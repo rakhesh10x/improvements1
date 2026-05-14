@@ -88,10 +88,13 @@ const BackingCards = () => {
     <section className="relative z-20 w-full max-w-[1200px] mx-auto px-6 py-4 lg:py-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 lg:gap-4">
         {backers.map((backer, i) => (
-          <div key={i} className={`glass-card group relative flex flex-col rounded-[28px] p-10 overflow-hidden ${backer.borderHover} transition-colors`}>
+          <div 
+            key={i} 
+            className={`relative flex flex-col rounded-[28px] p-10 overflow-hidden border border-white/[0.05] bg-white/[0.01] backdrop-blur-md ${backer.borderHover} transition-all duration-500 group`}
+          >
             <div
               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-              style={{ background: `radial-gradient(circle at center, rgba(${backer.gradientRgba},0.1) 0%, transparent 70%)` }}
+              style={{ background: `radial-gradient(circle at center, rgba(${backer.gradientRgba},0.05) 0%, transparent 70%)` }}
             />
             <div className="relative z-10 h-24 flex items-center justify-center mb-10 transition-transform duration-700 group-hover:scale-110">
               {backer.logo}
