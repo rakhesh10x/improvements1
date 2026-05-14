@@ -140,7 +140,6 @@ const Team = () => {
                 <div>
                   <h3 className="text-white text-lg font-bold leading-tight">{selected.name}</h3>
                   <p className="text-purple-400/80 text-[10px] uppercase tracking-[0.2em] font-black mt-1.5">{selected.role}</p>
-                  <p className="text-[#666] text-[11px] mt-2 font-medium">{selected.education}</p>
                 </div>
 
                 <p className="text-[#999] text-[13px] leading-relaxed font-light line-clamp-3">
