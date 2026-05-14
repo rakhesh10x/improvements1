@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const PageGateways = () => {
-  const [isAIHovered, setIsAIHovered] = useState(false);
+  const [hasPlayed, setHasPlayed] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
 
   const gateways = [
@@ -24,8 +25,9 @@ const PageGateways = () => {
   ];
 
   const handleMouseEnter = (index) => {
-    if (index === 1) {
-      setIsAIHovered(true);
+    if (index === 1 && !hasPlayed) {
+      setHasPlayed(true);
+      setIsPlaying(true);
       if (videoRef.current) {
         videoRef.current.currentTime = 0;
         videoRef.current.play();
@@ -35,12 +37,17 @@ const PageGateways = () => {
 
   const handleMouseLeave = (index) => {
     if (index === 1) {
-      setIsAIHovered(false);
+      setHasPlayed(false);
+      setIsPlaying(false);
       if (videoRef.current) {
         videoRef.current.pause();
         videoRef.current.currentTime = 0;
       }
     }
+  };
+
+  const handleVideoEnd = () => {
+    setIsPlaying(false);
   };
 
   return (
@@ -56,28 +63,26 @@ const PageGateways = () => {
             {/* Border Glow Effect */}
             <div className="absolute -inset-[1px] bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
-            <div className="relative h-full bg-[#0A0A0F] border border-white/10 rounded-[32px] overflow-hidden flex flex-col">
+            <div className="relative h-full bg-[#04040c] border border-white/10 rounded-[32px] overflow-hidden flex flex-col">
               {/* Image/Video Container */}
-              <div className="relative aspect-[16/9] overflow-hidden bg-[#000]">
+              <div className="relative aspect-[16/9] overflow-hidden bg-[#04040c] flex items-center justify-center">
                 {i === 1 ? (
-                  <div className="w-full h-full relative">
-                    {/* Video for AI Card */}
+                  <div className="w-full h-full relative flex items-center justify-center">
+                    {/* Static LUCA Eyes (Always visible by default) */}
+                    <div className={`flex items-center justify-center gap-8 transition-opacity duration-300 ${isPlaying ? 'opacity-0' : 'opacity-100'}`}>
+                      <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)]"></div>
+                      <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)]"></div>
+                    </div>
+
+                    {/* Video for AI Card (Overlay during animation) */}
                     <video
                       ref={videoRef}
                       src="/eye video.mp4"
-                      className="w-full h-full object-cover transition-opacity duration-500"
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${isPlaying ? 'opacity-100' : 'opacity-0'}`}
                       muted
                       playsInline
-                      style={{ opacity: isAIHovered ? 1 : 0.6 }}
+                      onEnded={handleVideoEnd}
                     />
-                    {/* Fallback/Static state image if video is not active */}
-                    {!isAIHovered && (
-                      <img 
-                        src={gateway.image} 
-                        alt={gateway.title}
-                        className="absolute inset-0 w-full h-full object-cover opacity-100"
-                      />
-                    )}
                   </div>
                 ) : (
                   <img 
@@ -86,7 +91,7 @@ const PageGateways = () => {
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#04040c] via-transparent to-transparent"></div>
               </div>
 
               {/* Content */}
