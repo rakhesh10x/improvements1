@@ -105,11 +105,11 @@ const FeatureLinks = ({ mode = 'all' }) => {
                       <span className="text-purple-400 text-[10px] uppercase tracking-[0.5em] font-black mb-1 opacity-60">
                         {card.category}
                       </span>
-                      <h2 className="text-white text-3xl md:text-4xl lg:text-[40px] font-bold mb-4 tracking-tighter leading-[1.05]">
-                        The Architecture <br /> Behind <span className="text-white">LUCA</span>
+                      <h2 className="text-white text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 tracking-tighter leading-[1.05]">
+                        The Architecture Behind <br /> <span className="text-white">LUCA</span>
                       </h2>
-                      <p className="text-[#999] text-[15px] lg:text-[15px] leading-relaxed mb-6 max-w-[310px] font-medium opacity-90">
-                        {card.description}
+                      <p className="text-[#999] text-[15px] lg:text-[15px] leading-relaxed mb-8 max-w-[340px] font-medium opacity-90">
+                        The research behind our custom OS, <br /> where fine-tuning SLM becomes a closed loop.
                       </p>
                       
                       <a 
