@@ -1,0 +1,200 @@
+import React, { useState } from 'react';
+import { Mail, Phone } from 'lucide-react';
+
+const LinkedinIcon = ({ className }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+  </svg>
+);
+
+const team = [
+  {
+    role: 'Founder',
+    name: 'Mani Bhavan',
+    initials: 'MB',
+    description: 'Visionary behind 10X Technologies and the driving force behind LUCA. Building emotionally intelligent AI hardware from India for the world.',
+    education: 'B.Tech, IIT Hyderabad',
+    email: 'mani@10xtechnologies.tech',
+    mobile: '+91 00000 00000',
+    linkedin: '#',
+    gradientRgba: '167,139,250',
+    accentColor: '#a78bfa',
+  },
+  {
+    role: 'Co-Founder',
+    name: 'Erfan Abdi',
+    initials: 'EA',
+    description: "Co-architect of LUCA's core AI intelligence and product strategy. Specialises in multilingual systems and cross-cultural human-device interaction.",
+    education: 'M.Sc, AI & Robotics, TU Berlin',
+    email: 'erfan@10xtechnologies.tech',
+    mobile: '+91 00000 00000',
+    linkedin: '#',
+    gradientRgba: '96,165,250',
+    accentColor: '#60a5fa',
+  },
+  {
+    role: 'OS VP',
+    name: 'Dhina',
+    initials: 'DH',
+    description: 'Leads the development of our custom embedded OS from the ground up. Optimises low-level hardware integration for real-time on-device AI inference.',
+    education: 'B.E, Embedded Systems, Anna University',
+    email: 'dhina@10xtechnologies.tech',
+    mobile: '+91 00000 00000',
+    linkedin: '#',
+    gradientRgba: '52,211,153',
+    accentColor: '#34d399',
+  },
+  {
+    role: 'LUCA VP',
+    name: 'Vyshnavi',
+    initials: 'VY',
+    description: "Oversees LUCA's end-to-end product experience and emotional AI pipeline. Bridges hardware design with natural, intuitive human interaction.",
+    education: 'B.Tech, Electronics & AI, JNTU',
+    email: 'vyshnavi@10xtechnologies.tech',
+    mobile: '+91 00000 00000',
+    linkedin: '#',
+    gradientRgba: '251,191,36',
+    accentColor: '#fbbf24',
+  },
+  {
+    role: 'Core Dev',
+    name: 'Pavan Kumar',
+    initials: 'PK',
+    photo: 'https://media.licdn.com/dms/image/v2/D5603AQFIfBQhsE8u7g/profile-displayphoto-crop_800_800/B56Z1U4k0UKgAU-/0/1775245614200?e=1779926400&v=beta&t=8tsYThTi4cm2L8C-Qlps4NCmW6t4eBPWag_v3YEhTLQ',
+    description: "Full-stack engineer powering 10X's web infrastructure and developer tooling. Architect of the Akshara tokenizer API and platform integrations.",
+    education: 'B.Tech, CSE, JNTU Hyderabad',
+    email: 'pavan@10xtechnologies.tech',
+    mobile: '+91 00000 00000',
+    linkedin: '#',
+    gradientRgba: '251,146,60',
+    accentColor: '#fb923c',
+  },
+];
+
+const Team = () => {
+  const [selected, setSelected] = useState(null);
+
+  return (
+    <section className="py-16 max-w-[1200px] mx-auto px-6">
+      <h2 className="text-lg font-medium text-white mb-10">Our Team</h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        {/* Column 1: member list */}
+        <div className="flex flex-col">
+          {team.map((member) => {
+            const isSelected = selected?.name === member.name;
+            return (
+              <button
+                key={member.name}
+                onClick={() => setSelected(isSelected ? null : member)}
+                className={`flex items-center gap-4 py-3.5 px-2 border-b border-white/[0.06] text-left transition-all duration-200
+                  ${isSelected ? 'bg-white/[0.04]' : 'hover:bg-white/[0.03]'}`}
+              >
+                <span className="text-[#666] text-sm w-28 flex-shrink-0">{member.role}</span>
+                <span className="text-white text-sm flex-1">{member.name}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Column 2: detail card */}
+        <div className="flex items-stretch">
+          {selected ? (
+            <div
+              key={selected.name}
+              className="w-full glass-card rounded-2xl overflow-hidden flex transition-all duration-300 h-[265px]"
+              style={{
+                border: `1px solid rgba(${selected.gradientRgba},0.25)`,
+                boxShadow: `0 0 40px rgba(${selected.gradientRgba},0.08)`,
+              }}
+            >
+              {/* Left: image with right-side fade */}
+              <div className="relative w-1/2 flex-shrink-0">
+                {selected.photo ? (
+                  <img
+                    src={selected.photo}
+                    alt={selected.name}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <div
+                    className="w-full h-full flex items-center justify-center"
+                    style={{
+                      background: `linear-gradient(135deg, rgba(${selected.gradientRgba},0.18) 0%, rgba(${selected.gradientRgba},0.05) 100%)`,
+                    }}
+                  >
+                    <svg className="w-14 h-14 opacity-20" fill="none" stroke="currentColor" strokeWidth="1" viewBox="0 0 24 24" style={{ color: selected.accentColor }}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                    </svg>
+                  </div>
+                )}
+                {/* Fade to right */}
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{ background: 'linear-gradient(to right, transparent 40%, #08080f 100%)' }}
+                />
+              </div>
+
+              {/* Right: 3 rows */}
+              <div className="flex-1 flex flex-col justify-between py-5 px-5">
+
+                {/* Row 1: name + edu + role */}
+                <div>
+                  <h3 className="text-white text-base font-semibold leading-tight">{selected.name}</h3>
+                  <p className="text-[#666] text-[11px] mt-0.5">{selected.education}</p>
+                  <span
+                    className="text-[10px] uppercase tracking-[0.18em] font-bold mt-1 block"
+                    style={{ color: selected.accentColor }}
+                  >
+                    {selected.role}
+                  </span>
+                </div>
+
+                {/* Row 2: description */}
+                <p className="text-[#888] text-xs leading-relaxed">
+                  {selected.description}
+                </p>
+
+                {/* Row 3: contact icons */}
+                <div className="flex items-center gap-3">
+                  <a
+                    href={`mailto:${selected.email}`}
+                    title={selected.email}
+                    className="w-8 h-8 rounded-lg bg-white/5 border border-white/8 flex items-center justify-center text-[#666] hover:text-white hover:bg-white/10 transition-all"
+                  >
+                    <Mail className="w-3.5 h-3.5" />
+                  </a>
+                  <a
+                    href={`tel:${selected.mobile}`}
+                    title={selected.mobile}
+                    className="w-8 h-8 rounded-lg bg-white/5 border border-white/8 flex items-center justify-center text-[#666] hover:text-white hover:bg-white/10 transition-all"
+                  >
+                    <Phone className="w-3.5 h-3.5" />
+                  </a>
+                  <a
+                    href={selected.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="LinkedIn"
+                    className="w-8 h-8 rounded-lg bg-white/5 border border-white/8 flex items-center justify-center text-[#666] hover:text-white hover:bg-white/10 transition-all"
+                  >
+                    <LinkedinIcon className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          ) : (
+            <div className="w-full h-[265px] rounded-2xl border border-dashed border-white/10 flex items-center justify-center">
+              <p className="text-[#555] text-sm">Select a team member</p>
+            </div>
+          )}
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default Team;

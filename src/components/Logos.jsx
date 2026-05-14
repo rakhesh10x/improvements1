@@ -1,0 +1,45 @@
+import React from 'react';
+
+const logos = [
+  { src: 'https://i.ibb.co/4w7vRPF9/Activate-Logo-color-white-e1601561941855-removebg-preview.png', alt: 'Activate' },
+  { src: 'https://i.ibb.co/xVrHgHw/Amazon-Web-Services-Logo-svg-1-removebg-preview.png', alt: 'AWS' },
+  { src: 'https://i.ibb.co/pvVYDJmC/Bharat-AI-Mission-Logo-removebg-preview.png', alt: 'Bharat AI Mission' },
+  { src: 'https://i.ibb.co/hJYm1Qcq/Copy-of-IMG-20260409-WA0019-removebg-preview.png', alt: 'Partner' },
+  { src: 'https://i.ibb.co/BHBFnLGx/DPIIT-header-removebg-preview.png', alt: 'DPIIT' },
+  { src: 'https://i.ibb.co/vxZZr3YS/wehub-logo3-removebg-preview.png', alt: 'WeHub' },
+];
+
+const LogoGroup = () => (
+  <div className="flex items-center gap-14 md:gap-20 flex-shrink-0 px-10">
+    {logos.map((logo, i) => (
+      <img
+        key={i}
+        src={logo.src}
+        alt={logo.alt}
+        className="h-8 md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
+      />
+    ))}
+  </div>
+);
+
+const Logos = () => {
+  return (
+    <section className="pt-10 pb-12 border-y border-white/10 overflow-hidden">
+      <p className="text-[#A0A0A0] text-[10px] font-bold uppercase tracking-[0.3em] mb-10 text-center">Officially Collaborated & Backed By</p>
+
+      <div className="relative w-full overflow-hidden">
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+
+        <div className="animate-marquee">
+          <LogoGroup />
+          <LogoGroup />
+          <LogoGroup />
+          <LogoGroup />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Logos;
