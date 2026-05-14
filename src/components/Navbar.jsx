@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Navbar = ({ openContactModal }) => {
   return (
     <div className="fixed top-6 w-full z-50 flex justify-center px-4 md:px-6 pointer-events-none">
-      <nav className="w-full max-w-[1000px] bg-white/5 backdrop-blur-2xl border border-white/10 px-5 py-1.5 rounded-full flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.08)] pointer-events-auto transition-all">
+      <nav className="w-full max-w-[1000px] bg-white/[0.03] backdrop-blur-lg border border-white/[0.05] px-5 py-1.5 rounded-full flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05)] pointer-events-auto transition-all">
         <div className="flex items-center gap-6">
           <Link to="/" className="flex items-center cursor-pointer group">
             <img 
