@@ -3,7 +3,7 @@ import React from 'react';
 const logos = [
   { src: 'https://i.ibb.co/4w7vRPF9/Activate-Logo-color-white-e1601561941855-removebg-preview.png', alt: 'Activate' },
   { src: 'https://i.ibb.co/xVrHgHw/Amazon-Web-Services-Logo-svg-1-removebg-preview.png', alt: 'AWS' },
-  { src: 'https://i.ibb.co/pvVYDJmC/Bharat-AI-Mission-Logo-removebg-preview.png', alt: 'Bharat AI Mission' },
+  { src: 'https://i.ibb.co/pvVYDJmC/Bharat-AI-Mission-Logo-removebg-preview.png', alt: 'Bharat AI Mission', scale: 'h-14 md:h-20' },
   { src: 'https://i.ibb.co/hJYm1Qcq/Copy-of-IMG-20260409-WA0019-removebg-preview.png', alt: 'Partner' },
   { src: 'https://i.ibb.co/BHBFnLGx/DPIIT-header-removebg-preview.png', alt: 'DPIIT' },
   { src: 'https://i.ibb.co/vxZZr3YS/wehub-logo3-removebg-preview.png', alt: 'WeHub' },
@@ -16,7 +16,7 @@ const LogoGroup = () => (
         key={i}
         src={logo.src}
         alt={logo.alt}
-        className="h-8 md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
+        className={`${logo.scale || 'h-8 md:h-10'} w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 brightness-0 invert`}
       />
     ))}
   </div>
