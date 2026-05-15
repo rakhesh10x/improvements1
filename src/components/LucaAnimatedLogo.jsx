@@ -2,97 +2,126 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const LucaAnimatedLogo = () => {
+  // Path Drawing Animation Variants
+  const pathVariants = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: (delay) => ({
+      pathLength: 1,
+      opacity: 1,
+      transition: {
+        pathLength: { delay, duration: 1.8, ease: "easeInOut" },
+        opacity: { delay, duration: 0.2 }
+      }
+    })
+  };
+
   return (
     <div className="relative w-full max-w-lg aspect-square flex items-center justify-center pointer-events-none">
-      {/* Dynamic Glow Background - Appears last as glow stabilizes */}
+      {/* Final Stabilization Glow - Appears after all drawing is done */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 2.5, delay: 1.5, ease: "easeOut" }}
-        className="absolute inset-0 bg-white/[0.03] blur-[120px] rounded-full"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, delay: 3.5 }}
+        className="absolute inset-0 bg-white/[0.03] blur-[100px] rounded-full"
       />
       
-      <svg viewBox="0 0 500 500" className="w-full h-full relative z-10 filter drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-        {/* Base Black Interior */}
+      <svg viewBox="0 0 500 500" className="w-full h-full relative z-10 overflow-visible">
+        {/* Interior Base - Fades in softly at the start */}
         <motion.circle
           cx="250"
           cy="250"
           r="198"
           fill="black"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: 0.8 }}
           transition={{ duration: 1, delay: 0.2 }}
         />
 
-        {/* Outer Ring 1 (Main Perimeter) */}
-        <motion.circle
-          cx="250"
-          cy="250"
-          r="200"
+        {/* 1. First Outer Circular Line - VISIBLE DRAWING */}
+        <motion.path
+          d="M 250, 50 A 200, 200 0 1, 1 249.9, 50"
           fill="none"
           stroke="white"
-          strokeWidth="1.5"
+          strokeWidth="2"
           strokeLinecap="round"
-          initial={{ pathLength: 0, opacity: 0, rotate: -120 }}
-          animate={{ pathLength: 1, opacity: 1, rotate: -120 }}
-          transition={{ 
-            pathLength: { duration: 2, ease: [0.43, 0.13, 0.23, 0.96] },
-            opacity: { duration: 0.3 }
-          }}
-          style={{ originX: "250px", originY: "250px" }}
+          variants={pathVariants}
+          custom={0}
+          initial="hidden"
+          animate="visible"
         />
 
-        {/* Inner Ring 2 (Offset for 3D Depth Effect) */}
-        <motion.circle
-          cx="262"
-          cy="238"
-          r="195"
+        {/* 2. Second Circular Line (Depth Ring) - VISIBLE DRAWING */}
+        <motion.path
+          d="M 262, 43 A 195, 195 0 1, 1 261.9, 43"
+          fill="none"
+          stroke="white"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          variants={pathVariants}
+          custom={0.8}
+          initial="hidden"
+          animate="visible"
+          style={{ opacity: 0.4 }}
+        />
+
+        {/* 3. Left Eye Path - VISIBLE DRAWING */}
+        <motion.path
+          d="M 205, 222 A 18, 18 0 1, 1 204.9, 222"
+          fill="none"
+          stroke="white"
+          strokeWidth="2"
+          strokeLinecap="round"
+          variants={pathVariants}
+          custom={2.2}
+          initial="hidden"
+          animate="visible"
+        />
+        {/* Fill Left Eye after drawing */}
+        <motion.circle 
+          cx="205" 
+          cy="240" 
+          r="18" 
+          fill="white" 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ delay: 3.0 }} 
+          className="filter drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]"
+        />
+
+        {/* 4. Right Eye Path - VISIBLE DRAWING */}
+        <motion.path
+          d="M 295, 222 A 18, 18 0 1, 1 294.9, 222"
+          fill="none"
+          stroke="white"
+          strokeWidth="2"
+          strokeLinecap="round"
+          variants={pathVariants}
+          custom={2.6}
+          initial="hidden"
+          animate="visible"
+        />
+        {/* Fill Right Eye after drawing */}
+        <motion.circle 
+          cx="295" 
+          cy="240" 
+          r="18" 
+          fill="white" 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ delay: 3.4 }} 
+          className="filter drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]"
+        />
+
+        {/* Subtle Bottom Highlight Trace */}
+        <motion.path
+          d="M 180, 420 Q 250, 440 320, 420"
           fill="none"
           stroke="white"
           strokeWidth="1"
           strokeLinecap="round"
-          initial={{ pathLength: 0, opacity: 0, rotate: 60 }}
-          animate={{ pathLength: 1, opacity: 0.4, rotate: 60 }}
-          transition={{ 
-            pathLength: { duration: 1.8, delay: 0.4, ease: "easeInOut" },
-            opacity: { duration: 0.5, delay: 0.4 }
-          }}
-          style={{ originX: "262px", originY: "238px" }}
-        />
-
-        {/* The Eyes (LUCA's Signature Feature) */}
-        <motion.g
-          initial={{ opacity: 0, scale: 0.9, y: 5 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.2, ease: "easeOut" }}
-        >
-          {/* Left Eye */}
-          <circle 
-            cx="210" 
-            cy="240" 
-            r="18" 
-            fill="white" 
-            className="filter drop-shadow-[0_0_12px_rgba(255,255,255,0.9)]"
-          />
-          {/* Right Eye */}
-          <circle 
-            cx="280" 
-            cy="240" 
-            r="18" 
-            fill="white" 
-            className="filter drop-shadow-[0_0_12px_rgba(255,255,255,0.9)]"
-          />
-        </motion.g>
-
-        {/* Subtle bottom highlight */}
-        <motion.path
-          d="M 180 420 Q 250 435 320 420"
-          fill="none"
-          stroke="white"
-          strokeWidth="0.8"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 0.2 }}
-          transition={{ duration: 1, delay: 2.5 }}
+          transition={{ duration: 1.2, delay: 3.2 }}
         />
       </svg>
     </div>
