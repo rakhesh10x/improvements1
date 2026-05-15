@@ -1,6 +1,6 @@
-// Vercel Sync Commit: Latest Alignment Fixes
 import { motion } from 'framer-motion';
 import Logo10X from './Logo10X';
+import LucaAnimatedLogo from './LucaAnimatedLogo';
 
 const SmartSpeakerHero = () => {
   return (
@@ -32,19 +32,15 @@ const SmartSpeakerHero = () => {
             </p>
           </motion.div>
 
-          {/* Right Side: Image - Spanning 6 columns */}
+          {/* Right Side: Animated SVG Logo - Spanning 6 columns */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, delay: 0.2 }}
             className="col-span-12 md:col-span-6 flex justify-end relative"
           >
             <div className="absolute inset-0 bg-purple-600/5 blur-[120px] rounded-full pointer-events-none"></div>
-            <img 
-              src={`${import.meta.env.BASE_URL}product home page.png`} 
-              alt="10X Technologies Product" 
-              className="relative z-10 w-full max-w-md h-auto object-contain drop-shadow-[0_0_50px_rgba(147,51,234,0.1)] rounded-[80%]"
-            />
+            <LucaAnimatedLogo />
           </motion.div>
         </div>
       </div>
