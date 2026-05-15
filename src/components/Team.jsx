@@ -115,6 +115,8 @@ const Team = () => {
                       src={selected.photo}
                       alt={selected.name}
                       className="w-full h-full object-cover object-top"
+                      decoding="async"
+                      loading="lazy"
                       style={{
                         maskImage: 'linear-gradient(to right, black 65%, transparent 98%)',
                         WebkitMaskImage: 'linear-gradient(to right, black 65%, transparent 98%)'

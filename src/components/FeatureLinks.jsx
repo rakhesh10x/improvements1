@@ -79,6 +79,8 @@ const FeatureLinks = ({ mode = 'all' }) => {
                   <img
                     src={`${import.meta.env.BASE_URL}${card.image.startsWith('/') ? card.image.slice(1) : card.image}`}
                     alt={card.title}
+                    decoding="async"
+                    loading="lazy"
                     className="w-full h-full transition-all duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100 object-cover relative z-10"
                     style={originalIndex === 3 ? {
                       maskImage: 'linear-gradient(to right, black 65%, transparent 98%)',

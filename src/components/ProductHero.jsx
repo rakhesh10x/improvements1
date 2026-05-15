@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ProductHero = () => {
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden bg-white">
+    <section className="relative min-h-[90svh] flex flex-col items-center justify-center overflow-hidden bg-white">
       {/* Blue gradient glow from the edges like the reference */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(186,204,255,0.2)_0%,transparent_70%)]"></div>
       

@@ -16,6 +16,8 @@ const LogoGroup = () => (
         key={i}
         src={logo.src}
         alt={logo.alt}
+        decoding="async"
+        loading="lazy"
         className={`${logo.scale || 'h-8 md:h-10'} w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 brightness-0 invert`}
       />
     ))}

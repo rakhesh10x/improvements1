@@ -31,6 +31,8 @@ const BackingCards = () => {
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
           alt="AWS Logo"
+          decoding="async"
+          loading="lazy"
           className="h-16 w-auto object-contain opacity-100 group-hover:opacity-100 transition-all duration-300 group-hover:drop-shadow-[0_0_20px_rgba(255,153,0,0.8)]"
         />
       )
@@ -54,6 +56,8 @@ const BackingCards = () => {
         <img
           src="/nvidia-remove.bg.png"
           alt="NVIDIA Logo"
+          decoding="async"
+          loading="lazy"
           className="h-16 w-auto object-contain opacity-100 group-hover:opacity-100 transition-all duration-300 group-hover:drop-shadow-[0_0_20px_rgba(118,185,0,0.8)]"
         />
       )
@@ -77,6 +81,8 @@ const BackingCards = () => {
         <img
           src="/govt of india-remove.bg.png"
           alt="Govt of India"
+          decoding="async"
+          loading="lazy"
           className="h-16 w-auto object-contain opacity-100 group-hover:opacity-100 transition-all duration-300 group-hover:drop-shadow-[0_0_20px_rgba(30,144,255,0.8)]"
         />
       )

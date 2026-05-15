@@ -23,7 +23,7 @@ const PartnerModal = ({ isOpen, onClose, partner }) => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 30 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-4xl h-[85vh] glass-card rounded-[32px] overflow-hidden flex flex-col z-10 cursor-default !transform-none !transition-none"
+          className="relative w-full max-w-4xl h-[85svh] glass-card rounded-[32px] overflow-hidden flex flex-col z-10 cursor-default !transform-none !transition-none"
         >
           {/* Top Gradient Glow Line - Matching ContactModal */}
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-blue-500 z-[70]"></div>
@@ -47,7 +47,7 @@ const PartnerModal = ({ isOpen, onClose, partner }) => {
           <div className="flex-1 overflow-y-auto no-scrollbar scroll-smooth">
 
             {/* 70% Hero Image Area with Reduced Cinematic Fade */}
-            <div className="relative w-full h-[60vh] overflow-hidden bg-[#0A0A0F]">
+            <div className="relative w-full h-[60svh] overflow-hidden bg-[#0A0A0F]">
               {partner.heroImage ? (
                 <img
                   src={partner.heroImage.startsWith('http') ? partner.heroImage : `${import.meta.env.BASE_URL}${partner.heroImage}`}
