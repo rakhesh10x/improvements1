@@ -58,15 +58,15 @@ const PageGateways = () => {
               <div className="relative aspect-[16/9] overflow-hidden bg-[#04040c] flex items-center justify-center">
                 {i === 1 ? (
                   <>
-                    {/* Static LUCA Eyes with Pure CSS Blink */}
+                    {/* Static LUCA Eyes with Pure CSS Blink (Triggered via group-hover) */}
                     <div className="flex items-center justify-center gap-10 md:gap-12">
                       <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full bg-white shadow-[0_0_40px_rgba(255,255,255,0.25),0_0_80px_rgba(255,255,255,0.1)] overflow-hidden">
                         {/* Eyelid Overlay */}
-                        <div className={`absolute inset-0 bg-[#04040c] transition-transform duration-300 origin-top ${isPlaying ? 'animate-blink-eyelid' : 'translate-y-[-100%]'}`} onAnimationEnd={handleVideoEnd}></div>
+                        <div className="absolute inset-0 bg-[#04040c] transform scale-y-0 origin-top group-hover:animate-blink-eyelid"></div>
                       </div>
                       <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full bg-white shadow-[0_0_40px_rgba(255,255,255,0.25),0_0_80px_rgba(255,255,255,0.1)] overflow-hidden">
                         {/* Eyelid Overlay */}
-                        <div className={`absolute inset-0 bg-[#04040c] transition-transform duration-300 origin-top ${isPlaying ? 'animate-blink-eyelid' : 'translate-y-[-100%]'}`}></div>
+                        <div className="absolute inset-0 bg-[#04040c] transform scale-y-0 origin-top group-hover:animate-blink-eyelid"></div>
                       </div>
                     </div>
                   </>
