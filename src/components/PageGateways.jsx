@@ -67,27 +67,17 @@ const PageGateways = () => {
               {/* Image/Video Container */}
               <div className="relative aspect-[16/9] overflow-hidden bg-[#04040c] flex items-center justify-center">
                 {i === 1 ? (
-                  <div className="absolute inset-0 w-full h-full flex items-center justify-center overflow-hidden pointer-events-none">
-                    {/* Layer 1: Static Idle Eyes */}
-                    <div className={`absolute inset-0 w-full h-full flex items-center justify-center gap-10 md:gap-12 transition-opacity duration-100 ${isPlaying ? 'opacity-0' : 'opacity-100'}`}>
-                      <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-white shadow-[0_0_40px_rgba(255,255,255,0.25),0_0_80px_rgba(255,255,255,0.1)]"></div>
-                      <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-white shadow-[0_0_40px_rgba(255,255,255,0.25),0_0_80px_rgba(255,255,255,0.1)]"></div>
+                    {/* Static LUCA Eyes with Pure CSS Blink */}
+                    <div className="flex items-center justify-center gap-10 md:gap-12">
+                      <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full bg-white shadow-[0_0_40px_rgba(255,255,255,0.25),0_0_80px_rgba(255,255,255,0.1)] overflow-hidden">
+                        {/* Eyelid Overlay */}
+                        <div className={`absolute inset-0 bg-[#04040c] transition-transform duration-300 origin-top ${isPlaying ? 'animate-blink-eyelid' : 'translate-y-[-100%]'}`} onAnimationEnd={handleVideoEnd}></div>
+                      </div>
+                      <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full bg-white shadow-[0_0_40px_rgba(255,255,255,0.25),0_0_80px_rgba(255,255,255,0.1)] overflow-hidden">
+                        {/* Eyelid Overlay */}
+                        <div className={`absolute inset-0 bg-[#04040c] transition-transform duration-300 origin-top ${isPlaying ? 'animate-blink-eyelid' : 'translate-y-[-100%]'}`}></div>
+                      </div>
                     </div>
-
-                    {/* Layer 2: Blink Video */}
-                    <video
-                      ref={videoRef}
-                      src="/eye video.mp4"
-                      className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-100 ${isPlaying ? 'opacity-100' : 'opacity-0'}`}
-                      muted
-                      playsInline
-                      onEnded={handleVideoEnd}
-                      style={{
-                        maskImage: 'linear-gradient(to bottom, black 65%, transparent 98%)',
-                        WebkitMaskImage: 'linear-gradient(to bottom, black 65%, transparent 98%)'
-                      }}
-                    />
-                  </div>
                 ) : (
                   <img 
                     src={gateway.image} 

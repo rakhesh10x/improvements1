@@ -174,3 +174,12 @@
   width: max-content;
   animation: marquee 30s linear infinite;
 }
+@keyframes blink-eyelid {
+  0% { transform: translateY(-100%); }
+  50% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+.animate-blink-eyelid {
+  animation: blink-eyelid 0.35s ease-in-out forwards;
+}
