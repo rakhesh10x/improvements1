@@ -12,14 +12,15 @@ const logos = [
 const LogoGroup = () => (
   <div className="flex items-center gap-14 md:gap-20 flex-shrink-0 px-10">
     {logos.map((logo, i) => (
-      <img
-        key={i}
-        src={logo.src}
-        alt={logo.alt}
-        decoding="async"
-        loading="lazy"
-        className={`${logo.scale || 'h-8 md:h-10'} w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 brightness-0 invert`}
-      />
+      <div key={i} className="h-14 md:h-20 flex items-center justify-center">
+        <img
+          src={logo.src}
+          alt={logo.alt}
+          decoding="async"
+          loading="lazy"
+          className={`${logo.scale || 'h-8 md:h-10'} w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 brightness-0 invert`}
+        />
+      </div>
     ))}
   </div>
 );
