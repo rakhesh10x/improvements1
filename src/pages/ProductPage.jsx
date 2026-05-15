@@ -14,7 +14,7 @@ const ProductPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-purple-500/30 font-sans relative w-full flex flex-col overflow-x-hidden">
+    <div className="min-h-[100svh] bg-black text-white selection:bg-purple-500/30 font-sans relative w-full flex flex-col overflow-x-hidden">
       <div className="bg-noise fixed pointer-events-none z-50"></div>
       <div className="bg-grid absolute inset-0 pointer-events-none z-0 opacity-40"></div>
       

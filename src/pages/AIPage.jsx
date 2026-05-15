@@ -32,7 +32,7 @@ const AIPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans relative w-full flex flex-col overflow-x-hidden">
+    <div className="min-h-[100svh] bg-black text-white font-sans relative w-full flex flex-col overflow-x-hidden">
       <style>{`
         @keyframes eyeBlink {
           0%, 88%, 100% { transform: scaleY(1); }
@@ -66,7 +66,7 @@ const AIPage = () => {
         <Starfield />
       </div>
 
-      <div className="relative z-10 flex flex-col min-h-screen">
+      <div className="relative z-10 flex flex-col min-h-[100svh]">
         <Navbar openContactModal={() => setIsContactModalOpen(true)} />
 
         {/* Hero */}
