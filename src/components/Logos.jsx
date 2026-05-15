@@ -27,7 +27,7 @@ const LogoGroup = () => (
 
 const Logos = () => {
   return (
-    <section className="mt-20 w-full overflow-hidden">
+    <section className="mt-12 w-full overflow-hidden">
       <p className="text-[#A0A0A0] text-[10px] font-bold uppercase tracking-[0.3em] mb-3 text-center">
         Officially Collaborated & Backed By
       </p>
