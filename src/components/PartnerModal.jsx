@@ -50,7 +50,7 @@ const PartnerModal = ({ isOpen, onClose, partner }) => {
             <div className="relative w-full h-[60svh] overflow-hidden bg-[#0A0A0F]">
               {partner.heroImage ? (
                 <img
-                  src={partner.heroImage.startsWith('http') ? partner.heroImage : `${import.meta.env.BASE_URL}${partner.heroImage}`}
+                  src={partner.heroImage.startsWith('http') ? partner.heroImage : partner.heroImage}
                   alt={partner.name}
                   className="w-full h-full object-cover opacity-90"
                 />
@@ -62,8 +62,8 @@ const PartnerModal = ({ isOpen, onClose, partner }) => {
                 </div>
               )}
 
-              {/* Reduced smooth gradient fade (Bottom 15%) */}
-              <div className="absolute bottom-0 left-0 right-0 h-[15%] bg-gradient-to-t from-[#0A0A0E] to-transparent z-10"></div>
+              {/* Increased smooth gradient fade (Bottom 30%) for cinematic blend */}
+              <div className="absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-t from-[#0A0A0E] via-[#0A0A0E]/80 to-transparent z-10"></div>
             </div>
 
             {/* Immersive Content Section */}

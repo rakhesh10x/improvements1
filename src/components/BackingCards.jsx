@@ -58,7 +58,7 @@ const BackingCards = () => {
           alt="Govt of India"
           decoding="async"
           loading="lazy"
-          className="h-16 w-auto object-contain opacity-100 group-hover:opacity-100 transition-all duration-300 group-hover:drop-shadow-[0_0_20px_rgba(30,144,255,0.8)]"
+          className="h-16 md:h-20 w-auto object-contain opacity-100 group-hover:opacity-100 transition-all duration-300 group-hover:drop-shadow-[0_0_20px_rgba(30,144,255,0.8)]"
         />
       )
     },
@@ -83,7 +83,7 @@ const BackingCards = () => {
           alt="NVIDIA Logo"
           decoding="async"
           loading="lazy"
-          className="h-20 w-auto object-contain opacity-100 group-hover:opacity-100 transition-all duration-300 group-hover:drop-shadow-[0_0_20px_rgba(118,185,0,0.8)] scale-110"
+          className="h-20 md:h-24 w-auto object-contain opacity-100 group-hover:opacity-100 transition-all duration-300 group-hover:drop-shadow-[0_0_20px_rgba(118,185,0,0.8)] scale-110"
         />
       )
     }
