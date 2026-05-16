@@ -118,8 +118,10 @@ const Team = () => {
                       decoding="async"
                       loading="lazy"
                       style={{
-                        maskImage: 'linear-gradient(to right, black 65%, transparent 98%)',
-                        WebkitMaskImage: 'linear-gradient(to right, black 65%, transparent 98%)'
+                        maskImage: 'linear-gradient(to right, black 40%, rgba(0,0,0,0.8) 60%, transparent 95%), linear-gradient(to bottom, black 80%, transparent 100%)',
+                        WebkitMaskImage: 'linear-gradient(to right, black 40%, rgba(0,0,0,0.8) 60%, transparent 95%), linear-gradient(to bottom, black 80%, transparent 100%)',
+                        WebkitMaskComposite: 'source-in',
+                        maskComposite: 'intersect'
                       }}
                     />
                   ) : (
@@ -134,9 +136,6 @@ const Team = () => {
                       </svg>
                     </div>
                   )}
-                  <div
-                    className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[#08080f] via-[#08080f]/60 to-transparent z-20 pointer-events-none"
-                  />
                 </div>
 
               {/* Right: details */}
