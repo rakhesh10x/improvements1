@@ -31,7 +31,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
       category: 'Research',
       title: 'The Architecture Behind LUCA',
       description: 'The research behind our custom OS, where fine-tuning SLM becomes a closed loop.',
-      image: '/research_data.png',
+      image: '/reserach image remove.bg.png',
       link: '#',
       buttonText: 'Blog',
       features: [
@@ -68,13 +68,12 @@ const FeatureLinks = ({ mode = 'all' }) => {
                 </>
               )}
               
-              <div className={originalIndex === 3 ? "flex flex-col items-center text-center relative z-10" : `grid grid-cols-1 md:grid-cols-2 ${originalIndex === 3 ? 'gap-6 lg:gap-8' : 'gap-12 lg:gap-16'} items-center relative z-10`}>
-                {/* Image Section removed for Research card */}
-                {originalIndex !== 3 && (
-                <div className={`relative aspect-[16/10] rounded-[24px] overflow-hidden group w-full ${
-                  (originalIndex === 1) ? 'md:order-1 md:mr-auto' : 'md:order-2 md:ml-auto'
-                } bg-[#08080f] border border-white/[0.05]`}
-                  style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)' }}
+              <div className={`grid grid-cols-1 md:grid-cols-2 ${originalIndex === 3 ? 'gap-6 lg:gap-8' : 'gap-12 lg:gap-16'} items-center relative z-10`}>
+                {/* Image Section */}
+                <div className={`relative ${originalIndex === 3 ? 'w-full aspect-[16/10] overflow-visible' : 'aspect-[16/10] rounded-[24px] overflow-hidden group w-full bg-[#08080f] border border-white/[0.05]'} ${
+                  (originalIndex === 3) ? 'md:order-1' : (originalIndex === 1) ? 'md:order-1 md:mr-auto' : 'md:order-2 md:ml-auto'
+                }`}
+                  style={originalIndex === 3 ? {} : { boxShadow: '0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)' }}
                 >
                   {/* Image with Smoother Fade Sync */}
                   <img
@@ -83,6 +82,10 @@ const FeatureLinks = ({ mode = 'all' }) => {
                     decoding="async"
                     loading="lazy"
                     className="w-full h-full transition-all duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100 object-cover relative z-10"
+                    style={originalIndex === 3 ? {
+                      maskImage: 'radial-gradient(ellipse at 30% 50%, black 20%, transparent 95%)',
+                      WebkitMaskImage: 'radial-gradient(ellipse at 30% 50%, black 20%, transparent 95%)'
+                    } : {}}
                   />
                   
                   {/* Gloss reflection */}
@@ -93,14 +96,13 @@ const FeatureLinks = ({ mode = 'all' }) => {
                     style={{ background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.12) 50%, transparent)' }}
                   ></div>
                 </div>
-                )}
 
                 {/* Text Content Section */}
                 <div className={`flex flex-col h-full justify-center ${
-                  (originalIndex === 3) ? 'md:order-2 items-center text-center w-full' : (originalIndex === 1) ? 'md:order-2 items-start text-left md:pl-12 lg:pl-16' : 'md:order-1 items-start text-left md:pr-12 lg:pr-16'
+                  (originalIndex === 3) ? 'md:order-2 items-start text-left' : (originalIndex === 1) ? 'md:order-2 items-start text-left md:pl-12 lg:pl-16' : 'md:order-1 items-start text-left md:pr-12 lg:pr-16'
                 }`}>
                   {originalIndex === 3 ? (
-                    <div className="flex flex-col items-center w-full max-w-xl mx-auto">
+                    <div className="flex flex-col items-start w-full max-w-sm ml-0">
                       <span className="text-purple-400 text-[10px] uppercase tracking-[0.5em] font-black mb-1 opacity-60">
                         {card.category}
                       </span>
@@ -108,8 +110,8 @@ const FeatureLinks = ({ mode = 'all' }) => {
                         <span className="whitespace-nowrap">The Architecture Behind</span> <br /> 
                         <span className="text-white">LUCA</span>
                       </h2>
-                      <p className="text-[#999] text-[15px] lg:text-[15px] leading-relaxed mb-8 max-w-md font-medium opacity-90">
-                        The research behind our custom OS, where fine-tuning SLM becomes a closed loop.
+                      <p className="text-[#999] text-[15px] lg:text-[15px] leading-relaxed mb-8 max-w-[340px] font-medium opacity-90">
+                        The research behind our custom OS, <br /> where fine-tuning SLM becomes a closed loop.
                       </p>
                       
                       <a 
