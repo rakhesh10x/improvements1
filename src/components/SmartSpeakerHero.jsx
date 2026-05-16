@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import Logo10X from './Logo10X';
-import LucaAnimatedLogo from './LucaAnimatedLogo';
 
 const SmartSpeakerHero = () => {
   return (
@@ -40,7 +39,14 @@ const SmartSpeakerHero = () => {
             className="col-span-12 md:col-span-6 flex justify-end relative"
           >
             <div className="absolute inset-0 bg-purple-600/5 blur-[120px] rounded-full pointer-events-none"></div>
-            <LucaAnimatedLogo />
+            <div className="relative w-full max-w-lg aspect-square flex items-center justify-center pointer-events-none scale-110">
+              <img 
+                src="/product home page.png"
+                alt="LUCA Product"
+                className="w-full h-full object-contain"
+                fetchpriority="high"
+              />
+            </div>
           </motion.div>
         </div>
       </div>
