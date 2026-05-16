@@ -65,7 +65,7 @@ const BackingCards = () => {
     {
       name: 'NVIDIA',
       tagline: 'INCEPTION PROGRAM',
-      heroImage: '/nvidia1.jpg',
+      heroImage: '/nvidia.png',
       description: 'Collaborating through NVIDIA Inception for advanced AI compute and hardware-level optimization for our Telugu models.',
       fullContent: '10X Technologies is proud to be part of the NVIDIA Inception Program — a program designed to nurture startups revolutionizing industries with advances in AI and data science. Through this collaboration, we gain access to NVIDIA\'s cutting-edge GPU infrastructure, technical expertise, and go-to-market support to accelerate our foundation model training and on-device inference capabilities.',
       highlights: [
