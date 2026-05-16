@@ -90,13 +90,17 @@ const FeatureLinks = ({ mode = 'all' }) => {
                     } : {}}
                   />
                   
-                  {/* Gloss reflection */}
-                  <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-br from-white/[0.05] via-transparent to-transparent"></div>
+                  {/* Gloss reflection - removed for research card to avoid artifacts */}
+                  {originalIndex !== 3 && (
+                    <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-br from-white/[0.05] via-transparent to-transparent"></div>
+                  )}
 
-                  {/* Top edge shimmer */}
-                  <div className="absolute top-0 left-0 right-0 h-px z-20 pointer-events-none"
-                    style={{ background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.12) 50%, transparent)' }}
-                  ></div>
+                  {/* Top edge shimmer - removed for research card to avoid artifacts */}
+                  {originalIndex !== 3 && (
+                    <div className="absolute top-0 left-0 right-0 h-px z-20 pointer-events-none"
+                      style={{ background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.12) 50%, transparent)' }}
+                    ></div>
+                  )}
                 </div>
 
                 {/* Text Content Section */}
