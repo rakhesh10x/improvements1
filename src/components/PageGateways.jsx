@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const PageGateways = () => {
-  const [blink, setBlink] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  const videoRef = useRef(null);
 
-  const handleHover = () => {
-    setBlink(false);
-    requestAnimationFrame(() => {
-      setBlink(true);
-      setTimeout(() => {
-        setBlink(false);
-      }, 400);
-    });
+  const handleMouseEnter = () => {
+    setShowVideo(true);
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.playbackRate = 5;
+      videoRef.current.play().catch(err => console.log("Video play interrupted", err));
+    }
+  };
+
+  const handleVideoEnded = () => {
+    setShowVideo(false);
   };
 
   const gateways = [
@@ -26,7 +30,7 @@ const PageGateways = () => {
     {
       title: 'AI',
       description: 'State-of-the-art foundation models and architectures built for the future of intelligence.',
-      image: '/luca-telugu.png',
+      image: '/luca eye image.png',
       link: '/ai',
       buttonText: 'Know more'
     }
@@ -38,10 +42,8 @@ const PageGateways = () => {
         {gateways.map((gateway, i) => (
           <div 
             key={i} 
-            className="group relative"
-            onMouseEnter={() => {
-              if (i === 1) handleHover();
-            }}
+            className="group relative h-full"
+            onMouseEnter={i === 1 ? handleMouseEnter : undefined}
           >
             {/* Border Glow Effect */}
             <div className="absolute -inset-[1px] bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -50,9 +52,24 @@ const PageGateways = () => {
               {/* Image/Video Container */}
               <div className="relative aspect-[16/9] overflow-hidden bg-[#04040c] flex items-center justify-center">
                 {i === 1 ? (
-                  <div className="flex items-center justify-center gap-10 md:gap-12 relative z-10">
-                    <div className={`w-24 h-24 md:w-32 md:h-32 rounded-full bg-white shadow-[0_0_40px_rgba(255,255,255,0.25),0_0_80px_rgba(255,255,255,0.1)] ${blink ? 'animate-leftReact' : ''}`} style={{ transformOrigin: 'center' }}></div>
-                    <div className={`w-24 h-24 md:w-32 md:h-32 rounded-full bg-white shadow-[0_0_40px_rgba(255,255,255,0.25),0_0_80px_rgba(255,255,255,0.1)] ${blink ? 'animate-rightBlink' : ''}`} style={{ transformOrigin: 'center' }}></div>
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    {/* Static Image - visible by default, hidden when video is playing if needed, 
+                        but user says 'switch', so we can use opacity or conditional rendering */}
+                    <img 
+                      src={gateway.image} 
+                      alt={gateway.title}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${showVideo ? 'opacity-0' : 'opacity-100'}`}
+                    />
+                    
+                    {/* Blink Video - overlaid and hidden by default */}
+                    <video
+                      ref={videoRef}
+                      src="/LUCA blink logo WhiteBG.mp4"
+                      muted
+                      playsInline
+                      onEnded={handleVideoEnded}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${showVideo ? 'opacity-100' : 'opacity-0'}`}
+                    />
                   </div>
                 ) : (
                   <img 
