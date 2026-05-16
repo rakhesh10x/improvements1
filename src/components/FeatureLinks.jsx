@@ -70,10 +70,10 @@ const FeatureLinks = ({ mode = 'all' }) => {
               
               <div className={`grid grid-cols-1 md:grid-cols-2 ${originalIndex === 3 ? 'gap-6 lg:gap-8' : 'gap-12 lg:gap-16'} items-center relative z-10`}>
                 {/* Image Section */}
-                <div className={`relative aspect-[16/10] rounded-[24px] overflow-hidden group w-full ${
+                <div className={`relative aspect-[16/10] overflow-hidden group w-full ${
                   (originalIndex === 3) ? 'md:order-1' : (originalIndex === 1) ? 'md:order-1 md:mr-auto' : 'md:order-2 md:ml-auto'
-                } bg-[#08080f] border border-white/[0.05]`}
-                  style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)' }}
+                } ${originalIndex === 3 ? '' : 'rounded-[24px] bg-[#08080f] border border-white/[0.05]'}`}
+                  style={originalIndex === 3 ? {} : { boxShadow: '0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)' }}
                 >
                   {/* Image with Smoother Fade Sync */}
                   <img
@@ -83,14 +83,19 @@ const FeatureLinks = ({ mode = 'all' }) => {
                     loading="lazy"
                     className="w-full h-full transition-all duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100 object-cover relative z-10"
                     style={originalIndex === 3 ? {
-                      maskImage: 'linear-gradient(to right, black 65%, transparent 98%)',
-                      WebkitMaskImage: 'linear-gradient(to right, black 65%, transparent 98%)'
+                      maskImage: 'linear-gradient(to right, black 50%, transparent 95%)',
+                      WebkitMaskImage: 'linear-gradient(to right, black 50%, transparent 95%)'
                     } : {}}
                   />
                   
-                  {/* Internal Fade for Syncing with Text Area */}
+                  {/* High-Fidelity Cinematic Fades (AWS Style) */}
                   {originalIndex === 3 && (
-                    <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[#08080f] via-[#08080f]/60 to-transparent z-20 pointer-events-none"></div>
+                    <>
+                      {/* Right Fade into Content Area */}
+                      <div className="absolute inset-y-0 right-0 w-[45%] bg-gradient-to-l from-[#0f0f11] via-[#0f0f11]/80 to-transparent z-20 pointer-events-none"></div>
+                      {/* Bottom Fade into Card Base */}
+                      <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#0f0f11] via-[#0f0f11]/80 to-transparent z-20 pointer-events-none"></div>
+                    </>
                   )}
 
                   {/* Gloss reflection */}
