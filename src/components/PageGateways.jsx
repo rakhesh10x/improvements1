@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
@@ -53,29 +53,28 @@ const PageGateways = () => {
               <div className="relative aspect-[16/9] overflow-hidden bg-[#04040c] flex items-center justify-center">
                 {i === 1 ? (
                   <div className="relative w-full h-full flex items-center justify-center">
-                    {/* Static Image - visible by default, hidden when video is playing if needed, 
-                        but user says 'switch', so we can use opacity or conditional rendering */}
+                    {/* Static Image - Completely static, no scaling */}
                     <img 
                       src={gateway.image} 
                       alt={gateway.title}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${showVideo ? 'opacity-0' : 'opacity-100'}`}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 transform-none ${showVideo ? 'opacity-0' : 'opacity-100'}`}
                     />
                     
-                    {/* Blink Video - overlaid and hidden by default */}
+                    {/* Blink Video - Completely static, no scaling */}
                     <video
                       ref={videoRef}
                       src="/LUCA blink logo WhiteBG.mp4"
                       muted
                       playsInline
                       onEnded={handleVideoEnded}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${showVideo ? 'opacity-100' : 'opacity-0'}`}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 transform-none ${showVideo ? 'opacity-100' : 'opacity-0'}`}
                     />
                   </div>
                 ) : (
                   <img 
                     src={gateway.image} 
                     alt={gateway.title}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    className="w-full h-full object-cover transform-none"
                     style={{
                       maskImage: 'linear-gradient(to bottom, black 65%, transparent 98%)',
                       WebkitMaskImage: 'linear-gradient(to bottom, black 65%, transparent 98%)'
