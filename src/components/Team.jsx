@@ -118,10 +118,8 @@ const Team = () => {
                       decoding="async"
                       loading="lazy"
                       style={{
-                        maskImage: 'linear-gradient(to right, black 40%, rgba(0,0,0,0.8) 60%, transparent 95%), linear-gradient(to bottom, black 80%, transparent 100%)',
-                        WebkitMaskImage: 'linear-gradient(to right, black 40%, rgba(0,0,0,0.8) 60%, transparent 95%), linear-gradient(to bottom, black 80%, transparent 100%)',
-                        WebkitMaskComposite: 'source-in',
-                        maskComposite: 'intersect'
+                        maskImage: 'radial-gradient(ellipse at left, black 20%, rgba(0,0,0,0.5) 50%, transparent 85%)',
+                        WebkitMaskImage: 'radial-gradient(ellipse at left, black 20%, rgba(0,0,0,0.5) 50%, transparent 85%)',
                       }}
                     />
                   ) : (
@@ -139,7 +137,7 @@ const Team = () => {
                 </div>
 
               {/* Right: details */}
-              <div className="flex-1 flex flex-col justify-between py-6 px-6 bg-[#08080f]/50">
+              <div className="flex-1 flex flex-col justify-between py-6 px-6 relative z-10">
                 <div>
                   <h3 className="text-white text-lg font-bold leading-tight">{selected.name}</h3>
                   <p className="text-purple-400/80 text-[10px] uppercase tracking-[0.2em] font-black mt-1.5">{selected.role}</p>
