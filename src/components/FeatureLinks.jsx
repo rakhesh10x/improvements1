@@ -83,8 +83,8 @@ const FeatureLinks = ({ mode = 'all' }) => {
                     loading="lazy"
                     className={originalIndex === 3 ? "w-auto h-auto max-h-[400px] transition-all duration-1000 group-hover:scale-105 opacity-100 object-contain relative z-10" : "w-full h-full transition-all duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100 object-cover relative z-10"}
                     style={originalIndex === 3 ? {
-                      maskImage: 'linear-gradient(to right, black 25%, transparent 95%), linear-gradient(to bottom, black 25%, transparent 95%)',
-                      WebkitMaskImage: 'linear-gradient(to right, black 25%, transparent 95%), linear-gradient(to bottom, black 25%, transparent 95%)',
+                      maskImage: 'linear-gradient(to right, black 70%, transparent 98%), linear-gradient(to bottom, black 85%, transparent 100%)',
+                      WebkitMaskImage: 'linear-gradient(to right, black 70%, transparent 98%), linear-gradient(to bottom, black 85%, transparent 100%)',
                       WebkitMaskComposite: 'source-in',
                       maskComposite: 'intersect'
                     } : {}}
