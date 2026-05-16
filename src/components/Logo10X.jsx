@@ -10,7 +10,7 @@ const Logo10X = ({ className }) => (
     <g transform="translate(582.733 378)">
       <text 
         fill="#FFFFFF" 
-        fontFamily="REM, REM_MSFontService, sans-serif" 
+        fontFamily="'Inter', sans-serif" 
         fontWeight="400" 
         fontSize="42.6667"
         textRendering="geometricPrecision"
