@@ -108,8 +108,8 @@ const Team = () => {
                 boxShadow: `0 0 50px rgba(${selected.gradientRgba},0.08)`,
               }}
             >
-                {/* Left: image with white-to-black bleed */}
-                <div className="relative w-2/5 flex-shrink-0 h-full bg-[#f8f9fa]">
+                {/* Left: image with seamless fade to card background */}
+                <div className="relative w-2/5 flex-shrink-0 h-full bg-transparent">
                   {selected.photo ? (
                     <img
                       src={selected.photo}
@@ -118,8 +118,8 @@ const Team = () => {
                       decoding="async"
                       loading="lazy"
                       style={{
-                        maskImage: 'linear-gradient(to right, black 50%, transparent 95%)',
-                        WebkitMaskImage: 'linear-gradient(to right, black 50%, transparent 95%)',
+                        maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 55%, rgba(0,0,0,0.85) 75%, rgba(0,0,0,0) 98%)',
+                        WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 55%, rgba(0,0,0,0.85) 75%, rgba(0,0,0,0) 98%)',
                       }}
                     />
                   ) : (
@@ -134,8 +134,6 @@ const Team = () => {
                       </svg>
                     </div>
                   )}
-                  {/* Transition Overlay: Fades the white container background into the dark card background */}
-                  <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-r from-transparent via-[#08080f]/20 to-[#08080f] z-20 pointer-events-none" />
                 </div>
 
               {/* Right: details */}

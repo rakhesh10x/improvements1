@@ -19,6 +19,14 @@ const PageGateways = () => {
     setShowVideo(false);
   };
 
+  const handleMouseLeave = () => {
+    setShowVideo(false);
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
+
   const gateways = [
     {
       title: 'Hardware',
@@ -44,6 +52,7 @@ const PageGateways = () => {
             key={i} 
             className="group relative h-full"
             onMouseEnter={i === 1 ? handleMouseEnter : undefined}
+            onMouseLeave={i === 1 ? handleMouseLeave : undefined}
           >
             {/* Border Glow Effect */}
             <div className="absolute -inset-[1px] bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -52,22 +61,21 @@ const PageGateways = () => {
               {/* Image/Video Container */}
               <div className="relative aspect-[16/9] overflow-hidden bg-[#04040c] flex items-center justify-center">
                 {i === 1 ? (
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    {/* Static Image - Completely static, no scaling */}
+                  <div className="relative w-full h-full overflow-hidden bg-[#04040c]">
                     <img 
                       src={gateway.image} 
                       alt={gateway.title}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 transform-none ${showVideo ? 'opacity-0' : 'opacity-100'}`}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-0 ${showVideo ? 'opacity-0' : 'opacity-100'}`}
                     />
                     
-                    {/* Blink Video - Completely static, no scaling */}
                     <video
                       ref={videoRef}
                       src="/LUCA blink logo WhiteBG.mp4"
                       muted
                       playsInline
+                      preload="auto"
                       onEnded={handleVideoEnded}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 transform-none ${showVideo ? 'opacity-100' : 'opacity-0'}`}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-0 ${showVideo ? 'opacity-100' : 'opacity-0'}`}
                     />
                   </div>
                 ) : (
