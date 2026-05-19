@@ -81,7 +81,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
                     alt={card.title}
                     decoding="async"
                     loading="lazy"
-                    className={originalIndex === 3 ? "w-full h-full object-cover object-left transition-all duration-1000 group-hover:scale-105 opacity-100 relative z-10" : "w-full h-full transition-all duration-1000 scale-[1.02] group-hover:scale-[1.05] opacity-80 group-hover:opacity-100 object-contain object-center relative z-10"}
+                    className={originalIndex === 3 ? "w-full h-full object-cover object-left opacity-100 relative z-10" : "w-full h-full transition-all duration-1000 scale-[1.02] group-hover:scale-[1.05] opacity-80 group-hover:opacity-100 object-contain object-center relative z-10"}
                     style={originalIndex === 3 ? {
                       maskImage: 'linear-gradient(to right, black 95%, transparent 100%)',
                       WebkitMaskImage: 'linear-gradient(to right, black 95%, transparent 100%)'
