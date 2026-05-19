@@ -118,8 +118,8 @@ const Team = () => {
                       decoding="async"
                       loading="lazy"
                       style={{
-                        maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 55%, rgba(0,0,0,0.85) 75%, rgba(0,0,0,0) 98%)',
-                        WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 55%, rgba(0,0,0,0.85) 75%, rgba(0,0,0,0) 98%)',
+                        maskImage: 'linear-gradient(to right, black 95%, transparent 100%)',
+                        WebkitMaskImage: 'linear-gradient(to right, black 95%, transparent 100%)',
                       }}
                     />
                   ) : (

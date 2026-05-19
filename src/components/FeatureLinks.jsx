@@ -7,7 +7,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
       category: 'Product',
       title: 'LUCA AI',
       description: 'Emotionally aware & OS integration. Interacts naturally, feels more like a companion than an AI device.',
-      image: '/luca-telugu.png',
+      image: '/LUCA AI image.png',
       link: '#',
       buttonText: 'Try LUCA'
     },
@@ -15,7 +15,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
       category: 'Product',
       title: 'Try Our Foundation Models',
       description: "We're launching open access to our native models for fine-tuning, inferencing, and deployment.",
-      image: '/foundation-models.png.png',
+      image: '/Copy of LFM Img.png',
       link: 'https://shesettipavankumarswamy-luca-telugu.hf.space/',
       buttonText: 'Try Now'
     },
@@ -23,7 +23,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
       category: 'Developer',
       title: 'Advanced Tokenizer & APIs',
       description: 'The future belongs to models with architectures crafted, optimized, and deployed for focused, low-latency tasks.',
-      image: '/akshara_tokenizer_ui.png',
+      image: '/Tokenizers ai img.png',
       link: 'https://10xtechnologies.tech/akshara.html',
       buttonText: 'Try Now'
     },
@@ -81,10 +81,10 @@ const FeatureLinks = ({ mode = 'all' }) => {
                     alt={card.title}
                     decoding="async"
                     loading="lazy"
-                    className={originalIndex === 3 ? "w-auto h-auto max-h-[400px] transition-all duration-1000 group-hover:scale-105 opacity-100 object-contain relative z-10" : "w-full h-full transition-all duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100 object-cover relative z-10"}
+                    className={originalIndex === 3 ? "w-auto h-auto max-h-[400px] transition-all duration-1000 group-hover:scale-105 opacity-100 object-contain relative z-10" : "w-full h-full transition-all duration-1000 scale-[1.15] group-hover:scale-[1.2] opacity-80 group-hover:opacity-100 object-contain object-center relative z-10"}
                     style={originalIndex === 3 ? {
-                      maskImage: 'linear-gradient(to right, black 70%, transparent 98%), linear-gradient(to bottom, black 85%, transparent 100%)',
-                      WebkitMaskImage: 'linear-gradient(to right, black 70%, transparent 98%), linear-gradient(to bottom, black 85%, transparent 100%)',
+                      maskImage: 'linear-gradient(to right, black 95%, transparent 100%), linear-gradient(to bottom, black 95%, transparent 100%)',
+                      WebkitMaskImage: 'linear-gradient(to right, black 95%, transparent 100%), linear-gradient(to bottom, black 95%, transparent 100%)',
                       WebkitMaskComposite: 'source-in',
                       maskComposite: 'intersect'
                     } : {}}

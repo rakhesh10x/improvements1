@@ -84,12 +84,12 @@ const PageGateways = () => {
                     alt={gateway.title}
                     className="w-full h-full object-cover transform-none"
                     style={{
-                      maskImage: 'linear-gradient(to bottom, black 65%, transparent 98%)',
-                      WebkitMaskImage: 'linear-gradient(to bottom, black 65%, transparent 98%)'
+                      maskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)',
+                      WebkitMaskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)'
                     }}
                   />
                 )}
-                <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-[#04040c] via-[#04040c]/60 to-transparent z-20 pointer-events-none"></div>
+                <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#04040c] to-transparent z-20 pointer-events-none opacity-80"></div>
               </div>
 
               {/* Content */}
