@@ -61,7 +61,13 @@ const PageGateways = () => {
               {/* Image/Video Container */}
               <div className="relative aspect-[16/9] overflow-hidden bg-[#04040c] flex items-center justify-center">
                 {i === 1 ? (
-                  <div className="relative w-full h-full overflow-hidden bg-[#04040c]">
+                  <div 
+                    className="relative w-full h-full overflow-hidden bg-[#04040c]"
+                    style={{
+                      maskImage: 'linear-gradient(to bottom, black 95%, transparent 100%)',
+                      WebkitMaskImage: 'linear-gradient(to bottom, black 95%, transparent 100%)'
+                    }}
+                  >
                     <img 
                       src={gateway.image} 
                       alt={gateway.title}
@@ -84,12 +90,12 @@ const PageGateways = () => {
                     alt={gateway.title}
                     className="w-full h-full object-cover transform-none"
                     style={{
-                      maskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)',
-                      WebkitMaskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)'
+                      maskImage: 'linear-gradient(to bottom, black 95%, transparent 100%)',
+                      WebkitMaskImage: 'linear-gradient(to bottom, black 95%, transparent 100%)'
                     }}
                   />
                 )}
-                <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#04040c] to-transparent z-20 pointer-events-none opacity-80"></div>
+                <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-[#04040c] to-transparent z-20 pointer-events-none opacity-30"></div>
               </div>
 
               {/* Content */}
