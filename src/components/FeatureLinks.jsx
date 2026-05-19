@@ -31,7 +31,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
       category: 'Research',
       title: 'The Architecture Behind LUCA',
       description: 'The research behind our custom OS, where fine-tuning SLM becomes a closed loop.',
-      image: '/reserach image remove.bg.png',
+      image: '/resolution changed reserach container.png',
       link: '#',
       buttonText: 'Blog',
       features: [
@@ -81,7 +81,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
                     alt={card.title}
                     decoding="async"
                     loading="lazy"
-                    className={originalIndex === 3 ? "w-auto h-auto max-h-[400px] transition-all duration-1000 group-hover:scale-105 opacity-100 object-contain relative z-10" : "w-full h-full transition-all duration-1000 scale-[1.02] group-hover:scale-[1.05] opacity-80 group-hover:opacity-100 object-contain object-center relative z-10"}
+                    className={originalIndex === 3 ? "w-full h-full object-contain object-center transition-all duration-1000 group-hover:scale-105 opacity-100 relative z-10" : "w-full h-full transition-all duration-1000 scale-[1.02] group-hover:scale-[1.05] opacity-80 group-hover:opacity-100 object-contain object-center relative z-10"}
                     style={originalIndex === 3 ? {
                       maskImage: 'linear-gradient(to right, black 95%, transparent 100%), linear-gradient(to bottom, black 95%, transparent 100%)',
                       WebkitMaskImage: 'linear-gradient(to right, black 95%, transparent 100%), linear-gradient(to bottom, black 95%, transparent 100%)',
