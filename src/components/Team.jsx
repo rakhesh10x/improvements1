@@ -74,7 +74,7 @@ const Team = () => {
   const [selected, setSelected] = useState(null);
 
   return (
-    <section className="py-16 max-w-[1200px] mx-auto px-6">
+    <section className="py-4 lg:py-6 max-w-[1200px] mx-auto px-6">
       <h2 className="text-lg font-medium text-white mb-10">Our Team</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

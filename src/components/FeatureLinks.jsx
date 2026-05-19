@@ -49,7 +49,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
       : allCards;
 
   return (
-    <section className="relative z-20 w-full max-w-[1200px] mx-auto px-6 py-8 lg:py-12">
+    <section className="relative z-20 w-full max-w-[1200px] mx-auto px-6 py-4 lg:py-6">
       <div className="flex flex-col gap-12 lg:gap-16">
         {cards.map((card, i) => {
           // Calculate the original index to preserve alternating logic and card 4's unique style

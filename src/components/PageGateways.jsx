@@ -45,7 +45,7 @@ const PageGateways = () => {
   ];
 
   return (
-    <section className="relative z-20 w-full max-w-[1200px] mx-auto px-6 py-12">
+    <section className="relative z-20 w-full max-w-[1200px] mx-auto px-6 py-4 lg:py-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {gateways.map((gateway, i) => (
           <div 
