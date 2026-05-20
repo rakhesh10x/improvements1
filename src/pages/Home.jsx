@@ -46,13 +46,15 @@ const Home = () => {
         <TechnicalFiller />
 
         <FeatureLinks mode="home" />
-        <div className="w-full max-w-[1200px] mx-auto h-[62px] overflow-hidden flex items-center justify-center">
-          <img 
-            src={`${import.meta.env.BASE_URL}dotlnes.svg`} 
-            alt="" 
-            className="w-full h-[62px] object-contain pointer-events-none" 
-          />
-        </div>
+        <div 
+          className="w-full max-w-[1200px] mx-auto h-[70px] overflow-hidden"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 10px 10px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 20px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 30px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 40px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 50px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 60px, rgba(255,255,255,0.25) 1px, transparent 1px)',
+            backgroundSize: '20px 70px',
+            maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+          }}
+        />
 
         <PageGateways />
         <TechnicalFiller />
