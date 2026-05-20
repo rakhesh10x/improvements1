@@ -54,10 +54,7 @@ const PageGateways = () => {
             onMouseEnter={i === 1 ? handleMouseEnter : undefined}
             onMouseLeave={i === 1 ? handleMouseLeave : undefined}
           >
-            {/* Border Glow Effect */}
-            <div className="absolute -inset-[1px] bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            
-            <div className="relative h-full bg-white/[0.01] backdrop-blur-md border border-white/[0.05] rounded-[32px] overflow-hidden flex flex-col">
+            <div className="relative h-full bg-white/[0.01] backdrop-blur-md border border-white/[0.05] group-hover:border-white/20 rounded-[32px] overflow-hidden flex flex-col transition-colors duration-500">
               {/* Image/Video Container */}
               <div className="relative aspect-[16/9] overflow-hidden bg-[#04040c] flex items-center justify-center">
                 {i === 1 ? (
