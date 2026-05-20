@@ -9,8 +9,8 @@ const Navbar = ({ openContactModal }) => {
         <div className="flex items-center gap-6">
           <Link to="/" className="flex items-center cursor-pointer group">
             <img 
-              src="https://i.ibb.co/LhBhDPhX/Screenshot-2026-05-11-153816-removebg-preview.png"
-              alt="10xTechnologies Logo"
+              src="/10Xtechnologies logo.png"
+              alt="10X Technologies Logo"
               className="h-12 md:h-14 w-auto object-contain"
             />
           </Link>
