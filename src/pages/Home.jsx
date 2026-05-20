@@ -46,11 +46,11 @@ const Home = () => {
         <TechnicalFiller />
 
         <FeatureLinks mode="home" />
-        <div className="w-full max-w-[1200px] mx-auto h-10 overflow-hidden flex items-center justify-center">
+        <div className="w-full max-w-[1200px] mx-auto h-[62px] overflow-hidden flex items-center justify-center">
           <img 
             src={`${import.meta.env.BASE_URL}dotlines.svg`} 
             alt="" 
-            className="w-full h-auto max-h-full object-contain pointer-events-none" 
+            className="w-full h-[62px] pointer-events-none" 
           />
         </div>
 
