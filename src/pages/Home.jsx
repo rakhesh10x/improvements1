@@ -46,7 +46,7 @@ const Home = () => {
         <TechnicalFiller />
 
         <FeatureLinks mode="home" />
-        <TechnicalFiller />
+        <TechnicalFiller className="my-4 md:my-6" />
 
         <PageGateways />
         <TechnicalFiller />
