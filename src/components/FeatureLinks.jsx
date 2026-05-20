@@ -69,18 +69,22 @@ const FeatureLinks = ({ mode = 'all' }) => {
               
               <div className={`grid grid-cols-1 md:grid-cols-2 ${originalIndex === 3 ? 'gap-0 items-stretch' : 'gap-12 lg:gap-16 items-center'} relative z-10`}>
                 {/* Image Section */}
-                <div className={`relative ${originalIndex === 3 ? 'w-full h-full min-h-[250px] md:min-h-0 flex items-center justify-center' : 'aspect-[16/10] rounded-[24px] overflow-hidden group w-full bg-[#08080f] border border-white/[0.05]'} ${
+                <div className={`relative ${originalIndex === 3 ? 'w-full h-full min-h-[250px] md:min-h-0 flex items-center justify-center' : 'aspect-[16/10] rounded-[24px] overflow-hidden group w-full bg-[#08080f] border border-white/[0.05] hover:border-[#512d8b]/40 shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_25px_rgba(81,45,139,0.25),inset_0_1px_0_rgba(255,255,255,0.1)] transition-all duration-500'} ${
                   (originalIndex === 3) ? 'md:order-1' : (originalIndex === 1) ? 'md:order-1 md:mr-auto' : 'md:order-2 md:ml-auto'
                 }`}
-                  style={originalIndex === 3 ? {} : { boxShadow: '0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)' }}
                 >
+                  {/* Internal Premium Glow */}
+                  {originalIndex !== 3 && (
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(81,45,139,0.12)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
+                  )}
+
                   {/* Image with Smoother Fade Sync */}
                   <img
                     src={`${import.meta.env.BASE_URL}${card.image.startsWith('/') ? card.image.slice(1) : card.image}`}
                     alt={card.title}
                     decoding="async"
                     loading="lazy"
-                    className={originalIndex === 3 ? "w-full h-full object-cover object-left opacity-100 relative z-10" : "w-full h-full transition-all duration-1000 scale-[1.02] group-hover:scale-[1.05] opacity-80 group-hover:opacity-100 object-contain object-center relative z-10"}
+                    className={originalIndex === 3 ? "w-full h-full object-cover object-left opacity-100 relative z-10" : "w-full h-full transition-all duration-1000 opacity-80 group-hover:opacity-100 object-contain object-center relative z-10"}
                     style={originalIndex === 3 ? {
                       maskImage: 'linear-gradient(to right, black 95%, transparent 100%)',
                       WebkitMaskImage: 'linear-gradient(to right, black 95%, transparent 100%)'

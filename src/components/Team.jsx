@@ -75,7 +75,7 @@ const Team = () => {
 
   return (
     <section className="py-4 lg:py-6 max-w-[1200px] mx-auto px-6">
-      <h2 className="text-lg font-medium text-white mb-10">Our Team</h2>
+      <h2 className="text-2xl font-medium mb-8 text-white">Our Team</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
@@ -86,7 +86,9 @@ const Team = () => {
             return (
               <button
                 key={member.name}
-                onClick={() => setSelected(isSelected ? null : member)}
+                onMouseEnter={() => setSelected(member)}
+                onClick={() => setSelected(member)}
+                onFocus={() => setSelected(member)}
                 className={`flex items-center gap-4 py-[1.15rem] px-2 border-b border-white/[0.06] text-left transition-all duration-300
                   ${isSelected ? 'bg-white/[0.04]' : 'hover:bg-white/[0.03]'}`}
               >

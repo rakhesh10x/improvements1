@@ -94,6 +94,14 @@
   transform: translateY(-4px);
 }
 
+.glass-card-stable {
+  transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease !important;
+}
+
+.glass-card-stable:hover {
+  transform: none !important;
+}
+
 .btn-premium {
   background: linear-gradient(135deg, #7C3AED, #4C1D95);
   color: white;

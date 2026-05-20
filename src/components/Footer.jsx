@@ -71,7 +71,7 @@ const Footer = ({ openContactModal, minimal = false }) => {
               href="https://www.linkedin.com/company/10xglobaltechnologies/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex-1 glass-card rounded-3xl p-6 md:p-8 flex items-center justify-between group hover:border-purple-500/30 transition-colors cursor-pointer relative overflow-hidden"
+              className="flex-1 glass-card glass-card-stable rounded-3xl p-6 md:p-8 flex items-center justify-between group hover:border-purple-500/30 transition-colors cursor-pointer relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(167,139,250,0.1)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               <div className="flex items-center gap-6 relative z-10">
@@ -91,7 +91,7 @@ const Footer = ({ openContactModal, minimal = false }) => {
             {/* Support Card */}
             <div 
               onClick={openContactModal}
-              className="flex-1 glass-card rounded-3xl p-6 md:p-8 flex items-center justify-between group hover:border-blue-500/30 transition-colors cursor-pointer relative overflow-hidden"
+              className="flex-1 glass-card glass-card-stable rounded-3xl p-6 md:p-8 flex items-center justify-between group hover:border-blue-500/30 transition-colors cursor-pointer relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.1)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               <div className="flex items-center gap-6 relative z-10">
