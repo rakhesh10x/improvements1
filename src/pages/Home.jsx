@@ -27,6 +27,10 @@ const Home = () => {
         <Starfield />
       </div>
 
+
+
+
+
       {/* Main Content Container */}
       <div className="relative z-10">
 <Navbar openContactModal={() => setIsContactModalOpen(true)} />

@@ -57,7 +57,7 @@ const PageGateways = () => {
             {/* Border Glow Effect */}
             <div className="absolute -inset-[1px] bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
-            <div className="relative h-full bg-[#04040c] border border-white/10 rounded-[32px] overflow-hidden flex flex-col">
+            <div className="relative h-full bg-white/[0.01] backdrop-blur-md border border-white/[0.05] rounded-[32px] overflow-hidden flex flex-col">
               {/* Image/Video Container */}
               <div className="relative aspect-[16/9] overflow-hidden bg-[#04040c] flex items-center justify-center">
                 {i === 1 ? (
@@ -101,7 +101,7 @@ const PageGateways = () => {
               {/* Content */}
               <div className="p-8 flex flex-col items-start flex-grow">
                 <h3 className="text-white text-2xl font-bold mb-3 tracking-tight">{gateway.title}</h3>
-                <p className="text-[#999] text-[15px] leading-relaxed mb-8 max-w-sm">
+                <p className="text-[#888] text-[15px] leading-relaxed mb-8 max-w-sm">
                   {gateway.description}
                 </p>
                 

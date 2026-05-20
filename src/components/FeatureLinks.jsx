@@ -58,12 +58,11 @@ const FeatureLinks = ({ mode = 'all' }) => {
           return (
             <div
               key={i}
-              className={originalIndex === 3 ? "glass-card group relative overflow-hidden rounded-[32px] hover:border-purple-500/20 transition-all duration-500" : "py-8"}
+              className={originalIndex === 3 ? "group relative overflow-hidden rounded-[32px] bg-white/[0.01] backdrop-blur-md border border-white/[0.05] hover:border-purple-500/20 transition-all duration-500" : "py-8"}
             >
               {originalIndex === 3 && (
                 <>
                   {/* Internal Premium Glows */}
-                  <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-purple-500/[0.03] to-transparent pointer-events-none"></div>
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(167,139,250,0.08)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                 </>
               )}
@@ -114,7 +113,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
                         <span className="whitespace-nowrap">The Architecture Behind</span> <br /> 
                         <span className="text-white">LUCA</span>
                       </h2>
-                      <p className="text-[#999] text-[15px] lg:text-[15px] leading-relaxed mb-8 max-w-[340px] font-medium opacity-90">
+                      <p className="text-[#888] text-[15px] lg:text-[15px] leading-relaxed mb-8 max-w-[340px] font-medium">
                         The research behind our custom OS, <br /> where fine-tuning SLM becomes a closed loop.
                       </p>
                       
