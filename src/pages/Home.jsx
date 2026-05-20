@@ -46,13 +46,17 @@ const Home = () => {
         <TechnicalFiller />
 
         <FeatureLinks mode="home" />
-        <div className="w-full max-w-[1200px] mx-auto h-[62px] overflow-hidden flex items-center justify-center">
-          <img 
-            src={`${import.meta.env.BASE_URL}dotlines.svg`} 
-            alt="" 
-            className="w-full h-[62px] pointer-events-none" 
-          />
-        </div>
+        <div 
+          className="w-full max-w-[1200px] mx-auto h-[62px] overflow-hidden"
+          style={{
+            backgroundImage: `url(${import.meta.env.BASE_URL}dotlines.svg)`,
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '1130px 62px',
+            maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+          }}
+        />
 
         <PageGateways />
         <TechnicalFiller />
