@@ -47,12 +47,10 @@ const Home = () => {
 
         <FeatureLinks mode="home" />
         <div 
-          className="w-full max-w-[1200px] mx-auto h-[62px] overflow-hidden"
+          className="w-full max-w-[1200px] mx-auto h-[70px] overflow-hidden"
           style={{
-            backgroundImage: `url(${import.meta.env.BASE_URL}dotlines.svg)`,
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '1130px 62px',
+            backgroundImage: 'radial-gradient(circle at 10px 10px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 20px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 30px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 40px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 50px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 60px, rgba(255,255,255,0.25) 1px, transparent 1px)',
+            backgroundSize: '20px 70px',
             maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
             WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
           }}
