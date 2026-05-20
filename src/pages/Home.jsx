@@ -49,8 +49,10 @@ const Home = () => {
         <div 
           className="w-full max-w-[1200px] mx-auto h-[120px] overflow-hidden"
           style={{
-            backgroundImage: 'radial-gradient(circle at 10px 15px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 33px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 51px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 69px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 87px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 105px, rgba(255,255,255,0.25) 1px, transparent 1px)',
-            backgroundSize: '20px 120px',
+            backgroundImage: `url(${import.meta.env.BASE_URL}dotlnes-v2.svg)`,
+            backgroundSize: 'contain',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
             maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
             WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
           }}
