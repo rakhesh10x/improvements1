@@ -47,10 +47,10 @@ const Home = () => {
 
         <FeatureLinks mode="home" />
         <div 
-          className="w-full max-w-[1200px] mx-auto h-[70px] overflow-hidden"
+          className="w-full max-w-[1200px] mx-auto h-[120px] overflow-hidden"
           style={{
-            backgroundImage: 'radial-gradient(circle at 10px 10px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 20px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 30px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 40px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 50px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 60px, rgba(255,255,255,0.25) 1px, transparent 1px)',
-            backgroundSize: '20px 70px',
+            backgroundImage: 'radial-gradient(circle at 10px 15px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 33px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 51px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 69px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 87px, rgba(255,255,255,0.25) 1px, transparent 1px), radial-gradient(circle at 10px 105px, rgba(255,255,255,0.25) 1px, transparent 1px)',
+            backgroundSize: '20px 120px',
             maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
             WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
           }}
