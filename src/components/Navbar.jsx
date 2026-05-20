@@ -1,6 +1,7 @@
 import React from 'react';
 import { Menu } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Logo10X from './Logo10X';
 
 const Navbar = ({ openContactModal }) => {
   return (
@@ -8,11 +9,7 @@ const Navbar = ({ openContactModal }) => {
       <nav className="w-full max-w-[1000px] bg-white/[0.01] backdrop-blur-[2px] border border-white/[0.05] px-8 py-1.5 rounded-full flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05)] pointer-events-auto transition-all">
         <div className="flex items-center gap-6">
           <Link to="/" className="flex items-center cursor-pointer group">
-            <img 
-              src="/10Xtechnologies logo.png"
-              alt="10X Technologies Logo"
-              className="h-12 md:h-14 w-auto object-contain"
-            />
+            <Logo10X className="h-12 md:h-14 w-auto" />
           </Link>
           
           <div className="hidden md:flex items-center gap-8 text-sm text-[#A0A0A0]">

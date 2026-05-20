@@ -46,17 +46,7 @@ const Home = () => {
         <TechnicalFiller />
 
         <FeatureLinks mode="home" />
-        <div 
-          className="w-full max-w-[1200px] mx-auto h-[120px] overflow-hidden"
-          style={{
-            backgroundImage: `url(${import.meta.env.BASE_URL}dotlnes-v2.svg)`,
-            backgroundSize: 'contain',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
-          }}
-        />
+        <TechnicalFiller />
 
         <PageGateways />
         <TechnicalFiller />
