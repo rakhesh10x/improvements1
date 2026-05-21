@@ -35,24 +35,27 @@ const Navbar = ({ openContactModal }) => {
     <>
       {/* Premium DeepInfra-style Top Announcement Banner */}
       <div 
-        className={`fixed top-0 left-0 right-0 w-full z-40 bg-gradient-to-r from-[#050409]/95 via-[#0c081e]/95 to-[#050409]/95 backdrop-blur-md border-b border-[#512DA8]/20 h-9 flex items-center justify-center text-center px-4 pointer-events-auto select-none transition-transform duration-500 ease-in-out shadow-[0_4px_30px_rgba(81,45,168,0.15)] ${
+        className={`fixed top-0 left-0 right-0 w-full z-40 bg-gradient-to-r from-[#040308] via-[#0d0924] to-[#040308] backdrop-blur-xl border-b border-[#512DA8]/25 h-9 flex items-center justify-center text-center px-4 pointer-events-auto select-none transition-transform duration-500 ease-in-out shadow-[0_4px_30px_rgba(81,45,168,0.20)] ${
           isBannerVisible ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
-        {/* Subtle Violet Light Diffusion and Premium Gradient Blending */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#512DA8]/[0.08] to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#512DA8]/0.5 to-transparent blur-[0.5px]"></div>
+        {/* Rich Violet Light Diffusion and Premium Gradient Blending */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#512DA8]/0.13 to-transparent pointer-events-none z-0"></div>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#8a63e5]/40 to-transparent blur-[0.2px] z-10"></div>
         
-        <span className="text-[11px] md:text-xs text-gray-300 font-medium relative z-10 tracking-wide flex items-center justify-center gap-1.5">
+        {/* Soft bottom atmospheric glow/bloom diffusion */}
+        <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-[55%] h-3 bg-[#512DA8]/12 blur-md pointer-events-none rounded-full z-0"></div>
+
+        <span className="text-[11px] md:text-xs text-zinc-200 font-medium relative z-10 tracking-wide flex items-center justify-center gap-1.5">
           <span>10X Technologies site is still under construction.</span>
-          <span className="text-gray-500 select-none">•</span>
+          <span className="text-zinc-600 select-none">•</span>
           <a 
             href="#" 
             onClick={(e) => {
               e.preventDefault();
               openContactModal();
             }}
-            className="text-white underline hover:text-[#512DA8] transition-colors duration-300 font-semibold cursor-pointer whitespace-nowrap"
+            className="text-white underline hover:text-[#a78bfa] transition-colors duration-300 font-semibold cursor-pointer whitespace-nowrap"
           >
             contact support
           </a>

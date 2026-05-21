@@ -31,7 +31,7 @@ const PageGateways = () => {
     {
       title: 'Hardware',
       description: 'Specialized silicon and embedded systems designed to run AI with zero latency.',
-      image: `${import.meta.env.BASE_URL}resolution changed hardwareimage.png`,
+      image: `${import.meta.env.BASE_URL}resolution changed hardware image.png`,
       link: '/product',
       buttonText: 'Know more'
     },
@@ -82,15 +82,34 @@ const PageGateways = () => {
                     />
                   </div>
                 ) : (
-                  <img 
-                    src={gateway.image} 
-                    alt={gateway.title}
-                    className="w-full h-full object-cover transform-none"
+                  <div 
+                    className="relative w-full h-full overflow-hidden bg-[#04040c]"
                     style={{
                       maskImage: 'linear-gradient(to bottom, black 95%, transparent 100%)',
                       WebkitMaskImage: 'linear-gradient(to bottom, black 95%, transparent 100%)'
                     }}
-                  />
+                  >
+                    {/* Internal Premium Glow */}
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(81,45,139,0.15)_0%,transparent_70%)] opacity-80 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
+
+                    {/* Image with Fade and Glow Sync */}
+                    <img 
+                      src={gateway.image} 
+                      alt={gateway.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] z-10"
+                    />
+
+                    {/* Gloss reflection */}
+                    <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-br from-white/[0.03] via-transparent to-transparent"></div>
+
+                    {/* Top edge shimmer */}
+                    <div className="absolute top-0 left-0 right-0 h-px z-20 pointer-events-none"
+                      style={{ background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.08) 50%, transparent)' }}
+                    ></div>
+                    
+                    {/* Cinematic Darkening / Ambient Shadow Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40 z-25 pointer-events-none"></div>
+                  </div>
                 )}
                 <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-[#04040c] to-transparent z-20 pointer-events-none opacity-30"></div>
               </div>
