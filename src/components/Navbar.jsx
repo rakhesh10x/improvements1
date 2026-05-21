@@ -4,7 +4,29 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ openContactModal }) => {
   return (
-    <div className="fixed top-6 w-full z-50 flex justify-center px-4 md:px-6 pointer-events-none">
+    <>
+      {/* Premium Violet Announcement Banner (DeepInfra-inspired) */}
+      <div className="fixed top-0 left-0 right-0 w-full z-50 bg-[#050409]/80 backdrop-blur-md border-b border-[#512DA8]/20 h-9 flex items-center justify-center text-center px-4 pointer-events-auto select-none">
+        {/* Subtle Violet Light Diffusion Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#512DA8]/08 to-transparent pointer-events-none"></div>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-[1px] bg-gradient-to-r from-transparent via-[#512DA8]/30 to-transparent blur-[1px]"></div>
+        
+        <span className="text-[11px] md:text-xs text-gray-300 font-medium relative z-10 tracking-wide">
+          10X raises seed round to scale native ambient intelligence —{' '}
+          <a 
+            href="#" 
+            onClick={(e) => {
+              e.preventDefault();
+              openContactModal();
+            }}
+            className="text-white underline hover:text-[#a78bfa] transition-all duration-300 font-semibold cursor-pointer whitespace-nowrap"
+          >
+            read the announcement
+          </a>
+        </span>
+      </div>
+
+      <div className="fixed top-14 w-full z-50 flex justify-center px-4 md:px-6 pointer-events-none">
       <nav className="w-full max-w-[1000px] bg-white/[0.01] backdrop-blur-[2px] border border-white/[0.05] px-8 py-1.5 rounded-full flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05)] pointer-events-auto transition-all">
         <div className="flex items-center gap-6">
           <Link to="/" className="flex items-center cursor-pointer group">
@@ -35,6 +57,7 @@ const Navbar = ({ openContactModal }) => {
         </button>
       </nav>
     </div>
+    </>
   );
 };
 
