@@ -37,7 +37,7 @@ const Home = () => {
         <Hero />
         <Logos />
 
-        <div className="relative z-20 w-full max-w-[1200px] mx-auto px-6 pt-4 pb-2 text-center mt-4">
+        <div className="relative z-20 w-full max-w-[1360px] mx-auto px-6 pt-4 pb-2 text-center mt-4">
           <span className="text-purple-400 text-[10px] uppercase tracking-[0.4em] font-bold mb-1 block">STAY UPDATED</span>
           <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight">Announcements</h2>
         </div>

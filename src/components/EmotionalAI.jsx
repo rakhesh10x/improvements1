@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 const EmotionalAI = () => {
   return (
     <section className="py-24 relative bg-black overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center gap-16">
+      <div className="max-w-[1360px] mx-auto px-6">
+        <div className="flex flex-col md:flex-row items-center gap-20">
           <div className="w-full md:w-1/2">
             <motion.div
               initial={{ opacity: 0, x: -50 }}

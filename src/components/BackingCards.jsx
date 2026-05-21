@@ -91,8 +91,8 @@ const BackingCards = () => {
 
   return (
     <>
-    <section className="relative z-20 w-full max-w-[1200px] mx-auto px-6 py-4 lg:py-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 lg:gap-4">
+    <section className="relative z-20 w-full max-w-[1360px] mx-auto px-6 py-4 lg:py-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
         {backers.map((backer, i) => (
           <div 
             key={i} 

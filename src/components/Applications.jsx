@@ -24,7 +24,7 @@ const itemVariants = {
 
 const Applications = () => {
   return (
-    <section id="ai" className="py-12 max-w-5xl mx-auto px-6 flex flex-col items-center">
+    <section id="ai" className="py-12 max-w-[1260px] mx-auto px-6 flex flex-col items-center">
       <motion.h2 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -39,7 +39,7 @@ const Applications = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left w-full"
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left w-full"
       >
         <motion.div variants={itemVariants} className="group glass-card p-6 rounded-2xl flex flex-col shadow-2xl hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] cursor-pointer relative overflow-hidden">
           {/* Internal Glow on load */}

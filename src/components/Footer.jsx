@@ -58,14 +58,14 @@ const Footer = ({ openContactModal, minimal = false }) => {
   };
 
   return (
-    <footer className="py-4 lg:py-6 px-6 max-w-[1200px] mx-auto">
+    <footer className="py-4 lg:py-6 px-6 max-w-[1360px] mx-auto">
       {!minimal && (
         <>
           <div className="mb-8">
             <h3 className="text-2xl font-medium mb-8 text-white">Community & support</h3>
           </div>
           
-          <div className="flex flex-col md:flex-row gap-6 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
             {/* Community Card (LinkedIn) */}
             <a 
               href="https://www.linkedin.com/company/10xglobaltechnologies/" 

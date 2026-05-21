@@ -66,12 +66,12 @@ const AIPage = () => {
         <Starfield />
       </div>
 
-      <div className="relative z-10 flex flex-col min-h-[100svh]">
+      <div className="relative z-10">
         <Navbar openContactModal={() => setIsContactModalOpen(true)} />
 
         {/* Hero */}
-        <main className="flex-1 flex items-center justify-center px-6 pt-40 pb-24">
-          <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8 items-center">
+        <main className="relative px-6 pt-40 pb-24 max-w-[1360px] mx-auto overflow-visible z-10 min-h-[70svh] flex items-center w-full">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-center">
 
             {/* Left */}
             <div className="flex flex-col gap-5 lg:gap-6">
@@ -182,7 +182,7 @@ const AIPage = () => {
 
         {/* Capabilities Section */}
         <section className="relative z-10 px-6 pb-16">
-          <div className="w-full max-w-6xl mx-auto rounded-2xl bg-[#0d0d18] border border-white/[0.07] p-7 md:p-9">
+          <div className="w-full max-w-[1360px] mx-auto rounded-2xl bg-[#0d0d18] border border-white/[0.07] p-7 md:p-9">
             <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] lg:grid-cols-[240px_1fr] gap-8 items-start">
 
               {/* Left label */}
@@ -199,7 +199,7 @@ const AIPage = () => {
               </div>
 
               {/* Right: 4 capability cards */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
                 {[
                   {
                     icon: <MessageCircle className="w-5 h-5 text-purple-400" />,

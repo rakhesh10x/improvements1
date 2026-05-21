@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 
 const ProductShowcase = () => {
   return (
-    <section id="product" className="relative z-20 w-full max-w-[1100px] mx-auto px-6 py-6 lg:py-8">
-      <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-16 group">
+    <section id="product" className="relative z-20 w-full max-w-[1260px] mx-auto px-6 py-6 lg:py-8">
+      <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-24 group">
         {/* Product Image Section */}
         <div className="w-full md:w-1/2">
           <div className="relative aspect-[16/10] rounded-[24px] overflow-hidden group">
@@ -37,7 +37,13 @@ const ProductShowcase = () => {
           </ul>
 
           <a 
-            href="#"
+            href="https://huggingface.co/spaces/shesettipavankumarswamy/luca-telugu"
+            onClick={(e) => {
+              e.preventDefault();
+              window.open('https://huggingface.co/spaces/shesettipavankumarswamy/luca-telugu', '_blank');
+            }}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 bg-white/5 text-white text-[13px] font-semibold hover:bg-white hover:text-black transition-all duration-300 group/btn"
           >
             <span>Try LUCA</span>

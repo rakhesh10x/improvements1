@@ -8,7 +8,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
       title: 'LUCA AI',
       description: 'Emotionally aware & OS integration. Interacts naturally, feels more like a companion than an AI device.',
       image: '/resolution changed luca ai  image.png',
-      link: '#',
+      link: 'https://huggingface.co/spaces/shesettipavankumarswamy/luca-telugu',
       buttonText: 'Try LUCA'
     },
     {
@@ -16,7 +16,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
       title: 'Try Our Foundation Models',
       description: "We're launching open access to our native models for fine-tuning, inferencing, and deployment.",
       image: '/resolution changed lfm image.png',
-      link: 'https://shesettipavankumarswamy-luca-telugu.hf.space/',
+      link: 'https://huggingface.co/spaces/shesettipavankumarswamy/lif-v1',
       buttonText: 'Try Now'
     },
     {
@@ -24,7 +24,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
       title: 'Advanced Tokenizer & APIs',
       description: 'The future belongs to models with architectures crafted, optimized, and deployed for focused, low-latency tasks.',
       image: '/resolution chnaged tokenization.png',
-      link: 'https://10xtechnologies.tech/akshara.html',
+      link: 'https://huggingface.co/spaces/shesettipavankumarswamy/en-luca-telugu',
       buttonText: 'Try Now'
     },
     {
@@ -49,7 +49,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
       : allCards;
 
   return (
-    <section className="relative z-20 w-full max-w-[1200px] mx-auto px-6 py-4 lg:py-6">
+    <section className="relative z-20 w-full max-w-[1360px] mx-auto px-6 py-4 lg:py-6">
       <div className="flex flex-col gap-12 lg:gap-16">
         {cards.map((card, i) => {
           // Calculate the original index to preserve alternating logic and card 4's unique style
@@ -67,7 +67,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
                 </>
               )}
               
-              <div className={`grid grid-cols-1 md:grid-cols-2 ${originalIndex === 3 ? 'gap-0 items-stretch' : 'gap-12 lg:gap-16 items-center'} relative z-10`}>
+              <div className={`grid grid-cols-1 md:grid-cols-2 ${originalIndex === 3 ? 'gap-0 items-stretch' : 'gap-16 lg:gap-24 items-center'} relative z-10`}>
                 {/* Image Section */}
                 <div className={`relative ${originalIndex === 3 ? 'w-full h-full min-h-[250px] md:min-h-0 flex items-center justify-center' : 'aspect-[16/10] rounded-[24px] overflow-hidden group w-full bg-[#08080f] border border-white/[0.05] hover:border-[#512d8b]/40 shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_25px_rgba(81,45,139,0.25),inset_0_1px_0_rgba(255,255,255,0.1)] transition-all duration-500'} ${
                   (originalIndex === 3) ? 'md:order-1' : (originalIndex === 1) ? 'md:order-1 md:mr-auto' : 'md:order-2 md:ml-auto'
@@ -143,6 +143,10 @@ const FeatureLinks = ({ mode = 'all' }) => {
 
                       <a 
                         href={card.link}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          window.open(card.link, '_blank');
+                        }}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-white/10 bg-white/5 text-white text-[12px] font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-500 group/btn"

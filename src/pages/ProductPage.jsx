@@ -40,8 +40,8 @@ const ProductPage = () => {
 
         {/* Technical Specs Section */}
         <section className="py-24 bg-[#050505] border-t border-white/5">
-          <div className="max-w-[1200px] mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
+          <div className="max-w-[1360px] mx-auto px-6">
+            <div className="max-w-5xl mx-auto">
               <h2 className="text-3xl font-bold mb-12 text-center">Technical Specifications</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                 {[

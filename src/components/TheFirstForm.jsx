@@ -18,7 +18,7 @@ const TheFirstForm = () => {
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center tracking-tight">THE FIRST FORM</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-[1260px] mx-auto">
           {/* Spec List */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold mb-8 text-purple-400">Technical Specifications</h3>

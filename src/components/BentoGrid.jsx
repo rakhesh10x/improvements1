@@ -25,7 +25,7 @@ const NoiseOverlay = () => (
 
 const BentoGrid = () => {
   return (
-    <section id="os" className="py-12 max-w-5xl mx-auto px-6 text-center">
+    <section id="os" className="py-12 max-w-[1260px] mx-auto px-6 text-center">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ const BentoGrid = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left"
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left"
       >
         <motion.div variants={itemVariants} className="hover:-translate-y-1 transition-transform duration-300 bg-[#0C121A] border border-white/5 p-6 rounded-2xl flex flex-col justify-between min-h-[160px] relative overflow-hidden group cursor-pointer shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
           <NoiseOverlay />
