@@ -31,7 +31,7 @@ const PageGateways = () => {
     {
       title: 'Hardware',
       description: 'Specialized silicon and embedded systems designed to run AI with zero latency.',
-      image: `${import.meta.env.BASE_URL}hardware_gateway_card.png`,
+      image: `${import.meta.env.BASE_URL}resolution changed hardwareimage.png`,
       link: '/product',
       buttonText: 'Know more'
     },
