@@ -211,19 +211,23 @@
   }
 }
 
-/* Premium Cinematic Shine Border Animation */
-@keyframes shine {
+/* GPU-Accelerated Traveling Perimeter Edge Light Animation */
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes border-rotate {
   0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
+    --border-angle: 0deg;
   }
   100% {
-    background-position: 0% 0%;
+    --border-angle: 360deg;
   }
 }
 
-.animate-shine {
-  animation: shine var(--duration, 14s) infinite linear;
+.animate-border-rotate {
+  animation: border-rotate var(--duration, 8s) linear infinite;
 }
+

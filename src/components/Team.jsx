@@ -113,9 +113,9 @@ const Team = () => {
             >
               <ShineBorder 
                 borderWidth={1}
-                duration={24}
+                duration={10}
                 shineColor={[selected.accentColor, selected.accentColor]}
-                className="opacity-70 z-30"
+                className="opacity-80 z-30"
               />
               {/* Left: image with seamless fade to card background */}
               <div className="relative w-2/5 flex-shrink-0 h-full bg-transparent">

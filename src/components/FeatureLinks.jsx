@@ -79,9 +79,9 @@ const FeatureLinks = ({ mode = 'all' }) => {
                   <>
                     <ShineBorder 
                       borderWidth={1}
-                      duration={24}
+                      duration={8}
                       shineColor={['#a78bfa', '#c084fc']}
-                      className="opacity-0 group-hover:opacity-60 transition-opacity duration-500 z-30"
+                      className="opacity-[0.12] group-hover:opacity-[0.85] transition-opacity duration-500 z-30"
                     />
                     {/* Internal Premium Glows */}
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(167,139,250,0.08)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -97,7 +97,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
                     {originalIndex !== 3 && (
                       <ShineBorder 
                         borderWidth={1}
-                        duration={24}
+                        duration={8}
                         shineColor={
                           originalIndex === 0 
                             ? ['#a78bfa', '#7c3aed'] 
@@ -105,7 +105,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
                               ? ['#a78bfa', '#6366f1'] 
                               : ['#8b5cf6', '#a78bfa']
                         }
-                        className="opacity-70 z-30"
+                        className="opacity-[0.12] group-hover:opacity-[0.85] transition-opacity duration-500 z-30"
                       />
                     )}
 

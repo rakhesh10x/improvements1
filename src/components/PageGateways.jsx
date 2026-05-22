@@ -58,9 +58,9 @@ const PageGateways = () => {
             <div className="relative h-full bg-white/[0.01] backdrop-blur-md border border-white/[0.05] group-hover:border-transparent rounded-[32px] overflow-hidden flex flex-col transition-colors duration-500">
               <ShineBorder 
                 borderWidth={1}
-                duration={24}
+                duration={8}
                 shineColor={i === 0 ? ['#3b82f6', '#1d4ed8'] : ['#a78bfa', '#7c3aed']}
-                className="opacity-70 z-30"
+                className="opacity-[0.12] group-hover:opacity-[0.85] transition-opacity duration-500 z-30"
               />
               {/* Image/Video Container */}
               <div className="relative aspect-[16/9] overflow-hidden bg-[#04040c] flex items-center justify-center">

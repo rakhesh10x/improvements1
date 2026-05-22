@@ -2,7 +2,7 @@ import React from 'react';
 
 const ShineBorder = ({
   borderWidth = 1,
-  duration = 20,
+  duration = 8,
   shineColor = "#000000",
   className = "",
   style = {},
@@ -15,8 +15,7 @@ const ShineBorder = ({
       style={{
         "--border-width": `${borderWidth}px`,
         "--duration": `${duration}s`,
-        backgroundImage: `radial-gradient(180px circle at center, ${colors}, transparent 80%)`,
-        backgroundSize: "300% 300%",
+        backgroundImage: `conic-gradient(from var(--border-angle), transparent 42%, ${colors}, transparent 58%)`,
         mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
         WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
         maskComposite: 'exclude',
@@ -24,7 +23,7 @@ const ShineBorder = ({
         padding: "var(--border-width)",
         ...style,
       }}
-      className={`animate-shine pointer-events-none absolute inset-0 w-full h-full rounded-[inherit] will-change-[background-position] ${className}`}
+      className={`animate-border-rotate pointer-events-none absolute inset-0 w-full h-full rounded-[inherit] ${className}`}
       {...props}
     />
   );
