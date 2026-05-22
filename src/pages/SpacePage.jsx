@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 
 const SpacePage = () => {
   const { state } = useLocation();
@@ -37,15 +37,6 @@ const SpacePage = () => {
           </div>
         </div>
 
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-white/60 text-[11px] font-medium hover:bg-white/10 hover:text-white transition-all duration-200 shrink-0 ml-4"
-        >
-          <ExternalLink className="w-3 h-3" />
-          Open in new tab
-        </a>
       </div>
 
       {/* Full-window iframe */}
