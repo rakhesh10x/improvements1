@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import ShineBorder from './ShineBorder';
 
 const FeatureLinks = ({ mode = 'all' }) => {
   const navigate = useNavigate();
@@ -72,10 +73,16 @@ const FeatureLinks = ({ mode = 'all' }) => {
             return (
               <div
                 key={i}
-                className={originalIndex === 3 ? "group relative overflow-hidden rounded-[32px] bg-white/[0.01] backdrop-blur-md border border-white/[0.05] hover:border-purple-500/20 transition-all duration-500" : "py-8"}
+                className={originalIndex === 3 ? "group relative overflow-hidden rounded-[32px] bg-white/[0.01] backdrop-blur-md border border-white/[0.05] group-hover:border-transparent transition-all duration-500" : "py-8"}
               >
                 {originalIndex === 3 && (
                   <>
+                    <ShineBorder 
+                      borderWidth={1}
+                      duration={24}
+                      shineColor={['#a78bfa', '#c084fc']}
+                      className="opacity-0 group-hover:opacity-60 transition-opacity duration-500 z-30"
+                    />
                     {/* Internal Premium Glows */}
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(167,139,250,0.08)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                   </>
@@ -83,10 +90,25 @@ const FeatureLinks = ({ mode = 'all' }) => {
 
                 <div className={`grid grid-cols-1 md:grid-cols-2 ${originalIndex === 3 ? 'gap-0 items-stretch' : 'gap-16 lg:gap-24 items-center'} relative z-10`}>
                   {/* Image Section */}
-                  <div className={`relative ${originalIndex === 3 ? 'w-full h-full min-h-[250px] md:min-h-0 flex items-center justify-center' : 'aspect-[16/10] rounded-[24px] overflow-hidden group w-full bg-[#08080f] border border-white/[0.05] hover:border-[#512d8b]/40 shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_25px_rgba(81,45,139,0.25),inset_0_1px_0_rgba(255,255,255,0.1)] transition-all duration-500'} ${
+                  <div className={`relative ${originalIndex === 3 ? 'w-full h-full min-h-[250px] md:min-h-0 flex items-center justify-center' : 'aspect-[16/10] rounded-[24px] overflow-hidden group w-full bg-[#08080f] border border-white/[0.05] hover:border-transparent shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)] transition-all duration-500'} ${
                     (originalIndex === 3) ? 'md:order-1' : (originalIndex === 1) ? 'md:order-1 md:mr-auto' : 'md:order-2 md:ml-auto'
                   }`}
                   >
+                    {originalIndex !== 3 && (
+                      <ShineBorder 
+                        borderWidth={1}
+                        duration={24}
+                        shineColor={
+                          originalIndex === 0 
+                            ? ['#a78bfa', '#7c3aed'] 
+                            : originalIndex === 1 
+                              ? ['#a78bfa', '#6366f1'] 
+                              : ['#8b5cf6', '#a78bfa']
+                        }
+                        className="opacity-0 group-hover:opacity-60 transition-opacity duration-500 z-30"
+                      />
+                    )}
+
                     {/* Internal Premium Glow */}
                     {originalIndex !== 3 && (
                       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(81,45,139,0.12)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone } from 'lucide-react';
+import ShineBorder from './ShineBorder';
 
 const LinkedinIcon = ({ className }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -104,14 +105,20 @@ const Team = () => {
           {selected ? (
             <div
               key={selected.name}
-              className="w-full glass-card rounded-2xl overflow-hidden flex transition-all duration-500 h-full"
+              className="w-full glass-card rounded-2xl overflow-hidden flex transition-all duration-500 h-full relative"
               style={{
-                border: `1px solid rgba(${selected.gradientRgba},0.25)`,
+                border: `1px solid rgba(${selected.gradientRgba},0.1)`,
                 boxShadow: `0 0 50px rgba(${selected.gradientRgba},0.08)`,
               }}
             >
-                {/* Left: image with seamless fade to card background */}
-                <div className="relative w-2/5 flex-shrink-0 h-full bg-transparent">
+              <ShineBorder 
+                borderWidth={1}
+                duration={24}
+                shineColor={[selected.accentColor, selected.accentColor]}
+                className="opacity-70 z-30"
+              />
+              {/* Left: image with seamless fade to card background */}
+              <div className="relative w-2/5 flex-shrink-0 h-full bg-transparent">
                   {selected.photo ? (
                     <img
                       src={selected.photo.startsWith('/') ? `${import.meta.env.BASE_URL}${selected.photo.slice(1)}` : selected.photo}
