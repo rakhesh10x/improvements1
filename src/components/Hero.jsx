@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import Logo10X from './Logo10X';
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative px-6 pt-40 pb-12 max-w-[1360px] mx-auto overflow-visible z-10 min-h-[70svh] flex items-center">
       
@@ -37,7 +39,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <button 
-              onClick={() => window.open('https://huggingface.co/spaces/shesettipavankumarswamy/luca-telugu', '_blank')}
+              onClick={() => navigate('/try', { state: { url: 'https://shesettipavankumarswamy-luca.hf.space/', title: 'LUCA AI' } })}
               className="px-10 py-3.5 rounded-full bg-white/5 border border-[#512DA8]/30 text-white font-bold tracking-widest text-xs hover:bg-[#512DA8] hover:border-[#512DA8] hover:shadow-[0_0_40px_rgba(81,45,168,0.4)] active:scale-95 transition-all duration-500"
             >
               TRY LUCA
