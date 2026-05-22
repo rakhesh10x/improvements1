@@ -18,7 +18,7 @@ const SolutionSection = () => {
             className="flex justify-center"
           >
             <img 
-              src="/architecture_data.png" 
+              src={`${import.meta.env.BASE_URL}architecture_data.png`}
               alt="Unification Diagram" 
               className="w-full h-auto"
             />

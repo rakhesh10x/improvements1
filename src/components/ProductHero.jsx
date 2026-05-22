@@ -24,7 +24,7 @@ const ProductHero = () => {
           className="relative z-20 w-full max-w-2xl"
         >
           <img 
-            src="/hero-device.png" 
+            src={`${import.meta.env.BASE_URL}hero-device.png`}
             alt="10X Smart Speaker" 
             className="w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
           />

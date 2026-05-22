@@ -42,7 +42,7 @@ const ProblemSection = () => {
               className="bg-[#0A0A0A] border border-white/5 rounded-2xl p-8 flex flex-col items-center text-center group hover:bg-[#111] transition-all"
             >
               <div className="w-24 h-24 mb-6">
-                <img src={item.image} alt={item.title} className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
+                <img src={`${import.meta.env.BASE_URL}${item.image.slice(1)}`} alt={item.title} className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
               </div>
               <h3 className={`text-xl font-black mb-4 tracking-wider ${item.color}`}>{item.title}</h3>
               <p className="text-gray-400 whitespace-pre-line leading-relaxed">

@@ -41,7 +41,7 @@ const WorldsFirstSection = () => {
               className="bg-[#0A0A0A] border border-white/5 p-10 rounded-3xl flex items-start gap-8 group hover:border-purple-500/30 transition-all"
             >
               <div className="w-20 h-20 shrink-0">
-                <img src={feature.icon} alt={feature.title} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
+                <img src={`${import.meta.env.BASE_URL}${feature.icon.slice(1)}`} alt={feature.title} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>

@@ -15,7 +15,7 @@ const ImageGallery = () => {
             className="md:col-span-2 relative aspect-[16/9] bg-white rounded-3xl overflow-hidden flex items-center justify-center p-8"
           >
             <img 
-              src="/hero-device.png" 
+              src={`${import.meta.env.BASE_URL}hero-device.png`} 
               alt="LUCA Main View" 
               className="w-full h-full object-contain"
             />
@@ -31,7 +31,7 @@ const ImageGallery = () => {
               className="relative aspect-square bg-white rounded-3xl overflow-hidden flex items-center justify-center p-6"
             >
               <img 
-                src="/smart-icon.png" 
+                src={`${import.meta.env.BASE_URL}smart-icon.png`} 
                 alt="LUCA Detail 1" 
                 className="w-full h-full object-contain scale-110"
               />
@@ -44,7 +44,7 @@ const ImageGallery = () => {
               className="relative aspect-square bg-white rounded-3xl overflow-hidden flex items-center justify-center p-6"
             >
               <img 
-                src="/hero-device.png" 
+                src={`${import.meta.env.BASE_URL}hero-device.png`} 
                 alt="LUCA Detail 2" 
                 className="w-full h-full object-contain rotate-45 scale-90"
               />

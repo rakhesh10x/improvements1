@@ -31,14 +31,14 @@ const PageGateways = () => {
     {
       title: 'Hardware',
       description: 'Specialized silicon and embedded systems designed to run AI with zero latency.',
-      image: '/hardware_gateway_card.png',
+      image: `${import.meta.env.BASE_URL}hardware_gateway_card.png`,
       link: '/product',
       buttonText: 'Know more'
     },
     {
       title: 'AI',
       description: 'State-of-the-art foundation models and architectures built for the future of intelligence.',
-      image: '/luca eye image.png',
+      image: `${import.meta.env.BASE_URL}luca eye image.png`,
       link: '/ai',
       buttonText: 'Know more'
     }
@@ -73,7 +73,7 @@ const PageGateways = () => {
                     
                     <video
                       ref={videoRef}
-                      src="/LUCA blink logo WhiteBG.mp4"
+                      src={`${import.meta.env.BASE_URL}LUCA blink logo WhiteBG.mp4`}
                       muted
                       playsInline
                       preload="auto"

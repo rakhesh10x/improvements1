@@ -41,7 +41,7 @@ const SmartSpeakerHero = () => {
             <div className="absolute inset-0 bg-purple-600/5 blur-[120px] rounded-full pointer-events-none"></div>
             <div className="relative w-full max-w-lg aspect-square flex items-center justify-center pointer-events-none scale-110">
               <img 
-                src="/product home page.png"
+                src={`${import.meta.env.BASE_URL}product home page.png`}
                 alt="LUCA Product"
                 className="w-full h-full object-contain"
                 fetchpriority="high"

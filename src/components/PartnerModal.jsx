@@ -50,7 +50,7 @@ const PartnerModal = ({ isOpen, onClose, partner }) => {
             <div className="relative w-full h-[60svh] overflow-hidden bg-[#0A0A0F]">
               {partner.heroImage ? (
                 <img
-                  src={partner.heroImage.startsWith('http') ? partner.heroImage : partner.heroImage}
+                  src={partner.heroImage.startsWith('http') ? partner.heroImage : `${import.meta.env.BASE_URL}${partner.heroImage.slice(1)}`}
                   alt={partner.name}
                   className="w-full h-full object-cover opacity-90"
                 />

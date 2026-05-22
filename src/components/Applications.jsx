@@ -61,7 +61,7 @@ const Applications = () => {
           {/* Top Right Floating Image */}
           <div className="absolute top-4 right-4 w-16 h-16 opacity-70 group-hover:opacity-100 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500 pointer-events-none drop-shadow-[0_0_15px_rgba(139,92,246,0.2)]">
             <div className="absolute inset-0 bg-purple-500/10 rounded-full blur-xl group-hover:bg-purple-500/20 transition-all"></div>
-            <img src="/wired-icon.png" alt="Wired Speaker" className="w-full h-full object-cover rounded-full mix-blend-lighten relative z-10" />
+            <img src={`${import.meta.env.BASE_URL}wired-icon.png`} alt="Wired Speaker" className="w-full h-full object-cover rounded-full mix-blend-lighten relative z-10" />
           </div>
 
           <p className="text-[13px] text-[#A0A0A0] group-hover:text-white/80 transition-colors leading-relaxed mb-6 flex-1 relative z-10 w-[85%]">
@@ -90,7 +90,7 @@ const Applications = () => {
           {/* Top Right Floating Image */}
           <div className="absolute top-4 right-4 w-16 h-16 opacity-70 group-hover:opacity-100 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 pointer-events-none drop-shadow-[0_0_15px_rgba(59,130,246,0.2)]">
             <div className="absolute inset-0 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all"></div>
-            <img src="/wireless-icon.png" alt="Wireless Speaker" className="w-full h-full object-cover rounded-full mix-blend-lighten relative z-10" />
+            <img src={`${import.meta.env.BASE_URL}wireless-icon.png`} alt="Wireless Speaker" className="w-full h-full object-cover rounded-full mix-blend-lighten relative z-10" />
           </div>
 
           <p className="text-[13px] text-[#A0A0A0] group-hover:text-white/80 transition-colors leading-relaxed mb-6 flex-1 relative z-10 w-[85%]">
@@ -119,7 +119,7 @@ const Applications = () => {
           {/* Top Right Floating Image */}
           <div className="absolute top-4 right-4 w-16 h-16 opacity-70 group-hover:opacity-100 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500 pointer-events-none drop-shadow-[0_0_15px_rgba(16,185,129,0.2)]">
             <div className="absolute inset-0 bg-emerald-500/10 rounded-full blur-xl group-hover:bg-emerald-500/20 transition-all"></div>
-            <img src="/smart-icon.png" alt="Smart Speaker" className="w-full h-full object-cover rounded-full mix-blend-lighten relative z-10" />
+            <img src={`${import.meta.env.BASE_URL}smart-icon.png`} alt="Smart Speaker" className="w-full h-full object-cover rounded-full mix-blend-lighten relative z-10" />
           </div>
 
           <p className="text-[13px] text-[#A0A0A0] group-hover:text-white/80 transition-colors leading-relaxed mb-6 flex-1 relative z-10 w-[85%]">

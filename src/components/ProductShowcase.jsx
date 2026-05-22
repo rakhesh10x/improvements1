@@ -10,7 +10,7 @@ const ProductShowcase = () => {
         <div className="w-full md:w-1/2">
           <div className="relative aspect-[16/10] rounded-[24px] overflow-hidden group">
             <img 
-              src="/luca-telugu.png" 
+              src={`${import.meta.env.BASE_URL}luca-telugu.png`}
               alt="LUCA AI conversational speaker" 
               className="w-full h-full transition-all duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100 object-contain p-6"
             />

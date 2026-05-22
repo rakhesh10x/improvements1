@@ -54,7 +54,7 @@ const BackingCards = () => {
       gradientRgba: '30,144,255',
       logo: (
         <img
-          src="/govt of india-remove.bg.png"
+          src={`${import.meta.env.BASE_URL}govt of india-remove.bg.png`}
           alt="Govt of India"
           decoding="async"
           loading="lazy"
@@ -79,7 +79,7 @@ const BackingCards = () => {
       gradientRgba: '118,185,0',
       logo: (
         <img
-          src="/nvidia-remove.bg.png"
+          src={`${import.meta.env.BASE_URL}nvidia-remove.bg.png`}
           alt="NVIDIA Logo"
           decoding="async"
           loading="lazy"

@@ -114,7 +114,7 @@ const Team = () => {
                 <div className="relative w-2/5 flex-shrink-0 h-full bg-transparent">
                   {selected.photo ? (
                     <img
-                      src={selected.photo}
+                      src={selected.photo.startsWith('/') ? `${import.meta.env.BASE_URL}${selected.photo.slice(1)}` : selected.photo}
                       alt={selected.name}
                       className="w-full h-full object-cover object-top"
                       decoding="async"
