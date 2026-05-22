@@ -105,7 +105,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
                               ? ['#a78bfa', '#6366f1'] 
                               : ['#8b5cf6', '#a78bfa']
                         }
-                        className="opacity-0 group-hover:opacity-60 transition-opacity duration-500 z-30"
+                        className="opacity-70 z-30"
                       />
                     )}
 
