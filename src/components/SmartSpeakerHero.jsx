@@ -3,7 +3,7 @@ import Logo10X from './Logo10X';
 
 const SmartSpeakerHero = () => {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden min-h-[90svh] flex items-center">
+    <section className="relative pt-28 pb-12 overflow-hidden min-h-[90svh] flex items-center">
       <div className="max-w-[1360px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-12 gap-8 md:gap-12 items-center">
           {/* Left Side: Matter (Text) - Spanning 6 columns */}
@@ -31,14 +31,12 @@ const SmartSpeakerHero = () => {
             </p>
           </motion.div>
 
-          {/* Right Side: Animated SVG Logo - Spanning 6 columns */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.2 }}
             className="col-span-12 md:col-span-6 flex justify-end relative"
           >
-            <div className="absolute inset-0 bg-purple-600/5 blur-[120px] rounded-full pointer-events-none"></div>
             <div className="relative w-full max-w-lg aspect-square flex items-center justify-center pointer-events-none scale-110">
               <img 
                 src={`${import.meta.env.BASE_URL}product home page.png`}
@@ -52,7 +50,7 @@ const SmartSpeakerHero = () => {
       </div>
       
       {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-purple-500/5 to-transparent"></div>
+      <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-white/5 to-transparent"></div>
     </section>
   );
 };
