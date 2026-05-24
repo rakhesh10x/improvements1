@@ -210,34 +210,35 @@ const ProductBento = () => {
             whileHover={{ y: -4, borderColor: 'rgba(255,255,255,0.08)', boxShadow: '0 15px 35px rgba(255,255,255,0.015)' }}
             transition={{ type: 'spring', stiffness: 350, damping: 22 }}
             style={{ gridArea: 'cm' }}
-            className="lg:h-[458px] md:h-[360px] h-auto min-h-[300px] rounded-[28px] bg-[#070707] border border-white/5 relative overflow-hidden group cursor-default flex flex-col justify-between p-6 md:p-8 select-none shadow-[0_15px_45px_rgba(0,0,0,0.8)]"
+            className="lg:h-full md:h-auto min-h-[300px] rounded-[28px] bg-[#070707] border border-white/5 relative overflow-hidden group cursor-default flex flex-col justify-between p-6 md:p-8 select-none shadow-[0_15px_45px_rgba(0,0,0,0.8)]"
           >
             {/* Soft Ambient Backglow behind hardware */}
             <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[160px] bg-gradient-to-r from-purple-950/15 to-indigo-950/15 blur-[65px] rounded-full pointer-events-none z-0 group-hover:scale-105 transition-transform duration-[3000ms]"></div>
             
-            {/* Centered Image (Object-Contain, perfect containment, no clipping/cropping) */}
-            <div className="absolute inset-x-0 top-6 bottom-16 flex items-center justify-center pointer-events-none z-10 px-8">
-              <img 
-                src="/bent box middel image.jpeg"
-                alt="LUCA AI Smart Speaker"
-                className="w-full h-full object-contain filter brightness-[0.95] contrast-[1.02] drop-shadow-[0_15px_30px_rgba(0,0,0,0.7)] group-hover:scale-[1.02] transition-transform duration-[4000ms] ease-out z-10"
-              />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(7,7,7,0.85)_100%)] pointer-events-none z-20"></div>
-            </div>
-
-            {/* Title & Decorative Elements */}
-            <div className="flex justify-between items-start relative z-20">
+            {/* Top Badge/Header */}
+            <div className="flex justify-between items-center relative z-20 w-full mb-4">
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse"></div>
-                <span className="text-[9px] font-mono text-zinc-400 uppercase tracking-widest">LUCA Physical Grid</span>
+                <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">LUCA Physical Grid</span>
               </div>
-              <div className="text-[9px] font-mono text-zinc-550 uppercase tracking-wider bg-white/[0.01] border border-white/5 px-2 py-0.5 rounded-md">
+              <div className="text-[10px] font-mono text-zinc-550 uppercase tracking-wider bg-white/[0.01] border border-white/5 px-2 py-0.5 rounded-md">
                 LUCA v1.0
               </div>
             </div>
 
-            {/* Bottom typography and breathing room */}
-            <div className="w-full relative z-20 flex justify-between items-end">
+            {/* Centered Image (Object-Contain, perfect containment, no clipping/cropping, naturally scaling) */}
+            <div className="relative w-full flex-1 min-h-[160px] md:min-h-[220px] lg:min-h-[260px] flex items-center justify-center pointer-events-none z-10 px-4 mb-4 overflow-hidden">
+              <img 
+                src="/bent box middel image.jpeg"
+                alt="LUCA AI Smart Speaker"
+                className="max-w-full max-h-full object-contain filter brightness-[0.95] contrast-[1.02] drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)] group-hover:scale-[1.02] transition-transform duration-[4000ms] ease-out z-10"
+              />
+              {/* Subtle vignette layer overlay */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_50%,rgba(7,7,7,0.75)_100%)] pointer-events-none z-20"></div>
+            </div>
+
+            {/* Bottom typography and copy with breathing room */}
+            <div className="w-full relative z-20 flex justify-between items-end mt-auto">
               <div>
                 <h3 className="text-white font-semibold tracking-wide text-sm md:text-base mb-1 font-sans">LUCA AI Smart Speaker</h3>
                 <p className="text-white/55 leading-relaxed text-[11px] font-light max-w-sm">An elegant ambient intelligence grid receding naturally into your environment.</p>
