@@ -58,7 +58,7 @@ const Footer = ({ openContactModal, minimal = false }) => {
   };
 
   return (
-    <footer className={`px-6 max-w-[1360px] mx-auto ${minimal ? 'pt-0 pb-4 lg:pb-6' : 'py-4 lg:py-6'}`}>
+    <footer className={`px-6 max-w-[1360px] mx-auto ${minimal ? 'pt-8 pb-4 lg:pb-6' : 'py-4 lg:py-6'}`}>
       {!minimal && (
         <>
           <div className="mb-8">
@@ -224,7 +224,7 @@ const Footer = ({ openContactModal, minimal = false }) => {
           },
         ];
         return (
-          <div className={`relative pt-6 ${minimal ? 'mt-0' : 'mt-2'}`}>
+          <div className="relative pt-6 mt-2">
             {/* Divider */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200px] h-[1px] bg-gradient-to-r from-transparent via-purple-400 to-transparent blur-[1px]" />
