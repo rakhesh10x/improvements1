@@ -91,69 +91,73 @@ const ProductBento = () => {
 
           {/* Card 1: SPATIAL AUDIO (top1) */}
           <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.25)' }}
+            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'top1' }}
-            className="bento-card-height h-[135px] rounded-[26px] bg-[#070707] border border-white/[0.05] shadow-[0_0_40px_rgba(120,80,255,0.04)] p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
+            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
           >
-            <div className="flex justify-between items-start">
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
+            <div className="relative z-10 flex justify-between items-start">
+              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">SPATIAL AUDIO</span>
               <Volume2 className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-              <div className="w-1.5 h-1.5 rounded-full bg-purple-500/10 group-hover:bg-purple-400/30 transition-colors duration-300"></div>
             </div>
-            <div>
-              <h4 className="text-white font-semibold tracking-wide text-xs uppercase mb-0.5 font-sans">SPATIAL AUDIO</h4>
-              <p className="text-zinc-500 leading-relaxed text-[10px] font-light">Concentric acoustic arrays for immersive resonance.</p>
+            <div className="relative z-10">
+              <h3 className="text-white text-sm font-bold tracking-tight mb-1">Room Resonance</h3>
+              <p className="text-[#888] text-[10px] leading-relaxed">Concentric acoustic arrays for immersive room-scale projection.</p>
             </div>
           </motion.div>
 
           {/* Card 2: EDGE AI (top2) */}
           <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.25)' }}
+            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'top2' }}
-            className="bento-card-height h-[135px] rounded-[26px] bg-[#070707] border border-white/[0.05] shadow-[0_0_40px_rgba(120,80,255,0.04)] p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
+            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
           >
-            <div className="flex justify-between items-start">
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
+            <div className="relative z-10 flex justify-between items-start">
+              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">EDGE AI</span>
               <Cpu className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-              <div className="w-1.5 h-1.5 rounded-full bg-purple-500/10 group-hover:bg-purple-400/30 transition-colors duration-300"></div>
             </div>
-            <div>
-              <h4 className="text-white font-semibold tracking-wide text-xs uppercase mb-0.5 font-sans">EDGE AI</h4>
-              <p className="text-zinc-500 leading-relaxed text-[10px] font-light">On-device local model execution with zero latency.</p>
+            <div className="relative z-10">
+              <h3 className="text-white text-sm font-bold tracking-tight mb-1">Local Inference</h3>
+              <p className="text-[#888] text-[10px] leading-relaxed">On-device neural network execution with zero cloud latency latency.</p>
             </div>
           </motion.div>
 
           {/* Card 3: LUCA OS (top3) */}
           <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.25)' }}
+            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'top3' }}
-            className="bento-card-height h-[135px] rounded-[26px] bg-[#070707] border border-white/[0.05] shadow-[0_0_40px_rgba(120,80,255,0.04)] p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
+            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
           >
-            <div className="flex justify-between items-start">
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
+            <div className="relative z-10 flex justify-between items-start">
+              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">LUCA OS</span>
               <Layers className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-              <div className="w-1.5 h-1.5 rounded-full bg-purple-500/10 group-hover:bg-purple-400/30 transition-colors duration-300"></div>
             </div>
-            <div>
-              <h4 className="text-white font-semibold tracking-wide text-xs uppercase mb-0.5 font-sans">LUCA OS</h4>
-              <p className="text-zinc-500 leading-relaxed text-[10px] font-light">Low-level OS scheduled for real-time threads.</p>
+            <div className="relative z-10">
+              <h3 className="text-white text-sm font-bold tracking-tight mb-1">Real-Time Core</h3>
+              <p className="text-[#888] text-[10px] leading-relaxed">Low-level OS scheduled dynamically for sub-millisecond threads.</p>
             </div>
           </motion.div>
 
           {/* Card 4: VOICE NATIVE (top4) */}
           <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.25)' }}
+            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'top4' }}
-            className="bento-card-height h-[135px] rounded-[26px] bg-[#070707] border border-white/[0.05] shadow-[0_0_40px_rgba(120,80,255,0.04)] p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
+            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
           >
-            <div className="flex justify-between items-start">
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
+            <div className="relative z-10 flex justify-between items-start">
+              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">VOICE NATIVE</span>
               <Radio className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-              <div className="w-1.5 h-1.5 rounded-full bg-purple-500/10 group-hover:bg-purple-400/30 transition-colors duration-300"></div>
             </div>
-            <div>
-              <h4 className="text-white font-semibold tracking-wide text-xs uppercase mb-0.5 font-sans">VOICE NATIVE</h4>
-              <p className="text-zinc-500 leading-relaxed text-[10px] font-light">Speech-to-speech engine running entirely locally.</p>
+            <div className="relative z-10">
+              <h3 className="text-white text-sm font-bold tracking-tight mb-1">Instant Voice</h3>
+              <p className="text-[#888] text-[10px] leading-relaxed">Continuous hardware speech-to-speech loop running locally.</p>
             </div>
           </motion.div>
 
@@ -163,19 +167,20 @@ const ProductBento = () => {
 
           {/* Card 5: NEURAL PROCESSING (left1) - Tall vertical card (320px height) */}
           <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.25)' }}
+            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'left1' }}
-            className="bento-card-height h-[320px] rounded-[26px] bg-[#070707] border border-white/[0.05] shadow-[0_0_40px_rgba(120,80,255,0.04)] p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
+            className="bento-card-height h-[320px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
           >
-            <div className="flex justify-between items-start">
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
+            <div className="relative z-10 flex justify-between items-start">
+              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">NEURAL CORPS</span>
               <Sparkles className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-              <div className="w-1.5 h-1.5 rounded-full bg-purple-500/10 group-hover:bg-purple-400 animate-pulse"></div>
             </div>
-            <div>
-              <h4 className="text-white font-semibold tracking-wide text-xs uppercase mb-1.5 font-sans">NEURAL PROCESSING</h4>
-              <p className="text-zinc-500 leading-relaxed text-[11px] font-light">
-                High-performance NPUs executing deep neural network nodes on the edge for real-time model synthesis.
+            <div className="relative z-10">
+              <h3 className="text-white text-lg font-bold tracking-tight mb-3">Neural Processing</h3>
+              <p className="text-[#888] text-xs leading-relaxed font-light mb-2">
+                High-performance NPUs executing deep neural network nodes on the edge for real-time model synthesis and local cognition.
               </p>
             </div>
           </motion.div>
@@ -185,16 +190,14 @@ const ProductBento = () => {
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.2)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'hero' }}
-            className="bento-hero-height h-[320px] rounded-[26px] bg-[#070707] border border-white/[0.05] shadow-[0_0_40px_rgba(120,80,255,0.04)] relative overflow-hidden group cursor-default flex flex-col justify-between p-6 select-none"
+            className="bento-hero-height h-[320px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md relative overflow-hidden group cursor-default flex flex-col justify-between p-6 select-none"
           >
-            {/* Subtle Purple Ambient Glow Behind Image */}
-            <div className="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[180px] bg-gradient-to-r from-purple-800/15 to-indigo-800/15 blur-[60px] rounded-full pointer-events-none z-0 group-hover:scale-110 transition-transform duration-[3000ms]"></div>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.06) 0%, transparent 70%)' }}></div>
             
             {/* Top-left small badge */}
             <div className="flex justify-between items-center relative z-20 w-full mb-1">
               <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse"></div>
-                <span className="text-[9px] font-mono text-zinc-400 uppercase tracking-widest">LUCA AI SYSTEM</span>
+                <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">LUCA AI SYSTEM</span>
               </div>
               <div className="text-[9px] font-mono text-zinc-550 uppercase tracking-wider bg-white/[0.01] border border-white/5 px-2 py-0.5 rounded-md">
                 CORE
@@ -215,8 +218,8 @@ const ProductBento = () => {
             {/* Bottom text */}
             <div className="w-full relative z-20 flex justify-between items-end mt-1">
               <div>
-                <h3 className="text-white font-semibold tracking-wide text-sm mb-0.5 font-sans">LUCA AI Smart Speaker</h3>
-                <p className="text-zinc-500 leading-relaxed text-[10px] font-light max-w-md">
+                <h3 className="text-white text-base font-bold tracking-tight mb-1">LUCA AI Smart Speaker</h3>
+                <p className="text-[#888] leading-relaxed text-xs font-light max-w-md">
                   Adaptive ambient intelligence powered by LUCA OS and real-time neural processing.
                 </p>
               </div>
@@ -226,36 +229,38 @@ const ProductBento = () => {
 
           {/* Card 7: REAL-TIME AI (right1) - Medium vertical card (right side row 2) (135px height) */}
           <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.25)' }}
+            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'right1' }}
-            className="bento-card-height h-[135px] rounded-[26px] bg-[#070707] border border-white/[0.05] shadow-[0_0_40px_rgba(120,80,255,0.04)] p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
+            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
           >
-            <div className="flex justify-between items-start">
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
+            <div className="relative z-10 flex justify-between items-start">
+              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">REAL-TIME AI</span>
               <Zap className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-              <div className="w-1.5 h-1.5 rounded-full bg-purple-500/10 group-hover:bg-purple-400/30 transition-colors duration-300"></div>
             </div>
-            <div>
-              <h4 className="text-white font-semibold tracking-wide text-xs uppercase mb-0.5 font-sans">REAL-TIME AI</h4>
-              <p className="text-zinc-500 leading-relaxed text-[10px] font-light">Predictive action execution responding instantly to ambient cues.</p>
+            <div className="relative z-10">
+              <h3 className="text-white text-sm font-bold tracking-tight mb-1">Predictive Loops</h3>
+              <p className="text-[#888] text-[10px] leading-relaxed">Predictive action execution responding instantly to environmental triggers.</p>
             </div>
           </motion.div>
 
           {/* Card 8: PRIVACY FIRST (right2) - Tall bottom-right card (320px height) */}
           <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.25)' }}
+            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'right2' }}
-            className="bento-card-height h-[320px] rounded-[26px] bg-[#070707] border border-white/[0.05] shadow-[0_0_40px_rgba(120,80,255,0.04)] p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
+            className="bento-card-height h-[320px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
           >
-            <div className="flex justify-between items-start">
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
+            <div className="relative z-10 flex justify-between items-start">
+              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">PRIVACY</span>
               <Lock className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-              <div className="w-1.5 h-1.5 rounded-full bg-purple-500/15 group-hover:bg-purple-400 animate-pulse"></div>
             </div>
-            <div>
-              <h4 className="text-white font-semibold tracking-wide text-xs uppercase mb-1.5 font-sans">PRIVACY FIRST</h4>
-              <p className="text-zinc-500 leading-relaxed text-[11px] font-light">
-                Encrypted sandboxed loops to safeguard your local voice patterns and telemetry logs with absolute protection.
+            <div className="relative z-10">
+              <h3 className="text-white text-lg font-bold tracking-tight mb-3">Privacy First</h3>
+              <p className="text-[#888] text-xs leading-relaxed font-light mb-2">
+                Encrypted sandboxed loops to safeguard your local voice patterns and telemetry logs with absolute hardware-level protection.
               </p>
             </div>
           </motion.div>
@@ -266,36 +271,38 @@ const ProductBento = () => {
 
           {/* Card 9: AMBIENT INTELLIGENCE (left2) - Small vertical bottom-left card (135px height) */}
           <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.25)' }}
+            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'left2' }}
-            className="bento-card-height h-[135px] rounded-[26px] bg-[#070707] border border-white/[0.05] shadow-[0_0_40px_rgba(120,80,255,0.04)] p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
+            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
           >
-            <div className="flex justify-between items-start">
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
+            <div className="relative z-10 flex justify-between items-start">
+              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">AMBIENT</span>
               <Eye className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-              <div className="w-1.5 h-1.5 rounded-full bg-purple-500/10 group-hover:bg-purple-400/30 transition-colors duration-300"></div>
             </div>
-            <div>
-              <h4 className="text-white font-semibold tracking-wide text-xs uppercase mb-0.5 font-sans">AMBIENT INTEL</h4>
-              <p className="text-zinc-500 leading-relaxed text-[10px] font-light">Fades quietly, responding only when contextually triggered.</p>
+            <div className="relative z-10">
+              <h3 className="text-white text-sm font-bold tracking-tight mb-1">Ambient Intel</h3>
+              <p className="text-[#888] text-[10px] leading-relaxed">Fades quietly, responding only when contextually triggered by presence.</p>
             </div>
           </motion.div>
 
           {/* Card 10: INDIAN AI ECOSYSTEM (bottom) - Wide bottom-center card (135px height) */}
           <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.25)' }}
+            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'bottom' }}
-            className="bento-card-height h-[135px] rounded-[26px] bg-[#070707] border border-white/[0.05] shadow-[0_0_40px_rgba(120,80,255,0.04)] p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
+            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
           >
-            <div className="flex justify-between items-start">
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
+            <div className="relative z-10 flex justify-between items-start">
+              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">ECOSYSTEM SYNC</span>
               <Globe className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-              <div className="w-1.5 h-1.5 rounded-full bg-purple-500/10 group-hover:bg-purple-400/30 transition-colors duration-300"></div>
             </div>
-            <div className="flex justify-between items-end">
+            <div className="relative z-10 flex justify-between items-end">
               <div>
-                <h4 className="text-white font-semibold tracking-wide text-xs uppercase mb-0.5 font-sans">INDIAN AI ECOSYSTEM</h4>
-                <p className="text-zinc-500 leading-relaxed text-[10px] font-light max-w-xl">
+                <h3 className="text-white text-sm font-bold tracking-tight mb-1">Indian AI Ecosystem</h3>
+                <p className="text-[#888] text-[10px] leading-relaxed max-w-xl">
                   Deeply integrated into regional Indian contexts, dialect semantics, and localized voice synthesis nodes.
                 </p>
               </div>
