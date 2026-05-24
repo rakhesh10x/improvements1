@@ -11,11 +11,11 @@ const ProductBento = () => {
           display: grid;
           gap: 14px;
           grid-template-columns: repeat(4, 1fr);
-          grid-template-rows: auto 135px 171px 135px;
+          grid-template-rows: auto 245px 61px 135px;
           grid-template-areas:
             "top-row top-row top-row top-row"
             "left1 hero hero right1"
-            "left1 hero hero right2"
+            "left2 hero hero right2"
             "left2 bottom bottom right2";
         }
 
@@ -175,12 +175,12 @@ const ProductBento = () => {
               ROW 2 & 3: CENTER HERO AND SIDE CARDS
               ======================================================== */}
 
-          {/* Card 5: NEURAL PROCESSING (left1) - Tall vertical card (320px height) */}
+          {/* Card 5: NEURAL PROCESSING (left1) - Shorter vertical card (245px height, Row 2) */}
           <motion.div
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'left1' }}
-            className="bento-card-height h-[320px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            className="bento-card-height h-[245px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
             <div className="relative z-10 flex justify-between items-start">
@@ -188,10 +188,8 @@ const ProductBento = () => {
               <Sparkles className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
             </div>
             <div className="relative z-10">
-              <h3 className="text-white text-lg font-bold tracking-tight mb-3">Neural Processing</h3>
-              <p className="text-[#888] text-xs leading-relaxed font-light mb-2">
-                High-performance NPUs executing deep neural network nodes on the edge for real-time model synthesis and local cognition.
-              </p>
+              <h3 className="text-white text-sm font-bold tracking-tight mb-1">Neural Processing</h3>
+              <p className="text-[#888] text-[10px] leading-relaxed">NPUs executing deep neural nodes on the edge for real-time model synthesis.</p>
             </div>
           </motion.div>
 
@@ -237,12 +235,12 @@ const ProductBento = () => {
             </div>
           </motion.div>
 
-          {/* Card 7: REAL-TIME AI (right1) - Medium vertical card (right side row 2) (135px height) */}
+          {/* Card 7: REAL-TIME AI (right1) - Medium vertical card (right side row 2) (245px height) */}
           <motion.div
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'right1' }}
-            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            className="bento-card-height h-[245px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
             <div className="relative z-10 flex justify-between items-start">
@@ -255,12 +253,12 @@ const ProductBento = () => {
             </div>
           </motion.div>
 
-          {/* Card 8: PRIVACY FIRST (right2) - Tall bottom-right card (320px height) */}
+          {/* Card 8: PRIVACY FIRST (right2) - Tall bottom-right card (210px height) */}
           <motion.div
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'right2' }}
-            className="bento-card-height h-[320px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            className="bento-card-height h-[210px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
             <div className="relative z-10 flex justify-between items-start">
@@ -279,12 +277,12 @@ const ProductBento = () => {
               ROW 4: BOTTOM SECTION
               ======================================================== */}
 
-          {/* Card 9: AMBIENT INTELLIGENCE (left2) - Small vertical bottom-left card (135px height) */}
+          {/* Card 9: AMBIENT INTELLIGENCE (left2) - Tall vertical bottom-left card (210px height, Row 3 & 4) */}
           <motion.div
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'left2' }}
-            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            className="bento-card-height h-[210px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
             <div className="relative z-10 flex justify-between items-start">
@@ -292,8 +290,10 @@ const ProductBento = () => {
               <Eye className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
             </div>
             <div className="relative z-10">
-              <h3 className="text-white text-sm font-bold tracking-tight mb-1">Ambient Intel</h3>
-              <p className="text-[#888] text-[10px] leading-relaxed">Fades quietly, responding only when contextually triggered by presence.</p>
+              <h3 className="text-white text-lg font-bold tracking-tight mb-3">Ambient Intel</h3>
+              <p className="text-[#888] text-xs leading-relaxed font-light mb-2">
+                Fades quietly into the background, responding only when contextually triggered by presence models.
+              </p>
             </div>
           </motion.div>
 
