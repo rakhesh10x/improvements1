@@ -12,22 +12,20 @@ const ProductShowcase = () => {
         transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
         className="w-full flex items-center justify-center relative pointer-events-none"
       >
-        {/* Subtle Atmospheric float animation */}
-        <motion.div 
-          animate={{ y: [-6, 6, -6] }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        {/* Static container - no floating movement */}
+        <div 
           className="w-full flex items-center justify-center relative"
         >
           {/* Hardware Render Image */}
           <img 
             src="/resolution%20changed%20hardware%20image.png"
             alt="LUCA Hardware Showcase"
-            className="w-full h-auto filter brightness-[0.95] contrast-[1.05] drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] z-10"
+            className="w-full h-auto block filter brightness-[0.95] contrast-[1.05] drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] z-10"
           />
 
           {/* Soft Vignette Blending Layer (Feathers edges softly into pure black page background) */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.95)_100%)] pointer-events-none z-20"></div>
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );
