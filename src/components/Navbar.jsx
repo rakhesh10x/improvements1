@@ -5,7 +5,17 @@ import { Link } from 'react-router-dom';
 const Navbar = ({ openContactModal }) => {
   const [isBannerVisible, setIsBannerVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isBentoExpanded, setIsBentoExpanded] = useState(false);
   const lastScrollYRef = useRef(0);
+
+  useEffect(() => {
+    const handleExpandEvent = (e) => {
+      setIsBentoExpanded(!!e.detail.expanded);
+    };
+
+    window.addEventListener('luca-bento-expand', handleExpandEvent);
+    return () => window.removeEventListener('luca-bento-expand', handleExpandEvent);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,8 +49,8 @@ const Navbar = ({ openContactModal }) => {
     <>
       {/* Premium DeepInfra-style Top Announcement Banner */}
       <div 
-        className={`fixed top-0 left-0 right-0 w-full z-40 bg-gradient-to-r from-[#040308] via-[#0d0924] to-[#040308] backdrop-blur-xl border-b border-[#512DA8]/25 h-9 flex items-center justify-center text-center px-4 pointer-events-auto select-none transition-transform duration-500 ease-in-out shadow-[0_4px_30px_rgba(81,45,168,0.20)] ${
-          isBannerVisible ? 'translate-y-0' : '-translate-y-full'
+        className={`fixed top-0 left-0 right-0 w-full z-40 bg-gradient-to-r from-[#040308] via-[#0d0924] to-[#040308] backdrop-blur-xl border-b border-[#512DA8]/25 h-9 flex items-center justify-center text-center px-4 pointer-events-auto select-none transition-all duration-500 ease-in-out shadow-[0_4px_30px_rgba(81,45,168,0.20)] ${
+          isBentoExpanded ? '-translate-y-full opacity-0' : (isBannerVisible ? 'translate-y-0' : '-translate-y-full')
         }`}
       >
         {/* Rich Violet Light Diffusion and Premium Gradient Blending */}
@@ -69,7 +79,7 @@ const Navbar = ({ openContactModal }) => {
       {/* GPU-Accelerated Fixed Navbar Wrapper (Statically top-6, dynamically translated via translateY) */}
       <div 
         className={`fixed w-full z-50 flex justify-center px-4 md:px-6 pointer-events-none top-6 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isBannerVisible ? 'translate-y-8' : 'translate-y-0'
+          isBentoExpanded ? '-translate-y-[200%] opacity-0' : (isBannerVisible ? 'translate-y-8' : 'translate-y-0')
         }`}
       >
         <nav className={`w-full flex items-center justify-between pointer-events-auto transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] border rounded-full ${

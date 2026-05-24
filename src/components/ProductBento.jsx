@@ -1,117 +1,248 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion';
-import { Cpu, Shield, Layers, Radio, Globe, Zap, Sparkles, Volume2, Lock, Eye } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Cpu, Shield, Layers, Radio, Globe, Zap, Sparkles, Volume2, Lock, Eye, X } from 'lucide-react';
 
 const ProductBento = () => {
   const [isHovered, setIsHovered] = useState(false);
-  const [rect, setRect] = useState(null);
-  const [sectionRect, setSectionRect] = useState(null);
-  const [isFullyExpanded, setIsFullyExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isAnimationDone, setIsAnimationDone] = useState(false);
+  const [isSectionFullyVisible, setIsSectionFullyVisible] = useState(false);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
-  const mediaContainerRef = useRef(null);
   const sectionRef = useRef(null);
   const videoBRef = useRef(null);
+  const cardRef = useRef(null);
+  const mediaContainerRef = useRef(null);
 
-  const scrollProgress = useMotionValue(0);
-  const smoothProgress = useSpring(scrollProgress, { stiffness: 100, damping: 20, mass: 1 });
-
-  // Sync scrollProgress change to measure bounding rect
+  // 1. Detect if the section is fully visible
   useEffect(() => {
-    const unsubscribe = scrollProgress.on("change", (latest) => {
-      if (latest > 0 && !rect) {
-        const element = mediaContainerRef.current;
-        const section = sectionRef.current;
-        if (element && section) {
-          setRect(element.getBoundingClientRect());
-          setSectionRect(section.getBoundingClientRect());
-        }
-      } else if (latest === 0) {
-        setRect(null);
-        setSectionRect(null);
-      }
-    });
-    return () => unsubscribe();
-  }, [scrollProgress, rect]);
+    let ticking = false;
 
-  // Track when smoothProgress reaches fully expanded state
-  useEffect(() => {
-    const unsubscribe = smoothProgress.on("change", (latest) => {
-      if (latest >= 0.99) {
-        setIsFullyExpanded(true);
-      } else {
-        setIsFullyExpanded(false);
-      }
-    });
-    return () => unsubscribe();
-  }, [smoothProgress]);
-
-  // Play Video B when rect becomes active (user starts scroll expansion)
-  useEffect(() => {
-    if (rect && videoBRef.current) {
-      try {
-        videoBRef.current.currentTime = 0;
-        videoBRef.current.play().catch((err) => {
-          console.warn("Autoplay was blocked or video not ready", err);
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (sectionRef.current) {
+            const rect = sectionRef.current.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const isVisible = rect.top >= -60 && rect.bottom <= viewportHeight + 60;
+            setIsSectionFullyVisible(isVisible);
+          }
+          ticking = false;
         });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // 1b. Measure card dimensions dynamically and calculate recommended resolutions
+  useEffect(() => {
+    if (!cardRef.current) return;
+
+    const measure = () => {
+      const element = cardRef.current;
+      const rect = element.getBoundingClientRect();
+      const style = window.getComputedStyle(element);
+      
+      const paddingX = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight);
+      const paddingY = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom);
+      
+      const contentWidth = rect.width - paddingX;
+      const contentHeight = rect.height - paddingY;
+      
+      setDimensions({ width: contentWidth, height: contentHeight });
+      
+      const retinaWidth = contentWidth * 2;
+      const retinaHeight = contentHeight * 2;
+      
+      console.log(
+        `%c[LUCA Container Dimensions]%c\n` +
+        `- Exact Content Width: ${contentWidth.toFixed(2)}px\n` +
+        `- Exact Content Height: ${contentHeight.toFixed(2)}px\n` +
+        `- Recommended Retina Export Resolution (2x): ${(retinaWidth).toFixed(0)}px x ${(retinaHeight).toFixed(0)}px`,
+        'color: #9d4edd; font-weight: bold; font-size: 13px;',
+        'color: #ffffff; font-size: 12px;'
+      );
+    };
+
+    const resizeObserver = new ResizeObserver(() => {
+      measure();
+    });
+    resizeObserver.observe(cardRef.current);
+    
+    measure();
+
+    return () => resizeObserver.disconnect();
+  }, []);
+
+  // 1c. Timeout fallback to ensure isAnimationDone is set after the 0.8s transition completes
+  useEffect(() => {
+    if (isExpanded) {
+      const timer = setTimeout(() => {
+        setIsAnimationDone(true);
+      }, 850); // 850ms to match the 0.8s transition duration plus a tiny buffer
+      return () => clearTimeout(timer);
+    } else {
+      setIsAnimationDone(false);
+    }
+  }, [isExpanded]);
+
+  // 2. Intercept scroll wheel events to trigger expansion when fully visible and block page scroll during morph
+  useEffect(() => {
+    const handleWheel = (e) => {
+      if (!isSectionFullyVisible) return;
+
+      if (!isExpanded) {
+        // Trigger expansion on scroll UP only (deltaY < 0)
+        if (e.deltaY < 0) {
+          e.preventDefault();
+          setIsExpanded(true);
+        }
+      } else if (!isAnimationDone) {
+        // Block scrolling during expansion animation
+        e.preventDefault();
+      }
+    };
+
+    const sectionElement = sectionRef.current;
+    if (sectionElement) {
+      sectionElement.addEventListener('wheel', handleWheel, { passive: false });
+    }
+    
+    // Also handle window-level scroll block during animation
+    const preventWindowScroll = (e) => {
+      if (isExpanded && !isAnimationDone) {
+        e.preventDefault();
+      }
+    };
+    
+    window.addEventListener('wheel', preventWindowScroll, { passive: false });
+
+    return () => {
+      if (sectionElement) {
+        sectionElement.removeEventListener('wheel', handleWheel);
+      }
+      window.removeEventListener('wheel', preventWindowScroll);
+    };
+  }, [isSectionFullyVisible, isExpanded, isAnimationDone]);
+
+  // 3. Intercept touch drag events for mobile compatibility
+  useEffect(() => {
+    let touchStart = 0;
+
+    const handleTouchStart = (e) => {
+      touchStart = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e) => {
+      if (!isSectionFullyVisible) return;
+
+      if (!isExpanded) {
+        const touchCurrent = e.touches[0].clientY;
+        const diff = touchStart - touchCurrent;
+        
+        // diff < -5 is scroll UP (swipe down, content moves down)
+        if (diff < -5) {
+          e.preventDefault();
+          setIsExpanded(true);
+        }
+      } else if (!isAnimationDone) {
+        e.preventDefault();
+      }
+    };
+
+    const sectionElement = sectionRef.current;
+    if (sectionElement) {
+      sectionElement.addEventListener('touchstart', handleTouchStart, { passive: true });
+      sectionElement.addEventListener('touchmove', handleTouchMove, { passive: false });
+    }
+
+    const preventWindowTouch = (e) => {
+      if (isExpanded && !isAnimationDone) {
+        e.preventDefault();
+      }
+    };
+    
+    window.addEventListener('touchmove', preventWindowTouch, { passive: false });
+
+    return () => {
+      if (sectionElement) {
+        sectionElement.removeEventListener('touchstart', handleTouchStart);
+        sectionElement.removeEventListener('touchmove', handleTouchMove);
+      }
+      window.removeEventListener('touchmove', preventWindowTouch);
+    };
+  }, [isSectionFullyVisible, isExpanded, isAnimationDone]);
+
+  // 4. Play video when animation finishes or expands
+  useEffect(() => {
+    let active = true;
+    
+    const playVideo = async () => {
+      const video = videoBRef.current;
+      if (!video) return;
+
+      // Ensure properties are configured correctly
+      video.muted = true;
+      video.playsInline = true;
+      video.loop = true;
+      video.preload = "auto";
+
+      try {
+        await video.play();
+        console.log("Video started playing successfully.");
       } catch (err) {
-        console.error("Video play error", err);
+        console.warn("Autoplay blocked or failed, waiting for user event...", err);
+        
+        const forcePlay = async () => {
+          if (!active || !video) return;
+          try {
+            await video.play();
+            console.log("Video played successfully via user gesture.");
+            window.removeEventListener('click', forcePlay);
+            window.removeEventListener('touchstart', forcePlay);
+          } catch (clickErr) {
+            console.error("Gesture play attempt failed:", clickErr);
+          }
+        };
+        window.addEventListener('click', forcePlay);
+        window.addEventListener('touchstart', forcePlay);
+      }
+    };
+
+    if (isExpanded) {
+      const timer = setTimeout(() => {
+        playVideo();
+      }, 50);
+
+      return () => {
+        active = false;
+        clearTimeout(timer);
+      };
+    } else {
+      if (videoBRef.current) {
+        videoBRef.current.pause();
       }
     }
-  }, [rect]);
+  }, [isExpanded]);
 
-  const fullscreenScrollY = useRef(0);
-
-  // Window wheel listener to capture scroll events on hover and during active expansion
+  // 5. Dispatch custom event for navbar hiding/showing
   useEffect(() => {
-    const handleWindowWheel = (e) => {
-      const current = scrollProgress.get();
-      if (isHovered || current > 0) {
-        const sensitivity = 0.003;
-        
-        if (e.deltaY > 0) {
-          // Scrolling down (expanding)
-          if (current < 1) {
-            e.preventDefault();
-            const next = Math.min(current + e.deltaY * sensitivity, 1);
-            scrollProgress.set(next);
-            if (next === 1) {
-              fullscreenScrollY.current = window.scrollY;
-            }
-          }
-          // If current === 1, allow natural page scroll down
-        } else if (e.deltaY < 0) {
-          // Scrolling up (shrinking)
-          if (window.scrollY > fullscreenScrollY.current + 5) {
-            // Allow natural page scroll up
-            return;
-          }
-          
-          if (current > 0) {
-            e.preventDefault();
-            const next = Math.max(current + e.deltaY * sensitivity, 0);
-            scrollProgress.set(next);
-          }
-        }
-      }
-    };
+    window.dispatchEvent(new CustomEvent('luca-bento-expand', { detail: { expanded: isExpanded } }));
+  }, [isExpanded]);
 
-    window.addEventListener('wheel', handleWindowWheel, { passive: false });
-    return () => {
-      window.removeEventListener('wheel', handleWindowWheel);
-    };
-  }, [isHovered, scrollProgress]);
-
-  // Transform values for fullscreen overlay video
-  const x = useTransform(smoothProgress, [0, 1], [rect ? rect.left : 0, 0]);
-  const y = useTransform(smoothProgress, [0, 1], [rect ? rect.top : 0, 0]);
-  const width = useTransform(smoothProgress, [0, 1], [rect ? rect.width : 0, typeof window !== 'undefined' ? window.innerWidth : 1920]);
-  const height = useTransform(smoothProgress, [0, 1], [rect ? rect.height : 0, typeof window !== 'undefined' ? window.innerHeight : 1080]);
-  const borderRadius = useTransform(smoothProgress, [0, 1], [20, 0]);
-  const otherOpacity = useTransform(smoothProgress, [0, 1], [1, 0]);
-
-  // Soft transitions to dissolve static image into moving video layer
-  const imageOpacity = useTransform(smoothProgress, [0, 0.4], [1, 0]);
-  const videoOpacity = useTransform(smoothProgress, [0, 0.4], [0, 1]);
+  const handleClose = () => {
+    setIsAnimationDone(false);
+    setIsExpanded(false);
+    
+    // Smoothly scroll back to the bento section so the user is properly centered
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex flex-col justify-center pt-10 pb-8 bg-[#000000] z-10 overflow-hidden px-[22px]">
@@ -191,7 +322,7 @@ const ProductBento = () => {
         <div className="absolute bottom-[10%] right-[8%] w-0.5 h-0.5 bg-white rounded-full opacity-25"></div>
       </div>
 
-      <motion.div style={{ opacity: otherOpacity }} className="max-w-[1560px] mx-auto relative z-10 w-full">
+      <div className="max-w-[1560px] mx-auto relative z-10 w-full">
         {/* Centered Heading with Premium Typography */}
         <div className="text-center mb-6 select-none">
           <motion.h2 
@@ -206,7 +337,11 @@ const ProductBento = () => {
         </div>
 
         {/* Bento Grid Container */}
-        <div className="bento-grid-container w-full mt-0">
+        <motion.div 
+          animate={{ opacity: isExpanded ? 0.25 : 1 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="bento-grid-container w-full mt-0"
+        >
           
           {/* ========================================================
               ROW 1: 4 Small Horizontal Cards with 1.4fr 1fr 1fr 1fr (150px height)
@@ -305,49 +440,41 @@ const ProductBento = () => {
 
           {/* Card 6: LARGE CENTER FEATURE CARD (hero) - Giant Center Card (305px height) */}
           <motion.div
+            ref={cardRef}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.2)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'hero' }}
-            className="bento-hero-height h-[290px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md relative overflow-hidden group cursor-default flex flex-col justify-between p-6 select-none"
+            className="bento-hero-height h-[290px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md relative overflow-hidden group cursor-default flex items-center justify-center p-6 select-none"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.06) 0%, transparent 70%)' }}></div>
             
-            {/* Top-left small badge */}
-            <div className="flex justify-between items-center relative z-20 w-full mb-1">
-              <div className="flex items-center gap-2">
-                <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">LUCA AI SYSTEM</span>
-              </div>
-              <div className="text-[9px] font-mono text-zinc-555 uppercase tracking-wider bg-white/[0.01] border border-white/5 px-2 py-0.5 rounded-md">
-                CORE
-              </div>
-            </div>
-
-            {/* Elegant Static Image Media Container */}
+            {/* Clean Premium Media Container */}
             <div 
-              ref={mediaContainerRef}
-              className="relative w-full flex-1 rounded-[20px] overflow-hidden pointer-events-none z-10 my-2"
-              style={{ opacity: rect ? 0 : 1 }}
+              style={{
+                width: dimensions.width ? `${dimensions.width}px` : '100%',
+                height: dimensions.height ? `${dimensions.height}px` : '100%',
+              }}
+              className="flex items-center justify-center pointer-events-none z-10 overflow-hidden"
             >
-              <img 
-                src="/bent box middel image.jpeg"
-                alt="LUCA AI Smart Speaker"
-                className="w-full h-full object-cover filter brightness-[0.96] contrast-[1.02] drop-shadow-[0_12px_24px_rgba(0,0,0,0.8)]"
-              />
-              {/* Radial vignette overlay */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(7,7,7,0.4)_100%)] pointer-events-none z-20"></div>
-            </div>
-
-            {/* Bottom text */}
-            <div className="w-full relative z-20 flex justify-between items-end mt-1">
-              <div>
-                <h3 className="text-white text-base font-bold tracking-tight mb-1">LUCA AI Smart Speaker</h3>
-                <p className="text-[#888] leading-relaxed text-xs font-light max-w-md">
-                  Adaptive ambient intelligence powered by LUCA OS and real-time neural processing.
-                </p>
-              </div>
-              <Layers className="w-4 h-4 text-purple-400/50 shrink-0 mb-1 ml-4 group-hover:text-purple-300 transition-colors" />
+              {!isExpanded && (
+                <motion.div
+                  layoutId="luca-media-container"
+                  className="w-full h-full flex items-center justify-center"
+                >
+                  <motion.img 
+                    src="/resolution changed bento box image.png"
+                    alt="LUCA AI"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'contain'
+                    }}
+                    className="filter brightness-[0.96] contrast-[1.02] drop-shadow-[0_12px_24px_rgba(0,0,0,0.8)]"
+                  />
+                </motion.div>
+              )}
             </div>
           </motion.div>
 
@@ -361,7 +488,7 @@ const ProductBento = () => {
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
             <div className="relative z-10 flex justify-between items-start">
               <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">REAL-TIME AI</span>
-              <Zap className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
+              <Zap className="w-4 h-4 text-zinc-555 group-hover:text-purple-400/80 transition-colors duration-300" />
             </div>
             <div className="relative z-10">
               <h3 className="text-white text-sm font-bold tracking-tight mb-1">Predictive Loops</h3>
@@ -379,7 +506,7 @@ const ProductBento = () => {
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
             <div className="relative z-10 flex justify-between items-start">
               <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">PRIVACY</span>
-              <Lock className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
+              <Lock className="w-4 h-4 text-zinc-555 group-hover:text-purple-400/80 transition-colors duration-300" />
             </div>
             <div className="relative z-10">
               <h3 className="text-white text-lg font-bold tracking-tight mb-3">Privacy First</h3>
@@ -403,7 +530,7 @@ const ProductBento = () => {
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
             <div className="relative z-10 flex justify-between items-start">
               <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">AMBIENT</span>
-              <Eye className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
+              <Eye className="w-4 h-4 text-zinc-555 group-hover:text-purple-400/80 transition-colors duration-300" />
             </div>
             <div className="relative z-10">
               <h3 className="text-white text-lg font-bold tracking-tight mb-3">Ambient Intel</h3>
@@ -423,7 +550,7 @@ const ProductBento = () => {
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
             <div className="relative z-10 flex justify-between items-start">
               <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">ECOSYSTEM SYNC</span>
-              <Globe className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
+              <Globe className="w-4 h-4 text-zinc-555 group-hover:text-purple-400/80 transition-colors duration-300" />
             </div>
             <div className="relative z-10 flex justify-between items-end">
               <div>
@@ -438,47 +565,109 @@ const ProductBento = () => {
             </div>
           </motion.div>
 
+        </motion.div>
+      </div>
+
+      {/* Scroll Spacer for Expanded State */}
+      {isExpanded && (
+        <div className="w-full flex items-center justify-center h-[55vh] bg-black select-none mt-16 mb-12">
+          <div className="flex flex-col gap-6 text-center max-w-3xl mx-auto px-8">
+            <motion.p 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 0.6, y: 0 }}
+              viewport={{ once: false, margin: "-50px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-[#a78bfa] text-[11px] md:text-xs uppercase tracking-[0.3em] font-bold"
+            >
+              LUCA OS
+            </motion.p>
+            <motion.h3 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-50px" }}
+              transition={{ duration: 1.0, delay: 0.1, ease: "easeOut" }}
+              className="text-white text-3xl md:text-5xl font-extrabold tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-b from-white via-zinc-100 to-zinc-400 drop-shadow-[0_0_30px_rgba(255,255,255,0.08)]"
+            >
+              Building the Future of Ambient Intelligence
+            </motion.h3>
+            <motion.p 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 0.7, y: 0 }}
+              viewport={{ once: false, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="text-zinc-400 text-sm md:text-base font-light tracking-wide leading-relaxed max-w-xl mx-auto font-sans"
+            >
+              Designed to blend seamlessly into everyday life through adaptive AI, real-time intelligence, and immersive ambient computing.
+            </motion.p>
+          </div>
         </div>
-      </motion.div>
-      {/* Immersive Cinematic Fullscreen Video Overlay */}
+      )}
+
+      {/* Cinematic Modal Video Overlay */}
       <AnimatePresence>
-        {rect && (
-          <motion.div
-            key="immersive-video-overlay"
-            style={{
-              position: isFullyExpanded ? 'absolute' : 'fixed',
-              left: isFullyExpanded ? (sectionRect ? `${-sectionRect.left}px` : '0px') : x,
-              top: isFullyExpanded ? (sectionRect ? `${-sectionRect.top}px` : '0px') : y,
-              width: isFullyExpanded ? '100vw' : width,
-              height: isFullyExpanded ? '100vh' : height,
-              borderRadius: isFullyExpanded ? 0 : borderRadius,
-              overflow: 'hidden',
-              zIndex: 50,
-              pointerEvents: 'none',
-            }}
-          >
-            {/* Layer 1: Static Image fading out */}
-            <motion.img
-              src="/bent box middel image.jpeg"
-              alt="LUCA AI Smart Speaker"
-              style={{ opacity: imageOpacity }}
-              className="absolute inset-0 w-full h-full object-cover filter brightness-[0.96] contrast-[1.02]"
-            />
-            
-            {/* Layer 2: Video fading in */}
-            <motion.video
-              ref={videoBRef}
-              src="/bento box middle image playback video.mp4"
-              muted
-              loop
-              playsInline
-              style={{ opacity: videoOpacity }}
-              className="absolute inset-0 w-full h-full object-cover filter brightness-[0.96] contrast-[1.02]"
+        {isExpanded && (
+          <div className="absolute inset-x-0 top-0 h-[100vh] flex items-center justify-center pointer-events-none z-50">
+            {/* Dark backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute inset-0 bg-black/80 backdrop-blur-md pointer-events-auto cursor-pointer"
+              onClick={handleClose}
             />
 
-            {/* Radial vignette overlay */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(7,7,7,0.4)_100%)] pointer-events-none z-20"></div>
-          </motion.div>
+            {/* Cinematic Player */}
+            <motion.div
+              layoutId="luca-media-container"
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              onAnimationComplete={() => {
+                setIsAnimationDone(true);
+              }}
+              className="relative w-[90vw] md:w-[85vw] max-w-[1200px] aspect-[16/9] rounded-[24px] border border-white/10 bg-black shadow-[0_24px_50px_rgba(0,0,0,0.8)] overflow-hidden pointer-events-auto z-10 flex items-center justify-center"
+            >
+              {/* Static image shown during morph */}
+              <motion.img
+                src="/resolution changed bento box image.png"
+                alt="LUCA AI"
+                initial={false}
+                animate={{ opacity: isAnimationDone ? 0 : 1 }}
+                transition={{ duration: 0.5, ease: 'easeInOut' }}
+                className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+              />
+
+              {/* Video layer */}
+              <video
+                ref={videoBRef}
+                src="/bento box middle image playback video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                style={{
+                  opacity: isAnimationDone ? 1 : 0,
+                  transition: 'opacity 0.5s ease-in-out'
+                }}
+                className="absolute inset-0 w-full h-full object-cover z-10 pointer-events-none"
+              />
+
+              {/* Clean Minimal Close Button */}
+              {isAnimationDone && (
+                <motion.button
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.3, delay: 0.2 }}
+                  onClick={handleClose}
+                  className="absolute top-4 right-4 md:top-6 md:right-6 z-35 p-2 rounded-full bg-black/40 hover:bg-black/60 border border-white/10 hover:border-white/20 text-white/80 hover:text-white transition-all duration-300 hover:scale-105 cursor-pointer flex items-center justify-center"
+                  aria-label="Close video player"
+                >
+                  <X className="w-5 h-5" />
+                </motion.button>
+              )}
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </section>
