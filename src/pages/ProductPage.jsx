@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar';
 import SmartSpeakerHero from '../components/SmartSpeakerHero';
 import ProductTabs from '../components/ProductTabs';
 import ProductBento from '../components/ProductBento';
-import ProductAnnouncement from '../components/ProductAnnouncement';
 import ProductShowcase from '../components/ProductShowcase';
 import Footer from '../components/Footer';
 import ContactModal from '../components/ContactModal';
@@ -39,8 +38,6 @@ const ProductPage = () => {
         <ProductTabs />
         
         <ProductBento />
-        
-        <ProductAnnouncement />
         
         <ProductShowcase />
         

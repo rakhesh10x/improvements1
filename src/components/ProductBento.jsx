@@ -1,17 +1,127 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion';
 import { Cpu, Shield, Layers, Radio, Globe, Zap, Sparkles, Volume2, Lock, Eye } from 'lucide-react';
 
 const ProductBento = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [rect, setRect] = useState(null);
+  const [sectionRect, setSectionRect] = useState(null);
+  const [isFullyExpanded, setIsFullyExpanded] = useState(false);
+
+  const mediaContainerRef = useRef(null);
+  const sectionRef = useRef(null);
+  const videoBRef = useRef(null);
+
+  const scrollProgress = useMotionValue(0);
+  const smoothProgress = useSpring(scrollProgress, { stiffness: 100, damping: 20, mass: 1 });
+
+  // Sync scrollProgress change to measure bounding rect
+  useEffect(() => {
+    const unsubscribe = scrollProgress.on("change", (latest) => {
+      if (latest > 0 && !rect) {
+        const element = mediaContainerRef.current;
+        const section = sectionRef.current;
+        if (element && section) {
+          setRect(element.getBoundingClientRect());
+          setSectionRect(section.getBoundingClientRect());
+        }
+      } else if (latest === 0) {
+        setRect(null);
+        setSectionRect(null);
+      }
+    });
+    return () => unsubscribe();
+  }, [scrollProgress, rect]);
+
+  // Track when smoothProgress reaches fully expanded state
+  useEffect(() => {
+    const unsubscribe = smoothProgress.on("change", (latest) => {
+      if (latest >= 0.99) {
+        setIsFullyExpanded(true);
+      } else {
+        setIsFullyExpanded(false);
+      }
+    });
+    return () => unsubscribe();
+  }, [smoothProgress]);
+
+  // Play Video B when rect becomes active (user starts scroll expansion)
+  useEffect(() => {
+    if (rect && videoBRef.current) {
+      try {
+        videoBRef.current.currentTime = 0;
+        videoBRef.current.play().catch((err) => {
+          console.warn("Autoplay was blocked or video not ready", err);
+        });
+      } catch (err) {
+        console.error("Video play error", err);
+      }
+    }
+  }, [rect]);
+
+  const fullscreenScrollY = useRef(0);
+
+  // Window wheel listener to capture scroll events on hover and during active expansion
+  useEffect(() => {
+    const handleWindowWheel = (e) => {
+      const current = scrollProgress.get();
+      if (isHovered || current > 0) {
+        const sensitivity = 0.003;
+        
+        if (e.deltaY > 0) {
+          // Scrolling down (expanding)
+          if (current < 1) {
+            e.preventDefault();
+            const next = Math.min(current + e.deltaY * sensitivity, 1);
+            scrollProgress.set(next);
+            if (next === 1) {
+              fullscreenScrollY.current = window.scrollY;
+            }
+          }
+          // If current === 1, allow natural page scroll down
+        } else if (e.deltaY < 0) {
+          // Scrolling up (shrinking)
+          if (window.scrollY > fullscreenScrollY.current + 5) {
+            // Allow natural page scroll up
+            return;
+          }
+          
+          if (current > 0) {
+            e.preventDefault();
+            const next = Math.max(current + e.deltaY * sensitivity, 0);
+            scrollProgress.set(next);
+          }
+        }
+      }
+    };
+
+    window.addEventListener('wheel', handleWindowWheel, { passive: false });
+    return () => {
+      window.removeEventListener('wheel', handleWindowWheel);
+    };
+  }, [isHovered, scrollProgress]);
+
+  // Transform values for fullscreen overlay video
+  const x = useTransform(smoothProgress, [0, 1], [rect ? rect.left : 0, 0]);
+  const y = useTransform(smoothProgress, [0, 1], [rect ? rect.top : 0, 0]);
+  const width = useTransform(smoothProgress, [0, 1], [rect ? rect.width : 0, typeof window !== 'undefined' ? window.innerWidth : 1920]);
+  const height = useTransform(smoothProgress, [0, 1], [rect ? rect.height : 0, typeof window !== 'undefined' ? window.innerHeight : 1080]);
+  const borderRadius = useTransform(smoothProgress, [0, 1], [20, 0]);
+  const otherOpacity = useTransform(smoothProgress, [0, 1], [1, 0]);
+
+  // Soft transitions to dissolve static image into moving video layer
+  const imageOpacity = useTransform(smoothProgress, [0, 0.4], [1, 0]);
+  const videoOpacity = useTransform(smoothProgress, [0, 0.4], [0, 1]);
+
   return (
-    <section className="relative min-h-screen flex flex-col justify-center pt-10 pb-8 bg-[#000000] z-10 overflow-hidden px-[22px]">
+    <section ref={sectionRef} className="relative min-h-screen flex flex-col justify-center pt-10 pb-8 bg-[#000000] z-10 overflow-hidden px-[22px]">
       {/* Scope bento custom grid template areas and exact responsive behavior */}
       <style>{`
         .bento-grid-container {
           display: grid;
           gap: 14px;
           grid-template-columns: repeat(4, 1fr);
-          grid-template-rows: auto 245px 61px 135px;
+          grid-template-rows: auto 215px 61px 135px;
           grid-template-areas:
             "top-row top-row top-row top-row"
             "left1 hero hero right1"
@@ -81,7 +191,7 @@ const ProductBento = () => {
         <div className="absolute bottom-[10%] right-[8%] w-0.5 h-0.5 bg-white rounded-full opacity-25"></div>
       </div>
 
-      <div className="max-w-[1560px] mx-auto relative z-10 w-full">
+      <motion.div style={{ opacity: otherOpacity }} className="max-w-[1560px] mx-auto relative z-10 w-full">
         {/* Centered Heading with Premium Typography */}
         <div className="text-center mb-6 select-none">
           <motion.h2 
@@ -99,14 +209,14 @@ const ProductBento = () => {
         <div className="bento-grid-container w-full mt-0">
           
           {/* ========================================================
-              ROW 1: 4 Small Horizontal Cards with 1.4fr 1fr 1fr 1fr
+              ROW 1: 4 Small Horizontal Cards with 1.4fr 1fr 1fr 1fr (150px height)
               ======================================================== */}
           <div style={{ gridArea: 'top-row' }} className="bento-top-row-grid w-full">
             {/* Card 1: SPATIAL AUDIO (top1) */}
             <motion.div
               whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+              className="bento-card-height h-[165px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
               <div className="relative z-10 flex justify-between items-start">
@@ -123,7 +233,7 @@ const ProductBento = () => {
             <motion.div
               whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+              className="bento-card-height h-[165px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
               <div className="relative z-10 flex justify-between items-start">
@@ -140,7 +250,7 @@ const ProductBento = () => {
             <motion.div
               whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+              className="bento-card-height h-[165px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
               <div className="relative z-10 flex justify-between items-start">
@@ -157,7 +267,7 @@ const ProductBento = () => {
             <motion.div
               whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+              className="bento-card-height h-[165px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
               <div className="relative z-10 flex justify-between items-start">
@@ -175,12 +285,12 @@ const ProductBento = () => {
               ROW 2 & 3: CENTER HERO AND SIDE CARDS
               ======================================================== */}
 
-          {/* Card 5: NEURAL PROCESSING (left1) - Shorter vertical card (245px height, Row 2) */}
+          {/* Card 5: NEURAL PROCESSING (left1) - Shorter vertical card (230px height, Row 2) */}
           <motion.div
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'left1' }}
-            className="bento-card-height h-[245px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            className="bento-card-height h-[215px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
             <div className="relative z-10 flex justify-between items-start">
@@ -193,12 +303,14 @@ const ProductBento = () => {
             </div>
           </motion.div>
 
-          {/* Card 6: LARGE CENTER FEATURE CARD (hero) - Giant Center Card (320px height) */}
+          {/* Card 6: LARGE CENTER FEATURE CARD (hero) - Giant Center Card (305px height) */}
           <motion.div
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.2)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'hero' }}
-            className="bento-hero-height h-[320px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md relative overflow-hidden group cursor-default flex flex-col justify-between p-6 select-none"
+            className="bento-hero-height h-[290px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md relative overflow-hidden group cursor-default flex flex-col justify-between p-6 select-none"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.06) 0%, transparent 70%)' }}></div>
             
@@ -207,20 +319,24 @@ const ProductBento = () => {
               <div className="flex items-center gap-2">
                 <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">LUCA AI SYSTEM</span>
               </div>
-              <div className="text-[9px] font-mono text-zinc-550 uppercase tracking-wider bg-white/[0.01] border border-white/5 px-2 py-0.5 rounded-md">
+              <div className="text-[9px] font-mono text-zinc-555 uppercase tracking-wider bg-white/[0.01] border border-white/5 px-2 py-0.5 rounded-md">
                 CORE
               </div>
             </div>
 
-            {/* Perfect Floating Centered Image with aspect ratio scaling */}
-            <div className="relative w-full flex-1 aspect-[1.8/1] flex items-center justify-center pointer-events-none z-10 px-4 overflow-hidden">
+            {/* Elegant Static Image Media Container */}
+            <div 
+              ref={mediaContainerRef}
+              className="relative w-full flex-1 rounded-[20px] overflow-hidden pointer-events-none z-10 my-2"
+              style={{ opacity: rect ? 0 : 1 }}
+            >
               <img 
                 src="/bent box middel image.jpeg"
                 alt="LUCA AI Smart Speaker"
-                className="max-w-[92%] max-h-[92%] object-contain filter brightness-[0.96] contrast-[1.02] drop-shadow-[0_12px_24px_rgba(0,0,0,0.8)] group-hover:scale-[1.03] transition-transform duration-[4000ms] ease-out z-10"
+                className="w-full h-full object-cover filter brightness-[0.96] contrast-[1.02] drop-shadow-[0_12px_24px_rgba(0,0,0,0.8)]"
               />
               {/* Radial vignette overlay */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(7,7,7,0.75)_100%)] pointer-events-none z-20"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(7,7,7,0.4)_100%)] pointer-events-none z-20"></div>
             </div>
 
             {/* Bottom text */}
@@ -235,12 +351,12 @@ const ProductBento = () => {
             </div>
           </motion.div>
 
-          {/* Card 7: REAL-TIME AI (right1) - Medium vertical card (right side row 2) (245px height) */}
+          {/* Card 7: REAL-TIME AI (right1) - Medium vertical card (right side row 2) (230px height) */}
           <motion.div
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'right1' }}
-            className="bento-card-height h-[245px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            className="bento-card-height h-[215px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
             <div className="relative z-10 flex justify-between items-start">
@@ -323,7 +439,48 @@ const ProductBento = () => {
           </motion.div>
 
         </div>
-      </div>
+      </motion.div>
+      {/* Immersive Cinematic Fullscreen Video Overlay */}
+      <AnimatePresence>
+        {rect && (
+          <motion.div
+            key="immersive-video-overlay"
+            style={{
+              position: isFullyExpanded ? 'absolute' : 'fixed',
+              left: isFullyExpanded ? (sectionRect ? `${-sectionRect.left}px` : '0px') : x,
+              top: isFullyExpanded ? (sectionRect ? `${-sectionRect.top}px` : '0px') : y,
+              width: isFullyExpanded ? '100vw' : width,
+              height: isFullyExpanded ? '100vh' : height,
+              borderRadius: isFullyExpanded ? 0 : borderRadius,
+              overflow: 'hidden',
+              zIndex: 50,
+              pointerEvents: 'none',
+            }}
+          >
+            {/* Layer 1: Static Image fading out */}
+            <motion.img
+              src="/bent box middel image.jpeg"
+              alt="LUCA AI Smart Speaker"
+              style={{ opacity: imageOpacity }}
+              className="absolute inset-0 w-full h-full object-cover filter brightness-[0.96] contrast-[1.02]"
+            />
+            
+            {/* Layer 2: Video fading in */}
+            <motion.video
+              ref={videoBRef}
+              src="/bento box middle image playback video.mp4"
+              muted
+              loop
+              playsInline
+              style={{ opacity: videoOpacity }}
+              className="absolute inset-0 w-full h-full object-cover filter brightness-[0.96] contrast-[1.02]"
+            />
+
+            {/* Radial vignette overlay */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(7,7,7,0.4)_100%)] pointer-events-none z-20"></div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
