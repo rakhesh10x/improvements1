@@ -11,12 +11,18 @@ const ProductBento = () => {
           display: grid;
           gap: 14px;
           grid-template-columns: repeat(4, 1fr);
-          grid-template-rows: 135px 135px 171px 135px;
+          grid-template-rows: auto 135px 171px 135px;
           grid-template-areas:
-            "top1 top2 top3 top4"
+            "top-row top-row top-row top-row"
             "left1 hero hero right1"
             "left1 hero hero right2"
             "left2 bottom bottom right2";
+        }
+
+        .bento-top-row-grid {
+          display: grid;
+          gap: 14px;
+          grid-template-columns: 1.4fr 1fr 1fr 1fr;
         }
 
         /* Responsive tablet rules: 2-column balanced grid */
@@ -26,11 +32,13 @@ const ProductBento = () => {
             grid-template-rows: auto;
             grid-template-areas:
               "hero hero"
-              "top1 top2"
-              "top3 top4"
+              "top-row top-row"
               "left1 right1"
               "left2 right2"
               "bottom bottom";
+          }
+          .bento-top-row-grid {
+            grid-template-columns: repeat(2, 1fr);
           }
           .bento-card-height {
             height: auto !important;
@@ -45,6 +53,11 @@ const ProductBento = () => {
         /* Responsive mobile rules: single column stack */
         @media (max-width: 767px) {
           .bento-grid-container {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+          }
+          .bento-top-row-grid {
             display: flex;
             flex-direction: column;
             gap: 14px;
@@ -86,80 +99,77 @@ const ProductBento = () => {
         <div className="bento-grid-container w-full mt-0">
           
           {/* ========================================================
-              ROW 1: 4 Small Horizontal Cards (135px height)
+              ROW 1: 4 Small Horizontal Cards with 1.4fr 1fr 1fr 1fr
               ======================================================== */}
+          <div style={{ gridArea: 'top-row' }} className="bento-top-row-grid w-full">
+            {/* Card 1: SPATIAL AUDIO (top1) */}
+            <motion.div
+              whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            >
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
+              <div className="relative z-10 flex justify-between items-start">
+                <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">SPATIAL AUDIO</span>
+                <Volume2 className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
+              </div>
+              <div className="relative z-10">
+                <h3 className="text-white text-sm font-bold tracking-tight mb-1">Room Resonance</h3>
+                <p className="text-[#888] text-[10px] leading-relaxed">Concentric acoustic arrays for immersive room-scale projection.</p>
+              </div>
+            </motion.div>
 
-          {/* Card 1: SPATIAL AUDIO (top1) */}
-          <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            style={{ gridArea: 'top1' }}
-            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
-          >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
-            <div className="relative z-10 flex justify-between items-start">
-              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">SPATIAL AUDIO</span>
-              <Volume2 className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-            </div>
-            <div className="relative z-10">
-              <h3 className="text-white text-sm font-bold tracking-tight mb-1">Room Resonance</h3>
-              <p className="text-[#888] text-[10px] leading-relaxed">Concentric acoustic arrays for immersive room-scale projection.</p>
-            </div>
-          </motion.div>
+            {/* Card 2: EDGE AI (top2) */}
+            <motion.div
+              whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            >
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
+              <div className="relative z-10 flex justify-between items-start">
+                <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">EDGE AI</span>
+                <Cpu className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
+              </div>
+              <div className="relative z-10">
+                <h3 className="text-white text-sm font-bold tracking-tight mb-1">Local Inference</h3>
+                <p className="text-[#888] text-[10px] leading-relaxed">On-device neural network execution with zero latency.</p>
+              </div>
+            </motion.div>
 
-          {/* Card 2: EDGE AI (top2) */}
-          <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            style={{ gridArea: 'top2' }}
-            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
-          >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
-            <div className="relative z-10 flex justify-between items-start">
-              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">EDGE AI</span>
-              <Cpu className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-            </div>
-            <div className="relative z-10">
-              <h3 className="text-white text-sm font-bold tracking-tight mb-1">Local Inference</h3>
-              <p className="text-[#888] text-[10px] leading-relaxed">On-device neural network execution with zero cloud latency latency.</p>
-            </div>
-          </motion.div>
+            {/* Card 3: LUCA OS (top3) */}
+            <motion.div
+              whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            >
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
+              <div className="relative z-10 flex justify-between items-start">
+                <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">LUCA OS</span>
+                <Layers className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
+              </div>
+              <div className="relative z-10">
+                <h3 className="text-white text-sm font-bold tracking-tight mb-1">Real-Time Core</h3>
+                <p className="text-[#888] text-[10px] leading-relaxed">Low-level OS scheduled dynamically for sub-millisecond threads.</p>
+              </div>
+            </motion.div>
 
-          {/* Card 3: LUCA OS (top3) */}
-          <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            style={{ gridArea: 'top3' }}
-            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
-          >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
-            <div className="relative z-10 flex justify-between items-start">
-              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">LUCA OS</span>
-              <Layers className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-            </div>
-            <div className="relative z-10">
-              <h3 className="text-white text-sm font-bold tracking-tight mb-1">Real-Time Core</h3>
-              <p className="text-[#888] text-[10px] leading-relaxed">Low-level OS scheduled dynamically for sub-millisecond threads.</p>
-            </div>
-          </motion.div>
-
-          {/* Card 4: VOICE NATIVE (top4) */}
-          <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            style={{ gridArea: 'top4' }}
-            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
-          >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
-            <div className="relative z-10 flex justify-between items-start">
-              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">VOICE NATIVE</span>
-              <Radio className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-            </div>
-            <div className="relative z-10">
-              <h3 className="text-white text-sm font-bold tracking-tight mb-1">Instant Voice</h3>
-              <p className="text-[#888] text-[10px] leading-relaxed">Continuous hardware speech-to-speech loop running locally.</p>
-            </div>
-          </motion.div>
+            {/* Card 4: VOICE NATIVE (top4) */}
+            <motion.div
+              whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            >
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
+              <div className="relative z-10 flex justify-between items-start">
+                <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">VOICE NATIVE</span>
+                <Radio className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
+              </div>
+              <div className="relative z-10">
+                <h3 className="text-white text-sm font-bold tracking-tight mb-1">Instant Voice</h3>
+                <p className="text-[#888] text-[10px] leading-relaxed">Continuous hardware speech-to-speech loop running locally.</p>
+              </div>
+            </motion.div>
+          </div>
 
           {/* ========================================================
               ROW 2 & 3: CENTER HERO AND SIDE CARDS
@@ -170,7 +180,7 @@ const ProductBento = () => {
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'left1' }}
-            className="bento-card-height h-[320px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
+            className="bento-card-height h-[320px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
             <div className="relative z-10 flex justify-between items-start">
@@ -232,7 +242,7 @@ const ProductBento = () => {
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'right1' }}
-            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
+            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
             <div className="relative z-10 flex justify-between items-start">
@@ -250,7 +260,7 @@ const ProductBento = () => {
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'right2' }}
-            className="bento-card-height h-[320px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
+            className="bento-card-height h-[320px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
             <div className="relative z-10 flex justify-between items-start">
@@ -274,7 +284,7 @@ const ProductBento = () => {
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'left2' }}
-            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
+            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
             <div className="relative z-10 flex justify-between items-start">
@@ -292,7 +302,7 @@ const ProductBento = () => {
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'bottom' }}
-            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden"
+            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(120,80,255,0.05) 0%, transparent 70%)' }}></div>
             <div className="relative z-10 flex justify-between items-start">
