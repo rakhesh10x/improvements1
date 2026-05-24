@@ -24,7 +24,12 @@ const ProductBento = () => {
           if (sectionRef.current) {
             const rect = sectionRef.current.getBoundingClientRect();
             const viewportHeight = window.innerHeight;
-            const isVisible = rect.top >= -60 && rect.bottom <= viewportHeight + 60;
+            // Check if section occupies the screen correctly:
+            // If section height is larger than viewport, it must fill the screen.
+            // If section height is smaller than viewport, it must be fully in view.
+            const isVisible = rect.height >= viewportHeight
+              ? (rect.top <= 100 && rect.bottom >= viewportHeight - 100)
+              : (rect.top >= -100 && rect.bottom <= viewportHeight + 100);
             setIsSectionFullyVisible(isVisible);
           }
           ticking = false;
@@ -180,16 +185,17 @@ const ProductBento = () => {
   // 4. Play video when animation finishes or expands
   useEffect(() => {
     let active = true;
-    
+    let timer1, timer2, timer3;
+    const video = videoBRef.current;
+
     const playVideo = async () => {
-      const video = videoBRef.current;
       if (!video) return;
 
-      // Ensure properties are configured correctly
+      // Ensure properties are configured correctly to bypass modern browser autoplay rules
       video.muted = true;
+      video.defaultMuted = true;
       video.playsInline = true;
       video.loop = true;
-      video.preload = "auto";
 
       try {
         await video.play();
@@ -214,20 +220,24 @@ const ProductBento = () => {
     };
 
     if (isExpanded) {
-      const timer = setTimeout(() => {
-        playVideo();
-      }, 50);
+      // Try playing immediately, plus retry multiple times to handle React render commits
+      playVideo();
+      timer1 = setTimeout(playVideo, 50);
+      timer2 = setTimeout(playVideo, 150);
+      timer3 = setTimeout(playVideo, 500);
 
       return () => {
         active = false;
-        clearTimeout(timer);
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+        clearTimeout(timer3);
       };
     } else {
-      if (videoBRef.current) {
-        videoBRef.current.pause();
+      if (video) {
+        video.pause();
       }
     }
-  }, [isExpanded]);
+  }, [isExpanded, isAnimationDone]);
 
   // 5. Dispatch custom event for navbar hiding/showing
   useEffect(() => {
@@ -464,7 +474,7 @@ const ProductBento = () => {
                   className="w-full h-full flex items-center justify-center"
                 >
                   <motion.img 
-                    src="/resolution changed bento box image.png"
+                    src="/resolution%20changed%20bento%20box%20image.png"
                     alt="LUCA AI"
                     style={{
                       width: '100%',
@@ -628,7 +638,7 @@ const ProductBento = () => {
             >
               {/* Static image shown during morph */}
               <motion.img
-                src="/resolution changed bento box image.png"
+                src="/resolution%20changed%20bento%20box%20image.png"
                 alt="LUCA AI"
                 initial={false}
                 animate={{ opacity: isAnimationDone ? 0 : 1 }}
@@ -638,8 +648,19 @@ const ProductBento = () => {
 
               {/* Video layer */}
               <video
-                ref={videoBRef}
-                src="/bento box middle image playback video.mp4"
+                ref={(el) => {
+                  videoBRef.current = el;
+                  if (el) {
+                    el.muted = true;
+                    el.defaultMuted = true;
+                    el.playsInline = true;
+                    el.loop = true;
+                    el.play().catch(err => {
+                      console.log("Muted autoplay on mount callback failed:", err);
+                    });
+                  }
+                }}
+                src="/bento%20box%20middle%20image%20playback%20video.mp4"
                 autoPlay
                 muted
                 loop
