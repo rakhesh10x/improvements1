@@ -14,7 +14,7 @@ const ProductShowcase = () => {
           transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
           className="w-full flex items-center justify-center relative pointer-events-none"
         >
-          <div className="w-full flex items-center justify-center relative p-6 md:p-12 lg:p-16">
+          <div className="w-full flex items-center justify-center relative p-4 md:p-8 lg:p-10">
             {/* Hardware Render Image */}
             <img 
               src="/resolution%20changed%20hardware%20image.png"
