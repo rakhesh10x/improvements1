@@ -39,7 +39,7 @@ const ProductPage = () => {
         
         <ProductBento />
         
-        <ProductShowcase />
+        <ProductShowcase openContactModal={() => setIsContactModalOpen(true)} />
         
         <Footer minimal={true} openContactModal={() => setIsContactModalOpen(true)} />
       </div>
