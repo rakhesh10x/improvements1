@@ -70,29 +70,20 @@ const ProductBento = () => {
 
       <div className="max-w-[1560px] mx-auto relative z-10 w-full">
         {/* Centered Heading with Premium Typography */}
-        <div className="text-center mb-8 select-none">
+        <div className="text-center mb-6 select-none">
           <motion.h2 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-            className="text-[30px] md:text-[40px] lg:text-[52px] font-bold tracking-tight text-white mb-2 uppercase drop-shadow-[0_0_30px_rgba(255,255,255,0.05)] font-sans"
+            className="text-[30px] md:text-[40px] lg:text-[52px] font-bold tracking-tight text-white mb-0 uppercase drop-shadow-[0_0_30px_rgba(255,255,255,0.05)] font-sans"
           >
             WORLD’S FIRST AI SMART SPEAKER
           </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1], delay: 0.12 }}
-            className="text-[13px] md:text-[15px] text-zinc-500 font-light tracking-wide max-w-[620px] mx-auto"
-          >
-            Built with LUCA Hardware, LUCA OS, and Real-Time AI Intelligence.
-          </motion.p>
         </div>
 
         {/* Bento Grid Container */}
-        <div className="bento-grid-container w-full">
+        <div className="bento-grid-container w-full mt-0">
           
           {/* ========================================================
               ROW 1: 4 Small Horizontal Cards (135px height)
