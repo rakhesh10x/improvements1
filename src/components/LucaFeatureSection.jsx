@@ -191,7 +191,7 @@ const LucaFeatureSection = ({ openContactModal }) => {
             {/* ── Custom controls bar ── */}
             <div
               className="absolute bottom-0 left-0 right-0 z-30 transition-opacity duration-300"
-              style={{ opacity: ctrlVisible || !isPlaying ? 1 : 0 }}
+              style={{ opacity: hasStarted && (ctrlVisible || !isPlaying) ? 1 : 0 }}
             >
               {/* Gradient backing so text/icons are readable */}
               <div className="absolute inset-0 pointer-events-none"
