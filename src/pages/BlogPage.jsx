@@ -4,8 +4,8 @@ import { Calendar } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactModal from '../components/ContactModal';
-import Starfield from '../components/Starfield';
 import TechnicalFiller from '../components/TechnicalFiller';
+import CenterExpandingGrid from '../components/CenterExpandingGrid';
 
 export const blogPosts = [
   {
@@ -163,9 +163,9 @@ const BlogPage = () => {
       {/* Global Noise Overlay */}
       <div className="bg-noise fixed pointer-events-none z-50"></div>
 
-      {/* Starfield */}
-      <div className="absolute top-0 left-0 right-0 h-[1000px] w-full pointer-events-none z-0 overflow-hidden opacity-70">
-        <Starfield />
+      {/* Fullscreen Digital Matrix Background */}
+      <div className="absolute top-0 left-0 right-0 w-full h-[100svh] pointer-events-none z-0 overflow-hidden">
+        <CenterExpandingGrid />
       </div>
 
       <div className="relative z-10 flex flex-col min-h-screen">
@@ -175,21 +175,23 @@ const BlogPage = () => {
         <main className="flex-grow pt-32 pb-24">
           
           {/* Blog Hero Section */}
-          <section className="relative w-full max-w-[1200px] mx-auto px-6 pt-16 pb-16 lg:pb-24 text-center flex flex-col items-center">
+          <section className="relative w-full mx-auto px-6 pt-32 pb-24 min-h-[75svh] flex flex-col justify-center items-center overflow-hidden border-b border-white/5">
+            {/* Background moved to fullscreen layer above */}
             
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-[#0a0a0f] mb-8 shadow-[0_0_15px_rgba(81,45,168,0.15)]">
-              <div className="w-2 h-2 rounded-full bg-[#512da8] animate-pulse"></div>
-              <span className="text-[#ccc] text-sm font-medium">Recent blog updates</span>
+            <div className="relative z-10 flex flex-col items-center max-w-[1200px] mx-auto w-full">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-[#0a0a0f] mb-8 shadow-[0_0_15px_rgba(81,45,168,0.15)]">
+                <div className="w-2 h-2 rounded-full bg-[#512da8] animate-pulse"></div>
+                <span className="text-[#ccc] text-sm font-medium">Recent blog updates</span>
+              </div>
+
+              <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1] mb-6 max-w-4xl text-center">
+                Explore our most <br className="hidden md:block" /> recent blog posts
+              </h1>
+              
+              <p className="text-[#888] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed font-light text-center">
+                Fintech is its potential to promote financial inclusion. In many parts of the world, millions of people lack access to traditional banking services.
+              </p>
             </div>
-
-            <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1] mb-6 max-w-4xl">
-              Explore our most <br className="hidden md:block" /> recent blog posts
-            </h1>
-            
-            <p className="text-[#888] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed font-light">
-              Fintech is its potential to promote financial inclusion. In many parts of the world, millions of people lack access to traditional banking services.
-            </p>
-
           </section>
 
           {/* Blog Grid Section */}
