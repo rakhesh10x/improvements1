@@ -60,17 +60,32 @@ const AIPage = () => {
       `}</style>
 
       <div className="bg-noise fixed pointer-events-none z-50"></div>
-      <div className="bg-grid absolute inset-0 pointer-events-none z-0 opacity-40"></div>
 
-      <div className="absolute top-0 left-0 right-0 h-[600px] w-full pointer-events-none z-0 overflow-hidden">
+      {/* Fullscreen Space Background for Section 1 */}
+      <div className="absolute top-0 left-0 right-0 w-full h-[100svh] pointer-events-none z-0 overflow-hidden">
         <Starfield />
       </div>
 
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar openContactModal={() => setIsContactModalOpen(true)} />
 
-        {/* Hero */}
-        <main className="relative px-6 pt-40 pb-24 max-w-[1360px] mx-auto overflow-visible z-10 min-h-[70svh] flex items-center w-full">
+        <main className="flex-grow">
+          {/* Section 1: New Premium Hero */}
+          <section className="relative w-full min-h-[100svh] flex flex-col justify-center items-center px-4 sm:px-6 -mt-20 z-10 border-b border-white/5">
+            <div className="flex flex-col items-center text-center w-full max-w-[1360px] mx-auto px-6">
+              <div className="inline-flex items-center gap-2 bg-[#512da8]/10 border border-[#512da8]/30 rounded-full px-4 py-1.5 w-fit mb-16 shadow-[0_0_15px_rgba(81,45,168,0.15)]">
+                <Sparkles className="w-3.5 h-3.5 text-[#a78bfa]" />
+                <span className="text-[#a78bfa] text-[10px] sm:text-xs uppercase tracking-[0.35em] font-bold">Introducing</span>
+              </div>
+              
+              <h1 className="text-white text-[clamp(2rem,7vw,6.25rem)] font-semibold tracking-tight leading-[1] whitespace-nowrap">
+                Language Fluency Model<sup className="text-[0.3em] text-[#a78bfa] font-medium tracking-normal ml-1 relative -top-[1em]">™</sup>
+              </h1>
+            </div>
+          </section>
+
+          {/* Section 2: Old AI Hero (Features/Card) */}
+          <section className="relative px-6 pt-32 pb-24 max-w-[1360px] mx-auto overflow-visible z-10 min-h-[70svh] flex items-center w-full">
           <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-center">
 
             {/* Left */}
@@ -178,7 +193,7 @@ const AIPage = () => {
             </div>
 
           </div>
-        </main>
+          </section>
 
         {/* Capabilities Section */}
         <section className="relative z-10 px-6 pb-16">
@@ -241,6 +256,7 @@ const AIPage = () => {
           <FeatureLinks mode="ai" />
         </div>
 
+        </main>
         <Footer openContactModal={() => setIsContactModalOpen(true)} />
       </div>
 
