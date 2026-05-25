@@ -92,7 +92,7 @@ const Navbar = ({ openContactModal }) => {
               <img 
                 src="https://i.ibb.co/Y781ky06/Screenshot-2026-05-26-000916-removebg-preview.png"
                 alt="10xTechnologies Logo"
-                className="h-12 md:h-14 w-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+                className="h-10 md:h-12 w-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
               />
             </Link>
             
