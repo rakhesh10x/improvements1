@@ -11,6 +11,10 @@ const CustomCursor = () => {
     };
 
     const handleMouseOver = (e) => {
+      if (e.target.closest('.no-cursor-track')) {
+        setIsHovering(false);
+        return;
+      }
       if (
         e.target.tagName.toLowerCase() === 'button' ||
         e.target.tagName.toLowerCase() === 'a' ||

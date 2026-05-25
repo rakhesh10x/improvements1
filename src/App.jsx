@@ -5,6 +5,8 @@ import AIPage from './pages/AIPage';
 import ProductPage from './pages/ProductPage';
 import SpacePage from './pages/SpacePage';
 import ModelsPage from './pages/ModelsPage';
+import BlogPage from './pages/BlogPage';
+import BlogDetails from './pages/BlogDetails';
 
 const App = () => {
   return (
@@ -14,6 +16,8 @@ const App = () => {
       <Route path="/product" element={<ProductPage />} />
       <Route path="/try" element={<SpacePage />} />
       <Route path="/models" element={<ModelsPage />} />
+      <Route path="/blog" element={<BlogPage />} />
+      <Route path="/blog/:id" element={<BlogDetails />} />
     </Routes>
   );
 };

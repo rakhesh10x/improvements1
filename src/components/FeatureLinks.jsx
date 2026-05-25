@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import ShineBorder from './ShineBorder';
 
 const FeatureLinks = ({ mode = 'all' }) => {
@@ -37,7 +37,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
       title: 'The Architecture Behind LUCA',
       description: 'The research behind our custom OS, where fine-tuning SLM becomes a closed loop.',
       image: '/resolution changed reserach container.png',
-      link: '#',
+      link: '/blog',
       buttonText: 'Blog',
       features: [
         "Custom OS architecture for SLM optimization",
@@ -157,15 +157,15 @@ const FeatureLinks = ({ mode = 'all' }) => {
                           The research behind our custom OS, <br /> where fine-tuning SLM becomes a closed loop.
                         </p>
 
-                        <a
-                          href={card.link}
+                        <Link
+                          to={card.link}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/10 bg-white/5 text-white text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-500 group/btn"
                         >
                           <span>{card.buttonText}</span>
                           <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
-                        </a>
+                        </Link>
                       </div>
                     ) : (
                       <>
