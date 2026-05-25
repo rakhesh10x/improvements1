@@ -1,7 +1,27 @@
 import { motion } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 import Logo10X from './Logo10X';
 
 const SmartSpeakerHero = () => {
+  const videoRef = useRef(null);
+  const timerRef = useRef(null);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const onEnded = () => {
+      timerRef.current = setTimeout(() => {
+        v.currentTime = 0;
+        v.play().catch(() => {});
+      }, 10000);
+    };
+    v.addEventListener('ended', onEnded);
+    return () => {
+      v.removeEventListener('ended', onEnded);
+      clearTimeout(timerRef.current);
+    };
+  }, []);
+
   return (
     <section className="relative pt-28 pb-6 overflow-hidden min-h-[90svh] flex items-center">
       <div className="max-w-[1360px] mx-auto px-6 relative z-10">
@@ -37,12 +57,16 @@ const SmartSpeakerHero = () => {
             transition={{ duration: 1.2, delay: 0.2 }}
             className="col-span-12 md:col-span-6 flex justify-end relative"
           >
-            <div className="relative w-full max-w-lg aspect-square flex items-center justify-center pointer-events-none scale-110">
-              <img 
-                src={`${import.meta.env.BASE_URL}product home page.png`}
-                alt="LUCA Product"
-                className="w-full h-full object-contain"
-                fetchpriority="high"
+            <div className="relative w-full max-w-lg flex items-center justify-center pointer-events-none" style={{ marginLeft: '65px', marginRight: '-90px' }}>
+              <video
+                ref={videoRef}
+                src="/luca_reveal.webm"
+                autoPlay
+                muted
+                playsInline
+                preload="auto"
+                className="w-full h-auto"
+                style={{ background: 'transparent' }}
               />
             </div>
           </motion.div>
