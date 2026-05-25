@@ -5,7 +5,7 @@ import vid from '../assets/vid.mp4';
 
 const LucaFeatureSection = ({ openContactModal }) => {
   return (
-    <section className="relative w-full bg-black overflow-hidden border-t border-white/[0.05]">
+    <section className="relative w-full bg-black overflow-hidden">
 
       {/* Ambient glow blobs */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -19,7 +19,7 @@ const LucaFeatureSection = ({ openContactModal }) => {
         />
       </div>
 
-      <div className="relative z-10 max-w-[1560px] mx-auto px-6 md:px-12 lg:px-[72px] py-24 md:py-32 flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+      <div className="relative z-10 max-w-[1560px] mx-auto px-6 md:px-12 lg:px-[72px] py-4 lg:py-6 flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
 
         {/* ── LEFT: text content ── */}
         <motion.div

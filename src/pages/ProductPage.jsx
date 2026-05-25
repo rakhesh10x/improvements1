@@ -5,6 +5,7 @@ import ProductTabs from '../components/ProductTabs';
 import ProductBento from '../components/ProductBento';
 import LucaFeatureSection from '../components/LucaFeatureSection';
 import ProductShowcase from '../components/ProductShowcase';
+import TechnicalFiller from '../components/TechnicalFiller';
 import Footer from '../components/Footer';
 import ContactModal from '../components/ContactModal';
 import Starfield from '../components/Starfield';
@@ -35,15 +36,20 @@ const ProductPage = () => {
         <Navbar openContactModal={() => setIsContactModalOpen(true)} />
         
         <SmartSpeakerHero />
-        
+        <TechnicalFiller />
+
         <ProductTabs />
-        
+        <TechnicalFiller />
+
         <ProductBento />
+        <TechnicalFiller />
 
         <LucaFeatureSection openContactModal={() => setIsContactModalOpen(true)} />
+        <TechnicalFiller />
 
         <ProductShowcase openContactModal={() => setIsContactModalOpen(true)} />
-        
+        <TechnicalFiller />
+
         <Footer minimal={true} openContactModal={() => setIsContactModalOpen(true)} />
       </div>
 

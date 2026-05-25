@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ProductShowcase = ({ openContactModal }) => {
   return (
-    <section className="relative w-full bg-black z-20 overflow-hidden border-t border-white/5">
+    <section className="relative w-full bg-black z-20 overflow-hidden py-4 lg:py-6">
       {/* Immersive Full-Width Cinematic Image Container */}
       <motion.div 
         initial={{ opacity: 0, y: 30 }}

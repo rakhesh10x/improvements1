@@ -4,7 +4,7 @@ import { Cpu, Layers, Radio, Globe, Zap, Sparkles, Volume2, Lock, Eye } from 'lu
 
 const ProductBento = () => {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center pt-10 pb-8 bg-black z-10 overflow-hidden px-[22px]">
+    <section className="relative flex flex-col py-4 lg:py-6 bg-black z-10 overflow-hidden px-[22px]">
       <style>{`
         .bento-grid-container {
           display: grid;

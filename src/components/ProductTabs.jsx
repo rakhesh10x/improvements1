@@ -156,7 +156,7 @@ const ProductTabs = () => {
   const activeContent = tabs.find(t => t.id === activeTab);
 
   return (
-    <section className="pt-16 pb-12 bg-black relative z-10 overflow-hidden border-t border-white/5">
+    <section className="py-4 lg:py-6 bg-black relative z-10 overflow-hidden">
       <div className="max-w-[1360px] mx-auto px-6">
         
         {/* Header */}
