@@ -10,12 +10,13 @@ const ProductBento = () => {
           display: grid;
           gap: 14px;
           grid-template-columns: repeat(4, 1fr);
-          grid-template-rows: auto 215px 61px 135px;
+          grid-template-rows: auto 215px 61px 68px 68px;
           grid-template-areas:
             "top-row top-row top-row top-row"
-            "left1 hero hero right1"
-            "left2 hero hero right2"
-            "left2 bottom bottom right2";
+            "left1   hero    hero    right1"
+            "left2   hero    hero    right2"
+            "left2   hero    hero    right2"
+            "left2   bottom  bottom  right2";
         }
         .bento-top-row-grid {
           display: grid;
@@ -119,11 +120,11 @@ const ProductBento = () => {
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.2)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'hero' }}
-            className="bento-hero-height h-[290px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] relative overflow-hidden group"
+            className="bento-hero-height rounded-[28px] border border-white/[0.05] bg-white/[0.01] relative overflow-hidden group"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center,rgba(120,80,255,0.07)0%,transparent 70%)' }} />
             <img
-              src="/resolution%20changed%20bento%20box%20image.png"
+              src="/worldfirst.png"
               alt="LUCA AI"
               className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
               draggable={false}
@@ -153,7 +154,7 @@ const ProductBento = () => {
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'right2' }}
-            className="bento-card-height h-[210px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            className="bento-card-height h-[225px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center,rgba(120,80,255,0.05)0%,transparent 70%)' }} />
             <div className="relative z-10 flex justify-between items-start">
@@ -173,7 +174,7 @@ const ProductBento = () => {
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'left2' }}
-            className="bento-card-height h-[210px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            className="bento-card-height h-[225px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center,rgba(120,80,255,0.05)0%,transparent 70%)' }} />
             <div className="relative z-10 flex justify-between items-start">
@@ -193,24 +194,12 @@ const ProductBento = () => {
             whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'bottom' }}
-            className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            className="bento-card-height h-[68px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md px-5 flex flex-row items-center justify-between group cursor-default transition-all overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center,rgba(120,80,255,0.05)0%,transparent 70%)' }} />
-            <div className="relative z-10 flex justify-between items-start">
-              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">ECOSYSTEM SYNC</span>
-              <Globe className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-            </div>
-            <div className="relative z-10 flex justify-between items-end">
-              <div>
-                <h3 className="text-white text-sm font-bold tracking-tight mb-1">Indian AI Ecosystem</h3>
-                <p className="text-[#888] text-[10px] leading-relaxed max-w-xl">
-                  Deeply integrated into regional Indian contexts, dialect semantics, and localized voice synthesis nodes.
-                </p>
-              </div>
-              <div className="text-[9px] font-mono text-zinc-600 uppercase tracking-widest pr-1 font-semibold hidden md:block select-none">
-                REGIONAL SYNC
-              </div>
-            </div>
+            <span className="relative z-10 text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">ECOSYSTEM SYNC</span>
+            <h3 className="relative z-10 text-white text-sm font-bold tracking-tight">Indian AI Ecosystem</h3>
+            <Globe className="relative z-10 w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
           </motion.div>
 
         </div>

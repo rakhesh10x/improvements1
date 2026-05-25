@@ -26,29 +26,123 @@ const features = [
 
 const WorldsFirstSection = () => {
   return (
-    <section className="py-24 bg-black text-white">
+    <section className="py-4 lg:py-6 bg-black text-white">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-6xl font-bold mb-16 tracking-tight">World's 1st</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {features.map((feature, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-[#0A0A0A] border border-white/5 p-10 rounded-3xl flex items-start gap-8 group hover:border-purple-500/30 transition-all"
+        <h2 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight">World's 1st</h2>
+
+        {/* 3-column grid: card | image | card / card | image | card */}
+        <div
+          className="grid gap-8"
+          style={{
+            gridTemplateColumns: '1fr auto 1fr',
+            gridTemplateRows: 'auto auto',
+            gridTemplateAreas: `
+              "tl center tr"
+              "bl center br"
+            `,
+            alignItems: 'stretch',
+          }}
+        >
+          {/* Top-left */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.0 }}
+            viewport={{ once: true }}
+            style={{ gridArea: 'tl' }}
+            className="bg-[#0A0A0A] border border-white/5 p-10 rounded-3xl flex items-start gap-8 group hover:border-purple-500/30 transition-all"
+          >
+            <div className="w-16 h-16 shrink-0">
+              <img src={`${import.meta.env.BASE_URL}${features[0].icon.slice(1)}`} alt={features[0].title} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">{features[0].title}</h3>
+              <p className="text-gray-400 leading-relaxed text-sm">{features[0].description}</p>
+            </div>
+          </motion.div>
+
+          {/* Center image — spans both rows */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true }}
+            style={{ gridArea: 'center' }}
+            className="flex items-center justify-center"
+          >
+            <div
+              className="rounded-3xl overflow-hidden"
+              style={{
+                width: '320px',
+                height: '100%',
+                minHeight: '300px',
+                background: '#0A0A0A',
+                border: '1px solid rgba(255,255,255,0.05)',
+              }}
             >
-              <div className="w-20 h-20 shrink-0">
-                <img src={`${import.meta.env.BASE_URL}${feature.icon.slice(1)}`} alt={feature.title} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{feature.description}</p>
-              </div>
-            </motion.div>
-          ))}
+              <img
+                src="/worldfirst.png"
+                alt="World's First AI Smart Speaker"
+                className="w-full h-full object-cover"
+                draggable={false}
+              />
+            </div>
+          </motion.div>
+
+          {/* Top-right */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.1 }}
+            viewport={{ once: true }}
+            style={{ gridArea: 'tr' }}
+            className="bg-[#0A0A0A] border border-white/5 p-10 rounded-3xl flex items-start gap-8 group hover:border-purple-500/30 transition-all"
+          >
+            <div className="w-16 h-16 shrink-0">
+              <img src={`${import.meta.env.BASE_URL}${features[1].icon.slice(1)}`} alt={features[1].title} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">{features[1].title}</h3>
+              <p className="text-gray-400 leading-relaxed text-sm">{features[1].description}</p>
+            </div>
+          </motion.div>
+
+          {/* Bottom-left */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+            style={{ gridArea: 'bl' }}
+            className="bg-[#0A0A0A] border border-white/5 p-10 rounded-3xl flex items-start gap-8 group hover:border-purple-500/30 transition-all"
+          >
+            <div className="w-16 h-16 shrink-0">
+              <img src={`${import.meta.env.BASE_URL}${features[2].icon.slice(1)}`} alt={features[2].title} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">{features[2].title}</h3>
+              <p className="text-gray-400 leading-relaxed text-sm">{features[2].description}</p>
+            </div>
+          </motion.div>
+
+          {/* Bottom-right */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+            viewport={{ once: true }}
+            style={{ gridArea: 'br' }}
+            className="bg-[#0A0A0A] border border-white/5 p-10 rounded-3xl flex items-start gap-8 group hover:border-purple-500/30 transition-all"
+          >
+            <div className="w-16 h-16 shrink-0">
+              <img src={`${import.meta.env.BASE_URL}${features[3].icon.slice(1)}`} alt={features[3].title} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">{features[3].title}</h3>
+              <p className="text-gray-400 leading-relaxed text-sm">{features[3].description}</p>
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
