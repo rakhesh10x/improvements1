@@ -20,7 +20,12 @@ const Hero = () => {
             className="mb-2 w-full max-w-6xl mx-auto"
           >
             <div className="flex justify-center items-center w-full">
-              <Logo10X className="h-14 md:h-20 lg:h-28 w-auto" fetchpriority="high" />
+              <img
+                src="https://i.ibb.co/Y781ky06/Screenshot-2026-05-26-000916-removebg-preview.png"
+                alt="10X Technologies"
+                className="h-14 md:h-20 lg:h-28 w-auto object-contain"
+                fetchpriority="high"
+              />
             </div>
           </motion.div>
 

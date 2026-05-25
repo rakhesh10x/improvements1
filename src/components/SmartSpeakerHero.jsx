@@ -40,7 +40,11 @@ const SmartSpeakerHero = () => {
             </div>
 
             <div className="mb-2 h-16 md:h-24 flex items-center">
-              <Logo10X className="h-full w-auto" />
+              <img
+                src="https://i.ibb.co/Y781ky06/Screenshot-2026-05-26-000916-removebg-preview.png"
+                alt="10X Technologies"
+                className="h-full w-auto object-contain"
+              />
             </div>
 
             <h2 className="text-xl md:text-3xl font-bold text-white mb-6 leading-tight">

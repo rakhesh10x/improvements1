@@ -90,7 +90,7 @@ const Navbar = ({ openContactModal }) => {
           <div className="flex items-center gap-6">
             <Link to="/" className="flex items-center cursor-pointer group">
               <img 
-                src="https://i.ibb.co/LhBhDPhX/Screenshot-2026-05-11-153816-removebg-preview.png"
+                src="https://i.ibb.co/Y781ky06/Screenshot-2026-05-26-000916-removebg-preview.png"
                 alt="10xTechnologies Logo"
                 className="h-12 md:h-14 w-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
               />
