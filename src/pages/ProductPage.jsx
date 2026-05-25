@@ -18,7 +18,7 @@ const ProductPage = () => {
   }, []);
 
   return (
-    <div className="min-h-[100svh] bg-black text-white selection:bg-purple-500/30 font-sans relative w-full flex flex-col overflow-x-hidden">
+    <div className="min-h-[100svh] bg-black text-white selection:bg-purple-500/30 font-sans relative w-full flex flex-col">
       <style>{`
         /* Scoped override to ensure no grid on product page */
         .bg-grid { display: none !important; }
