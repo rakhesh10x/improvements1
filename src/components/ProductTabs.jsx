@@ -220,54 +220,48 @@ const ProductTabs = () => {
 
         {/* Full-width tab bar */}
         <div className="w-full mb-10">
-          {/* Tab buttons row + pause button */}
-          <div className="flex items-stretch gap-3 w-full">
-            {/* Tabs */}
-            <div className="flex flex-1 border border-white/[0.07] rounded-full overflow-hidden">
+          <div className="flex items-stretch gap-2 w-full">
+            {/* Tabs — progress lines live INSIDE so overflow:hidden clips at corners */}
+            <div className="flex flex-1 border border-white/[0.07] rounded-full overflow-hidden relative">
               {tabs.map((tab, idx) => (
                 <button
                   key={tab.id}
                   onClick={() => handleTabClick(idx)}
-                  className={`relative flex-1 flex items-center gap-3 px-6 py-4 text-left transition-all duration-300 cursor-pointer border-r border-white/[0.07] last:border-r-0 ${
+                  className={`relative flex-1 flex items-center gap-2 px-5 py-3 text-left transition-all duration-300 cursor-pointer border-r border-white/[0.07] last:border-r-0 ${
                     activeIdx === idx ? 'bg-white/[0.06]' : 'bg-transparent hover:bg-white/[0.03]'
                   }`}
                 >
-                  <span className={`text-[10px] font-bold tracking-widest shrink-0 transition-colors duration-300 ${
+                  <span className={`text-[9px] font-bold tracking-widest shrink-0 transition-colors duration-300 ${
                     activeIdx === idx ? 'text-purple-400' : 'text-zinc-600'
                   }`}>
                     {String(idx + 1).padStart(2, '0')}
                   </span>
-                  <span className={`text-xs md:text-sm font-bold uppercase tracking-[0.15em] transition-colors duration-300 ${
+                  <span className={`text-[11px] font-bold uppercase tracking-[0.15em] transition-colors duration-300 ${
                     activeIdx === idx ? 'text-white' : 'text-zinc-500'
                   }`}>
                     {tab.title}
                   </span>
+
+                  {/* Progress line — inside each tab, clipped by parent overflow-hidden */}
+                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-transparent">
+                    <div
+                      ref={el => barRefs.current[idx] = el}
+                      className="h-full bg-purple-400"
+                      style={{ width: '0%' }}
+                    />
+                  </div>
                 </button>
               ))}
             </div>
 
-            {/* Pause / Play — independent pill box, same height as tabs */}
+            {/* Pause / Play — independent pill, same height */}
             <button
               onClick={handlePauseToggle}
-              className="px-4 py-4 flex items-center justify-center border border-white/[0.07] rounded-full bg-transparent hover:bg-white/[0.05] text-zinc-500 hover:text-white transition-all duration-200 shrink-0 cursor-pointer aspect-square"
+              className="py-3 px-3 flex items-center justify-center border border-white/[0.07] rounded-full bg-transparent hover:bg-white/[0.05] text-zinc-500 hover:text-white transition-all duration-200 shrink-0 cursor-pointer aspect-square"
               aria-label={isPaused ? 'Play' : 'Pause'}
             >
-              {isPaused ? <Play className="w-3.5 h-3.5" /> : <Pause className="w-3.5 h-3.5" />}
+              {isPaused ? <Play className="w-3 h-3" /> : <Pause className="w-3 h-3" />}
             </button>
-          </div>
-
-          {/* Progress line — only visible under the active tab */}
-          <div className="flex w-full">
-            {tabs.map((tab, idx) => (
-              <div key={tab.id} className={`flex-1 h-[3px] relative ${activeIdx === idx ? 'bg-white/[0.06]' : 'bg-transparent'}`}>
-                <div
-                  ref={el => barRefs.current[idx] = el}
-                  className="absolute left-0 top-0 h-full bg-purple-400"
-                  style={{ width: '0%' }}
-                />
-              </div>
-            ))}
-            <div className="w-[60px] h-[3px]" />
           </div>
         </div>
 
