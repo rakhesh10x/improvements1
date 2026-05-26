@@ -47,7 +47,7 @@ const WorkflowShowcase = () => {
 
       <div className="w-full max-w-[1360px] mx-auto px-6">
         {/* Architectural Grid Container */}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-0 border-t border-b border-white/[0.08] lg:border-l lg:border-r">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-0 border border-white/[0.08] rounded-[36px] overflow-hidden bg-[#050505]">
           
           {/* Left Side: Cards Column (40%) */}
           <div className="lg:col-span-5 flex flex-col border-b lg:border-b-0 lg:border-r border-white/[0.08] bg-[#050505]">
@@ -59,21 +59,23 @@ const WorkflowShowcase = () => {
               return (
                 <div 
                   key={idx}
-                  className={`relative p-8 lg:p-10 xl:p-12 flex flex-col justify-center transition-colors duration-500 cursor-pointer ${isLast ? '' : 'border-b border-white/[0.08]'} hover:bg-white/[0.02]`}
+                  className={`relative p-8 lg:p-10 xl:p-12 flex flex-col justify-center transition-colors duration-500 cursor-pointer rounded-[32px]`}
                   onClick={() => {
                     setActiveIndex(idx);
                     setIsPaused(true);
                   }}
                 >
-                  {/* Faint Background Track for Progress Bar */}
-                  <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-white/[0.03]"></div>
-                  
-                  {/* Active Animated Progress Bar */}
+                  {/* Absolute Bottom Border (prevents vertical line breaks) */}
+                  {!isLast && (
+                    <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-white/[0.08] z-0"></div>
+                  )}
+
+                  {/* Independent Animated Progress Bar */}
                   <motion.div 
-                    className="absolute left-0 top-0 w-[2px] bg-[#512da8] origin-top"
+                    className="absolute left-0 top-0 w-[2px] bg-[#512da8] origin-top z-20"
                     initial={{ height: "0%" }}
                     animate={{ 
-                      height: isActive && !isPaused ? ["0%", "100%"] : (isActive || isPast) ? "100%" : "0%" 
+                      height: isActive ? "100%" : "0%" 
                     }}
                     transition={{ 
                       duration: isActive && !isPaused ? 4 : 0.3, 
@@ -118,7 +120,7 @@ const WorkflowShowcase = () => {
           {/* Right Side: Image Container (60%) */}
           <div className="lg:col-span-7 relative bg-[#050505] p-6 sm:p-10 lg:p-16 flex items-center justify-center min-h-[400px] lg:min-h-[600px]">
             {/* Inner Frame matching editorial structure */}
-            <div className="relative w-full h-full min-h-[350px] lg:min-h-[500px] rounded-sm overflow-hidden border border-white/[0.08] bg-[#0a0a0f]">
+            <div className="relative w-full h-full min-h-[350px] lg:min-h-[500px] rounded-[32px] overflow-hidden border border-white/[0.08] bg-[#0a0a0f]">
               <AnimatePresence mode="popLayout">
                 <motion.div
                   key={activeIndex}
