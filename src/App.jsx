@@ -7,8 +7,10 @@ import SpacePage from './pages/SpacePage';
 import ModelsPage from './pages/ModelsPage';
 import BlogPage from './pages/BlogPage';
 import BlogDetails from './pages/BlogDetails';
+import { useSmoothScroll } from './hooks/useSmoothScroll';
 
 const App = () => {
+  useSmoothScroll();
   return (
     <Routes>
       <Route path="/" element={<Home />} />
