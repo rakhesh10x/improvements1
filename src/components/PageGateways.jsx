@@ -32,7 +32,7 @@ const PageGateways = () => {
     {
       title: 'Hardware',
       description: 'Specialized silicon and embedded systems designed to run AI with zero latency.',
-      image: `/bent box middel image.jpeg`,
+      image: `/worldfirst.png`,
       link: '/product',
       buttonText: 'Know more'
     },
