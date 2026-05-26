@@ -166,11 +166,11 @@ const ProductTabs = () => {
     rafRef.current = requestAnimationFrame(tick);
   }, []);
 
-  // Reset active tab's bar to 0 and start; leave other bars as-is
+  // Reset ALL bars to 0, then start only the active one
   useEffect(() => {
     pausedAtRef.current = 0;
     activeIdxRef.current = activeIdx;
-    setBarWidth(0);
+    barRefs.current.forEach(bar => { if (bar) bar.style.width = '0%'; });
     if (!isPausedRef.current) startAnim(0);
     return cancelAnim;
   }, [activeIdx, startAnim]);
