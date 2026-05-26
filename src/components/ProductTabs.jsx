@@ -134,19 +134,18 @@ const ProductTabs = () => {
   const [activeIdx, setActiveIdx] = useState(0);
   const [isPaused,  setIsPaused]  = useState(false);
 
-  const rafRef       = useRef(null);
-  const startTimeRef = useRef(null);
-  const pausedAtRef  = useRef(0);   // 0-100 pct when paused
-  const isPausedRef  = useRef(false);
-  const activeIdxRef = useRef(0);
-  const progressBarRef = useRef(null); // direct DOM ref — no re-renders
+  const rafRef        = useRef(null);
+  const startTimeRef  = useRef(null);
+  const pausedAtRef   = useRef(0);
+  const isPausedRef   = useRef(false);
+  const activeIdxRef  = useRef(0);
+  const barRefs       = useRef([null, null, null]); // one ref per tab
 
   const cancelAnim = () => cancelAnimationFrame(rafRef.current);
 
   const setBarWidth = (pct) => {
-    if (!progressBarRef.current) return;
-    const fill = ((activeIdxRef.current + pct / 100) / tabs.length) * 100;
-    progressBarRef.current.style.width = `${fill}%`;
+    const bar = barRefs.current[activeIdxRef.current];
+    if (bar) bar.style.width = `${pct}%`;
   };
 
   const startAnim = useCallback((fromPct = 0) => {
@@ -167,7 +166,7 @@ const ProductTabs = () => {
     rafRef.current = requestAnimationFrame(tick);
   }, []);
 
-  // Reset & start when tab changes
+  // Reset active tab's bar to 0 and start; leave other bars as-is
   useEffect(() => {
     pausedAtRef.current = 0;
     activeIdxRef.current = activeIdx;
@@ -254,13 +253,18 @@ const ProductTabs = () => {
             </button>
           </div>
 
-          {/* Single continuous progress line — DOM-driven at 60fps, no React re-renders */}
-          <div className="relative h-[3px] bg-white/[0.06] w-full">
-            <div
-              ref={progressBarRef}
-              className="absolute left-0 top-0 h-full bg-purple-400"
-              style={{ width: '0%' }}
-            />
+          {/* 3 separate progress tracks — each fills when its tab is active */}
+          <div className="flex w-full">
+            {tabs.map((tab, idx) => (
+              <div key={tab.id} className="flex-1 h-[3px] bg-white/[0.06] relative">
+                <div
+                  ref={el => barRefs.current[idx] = el}
+                  className="absolute left-0 top-0 h-full bg-purple-400"
+                  style={{ width: '0%' }}
+                />
+              </div>
+            ))}
+            <div className="w-[52px] h-[3px] bg-white/[0.03]" />
           </div>
         </div>
 
