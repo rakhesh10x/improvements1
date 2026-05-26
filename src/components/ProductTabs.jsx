@@ -220,43 +220,46 @@ const ProductTabs = () => {
 
         {/* Full-width tab bar */}
         <div className="w-full mb-10">
-          {/* Tab buttons row */}
-          <div className="flex items-stretch w-full border border-white/[0.07] rounded-t-lg">
-            {tabs.map((tab, idx) => (
-              <button
-                key={tab.id}
-                onClick={() => handleTabClick(idx)}
-                className={`relative flex-1 flex items-center gap-3 px-6 py-4 text-left transition-all duration-300 cursor-pointer border-r border-white/[0.07] last:border-r-0 ${
-                  activeIdx === idx ? 'bg-white/[0.06]' : 'bg-transparent hover:bg-white/[0.03]'
-                }`}
-              >
-                <span className={`text-[10px] font-bold tracking-widest shrink-0 transition-colors duration-300 ${
-                  activeIdx === idx ? 'text-purple-400' : 'text-zinc-600'
-                }`}>
-                  {String(idx + 1).padStart(2, '0')}
-                </span>
-                <span className={`text-xs md:text-sm font-bold uppercase tracking-[0.15em] transition-colors duration-300 ${
-                  activeIdx === idx ? 'text-white' : 'text-zinc-500'
-                }`}>
-                  {tab.title}
-                </span>
-              </button>
-            ))}
+          {/* Tab buttons row + pause button */}
+          <div className="flex items-stretch gap-3 w-full">
+            {/* Tabs */}
+            <div className="flex flex-1 border border-white/[0.07] rounded-lg overflow-hidden">
+              {tabs.map((tab, idx) => (
+                <button
+                  key={tab.id}
+                  onClick={() => handleTabClick(idx)}
+                  className={`relative flex-1 flex items-center gap-3 px-6 py-4 text-left transition-all duration-300 cursor-pointer border-r border-white/[0.07] last:border-r-0 ${
+                    activeIdx === idx ? 'bg-white/[0.06]' : 'bg-transparent hover:bg-white/[0.03]'
+                  }`}
+                >
+                  <span className={`text-[10px] font-bold tracking-widest shrink-0 transition-colors duration-300 ${
+                    activeIdx === idx ? 'text-purple-400' : 'text-zinc-600'
+                  }`}>
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <span className={`text-xs md:text-sm font-bold uppercase tracking-[0.15em] transition-colors duration-300 ${
+                    activeIdx === idx ? 'text-white' : 'text-zinc-500'
+                  }`}>
+                    {tab.title}
+                  </span>
+                </button>
+              ))}
+            </div>
 
-            {/* Pause / Play button */}
+            {/* Pause / Play — independent box */}
             <button
               onClick={handlePauseToggle}
-              className="px-5 flex items-center justify-center bg-transparent hover:bg-white/[0.03] text-zinc-500 hover:text-white transition-all duration-200 shrink-0 cursor-pointer border-l border-white/[0.07]"
+              className="w-12 h-full flex items-center justify-center border border-white/[0.07] rounded-lg bg-transparent hover:bg-white/[0.05] text-zinc-500 hover:text-white transition-all duration-200 shrink-0 cursor-pointer"
               aria-label={isPaused ? 'Play' : 'Pause'}
             >
               {isPaused ? <Play className="w-3.5 h-3.5" /> : <Pause className="w-3.5 h-3.5" />}
             </button>
           </div>
 
-          {/* 3 separate progress tracks — each fills when its tab is active */}
+          {/* Progress line — only visible under the active tab */}
           <div className="flex w-full">
             {tabs.map((tab, idx) => (
-              <div key={tab.id} className="flex-1 h-[3px] bg-white/[0.06] relative">
+              <div key={tab.id} className={`flex-1 h-[3px] relative ${activeIdx === idx ? 'bg-white/[0.06]' : 'bg-transparent'}`}>
                 <div
                   ref={el => barRefs.current[idx] = el}
                   className="absolute left-0 top-0 h-full bg-purple-400"
@@ -264,7 +267,7 @@ const ProductTabs = () => {
                 />
               </div>
             ))}
-            <div className="w-[52px] h-[3px] bg-white/[0.03]" />
+            <div className="w-[60px] h-[3px]" />
           </div>
         </div>
 
