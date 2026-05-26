@@ -70,17 +70,74 @@ const AIPage = () => {
         <Navbar openContactModal={() => setIsContactModalOpen(true)} />
 
         <main className="flex-grow">
-          {/* Section 1: New Premium Hero */}
-          <section className="relative w-full min-h-[100svh] flex flex-col justify-center items-center px-4 sm:px-6 -mt-20 z-10 border-b border-white/5">
-            <div className="flex flex-col items-center text-center w-full max-w-[1360px] mx-auto px-6">
-              <div className="inline-flex items-center gap-2 bg-[#512da8]/10 border border-[#512da8]/30 rounded-full px-4 py-1.5 w-fit mb-16 shadow-[0_0_15px_rgba(81,45,168,0.15)]">
-                <Sparkles className="w-3.5 h-3.5 text-[#a78bfa]" />
-                <span className="text-[#a78bfa] text-[10px] sm:text-xs uppercase tracking-[0.35em] font-bold">Introducing</span>
+          {/* Section 1: Hero */}
+          <section className="relative w-full min-h-[100svh] flex flex-col z-10 border-b border-white/5">
+            {/* Main content — vertically centered, left-aligned */}
+            <div className="flex-1 flex flex-col justify-center max-w-[1360px] mx-auto w-full px-6 sm:px-10 pt-32 pb-16">
+              <div className="max-w-3xl flex flex-col gap-8">
+
+                {/* Label */}
+                <div className="inline-flex items-center gap-2 bg-[#512da8]/10 border border-[#512da8]/30 rounded-full px-4 py-1.5 w-fit">
+                  <Sparkles className="w-3 h-3 text-[#a78bfa]" />
+                  <span className="text-[#a78bfa] text-[10px] uppercase tracking-[0.35em] font-bold">10X AI</span>
+                </div>
+
+                {/* Heading */}
+                <div>
+                  <h1 className="text-white font-extrabold tracking-tight leading-[1.0] text-[clamp(2.6rem,6.5vw,5.5rem)]">
+                    Language Fluency<br />Model
+                  </h1>
+                  <p className="mt-4 text-[clamp(1rem,2vw,1.5rem)] font-semibold text-zinc-400 tracking-tight">
+                    Conversational AI for internal knowledge.
+                  </p>
+                </div>
+
+                {/* Description */}
+                <p className="text-[#666] text-sm md:text-base leading-relaxed max-w-xl">
+                  A compact, Indic-first language layer that turns intranet data, documents, and databases into natural conversation — fully offline, license-based, and deployment-ready.
+                </p>
+
+                {/* Buttons */}
+                <div className="flex items-center gap-4 flex-wrap">
+                  <button
+                    onClick={() => setIsContactModalOpen(true)}
+                    className="px-7 py-3 rounded-full bg-white text-black text-sm font-bold tracking-wide hover:bg-zinc-200 transition-all duration-300"
+                  >
+                    Get a Demo
+                  </button>
+                  <button
+                    onClick={() => setIsContactModalOpen(true)}
+                    className="px-7 py-3 rounded-full border border-white/[0.15] text-white text-sm font-bold tracking-wide hover:border-white/40 transition-all duration-300"
+                  >
+                    Our Approach
+                  </button>
+                </div>
+
               </div>
-              
-              <h1 className="text-white text-[clamp(2rem,7vw,6.25rem)] font-semibold tracking-tight leading-[1] whitespace-nowrap">
-                Language Fluency Model<sup className="text-[0.3em] text-[#a78bfa] font-medium tracking-normal ml-1 relative -top-[1em]">™</sup>
-              </h1>
+            </div>
+
+            {/* Marquee ticker at the bottom */}
+            <div className="border-t border-white/[0.06] py-4 overflow-hidden">
+              <style>{`
+                @keyframes marquee-left {
+                  0%   { transform: translateX(0); }
+                  100% { transform: translateX(-50%); }
+                }
+                .marquee-track { animation: marquee-left 24s linear infinite; display: flex; width: max-content; }
+              `}</style>
+              <div className="marquee-track gap-0">
+                {[
+                  'INDIC-FIRST', 'FULLY OFFLINE', 'LICENSE-BASED', 'ZERO LATENCY',
+                  'ON-DEVICE', 'DEPLOYMENT-READY', 'MULTILINGUAL', 'PRIVACY BY DESIGN',
+                  'INDIC-FIRST', 'FULLY OFFLINE', 'LICENSE-BASED', 'ZERO LATENCY',
+                  'ON-DEVICE', 'DEPLOYMENT-READY', 'MULTILINGUAL', 'PRIVACY BY DESIGN',
+                ].map((tag, i) => (
+                  <span key={i} className="flex items-center gap-6 px-6 text-[11px] font-bold tracking-[0.25em] text-zinc-600 uppercase whitespace-nowrap">
+                    {tag}
+                    <span className="w-1 h-1 rounded-full bg-zinc-700 shrink-0" />
+                  </span>
+                ))}
+              </div>
             </div>
           </section>
 
