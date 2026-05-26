@@ -5,6 +5,7 @@ import FeatureLinks from '../components/FeatureLinks';
 import Footer from '../components/Footer';
 import ContactModal from '../components/ContactModal';
 import { Sparkles, Layers, Settings2, ArrowUpRight, MessageCircle, Zap, Target, Shield } from 'lucide-react';
+import WorkflowShowcase from '../components/WorkflowShowcase';
 
 const AIPage = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -61,8 +62,8 @@ const AIPage = () => {
 
       <div className="bg-noise fixed pointer-events-none z-50"></div>
 
-      {/* Fullscreen Space Background for Section 1 */}
-      <div className="absolute top-0 left-0 right-0 w-full h-[100svh] pointer-events-none z-0 overflow-hidden">
+      {/* Fullscreen Space Background */}
+      <div className="fixed top-0 left-0 right-0 w-full h-[100svh] pointer-events-none z-0 overflow-hidden">
         <Starfield />
       </div>
 
@@ -141,177 +142,256 @@ const AIPage = () => {
             </div>
           </section>
 
-          {/* Section 2: Old AI Hero (Features/Card) */}
-          <section className="relative px-6 pt-32 pb-24 max-w-[1360px] mx-auto overflow-visible z-10 min-h-[70svh] flex items-center w-full">
-          <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-center">
+          {/* Section 2: LFM Core Use Case */}
+          <section className="relative w-full z-10 py-16 md:py-24 px-6 flex flex-col items-center min-h-screen justify-center">
+            <div className="w-full max-w-[1360px] mx-auto flex flex-col">
 
-            {/* Left */}
-            <div className="flex flex-col gap-5 lg:gap-6">
-              <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-3 py-1 w-fit">
-                <Sparkles className="w-3 h-3 text-purple-400" />
-                <span className="text-purple-400 text-[9px] uppercase tracking-[0.35em] font-bold">Introducing</span>
+              {/* TOP CENTER HEADING */}
+              <div className="w-full max-w-4xl mx-auto text-center mb-10 md:mb-14">
+                <h2 className="text-white text-2xl md:text-[2rem] font-semibold tracking-tight leading-[1.25]">
+                  You do not need frontier AI for every workflow.
+                  You should not depend on APIs for internal questions.
+                </h2>
               </div>
 
-              <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
-                <span style={{ color: '#512da8' }}>10X</span>
-                <br />
-                <span className="text-white">Artificial</span>
-                <br />
-                <span className="text-white">Intelligence.</span>
-              </h1>
+              {/* MAIN CONTENT GRID */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5 w-full">
 
-              <p className="text-[#888] text-sm leading-relaxed max-w-[280px]">
-                10X AI is our core intelligence layer built for real-world communication. It understands nuance, context, intent, and meaning — the way humans do.
-              </p>
+                {/* LEFT SIDE: Large vertical image card */}
+                <div className="relative w-full rounded-[24px] overflow-hidden border border-white/5 bg-[#0a0a0f] min-h-[400px] lg:min-h-full group">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-[#0a0a0f]/40 z-10 pointer-events-none"></div>
+                  <img 
+                    src="/enterprise_server.png" 
+                    alt="Enterprise Server Setup" 
+                    className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-70"
+                  />
+                </div>
 
-              <div className="flex items-center gap-5">
-                <button
-                  onClick={() => setIsContactModalOpen(true)}
-                  className="btn-premium px-5 py-2.5 text-sm font-semibold flex items-center gap-2"
-                >
-                  Get Started <ArrowUpRight className="w-4 h-4" />
-                </button>
-                <button className="text-sm text-[#888] hover:text-white transition-colors flex items-center gap-1.5">
-                  Explore Docs <ArrowUpRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            </div>
+                {/* RIGHT SIDE: Stacked cards */}
+                <div className="flex flex-col gap-4 lg:gap-5 w-full h-full">
+                  
+                  {/* CARD 1: Large Main Card */}
+                  <div className="relative flex flex-col justify-center p-8 lg:p-10 rounded-[24px] border border-white/5 bg-[#0a0a0f]/90 backdrop-blur-xl flex-grow overflow-hidden group hover:border-white/10 transition-colors duration-500">
+                    
+                    <div className="relative z-10">
+                      <div className="inline-flex items-center gap-2 bg-[#512da8]/20 border border-[#512da8]/30 rounded-full px-3 py-1 w-fit mb-6">
+                        <span className="text-[#a78bfa] text-[9px] sm:text-[10px] uppercase tracking-[0.15em] font-bold">LFM Core</span>
+                      </div>
 
-            {/* Center Card */}
-            <div className="flex justify-center">
-              <div
-                className="relative w-[300px] md:w-[340px] rounded-[45px] bg-[#04040c] overflow-hidden flex flex-col"
-                style={{ aspectRatio: '4/5', boxShadow: '0 0 60px rgba(236,72,153,0.08), 0 0 120px rgba(139,92,246,0.06)' }}
-              >
-                {/* Subtle grid */}
-                <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none"></div>
+                      <h3 className="text-white text-xl lg:text-2xl font-semibold leading-snug mb-4 tracking-tight">
+                        Most enterprise tasks are not open-ended reasoning problems.
+                      </h3>
 
-                {/* ── Corner brackets ── */}
-                {/* top-left */}
-                <div className="corner-bracket absolute top-3 left-3 w-5 h-5 border-t-[2px] border-l-[2px] border-pink-400/80 rounded-tl-sm pointer-events-none z-30"></div>
-                {/* top-right */}
-                <div className="corner-bracket absolute top-3 right-3 w-5 h-5 border-t-[2px] border-r-[2px] border-pink-400/80 rounded-tr-sm pointer-events-none z-30"></div>
-                {/* bottom-left */}
-                <div className="corner-bracket absolute bottom-3 left-3 w-5 h-5 border-b-[2px] border-l-[2px] border-pink-400/80 rounded-bl-sm pointer-events-none z-30"></div>
-                {/* bottom-right */}
-                <div className="corner-bracket absolute bottom-3 right-3 w-5 h-5 border-b-[2px] border-r-[2px] border-pink-400/80 rounded-br-sm pointer-events-none z-30"></div>
+                      <p className="text-[#888] text-sm lg:text-base leading-relaxed mb-6 font-light">
+                        They are retrieval problems, lookup problems, translation problems, summarization problems, and structured response problems.
+                      </p>
 
-                {/* ── Scan line ── */}
-                <div
-                  className="scan-line absolute left-0 right-0 h-[1.5px] z-20 pointer-events-none"
-                  style={{ background: 'linear-gradient(to right, transparent 0%, rgba(236,72,153,0.9) 25%, rgba(167,139,250,1) 50%, rgba(236,72,153,0.9) 75%, transparent 100%)' }}
-                ></div>
-                {/* Scan glow beneath line */}
-                <div
-                  className="scan-glow absolute left-0 right-0 h-10 z-20 pointer-events-none -mt-5"
-                  style={{ background: 'linear-gradient(to bottom, transparent, rgba(236,72,153,0.06), transparent)' }}
-                ></div>
+                      <p className="text-[#e2e8f0] text-sm lg:text-base font-medium tracking-wide">
+                        LFM is built for that class of workload.
+                      </p>
+                    </div>
+                  </div>
 
-                {/* Status badge */}
-                <div className="relative z-10 flex justify-center pt-5">
-                  <div className="flex items-center gap-2 bg-black/60 border border-white/10 rounded-full px-3 py-1.5 backdrop-blur-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 shadow-[0_0_6px_rgba(74,222,128,1)]"></span>
-                    <span className="text-white text-xs font-medium tracking-wide">AI Active</span>
+                  {/* BOTTOM TWO SMALL CARDS */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
+                    
+                    {/* Card 2 */}
+                    <div className="relative flex flex-col p-6 lg:p-8 rounded-[24px] border border-white/5 bg-[#0a0a0f]/90 backdrop-blur-xl hover:bg-[#0f0f14]/90 hover:border-white/10 transition-colors duration-500 group">
+                      <h4 className="text-white text-lg lg:text-xl font-semibold mb-3 tracking-tight">Private<br />by design</h4>
+                      <p className="text-[#777] text-xs lg:text-sm leading-relaxed font-light mt-auto pt-2">
+                        Run language workflows without exposing internal company knowledge to external AI APIs.
+                      </p>
+                    </div>
+
+                    {/* Card 3 */}
+                    <div className="relative flex flex-col p-6 lg:p-8 rounded-[24px] border border-white/5 bg-[#0a0a0f]/90 backdrop-blur-xl hover:bg-[#0f0f14]/90 hover:border-white/10 transition-colors duration-500 group">
+                      <h4 className="text-white text-lg lg:text-xl font-semibold mb-3 tracking-tight">Fast local<br />inference</h4>
+                      <p className="text-[#777] text-xs lg:text-sm leading-relaxed font-light mt-auto pt-2">
+                        Optimized for structured enterprise intelligence tasks with lower latency and predictable outputs.
+                      </p>
+                    </div>
+
                   </div>
                 </div>
 
-                {/* Eyes */}
-                <div className="relative z-10 flex-1 flex items-center justify-center gap-10">
-                  <div className="eye w-[74px] h-[74px] rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)]"></div>
-                  <div className="eye eye-right w-[74px] h-[74px] rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)]"></div>
-                </div>
-
-                {/* Bottom text */}
-                <div className="relative z-10 px-5 pb-5 pt-3 bg-gradient-to-t from-black/80 to-transparent text-center">
-                  <p className="text-white/80 text-xs tracking-wide">Understanding. Reasoning. Expressing.</p>
-                  <p className="text-purple-400 font-semibold text-sm mt-1">Fluently.</p>
-                </div>
-
-                {/* Inset shadow */}
-                <div className="absolute inset-0 pointer-events-none rounded-xl"
-                  style={{ boxShadow: 'inset 0 0 60px rgba(0,0,0,0.7)', borderRadius: '45px' }}
-                ></div>
               </div>
             </div>
-
-            {/* Right: Features */}
-            <div className="flex flex-col gap-7">
-              {features.map((feat, i) => (
-                <div key={i} className="flex gap-4 items-start">
-                  <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    {feat.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-white font-semibold text-sm mb-1">{feat.title}</h3>
-                    <p className="text-[#666] text-xs leading-relaxed">{feat.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
           </section>
 
-        {/* Capabilities Section */}
-        <section className="relative z-10 px-6 pb-16">
-          <div className="w-full max-w-[1360px] mx-auto rounded-2xl bg-[#0d0d18] border border-white/[0.07] p-7 md:p-9">
-            <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] lg:grid-cols-[240px_1fr] gap-8 items-start">
+          {/* Interactive Workflow Showcase */}
+          <WorkflowShowcase />
 
-              {/* Left label */}
-              <div className="flex flex-col gap-4">
-                <h2 className="text-white text-xl font-bold leading-snug">
-                  Built for fluent<br />intelligence
-                </h2>
-                <p className="text-[#666] text-xs leading-relaxed">
-                  10X AI powers the next generation of applications with human-like understanding and expression.
+          {/* Section 3: Old AI Hero (Features/Card) */}
+          <section className="relative px-6 pt-32 pb-24 max-w-[1360px] mx-auto overflow-visible z-10 min-h-[70svh] flex items-center w-full">
+            <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-center">
+
+              {/* Left */}
+              <div className="flex flex-col gap-5 lg:gap-6">
+                <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-3 py-1 w-fit">
+                  <Sparkles className="w-3 h-3 text-purple-400" />
+                  <span className="text-purple-400 text-[9px] uppercase tracking-[0.35em] font-bold">Introducing</span>
+                </div>
+
+                <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
+                  <span style={{ color: '#512da8' }}>10X</span>
+                  <br />
+                  <span className="text-white">Artificial</span>
+                  <br />
+                  <span className="text-white">Intelligence.</span>
+                </h1>
+
+                <p className="text-[#888] text-sm leading-relaxed max-w-[280px]">
+                  10X AI is our core intelligence layer built for real-world communication. It understands nuance, context, intent, and meaning — the way humans do.
                 </p>
-                <button className="text-purple-400 hover:text-purple-300 transition-colors text-xs font-medium flex items-center gap-1.5 w-fit">
-                  See all capabilities <ArrowUpRight className="w-3.5 h-3.5" />
-                </button>
+
+                <div className="flex items-center gap-5">
+                  <button
+                    onClick={() => setIsContactModalOpen(true)}
+                    className="btn-premium px-5 py-2.5 text-sm font-semibold flex items-center gap-2"
+                  >
+                    Get Started <ArrowUpRight className="w-4 h-4" />
+                  </button>
+                  <button className="text-sm text-[#888] hover:text-white transition-colors flex items-center gap-1.5">
+                    Explore Docs <ArrowUpRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
 
-              {/* Right: 4 capability cards */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
-                {[
-                  {
-                    icon: <MessageCircle className="w-5 h-5 text-purple-400" />,
-                    title: 'Deep Understanding',
-                    desc: 'Grasps nuance, context and intent across languages and domains.',
-                  },
-                  {
-                    icon: <Zap className="w-5 h-5 text-purple-400" />,
-                    title: 'Natural Expression',
-                    desc: 'Generates responses that feel natural, fluent and human-like.',
-                  },
-                  {
-                    icon: <Target className="w-5 h-5 text-purple-400" />,
-                    title: 'Real-world Ready',
-                    desc: 'Trained for messy, real-world conversations, not just clean benchmarks.',
-                  },
-                  {
-                    icon: <Shield className="w-5 h-5 text-purple-400" />,
-                    title: 'Private & Secure',
-                    desc: 'Enterprise-grade privacy with on-prem, VPC and regional control.',
-                  },
-                ].map((cap, i) => (
-                  <div key={i} className="flex flex-col gap-3">
-                    <div className="w-10 h-10 rounded-full bg-purple-500/15 border border-purple-500/20 flex items-center justify-center">
-                      {cap.icon}
+              {/* Center Card */}
+              <div className="flex justify-center">
+                <div
+                  className="relative w-[300px] md:w-[340px] rounded-[45px] bg-[#04040c] overflow-hidden flex flex-col"
+                  style={{ aspectRatio: '4/5', boxShadow: '0 0 60px rgba(236,72,153,0.08), 0 0 120px rgba(139,92,246,0.06)' }}
+                >
+                  {/* Subtle grid */}
+                  <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none"></div>
+
+                  {/* ── Corner brackets ── */}
+                  {/* top-left */}
+                  <div className="corner-bracket absolute top-3 left-3 w-5 h-5 border-t-[2px] border-l-[2px] border-pink-400/80 rounded-tl-sm pointer-events-none z-30"></div>
+                  {/* top-right */}
+                  <div className="corner-bracket absolute top-3 right-3 w-5 h-5 border-t-[2px] border-r-[2px] border-pink-400/80 rounded-tr-sm pointer-events-none z-30"></div>
+                  {/* bottom-left */}
+                  <div className="corner-bracket absolute bottom-3 left-3 w-5 h-5 border-b-[2px] border-l-[2px] border-pink-400/80 rounded-bl-sm pointer-events-none z-30"></div>
+                  {/* bottom-right */}
+                  <div className="corner-bracket absolute bottom-3 right-3 w-5 h-5 border-b-[2px] border-r-[2px] border-pink-400/80 rounded-br-sm pointer-events-none z-30"></div>
+
+                  {/* ── Scan line ── */}
+                  <div
+                    className="scan-line absolute left-0 right-0 h-[1.5px] z-20 pointer-events-none"
+                    style={{ background: 'linear-gradient(to right, transparent 0%, rgba(236,72,153,0.9) 25%, rgba(167,139,250,1) 50%, rgba(236,72,153,0.9) 75%, transparent 100%)' }}
+                  ></div>
+                  {/* Scan glow beneath line */}
+                  <div
+                    className="scan-glow absolute left-0 right-0 h-10 z-20 pointer-events-none -mt-5"
+                    style={{ background: 'linear-gradient(to bottom, transparent, rgba(236,72,153,0.06), transparent)' }}
+                  ></div>
+
+                  {/* Status badge */}
+                  <div className="relative z-10 flex justify-center pt-5">
+                    <div className="flex items-center gap-2 bg-black/60 border border-white/10 rounded-full px-3 py-1.5 backdrop-blur-sm">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 shadow-[0_0_6px_rgba(74,222,128,1)]"></span>
+                      <span className="text-white text-xs font-medium tracking-wide">AI Active</span>
                     </div>
-                    <h3 className="text-white text-sm font-semibold leading-snug">{cap.title}</h3>
-                    <p className="text-[#666] text-xs leading-relaxed">{cap.desc}</p>
+                  </div>
+
+                  {/* Eyes */}
+                  <div className="relative z-10 flex-1 flex items-center justify-center gap-10">
+                    <div className="eye w-[74px] h-[74px] rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)]"></div>
+                    <div className="eye eye-right w-[74px] h-[74px] rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)]"></div>
+                  </div>
+
+                  {/* Bottom text */}
+                  <div className="relative z-10 px-5 pb-5 pt-3 bg-gradient-to-t from-black/80 to-transparent text-center">
+                    <p className="text-white/80 text-xs tracking-wide">Understanding. Reasoning. Expressing.</p>
+                    <p className="text-purple-400 font-semibold text-sm mt-1">Fluently.</p>
+                  </div>
+
+                  {/* Inset shadow */}
+                  <div className="absolute inset-0 pointer-events-none rounded-xl"
+                    style={{ boxShadow: 'inset 0 0 60px rgba(0,0,0,0.7)', borderRadius: '45px' }}
+                  ></div>
+                </div>
+              </div>
+
+              {/* Right: Features */}
+              <div className="flex flex-col gap-7">
+                {features.map((feat, i) => (
+                  <div key={i} className="flex gap-4 items-start">
+                    <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      {feat.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-white font-semibold text-sm mb-1">{feat.title}</h3>
+                      <p className="text-[#666] text-xs leading-relaxed">{feat.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
 
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Feature Links */}
-        <div className="relative z-10">
-          <FeatureLinks mode="ai" />
-        </div>
+          {/* Capabilities Section */}
+          <section className="relative z-10 px-6 pb-16">
+            <div className="w-full max-w-[1360px] mx-auto rounded-2xl bg-[#0d0d18] border border-white/[0.07] p-7 md:p-9">
+              <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] lg:grid-cols-[240px_1fr] gap-8 items-start">
+
+                {/* Left label */}
+                <div className="flex flex-col gap-4">
+                  <h2 className="text-white text-xl font-bold leading-snug">
+                    Built for fluent<br />intelligence
+                  </h2>
+                  <p className="text-[#666] text-xs leading-relaxed">
+                    10X AI powers the next generation of applications with human-like understanding and expression.
+                  </p>
+                  <button className="text-purple-400 hover:text-purple-300 transition-colors text-xs font-medium flex items-center gap-1.5 w-fit">
+                    See all capabilities <ArrowUpRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+
+                {/* Right: 4 capability cards */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
+                  {[
+                    {
+                      icon: <MessageCircle className="w-5 h-5 text-purple-400" />,
+                      title: 'Deep Understanding',
+                      desc: 'Grasps nuance, context and intent across languages and domains.',
+                    },
+                    {
+                      icon: <Zap className="w-5 h-5 text-purple-400" />,
+                      title: 'Natural Expression',
+                      desc: 'Generates responses that feel natural, fluent and human-like.',
+                    },
+                    {
+                      icon: <Target className="w-5 h-5 text-purple-400" />,
+                      title: 'Real-world Ready',
+                      desc: 'Trained for messy, real-world conversations, not just clean benchmarks.',
+                    },
+                    {
+                      icon: <Shield className="w-5 h-5 text-purple-400" />,
+                      title: 'Private & Secure',
+                      desc: 'Enterprise-grade privacy with on-prem, VPC and regional control.',
+                    },
+                  ].map((cap, i) => (
+                    <div key={i} className="flex flex-col gap-3">
+                      <div className="w-10 h-10 rounded-full bg-purple-500/15 border border-purple-500/20 flex items-center justify-center">
+                        {cap.icon}
+                      </div>
+                      <h3 className="text-white text-sm font-semibold leading-snug">{cap.title}</h3>
+                      <p className="text-[#666] text-xs leading-relaxed">{cap.desc}</p>
+                    </div>
+                  ))}
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          {/* Feature Links */}
+          <div className="relative z-10">
+            <FeatureLinks mode="ai" />
+          </div>
 
         </main>
         <Footer openContactModal={() => setIsContactModalOpen(true)} />
