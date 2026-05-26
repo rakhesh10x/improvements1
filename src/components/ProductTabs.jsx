@@ -131,17 +131,23 @@ const tabs = [
 ];
 
 const ProductTabs = () => {
-  const [activeIdx, setActiveIdx]   = useState(0);
-  const [isPaused,  setIsPaused]    = useState(false);
-  const [progress,  setProgress]    = useState(0); // 0-100
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [isPaused,  setIsPaused]  = useState(false);
 
-  const rafRef        = useRef(null);
-  const startTimeRef  = useRef(null);
-  const pausedAtRef   = useRef(0);
-  const isPausedRef   = useRef(false);
-  const activeIdxRef  = useRef(0);
+  const rafRef       = useRef(null);
+  const startTimeRef = useRef(null);
+  const pausedAtRef  = useRef(0);   // 0-100 pct when paused
+  const isPausedRef  = useRef(false);
+  const activeIdxRef = useRef(0);
+  const progressBarRef = useRef(null); // direct DOM ref — no re-renders
 
   const cancelAnim = () => cancelAnimationFrame(rafRef.current);
+
+  const setBarWidth = (pct) => {
+    if (!progressBarRef.current) return;
+    const fill = ((activeIdxRef.current + pct / 100) / tabs.length) * 100;
+    progressBarRef.current.style.width = `${fill}%`;
+  };
 
   const startAnim = useCallback((fromPct = 0) => {
     cancelAnim();
@@ -150,7 +156,8 @@ const ProductTabs = () => {
     const tick = (now) => {
       if (isPausedRef.current) return;
       const pct = Math.min(((now - startTimeRef.current) / DURATION) * 100, 100);
-      setProgress(pct);
+      pausedAtRef.current = pct;
+      setBarWidth(pct);
       if (pct < 100) {
         rafRef.current = requestAnimationFrame(tick);
       } else {
@@ -162,9 +169,9 @@ const ProductTabs = () => {
 
   // Reset & start when tab changes
   useEffect(() => {
-    setProgress(0);
     pausedAtRef.current = 0;
     activeIdxRef.current = activeIdx;
+    setBarWidth(0);
     if (!isPausedRef.current) startAnim(0);
     return cancelAnim;
   }, [activeIdx, startAnim]);
@@ -174,7 +181,6 @@ const ProductTabs = () => {
     isPausedRef.current = next;
     setIsPaused(next);
     if (next) {
-      pausedAtRef.current = progress;
       cancelAnim();
     } else {
       startAnim(pausedAtRef.current);
@@ -248,14 +254,12 @@ const ProductTabs = () => {
             </button>
           </div>
 
-          {/* Single continuous progress line across all tabs */}
+          {/* Single continuous progress line — DOM-driven at 60fps, no React re-renders */}
           <div className="relative h-[3px] bg-white/[0.06] w-full">
             <div
+              ref={progressBarRef}
               className="absolute left-0 top-0 h-full bg-purple-400"
-              style={{
-                width: `${((activeIdx + progress / 100) / tabs.length) * 100}%`,
-                transition: 'width 0.05s linear',
-              }}
+              style={{ width: '0%' }}
             />
           </div>
         </div>
