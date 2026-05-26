@@ -248,20 +248,15 @@ const ProductTabs = () => {
             </button>
           </div>
 
-          {/* Progress lines row — one track per tab */}
-          <div className="flex w-full">
-            {tabs.map((tab, idx) => (
-              <div key={tab.id} className="flex-1 h-[3px] bg-white/[0.06]">
-                {activeIdx === idx && (
-                  <div
-                    className="h-full bg-purple-400"
-                    style={{ width: `${progress}%`, transition: 'width 0.05s linear' }}
-                  />
-                )}
-              </div>
-            ))}
-            {/* Spacer matching pause button width */}
-            <div className="w-[52px] h-[3px] bg-white/[0.03]" />
+          {/* Single continuous progress line across all tabs */}
+          <div className="relative h-[3px] bg-white/[0.06] w-full">
+            <div
+              className="absolute left-0 top-0 h-full bg-purple-400"
+              style={{
+                width: `${((activeIdx + progress / 100) / tabs.length) * 100}%`,
+                transition: 'width 0.05s linear',
+              }}
+            />
           </div>
         </div>
 
