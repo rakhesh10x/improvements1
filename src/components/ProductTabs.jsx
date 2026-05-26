@@ -214,21 +214,33 @@ const ProductTabs = () => {
         </div>
 
         {/* Full-width tab bar */}
-        <div className="flex items-stretch w-full mb-10 border-b border-white/[0.07]">
+        <div className="flex items-stretch w-full mb-10 border border-white/[0.07] rounded-lg overflow-hidden">
           {tabs.map((tab, idx) => (
             <button
               key={tab.id}
               onClick={() => handleTabClick(idx)}
-              className={`relative flex-1 py-4 text-center text-sm md:text-base font-medium tracking-wide transition-colors duration-300 cursor-pointer ${
-                activeIdx === idx ? 'text-white' : 'text-zinc-500 hover:text-zinc-300'
+              className={`relative flex-1 flex items-center gap-3 px-6 py-4 text-left transition-all duration-300 cursor-pointer border-r border-white/[0.07] ${
+                activeIdx === idx
+                  ? 'bg-white/[0.06]'
+                  : 'bg-transparent hover:bg-white/[0.03]'
               }`}
             >
-              {tab.title}
+              {/* Number */}
+              <span className={`text-[10px] font-bold tracking-widest shrink-0 transition-colors duration-300 ${
+                activeIdx === idx ? 'text-purple-400' : 'text-zinc-600'
+              }`}>
+                {String(idx + 1).padStart(2, '0')}
+              </span>
 
-              {/* Track line */}
-              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/[0.07]" />
+              {/* Title */}
+              <span className={`text-xs md:text-sm font-bold uppercase tracking-[0.15em] transition-colors duration-300 ${
+                activeIdx === idx ? 'text-white' : 'text-zinc-500'
+              }`}>
+                {tab.title}
+              </span>
 
-              {/* Progress fill — only on active tab */}
+              {/* Progress line at bottom */}
+              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/[0.05]" />
               {activeIdx === idx && (
                 <div
                   className="absolute bottom-0 left-0 h-[2px] bg-purple-400"
@@ -241,12 +253,12 @@ const ProductTabs = () => {
           {/* Pause / Play button */}
           <button
             onClick={handlePauseToggle}
-            className="px-5 py-4 text-zinc-500 hover:text-white transition-colors duration-200 shrink-0 cursor-pointer border-b border-white/[0.07]"
+            className="px-5 flex items-center justify-center bg-transparent hover:bg-white/[0.03] text-zinc-500 hover:text-white transition-all duration-200 shrink-0 cursor-pointer"
             aria-label={isPaused ? 'Play' : 'Pause'}
           >
             {isPaused
-              ? <Play  className="w-4 h-4" />
-              : <Pause className="w-4 h-4" />}
+              ? <Play  className="w-3.5 h-3.5" />
+              : <Pause className="w-3.5 h-3.5" />}
           </button>
         </div>
 
