@@ -223,7 +223,7 @@ const ProductTabs = () => {
           {/* Tab buttons row + pause button */}
           <div className="flex items-stretch gap-3 w-full">
             {/* Tabs */}
-            <div className="flex flex-1 border border-white/[0.07] rounded-lg overflow-hidden">
+            <div className="flex flex-1 border border-white/[0.07] rounded-full overflow-hidden">
               {tabs.map((tab, idx) => (
                 <button
                   key={tab.id}
@@ -246,10 +246,10 @@ const ProductTabs = () => {
               ))}
             </div>
 
-            {/* Pause / Play — independent box */}
+            {/* Pause / Play — independent pill box, same height as tabs */}
             <button
               onClick={handlePauseToggle}
-              className="w-12 h-full flex items-center justify-center border border-white/[0.07] rounded-lg bg-transparent hover:bg-white/[0.05] text-zinc-500 hover:text-white transition-all duration-200 shrink-0 cursor-pointer"
+              className="px-4 py-4 flex items-center justify-center border border-white/[0.07] rounded-full bg-transparent hover:bg-white/[0.05] text-zinc-500 hover:text-white transition-all duration-200 shrink-0 cursor-pointer aspect-square"
               aria-label={isPaused ? 'Play' : 'Pause'}
             >
               {isPaused ? <Play className="w-3.5 h-3.5" /> : <Pause className="w-3.5 h-3.5" />}
