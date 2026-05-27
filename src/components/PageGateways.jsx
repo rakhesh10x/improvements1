@@ -68,7 +68,7 @@ const PageGateways = () => {
                 className="opacity-[0.12] group-hover:opacity-[0.85] transition-opacity duration-500 z-30"
               />
               {/* Image/Video Container */}
-              <div className="relative aspect-[16/9] overflow-hidden bg-[#04040c] flex items-center justify-center">
+              <div className="relative aspect-[16/9] md:aspect-[2/1] lg:aspect-[2.35/1] overflow-hidden bg-[#04040c] flex items-center justify-center">
                 {i === 1 ? (
                   <div 
                     className="relative w-full h-full overflow-hidden bg-[#04040c]"
@@ -85,7 +85,7 @@ const PageGateways = () => {
                     
                     <video
                       ref={videoRef}
-                      src={`${import.meta.env.BASE_URL}LUCA blink logo WhiteBG.mp4`}
+                      src={`${import.meta.env.BASE_URL}new video in ai container.mp4`}
                       muted
                       playsInline
                       preload="auto"
