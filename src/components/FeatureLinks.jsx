@@ -64,7 +64,20 @@ const FeatureLinks = ({ mode = 'all' }) => {
   };
 
   return (
-    <section className="relative z-20 w-full max-w-[1360px] mx-auto px-6 py-4 lg:py-6">
+    <section className="relative z-20 w-full max-w-[1360px] mx-auto px-6 py-8 lg:py-12">
+        {mode === 'home' && (
+          <div className="mb-10 text-center">
+            <span className="text-tagline-02 text-purple-400 uppercase mb-2 block">Insights</span>
+            <h2 className="text-heading-03 md:text-heading-02 text-white">Research & Blog</h2>
+          </div>
+        )}
+        {mode === 'ai' && (
+          <div className="mb-10 text-center">
+            <span className="text-tagline-02 text-purple-400 uppercase mb-2 block">Ecosystem</span>
+            <h2 className="text-heading-03 md:text-heading-02 text-white">Explore our Tech</h2>
+          </div>
+        )}
+        
         <div className="flex flex-col gap-12 lg:gap-16">
           {cards.map((card, i) => {
             // Calculate the original index to preserve alternating logic and card 4's unique style

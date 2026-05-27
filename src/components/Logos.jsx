@@ -12,15 +12,15 @@ const logos = [
 ];
 
 const LogoGroup = () => (
-  <div className="flex items-center gap-8 md:gap-14 flex-shrink-0 px-6">
+  <div className="flex items-center gap-10 md:gap-16 flex-shrink-0 px-8">
     {logos.map((logo, i) => (
-      <div key={i} className="h-12 md:h-16 flex items-center justify-center">
+      <div key={i} className="flex items-center justify-center w-[120px] md:w-[160px] h-[60px] md:h-[80px]">
         <img
           src={logo.src}
           alt={logo.alt}
           decoding="async"
           loading="lazy"
-          className="w-24 md:w-32 h-8 md:h-12 object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
+          className="max-w-full max-h-[36px] md:max-h-[44px] w-auto h-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
         />
       </div>
     ))}
