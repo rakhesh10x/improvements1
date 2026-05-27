@@ -58,14 +58,14 @@ const Footer = ({ openContactModal, minimal = false }) => {
   };
 
   return (
-    <footer className={`px-6 max-w-[1360px] mx-auto ${minimal ? 'pt-8 pb-4 lg:pb-6' : 'py-4 lg:py-6'}`}>
+    <footer className={`px-6 max-w-[1360px] mx-auto w-full ${minimal ? 'pt-8 pb-4 lg:pb-6' : 'py-4 lg:py-6'}`}>
       {!minimal && (
         <>
-          <div className="mb-8">
-            <h3 className="text-2xl font-medium mb-8 text-white">Community & support</h3>
+          <div className="mb-4">
+            <h3 className="text-heading-04 text-white mb-4">Community & support</h3>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {/* Community Card (LinkedIn) */}
             <a 
               href="https://www.linkedin.com/company/10xglobaltechnologies/" 
@@ -79,11 +79,11 @@ const Footer = ({ openContactModal, minimal = false }) => {
                    <Linkedin className="w-5 h-5 text-[#A0A0A0] group-hover:text-purple-300 transition-colors" />
                  </div>
                  <div>
-                   <h4 className="text-white font-medium mb-1 tracking-tight">Join the community</h4>
-                   <p className="text-[#A0A0A0] text-sm">Follow our latest updates on LinkedIn.</p>
+                   <h4 className="text-body-01 text-white mb-1">Join the community</h4>
+                   <p className="text-body-03 text-[#A0A0A0]">Follow our latest updates on LinkedIn.</p>
                  </div>
               </div>
-              <span className="text-[#A0A0A0] group-hover:text-purple-300 transition-colors text-sm flex items-center gap-1 whitespace-nowrap ml-4 relative z-10 font-medium">
+              <span className="text-btn-secondary text-[#A0A0A0] group-hover:text-purple-300 transition-colors flex items-center gap-1 whitespace-nowrap ml-4 relative z-10">
                 Follow Us <span className="text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
               </span>
             </a>
@@ -99,28 +99,29 @@ const Footer = ({ openContactModal, minimal = false }) => {
                    <LifeBuoy className="w-5 h-5 text-[#A0A0A0] group-hover:text-blue-300 transition-colors" />
                  </div>
                  <div>
-                   <h4 className="text-white font-medium mb-1 tracking-tight">Need help?</h4>
-                   <p className="text-[#A0A0A0] text-sm">Get in touch with our support team.</p>
+                   <h4 className="text-body-01 text-white mb-1">Need help?</h4>
+                    <p className="text-body-03 text-[#A0A0A0]">Get in touch with 10X Technologies.</p>
                  </div>
               </div>
-              <span className="text-[#A0A0A0] group-hover:text-blue-300 transition-colors text-sm flex items-center gap-1 whitespace-nowrap ml-4 relative z-10 font-medium">
-                Contact Support <span className="text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
+              <span className="text-btn-secondary text-[#A0A0A0] group-hover:text-blue-300 transition-colors flex items-center gap-1 whitespace-nowrap ml-4 relative z-10">
+                Contact Us <span className="text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
               </span>
             </div>
           </div>
 
           {/* Premium Newsletter / Waitlist Section */}
-          <div className="relative w-full rounded-3xl p-[1px] overflow-hidden mb-12 group">
+          <div className="relative w-full rounded-3xl p-[1px] overflow-hidden mb-8 group">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 via-blue-500/30 to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-700"></div>
             <div className="relative bg-[#050508]/90 backdrop-blur-xl rounded-[23px] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 h-full border border-white/5 shadow-[inset_0_0_30px_rgba(0,0,0,0.5)]">
                <div className="flex-1">
                  <div className="flex items-center gap-2 mb-3">
                    <Sparkles className="w-5 h-5 text-purple-400 animate-pulse" />
-                   <h3 className="text-2xl font-medium text-white tracking-tight">Get Early Access</h3>
+                   <h3 className="text-heading-04 text-white">Be the First to know about us</h3>
                  </div>
-                 <p className="text-[#888] text-sm leading-relaxed max-w-md">
-                   Join the waitlist. Be the first to know when LUCA ships and get exclusive developer access to our foundation models.
+                 <p className="text-body-03 text-[#888] max-w-md mb-3">
+                   Join our waitlist. Be the first to know when LUCA ships and get exclusive BETA access to our foundation models and SOTA Research Updates.
                  </p>
+                 <span className="text-tagline-02 text-purple-400 uppercase block">WE DON’T SPAM YOU!</span>
                </div>
                
                <div className="w-full md:w-auto flex flex-col sm:flex-row items-center gap-3">
@@ -144,7 +145,7 @@ const Footer = ({ openContactModal, minimal = false }) => {
                      <button 
                        onClick={handleSubscribe}
                        disabled={isLoading || email.trim() === ''}
-                       className="w-full sm:w-auto bg-white text-black px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-purple-50 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105 active:scale-95 transition-all whitespace-nowrap disabled:opacity-70 disabled:hover:scale-100 cursor-pointer disabled:cursor-not-allowed"
+                       className="text-btn-secondary w-full sm:w-auto bg-white text-black px-8 py-3.5 rounded-full hover:bg-purple-50 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105 active:scale-95 transition-all whitespace-nowrap disabled:opacity-70 disabled:hover:scale-100 cursor-pointer disabled:cursor-not-allowed"
                      >
                        {isLoading ? 'Subscribing...' : 'Subscribe'}
                      </button>
@@ -155,7 +156,7 @@ const Footer = ({ openContactModal, minimal = false }) => {
           </div>
 
           {/* Mid Section: AI / Search / Status */}
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-8 mb-16">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6 mb-8">
             <div className="hidden lg:block w-full lg:w-auto"></div>
 
             <div className="flex flex-col lg:flex-row items-center gap-6 w-full lg:w-auto">
@@ -250,7 +251,7 @@ const Footer = ({ openContactModal, minimal = false }) => {
               </div>
 
               {/* Center: copyright */}
-              <span className="text-[#555] text-xs whitespace-nowrap">© 2026 10xTechnologies. • All rights reserved</span>
+              <span className="text-body-03 text-[#555] whitespace-nowrap">© 2026 10X Technologies. • All rights reserved</span>
 
               {/* Right: social icons */}
               <div className="flex items-center gap-4">

@@ -33,7 +33,7 @@ const AIPage = () => {
   ];
 
   return (
-    <div className="min-h-[100svh] bg-black text-white font-sans relative w-full flex flex-col overflow-x-hidden">
+    <div className="min-h-[100svh] bg-black text-white selection:bg-purple-500/30 font-sans relative w-full flex flex-col">
       <style>{`
         @keyframes eyeBlink {
           0%, 88%, 100% { transform: scaleY(1); }
@@ -72,9 +72,9 @@ const AIPage = () => {
 
         <main className="flex-grow">
           {/* Section 1: Hero */}
-          <section className="relative w-full min-h-[100svh] flex flex-col z-10 border-b border-white/5">
+          <section className="relative w-full min-h-[70svh] flex flex-col z-10 border-b border-white/5">
             {/* Main content — vertically centered, left-aligned */}
-            <div className="flex-1 flex flex-col justify-center max-w-[1360px] mx-auto w-full px-6 sm:px-10 pt-32 pb-16">
+            <div className="flex-1 flex flex-col justify-center max-w-[1360px] mx-auto w-full px-6 pt-40 pb-12">
               <div className="max-w-3xl flex flex-col gap-8">
 
                 {/* Label */}
@@ -143,7 +143,7 @@ const AIPage = () => {
           </section>
 
           {/* Section 2: LFM Core Use Case */}
-          <section className="relative w-full z-10 py-16 md:py-24 px-6 flex flex-col items-center min-h-screen justify-center">
+          <section className="relative w-full z-10 py-12 md:py-16 px-6 flex flex-col items-center min-h-[70svh] justify-center">
             <div className="w-full max-w-[1360px] mx-auto flex flex-col">
 
               {/* TOP CENTER HEADING */}
@@ -222,7 +222,7 @@ const AIPage = () => {
           <WorkflowShowcase />
 
           {/* Section 3: Old AI Hero (Features/Card) */}
-          <section className="relative px-6 pt-32 pb-24 max-w-[1360px] mx-auto overflow-visible z-10 min-h-[70svh] flex items-center w-full">
+          <section className="relative px-6 py-16 max-w-[1360px] mx-auto overflow-visible z-10 flex items-center w-full">
             <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-center">
 
               {/* Left */}
@@ -333,8 +333,8 @@ const AIPage = () => {
           </section>
 
           {/* Capabilities Section */}
-          <section className="relative z-10 px-6 pb-16">
-            <div className="w-full max-w-[1360px] mx-auto rounded-2xl bg-[#0d0d18] border border-white/[0.07] p-7 md:p-9">
+          <section className="relative z-10 px-6 pb-12">
+            <div className="w-full max-w-[1360px] mx-auto rounded-2xl bg-[#0d0d18] border border-white/[0.07] p-6 md:p-8">
               <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] lg:grid-cols-[240px_1fr] gap-8 items-start">
 
                 {/* Left label */}

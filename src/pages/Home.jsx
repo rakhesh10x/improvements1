@@ -38,8 +38,8 @@ const Home = () => {
         <Logos />
 
         <div className="relative z-20 w-full max-w-[1360px] mx-auto px-6 pt-4 pb-2 text-center mt-4">
-          <span className="text-purple-400 text-[10px] uppercase tracking-[0.4em] font-bold mb-1 block">STAY UPDATED</span>
-          <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight">Announcements</h2>
+          <span className="text-tagline-02 text-purple-400 uppercase mb-1 block">OUR LATEST</span>
+          <h2 className="text-heading-03 md:text-heading-02 text-white">Announcements</h2>
         </div>
 
         <BackingCards />

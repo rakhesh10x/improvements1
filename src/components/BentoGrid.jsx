@@ -82,7 +82,7 @@ const BentoGrid = () => {
           <div className="flex items-center gap-3 relative z-10">
              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#76B900]/30 to-[#76B900]/5 flex items-center justify-center text-[11px] font-bold border border-[#76B900]/20 text-[#76B900]">10</div>
              <div>
-               <p className="text-[13px] font-medium text-white">10xTechnologies</p>
+               <p className="text-[13px] font-medium text-white">10X Technologies</p>
                <p className="text-[10px] text-[#A0A0A0] uppercase tracking-wide mt-0.5">Engineering</p>
              </div>
           </div>

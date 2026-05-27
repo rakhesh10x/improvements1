@@ -33,7 +33,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-white text-lg md:text-xl font-medium tracking-wide mb-6 max-w-2xl mx-auto opacity-90"
+            className="text-body-01 md:text-heading-06 text-white mb-6 max-w-2xl mx-auto opacity-90"
           >
             Building AI that feels less artificial and more human.
           </motion.p>
@@ -45,7 +45,7 @@ const Hero = () => {
           >
             <button 
               onClick={() => navigate('/try', { state: { url: 'https://shesettipavankumarswamy-luca.hf.space/', title: 'LUCA AI' } })}
-              className="px-10 py-3.5 rounded-full bg-white/5 border border-[#512DA8]/30 text-white font-bold tracking-widest text-xs hover:bg-[#512DA8] hover:border-[#512DA8] hover:shadow-[0_0_40px_rgba(81,45,168,0.4)] active:scale-95 transition-all duration-500"
+              className="text-btn-primary px-10 py-3.5 rounded-full bg-white/5 border border-[#512DA8]/30 text-white uppercase hover:bg-[#512DA8] hover:border-[#512DA8] hover:shadow-[0_0_40px_rgba(81,45,168,0.4)] active:scale-95 transition-all duration-500"
             >
               TRY LUCA
             </button>

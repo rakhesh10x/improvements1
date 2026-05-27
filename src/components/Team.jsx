@@ -76,7 +76,7 @@ const Team = () => {
 
   return (
     <section className="py-4 lg:py-6 max-w-[1360px] mx-auto px-6">
-      <h2 className="text-2xl font-medium mb-8 text-white">Our Team</h2>
+      <h2 className="text-heading-04 text-white mb-8">Our Team</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
@@ -93,8 +93,8 @@ const Team = () => {
                 className={`flex items-center gap-4 py-[1.15rem] px-2 border-b border-white/[0.06] text-left transition-all duration-300
                   ${isSelected ? 'bg-white/[0.04]' : 'hover:bg-white/[0.03]'}`}
               >
-                <span className="text-[#666] text-xs w-28 flex-shrink-0 font-medium uppercase tracking-wider">{member.role}</span>
-                <span className="text-white text-sm font-semibold flex-1">{member.name}</span>
+                <span className="text-tagline-02 text-[#666] uppercase w-28 flex-shrink-0">{member.role}</span>
+                <span className="text-body-01 text-white flex-1">{member.name}</span>
               </button>
             );
           })}
@@ -148,11 +148,11 @@ const Team = () => {
               {/* Right: details */}
               <div className="flex-1 flex flex-col justify-between py-6 px-6 relative z-10">
                 <div>
-                  <h3 className="text-white text-lg font-bold leading-tight">{selected.name}</h3>
-                  <p className="text-purple-400/80 text-[10px] uppercase tracking-[0.2em] font-black mt-1.5">{selected.role}</p>
+                  <h3 className="text-heading-06 text-white">{selected.name}</h3>
+                  <p className="text-tagline-02 text-purple-400/80 uppercase mt-1.5">{selected.role}</p>
                 </div>
 
-                <p className="text-[#999] text-[13px] leading-relaxed font-light line-clamp-3">
+                <p className="text-body-03 text-[#999] line-clamp-3">
                   {selected.description}
                 </p>
 
@@ -180,7 +180,7 @@ const Team = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </div>
-              <p className="text-[#666] text-[13px] font-medium tracking-wide">Select a team member to view details</p>
+              <p className="text-body-03 text-[#666]">Select a team member to view details</p>
             </div>
           )}
         </div>

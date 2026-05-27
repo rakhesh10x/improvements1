@@ -180,7 +180,7 @@
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 30s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 .animate-rightBlink {
   animation: rightBlink 0.4s ease;
@@ -232,5 +232,24 @@
 
 .animate-border-rotate {
   animation: border-rotate var(--duration, 8s) linear infinite;
+}
+
+@layer utilities {
+  .text-heading-01 { font-family: 'BDO Grotesk', sans-serif; font-weight: 500; font-size: 62px; line-height: 70px; letter-spacing: -0.06em; }
+  .text-heading-02 { font-family: 'BDO Grotesk', sans-serif; font-weight: 500; font-size: 52px; line-height: 60px; letter-spacing: -0.06em; }
+  .text-heading-03 { font-family: 'BDO Grotesk', sans-serif; font-weight: 500; font-size: 42px; line-height: 50px; letter-spacing: -0.06em; }
+  .text-heading-04 { font-family: 'BDO Grotesk', sans-serif; font-weight: 500; font-size: 32px; line-height: 40px; letter-spacing: -0.06em; }
+  .text-heading-05 { font-family: 'BDO Grotesk', sans-serif; font-weight: 500; font-size: 24px; line-height: 36px; letter-spacing: 0px; }
+  .text-heading-06 { font-family: 'BDO Grotesk', sans-serif; font-weight: 500; font-size: 20px; line-height: 30px; letter-spacing: -0.02em; }
+  
+  .text-body-01 { font-family: 'BDO Grotesk', sans-serif; font-weight: 500; font-size: 18px; line-height: 28px; letter-spacing: -0.02em; }
+  .text-body-02 { font-family: 'BDO Grotesk', sans-serif; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.02em; }
+  .text-body-03 { font-family: 'BDO Grotesk', sans-serif; font-weight: 400; font-size: 14px; line-height: 22px; letter-spacing: -0.02em; }
+  
+  .text-btn-primary { font-family: 'BDO Grotesk', sans-serif; font-weight: 500; font-size: 18px; line-height: 27px; letter-spacing: -0.03em; }
+  .text-btn-secondary { font-family: 'BDO Grotesk', sans-serif; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.02em; }
+  
+  .text-tagline-01 { font-family: 'BDO Grotesk', sans-serif; font-weight: 400; font-size: 16px; line-height: 22px; letter-spacing: 0px; }
+  .text-tagline-02 { font-family: 'BDO Grotesk', sans-serif; font-weight: 500; font-size: 14px; line-height: 22px; letter-spacing: -0.02em; }
 }
 

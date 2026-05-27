@@ -30,15 +30,17 @@ const PageGateways = () => {
 
   const gateways = [
     {
-      title: 'Hardware',
-      description: 'Specialized silicon and embedded systems designed to run AI with zero latency.',
+      tagline: 'POWER OF SOUND & AI IN THE PALM OF YOUR HANDS',
+      title: 'LUCA ●●™ | Smart Speaker',
+      description: 'World’s 1st AI-powered Smart Speaker! Built from the ground up for Indic languages, natural conversations & edge AI from India to World.',
       image: `/worldfirst.png`,
       link: '/product',
       buttonText: 'Know more'
     },
     {
-      title: 'AI',
-      description: 'State-of-the-art foundation models and architectures built for the future of intelligence.',
+      tagline: "NOT YOUR TYPICAL LLM's BUT OUR PROPRIETARY TECH",
+      title: 'LFM™ | Brain Behind LUCA',
+      description: 'Our proprietary Language Fluency Model designed for low-latency inference, natural interaction, and scalable on-device intelligence.',
       image: `${import.meta.env.BASE_URL}luca eye image.png`,
       link: '/ai',
       buttonText: 'Know more'
@@ -123,14 +125,17 @@ const PageGateways = () => {
 
               {/* Content */}
               <div className="p-8 flex flex-col items-start flex-grow">
-                <h3 className="text-white text-2xl font-bold mb-3 tracking-tight">{gateway.title}</h3>
-                <p className="text-[#888] text-[15px] leading-relaxed mb-8 max-w-sm">
+                {gateway.tagline && (
+                  <span className="text-tagline-02 text-purple-400 uppercase mb-3">{gateway.tagline}</span>
+                )}
+                <h3 className="text-heading-05 text-white mb-3">{gateway.title}</h3>
+                <p className="text-body-03 text-[#888] mb-8 max-w-sm">
                   {gateway.description}
                 </p>
                 
                 <Link 
                   to={gateway.link}
-                  className="mt-auto inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-white text-sm font-semibold hover:bg-white hover:text-black transition-all duration-300"
+                  className="text-btn-secondary mt-auto inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white hover:text-black transition-all duration-300"
                 >
                   <span>{gateway.buttonText}</span>
                   <ArrowRight className="w-4 h-4" />

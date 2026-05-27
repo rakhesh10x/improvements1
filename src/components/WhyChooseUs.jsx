@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-text-primary mb-6"
           >
-            Why 10xTechnologies?
+            Why 10X Technologies?
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

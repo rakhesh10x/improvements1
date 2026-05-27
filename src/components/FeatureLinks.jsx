@@ -33,9 +33,9 @@ const FeatureLinks = ({ mode = 'all' }) => {
       buttonText: 'Try Now'
     },
     {
-      category: 'Research',
-      title: 'The Architecture Behind LUCA',
-      description: 'The research behind our custom OS, where fine-tuning SLM becomes a closed loop.',
+      category: 'BLOG & RESEARCH UPDATES',
+      title: 'Inside 10X Technologies & LUCA',
+      description: 'Read our latest announcements, SOTA - Research updates, product breakthroughs, behind the scenes stories and get to know about our journey in Redefining Technology!',
       image: '/resolution changed reserach container.png',
       link: '/blog',
       buttonText: 'Blog',
@@ -146,22 +146,22 @@ const FeatureLinks = ({ mode = 'all' }) => {
                   }`}>
                     {originalIndex === 3 ? (
                       <div className="flex flex-col items-start w-full max-w-sm ml-0">
-                        <span className="text-purple-400 text-[10px] uppercase tracking-[0.5em] font-black mb-1 opacity-60">
+                        <span className="text-tagline-02 text-purple-400 uppercase mb-1 opacity-60">
                           {card.category}
                         </span>
-                        <h2 className="text-white text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 tracking-tighter leading-[1.05]">
-                          <span className="whitespace-nowrap">The Architecture Behind</span> <br />
+                        <h2 className="text-heading-03 md:text-heading-02 text-white mb-6">
+                          <span className="whitespace-nowrap">Inside 10X Technologies &</span> <br />
                           <span className="text-white">LUCA</span>
                         </h2>
-                        <p className="text-[#888] text-[15px] lg:text-[15px] leading-relaxed mb-8 max-w-[340px] font-medium">
-                          The research behind our custom OS, <br /> where fine-tuning SLM becomes a closed loop.
+                        <p className="text-body-03 text-[#888] mb-8 max-w-[340px]">
+                          Read our latest announcements, SOTA - Research updates, product breakthroughs, behind the scenes stories and get to know about our journey in Redefining Technology!
                         </p>
 
                         <Link
                           to={card.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/10 bg-white/5 text-white text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-500 group/btn"
+                          className="text-btn-secondary inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/10 bg-white/5 text-white uppercase hover:bg-white hover:text-black transition-all duration-500 group/btn"
                         >
                           <span>{card.buttonText}</span>
                           <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
@@ -169,17 +169,17 @@ const FeatureLinks = ({ mode = 'all' }) => {
                       </div>
                     ) : (
                       <>
-                        <span className="text-[#888] text-[12px] uppercase tracking-[0.2em] font-bold mb-4">{card.category}</span>
-                        <h2 className="text-white text-2xl md:text-3xl lg:text-[38px] font-bold mb-4 tracking-tight leading-tight">
+                        <span className="text-tagline-02 text-[#888] uppercase mb-4">{card.category}</span>
+                        <h2 className="text-heading-04 md:text-heading-03 text-white mb-4">
                           {card.title}
                         </h2>
-                        <p className="text-[#999] text-base lg:text-[17px] leading-relaxed mb-6 max-w-lg">
+                        <p className="text-body-02 text-[#999] mb-6 max-w-lg">
                           {card.description}
                         </p>
 
                         <button
                           onClick={(e) => handleTryClick(e, card)}
-                          className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-white/10 bg-white/5 text-white text-[12px] font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-500 group/btn"
+                          className="text-btn-secondary inline-flex items-center gap-2 px-8 py-3 rounded-full border border-white/10 bg-white/5 text-white uppercase hover:bg-white hover:text-black transition-all duration-500 group/btn"
                         >
                           <span>{card.buttonText}</span>
                           <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />

@@ -24,7 +24,7 @@ const WorkflowShowcase = () => {
   const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <section className="relative w-full min-h-screen py-24 lg:py-32 bg-[#050505] flex flex-col items-center justify-center border-t border-white/[0.05]">
+    <section className="relative w-full py-16 lg:py-20 bg-[#050505] flex flex-col items-center border-t border-white/[0.05]">
       <div className="w-full max-w-[1360px] mx-auto px-6 mb-16 lg:mb-24 flex flex-col items-center text-center">
         {/* Subtle Label */}
         <div className="inline-flex items-center gap-2 border border-white/10 rounded-full px-3 py-1 w-fit mb-8">

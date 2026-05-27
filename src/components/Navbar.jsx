@@ -60,7 +60,7 @@ const Navbar = ({ openContactModal }) => {
         {/* Soft bottom atmospheric glow/bloom diffusion */}
         <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-[55%] h-3 bg-[#512DA8]/12 blur-md pointer-events-none rounded-full z-0"></div>
 
-        <span className="text-[11px] md:text-xs text-zinc-200 font-medium relative z-10 tracking-wide flex items-center justify-center gap-1.5">
+        <span className="text-tagline-02 text-zinc-200 relative z-10 flex items-center justify-center gap-1.5">
           <span>10X Technologies site is still under construction.</span>
           <span className="text-zinc-600 select-none">•</span>
           <a 
@@ -69,7 +69,7 @@ const Navbar = ({ openContactModal }) => {
               e.preventDefault();
               openContactModal();
             }}
-            className="text-white underline hover:text-[#a78bfa] transition-colors duration-300 font-semibold cursor-pointer whitespace-nowrap"
+            className="text-white underline hover:text-[#a78bfa] transition-colors duration-300 cursor-pointer whitespace-nowrap"
           >
             contact support
           </a>
@@ -91,23 +91,23 @@ const Navbar = ({ openContactModal }) => {
             <Link to="/" className="flex items-center cursor-pointer group">
               <img 
                 src="https://i.ibb.co/Y781ky06/Screenshot-2026-05-26-000916-removebg-preview.png"
-                alt="10xTechnologies Logo"
+                alt="10X Technologies Logo"
                 className="h-8 md:h-10 w-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
               />
             </Link>
             
-            <div className="hidden md:flex items-center gap-8 text-sm text-[#A0A0A0]">
-              <Link to="/product" className="hover:text-white transition-colors duration-300 font-medium tracking-wide">Product</Link>
-              <Link to="/ai" className="hover:text-white transition-colors duration-300 font-medium tracking-wide">AI</Link>
+            <div className="hidden md:flex items-center gap-8 text-[#A0A0A0]">
+              <Link to="/product" className="text-body-02 hover:text-white transition-colors duration-300">LUCA ●● | Smart Speaker</Link>
+              <Link to="/ai" className="text-body-02 hover:text-white transition-colors duration-300">LFM</Link>
             </div>
           </div>
           
           <div className="hidden md:block">
             <button 
               onClick={openContactModal}
-              className="bg-gradient-to-r from-[#512da8] to-[#4c1d95] border border-purple-500/30 text-white px-6 py-2.5 rounded-full text-sm font-semibold shadow-[0_4px_20px_rgba(81,45,168,0.3),inset_0_1px_0_rgba(255,255,255,0.15)] hover:shadow-[0_4px_30px_rgba(124,58,237,0.5),inset_0_1px_0_rgba(255,255,255,0.25)] hover:border-purple-400/40 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer"
+              className="text-btn-secondary bg-gradient-to-r from-[#512da8] to-[#4c1d95] border border-purple-500/30 text-white px-6 py-2.5 rounded-full shadow-[0_4px_20px_rgba(81,45,168,0.3),inset_0_1px_0_rgba(255,255,255,0.15)] hover:shadow-[0_4px_30px_rgba(124,58,237,0.5),inset_0_1px_0_rgba(255,255,255,0.25)] hover:border-purple-400/40 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer"
             >
-              <span className="relative z-10 tracking-wide">Contact Us</span>
+              <span className="relative z-10">Contact Us</span>
             </button>
           </div>
  

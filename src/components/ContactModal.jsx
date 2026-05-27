@@ -67,8 +67,8 @@ const ContactModal = ({ isOpen, onClose }) => {
             <X className="w-5 h-5" />
           </button>
 
-          <h2 className="text-2xl font-semibold text-white mb-2">Contact Support</h2>
-          <p className="text-[#A0A0A0] text-sm mb-8">We'd love to hear from you. Send us a message.</p>
+          <h2 className="text-heading-05 text-white mb-2">Contact Support</h2>
+          <p className="text-body-03 text-[#A0A0A0] mb-8">We'd love to hear from you. Send us a message.</p>
 
           {isSuccess ? (
             <motion.div 
@@ -78,15 +78,15 @@ const ContactModal = ({ isOpen, onClose }) => {
             >
               <CheckCircle2 className="w-16 h-16 text-emerald-400" />
               <div>
-                <h3 className="text-xl font-medium text-white mb-1">Message Sent!</h3>
-                <p className="text-[#A0A0A0] text-sm">We will get back to you shortly.</p>
+                <h3 className="text-heading-06 text-white mb-1">Message Sent!</h3>
+                <p className="text-body-03 text-[#A0A0A0]">We will get back to you shortly.</p>
               </div>
             </motion.div>
           ) : (
             <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
               
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-medium text-[#A0A0A0] uppercase tracking-wider ml-1">Name</label>
+                <label className="text-tagline-02 text-[#A0A0A0] uppercase ml-1">Name</label>
                 <input 
                   type="text" 
                   name="name"
@@ -97,7 +97,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-medium text-[#A0A0A0] uppercase tracking-wider ml-1">Email</label>
+                <label className="text-tagline-02 text-[#A0A0A0] uppercase ml-1">Email</label>
                 <input 
                   type="email" 
                   name="email"
@@ -108,7 +108,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-medium text-[#A0A0A0] uppercase tracking-wider ml-1">Message</label>
+                <label className="text-tagline-02 text-[#A0A0A0] uppercase ml-1">Message</label>
                 <textarea 
                   name="message"
                   placeholder="How can we help you?"
@@ -121,7 +121,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               <button 
                 type="submit"
                 disabled={isSubmitting}
-                className="mt-4 w-full bg-white text-black font-semibold rounded-xl py-3.5 flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)] disabled:opacity-70 disabled:cursor-not-allowed"
+                className="text-btn-secondary mt-4 w-full bg-white text-black rounded-xl py-3.5 flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)] disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <><Loader2 className="w-4 h-4 animate-spin" /> Sending...</>
