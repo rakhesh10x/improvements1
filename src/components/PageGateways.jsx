@@ -50,8 +50,7 @@ const PageGateways = () => {
   return (
     <section className="relative z-20 w-full max-w-[1360px] mx-auto px-6 py-8 lg:py-12">
       <div className="mb-10 text-center">
-        <span className="text-tagline-02 text-purple-400 uppercase mb-2 block">Our Products</span>
-        <h2 className="text-heading-03 md:text-heading-02 text-white">Hardware & Intelligence</h2>
+        <h2 className="text-tier-1">Hardware & Intelligence</h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {gateways.map((gateway, i) => (
@@ -132,8 +131,8 @@ const PageGateways = () => {
                 {gateway.tagline && (
                   <span className="text-tagline-02 text-purple-400 uppercase mb-3">{gateway.tagline}</span>
                 )}
-                <h3 className="text-heading-05 text-white mb-3">{gateway.title}</h3>
-                <p className="text-body-03 text-[#888] mb-8 max-w-sm">
+                <h3 className="text-tier-2">{gateway.title}</h3>
+                <p className="text-tier-3 max-w-sm mb-8">
                   {gateway.description}
                 </p>
                 

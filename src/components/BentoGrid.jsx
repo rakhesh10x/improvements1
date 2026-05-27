@@ -46,8 +46,8 @@ const BentoGrid = () => {
           <NoiseOverlay />
           <div className="absolute -inset-10 bg-[radial-gradient(ellipse_at_bottom_left,rgba(50,150,200,0.15)_0%,transparent_70%)] group-hover:opacity-100 group-hover:scale-110 opacity-60 transition-all duration-500"></div>
           <div className="relative z-10">
-            <h3 className="text-3xl font-semibold text-white mb-1 tracking-tighter">100%</h3>
-            <p className="text-xs text-[#A0A0A0] font-medium">On-device processing</p>
+            <h3 className="text-tier-2">100%</h3>
+            <p className="text-tier-3 mt-1">On-device processing</p>
           </div>
         </motion.div>
         
@@ -55,8 +55,8 @@ const BentoGrid = () => {
           <NoiseOverlay />
           <div className="absolute -inset-10 bg-[radial-gradient(ellipse_at_top_right,rgba(150,50,200,0.15)_0%,transparent_70%)] group-hover:opacity-100 group-hover:scale-110 opacity-60 transition-all duration-500"></div>
           <div className="relative z-10">
-            <h3 className="text-3xl font-semibold text-white mb-1 tracking-tighter">Zero</h3>
-            <p className="text-xs text-[#A0A0A0] font-medium">Latency overhead vs cloud</p>
+            <h3 className="text-tier-2">Zero</h3>
+            <p className="text-tier-3 mt-1">Latency overhead vs cloud</p>
           </div>
         </motion.div>
         
@@ -92,8 +92,8 @@ const BentoGrid = () => {
           <NoiseOverlay />
           <div className="absolute -inset-10 bg-[radial-gradient(ellipse_at_top_left,rgba(50,200,150,0.15)_0%,transparent_70%)] group-hover:opacity-100 group-hover:scale-110 opacity-60 transition-all duration-500"></div>
           <div className="relative z-10">
-            <h3 className="text-3xl font-semibold text-white mb-1 tracking-tighter">LIBRE</h3>
-            <p className="text-xs text-[#A0A0A0] font-medium">Custom built Android-based OS</p>
+            <h3 className="text-tier-2">LIBRE</h3>
+            <p className="text-tier-3 mt-1">Custom built Android-based OS</p>
           </div>
         </motion.div>
 
@@ -101,8 +101,8 @@ const BentoGrid = () => {
           <NoiseOverlay />
           <div className="absolute -inset-10 bg-[radial-gradient(ellipse_at_bottom_right,rgba(200,150,50,0.15)_0%,transparent_70%)] group-hover:opacity-100 group-hover:scale-110 opacity-60 transition-all duration-500"></div>
           <div className="relative z-10">
-            <h3 className="text-3xl font-semibold text-white mb-1 tracking-tighter">30%</h3>
-            <p className="text-xs text-[#A0A0A0] font-medium">Closer to the final experience</p>
+            <h3 className="text-tier-2">30%</h3>
+            <p className="text-tier-3 mt-1">Closer to the final experience</p>
           </div>
         </motion.div>
       </motion.div>

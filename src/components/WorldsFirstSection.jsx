@@ -28,7 +28,7 @@ const WorldsFirstSection = () => {
   return (
     <section className="py-4 lg:py-6 bg-black text-white">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight">World's 1st</h2>
+        <h2 className="text-tier-1 mb-10">World's 1st</h2>
 
         {/* 3-column grid: card | image | card / card | image | card */}
         <div
@@ -56,8 +56,8 @@ const WorldsFirstSection = () => {
               <img src={`${import.meta.env.BASE_URL}${features[0].icon.slice(1)}`} alt={features[0].title} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-2">{features[0].title}</h3>
-              <p className="text-gray-400 leading-relaxed text-sm">{features[0].description}</p>
+              <h3 className="text-tier-2">{features[0].title}</h3>
+              <p className="text-tier-3">{features[0].description}</p>
             </div>
           </motion.div>
 
@@ -102,8 +102,8 @@ const WorldsFirstSection = () => {
               <img src={`${import.meta.env.BASE_URL}${features[1].icon.slice(1)}`} alt={features[1].title} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-2">{features[1].title}</h3>
-              <p className="text-gray-400 leading-relaxed text-sm">{features[1].description}</p>
+              <h3 className="text-tier-2">{features[1].title}</h3>
+              <p className="text-tier-3">{features[1].description}</p>
             </div>
           </motion.div>
 
@@ -120,8 +120,8 @@ const WorldsFirstSection = () => {
               <img src={`${import.meta.env.BASE_URL}${features[2].icon.slice(1)}`} alt={features[2].title} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-2">{features[2].title}</h3>
-              <p className="text-gray-400 leading-relaxed text-sm">{features[2].description}</p>
+              <h3 className="text-tier-2">{features[2].title}</h3>
+              <p className="text-tier-3">{features[2].description}</p>
             </div>
           </motion.div>
 
@@ -138,8 +138,8 @@ const WorldsFirstSection = () => {
               <img src={`${import.meta.env.BASE_URL}${features[3].icon.slice(1)}`} alt={features[3].title} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-2">{features[3].title}</h3>
-              <p className="text-gray-400 leading-relaxed text-sm">{features[3].description}</p>
+              <h3 className="text-tier-2">{features[3].title}</h3>
+              <p className="text-tier-3">{features[3].description}</p>
             </div>
           </motion.div>
 

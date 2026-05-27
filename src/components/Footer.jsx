@@ -62,7 +62,7 @@ const Footer = ({ openContactModal, minimal = false }) => {
       {!minimal && (
         <>
           <div className="mb-4">
-            <h3 className="text-heading-04 text-white mb-4">Community & support</h3>
+            <h3 className="text-tier-1">Community & support</h3>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -116,9 +116,9 @@ const Footer = ({ openContactModal, minimal = false }) => {
                <div className="flex-1">
                  <div className="flex items-center gap-2 mb-3">
                    <Sparkles className="w-5 h-5 text-purple-400 animate-pulse" />
-                   <h3 className="text-heading-04 text-white">Be the First to know about us</h3>
+                   <h3 className="text-tier-2">Be the First to know about us</h3>
                  </div>
-                 <p className="text-body-03 text-[#888] max-w-md mb-3">
+                 <p className="text-tier-3 max-w-md mb-3">
                    Join our waitlist. Be the first to know when LUCA ships and get exclusive BETA access to our foundation models and SOTA Research Updates.
                  </p>
                  <span className="text-tagline-02 text-purple-400 uppercase block">WE DON’T SPAM YOU!</span>

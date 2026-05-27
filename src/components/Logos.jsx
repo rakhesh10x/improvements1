@@ -1,26 +1,36 @@
 import React, { useState, useEffect } from 'react';
 
 const logos = [
-  { src: `${import.meta.env.BASE_URL}slider-logos/moreyeahs.png`, alt: 'MoreYeahs' },
-  { src: `${import.meta.env.BASE_URL}slider-logos/ggu-new-logo.png`, alt: 'GGU' },
-  { src: `${import.meta.env.BASE_URL}slider-logos/ah-logo.png`, alt: 'AH Logo' },
-  { src: `${import.meta.env.BASE_URL}slider-logos/meity-startup-hub-meity-startup-hub-01-01.png`, alt: 'MeitY Startup Hub' },
-  { src: `${import.meta.env.BASE_URL}slider-logos/dpiit-header.png`, alt: 'DPIIT' },
-  { src: `${import.meta.env.BASE_URL}slider-logos/7292-nvidia.png`, alt: 'NVIDIA' },
-  { src: `${import.meta.env.BASE_URL}slider-logos/activate-logo_color-white-e1601561941855.png`, alt: 'AWS Activate' },
-  { src: `${import.meta.env.BASE_URL}slider-logos/bharat_ai_mission_logo.png`, alt: 'Bharat AI Mission' },
+  { src: `${import.meta.env.BASE_URL}sliderlogo1.png`, alt: 'Logo 1', scale: 1.2, gap: '5rem' },
+  { src: `${import.meta.env.BASE_URL}sliderlogo2.png`, alt: 'Logo 2', scale: 1.9, gap: '6rem' },
+  { src: `${import.meta.env.BASE_URL}sliderlogo3.png`, alt: 'Logo 3', scale: 1.8, gap: '3rem' },
+  { src: `${import.meta.env.BASE_URL}sliderlogo4.png`, alt: 'Logo 4', scale: 1.0, gap: '3rem' },
+  { src: `${import.meta.env.BASE_URL}sliderlogo5.png`, alt: 'Logo 5', scale: 1.4, gap: '2.5rem' },
+  { src: `${import.meta.env.BASE_URL}sliderlogo6.png`, alt: 'Logo 6', scale: 1.8, gap: '2rem' },
+  { src: `${import.meta.env.BASE_URL}sliderlogo7.png`, alt: 'Logo 7', scale: 1.4, gap: '2.5rem' },
+  { src: `${import.meta.env.BASE_URL}sliderlogo8.png`, alt: 'Logo 8', scale: 1.0, gap: '3rem' },
+  { src: `${import.meta.env.BASE_URL}sliderlogo9.png`, alt: 'Logo 9', scale: 1.0, gap: '3rem' },
+  { src: `${import.meta.env.BASE_URL}sliderlogo10.png`, alt: 'Logo 10', scale: 1.6, gap: '2rem' },
 ];
 
 const LogoGroup = () => (
-  <div className="flex items-center gap-10 md:gap-16 flex-shrink-0 px-8">
+  <div className="flex items-center flex-shrink-0 px-2">
     {logos.map((logo, i) => (
-      <div key={i} className="flex items-center justify-center w-[120px] md:w-[160px] h-[60px] md:h-[80px]">
+      <div 
+        key={i} 
+        className="flex items-center justify-center h-[50px] sm:h-[60px] md:h-[75px]"
+        style={{ marginRight: logo.gap || '4rem' }}
+      >
         <img
           src={logo.src}
           alt={logo.alt}
           decoding="async"
           loading="lazy"
-          className="max-w-full max-h-[36px] md:max-h-[44px] w-auto h-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
+          className="w-full h-full object-contain opacity-[0.65] hover:opacity-100 transition-all duration-300"
+          style={{ 
+            filter: 'brightness(0) invert(1) drop-shadow(0 0 12px rgba(255,255,255,0.1))',
+            transform: `scale(${logo.scale || 1})`
+          }}
         />
       </div>
     ))}
@@ -37,18 +47,19 @@ const Logos = () => {
   if (!mounted) return <div className="h-32 w-full" />;
 
   return (
-    <section className="relative z-20 mt-24 w-full overflow-hidden">
-      <p className="text-tagline-02 text-[#A0A0A0] uppercase mb-3 text-center">
+    <section className="relative z-20 mt-8 md:mt-12 lg:mt-16 w-full overflow-hidden flex flex-col items-center">
+      <p className="text-tagline-02 text-[#A0A0A0] uppercase mb-4 text-center tracking-widest font-medium">
         COLLABORATED & BACKED BY
       </p>
 
-      <div className="border-y border-white/10 pt-4 pb-4">
-        <div className="relative w-full">
-          {/* Edge Gradients */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+      <div className="w-full border-y border-white/[0.08] pt-6 pb-1 bg-[#030303]/40 backdrop-blur-sm">
+        <div className="relative w-full max-w-[1920px] mx-auto flex items-center">
+          {/* Edge Gradients for smooth fade out */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
 
-          <div className="animate-marquee flex">
+          {/* Marquee Container with pause on hover */}
+          <div className="animate-marquee flex items-center hover:[animation-play-state:paused] cursor-pointer">
             <LogoGroup />
             <LogoGroup />
             <LogoGroup />

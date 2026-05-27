@@ -168,8 +168,8 @@ const BackingCards = () => {
             </div>
             <div className="relative z-10 flex flex-col items-center text-center">
               <span className="text-tagline-02 text-purple-400 uppercase mb-3">{backer.tagline}</span>
-              <h3 className="text-heading-06 text-white mb-4">{backer.name}</h3>
-              <p className="text-body-03 text-[#888] mb-8">{backer.description}</p>
+              <h3 className="text-tier-2">{backer.name}</h3>
+              <p className="text-tier-3 mb-8">{backer.description}</p>
               <button
                 onClick={() => openModal(backer)}
                 className="text-btn-secondary inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/10 bg-white/5 text-white hover:bg-white hover:text-black transition-all duration-300 group/btn"

@@ -88,13 +88,13 @@ const AIPage = () => {
                   <h1 className="text-white font-extrabold tracking-tight leading-[1.0] text-[clamp(2.6rem,6.5vw,5.5rem)]">
                     Language Fluency<br />Model
                   </h1>
-                  <p className="mt-4 text-[clamp(1rem,2vw,1.5rem)] font-semibold text-zinc-400 tracking-tight">
+                  <p className="text-tier-2 mt-4">
                     Conversational AI for internal knowledge.
                   </p>
                 </div>
 
                 {/* Description */}
-                <p className="text-[#666] text-sm md:text-base leading-relaxed max-w-xl">
+                <p className="text-tier-3 max-w-xl">
                   A compact, Indic-first language layer that turns intranet data, documents, and databases into natural conversation — fully offline, license-based, and deployment-ready.
                 </p>
 

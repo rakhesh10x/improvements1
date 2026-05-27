@@ -76,7 +76,7 @@ const Team = () => {
 
   return (
     <section className="py-4 lg:py-6 max-w-[1360px] mx-auto px-6">
-      <h2 className="text-heading-04 text-white mb-8">Our Team</h2>
+      <h2 className="text-tier-1 mb-8">Our Team</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
@@ -148,11 +148,11 @@ const Team = () => {
               {/* Right: details */}
               <div className="flex-1 flex flex-col justify-between py-6 px-6 relative z-10">
                 <div>
-                  <h3 className="text-heading-06 text-white">{selected.name}</h3>
+                  <h3 className="text-tier-2">{selected.name}</h3>
                   <p className="text-tagline-02 text-purple-400/80 uppercase mt-1.5">{selected.role}</p>
                 </div>
 
-                <p className="text-body-03 text-[#999] line-clamp-3">
+                <p className="text-tier-3 line-clamp-3">
                   {selected.description}
                 </p>
 

@@ -114,17 +114,14 @@ const LucaFeatureSection = ({ openContactModal }) => {
           className="w-full lg:w-[36%] flex flex-col gap-5 shrink-0"
           style={{ paddingLeft: '50px' }}
         >
-          <span className="text-purple-400 text-[10px] uppercase tracking-[0.3em] font-bold">
-            LUCA INTELLIGENCE
-          </span>
-          <h2 className="text-white text-2xl md:text-3xl lg:text-[36px] font-extrabold tracking-tight leading-[1.15] font-sans">
+          <h2 className="text-tier-2">
             Watch our{' '}
             <span className="bg-clip-text text-transparent"
               style={{ backgroundImage: 'linear-gradient(135deg,#c084fc 0%,#818cf8 100%)' }}>
               Announcement
             </span>
           </h2>
-          <p className="text-[#777] text-[13px] leading-[1.75] font-light max-w-[340px]">
+          <p className="text-tier-3 max-w-[340px] mt-4">
             An ambient intelligence platform built for Indian homes and dialects — powered by on-device AI with no lag and no compromise on privacy.
           </p>
           <div className="mt-2">

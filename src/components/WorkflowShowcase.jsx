@@ -26,16 +26,8 @@ const WorkflowShowcase = () => {
   return (
     <section className="relative w-full py-16 lg:py-20 bg-[#050505] flex flex-col items-center border-t border-white/[0.05]">
       <div className="w-full max-w-[1360px] mx-auto px-6 mb-16 lg:mb-24 flex flex-col items-center text-center">
-        {/* Subtle Label */}
-        <div className="inline-flex items-center gap-2 border border-white/10 rounded-full px-3 py-1 w-fit mb-8">
-          <svg className="w-3 h-3 text-[#512da8]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          <span className="text-[#512da8] text-[10px] uppercase tracking-[0.2em] font-bold">Our Approach</span>
-        </div>
-        
         {/* Main Title */}
-        <h2 className="text-white font-extrabold tracking-tight leading-[1.05] text-[clamp(2.5rem,5vw,4.5rem)] mb-6">
+        <h2 className="text-tier-1 mb-6">
           Purpose beats scale.
         </h2>
         
@@ -92,7 +84,7 @@ const WorkflowShowcase = () => {
                     <span className="text-[#512da8] text-[10px] uppercase tracking-[0.2em] font-bold mb-3 block">
                       PHASE 0{idx + 1}
                     </span>
-                    <h3 className={`text-2xl lg:text-3xl font-extrabold tracking-tight transition-colors duration-500 ${isActive ? 'text-white' : 'text-[#444]'}`}>
+                    <h3 className={`text-tier-2 transition-colors duration-500 ${isActive ? 'text-white' : 'text-[#444]'}`}>
                       {card.title}
                     </h3>
                     
@@ -107,7 +99,7 @@ const WorkflowShowcase = () => {
                       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="text-[#888] text-sm lg:text-base leading-relaxed font-light max-w-[90%]">
+                      <p className="text-tier-3 max-w-[90%]">
                         {card.text}
                       </p>
                     </motion.div>

@@ -67,14 +67,12 @@ const FeatureLinks = ({ mode = 'all' }) => {
     <section className="relative z-20 w-full max-w-[1360px] mx-auto px-6 py-8 lg:py-12">
         {mode === 'home' && (
           <div className="mb-10 text-center">
-            <span className="text-tagline-02 text-purple-400 uppercase mb-2 block">Insights</span>
-            <h2 className="text-heading-03 md:text-heading-02 text-white">Research & Blog</h2>
+            <h2 className="text-tier-1">Research & Blog</h2>
           </div>
         )}
         {mode === 'ai' && (
           <div className="mb-10 text-center">
-            <span className="text-tagline-02 text-purple-400 uppercase mb-2 block">Ecosystem</span>
-            <h2 className="text-heading-03 md:text-heading-02 text-white">Explore our Tech</h2>
+            <h2 className="text-tier-1">Explore our Tech</h2>
           </div>
         )}
         
@@ -162,11 +160,11 @@ const FeatureLinks = ({ mode = 'all' }) => {
                         <span className="text-tagline-02 text-purple-400 uppercase mb-1 opacity-60">
                           {card.category}
                         </span>
-                        <h2 className="text-heading-03 md:text-heading-02 text-white mb-6">
+                        <h2 className="text-tier-2">
                           <span className="whitespace-nowrap">Inside 10X Technologies &</span> <br />
                           <span className="text-white">LUCA</span>
                         </h2>
-                        <p className="text-body-03 text-[#888] mb-8 max-w-[340px]">
+                        <p className="text-tier-3 max-w-[340px] mb-8">
                           Read our latest announcements, SOTA - Research updates, product breakthroughs, behind the scenes stories and get to know about our journey in Redefining Technology!
                         </p>
 
@@ -183,10 +181,10 @@ const FeatureLinks = ({ mode = 'all' }) => {
                     ) : (
                       <>
                         <span className="text-tagline-02 text-[#888] uppercase mb-4">{card.category}</span>
-                        <h2 className="text-heading-04 md:text-heading-03 text-white mb-4">
+                        <h2 className="text-tier-2">
                           {card.title}
                         </h2>
-                        <p className="text-body-02 text-[#999] mb-6 max-w-lg">
+                        <p className="text-tier-3 max-w-lg mb-6">
                           {card.description}
                         </p>
 
