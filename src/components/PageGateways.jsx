@@ -49,7 +49,7 @@ const PageGateways = () => {
 
   return (
     <section className="relative z-20 w-full max-w-[1360px] mx-auto px-6 py-8 lg:py-12">
-      <div className="mb-10 text-center">
+      <div className="mb-10 text-left">
         <h2 className="text-tier-1">Hardware & Intelligence</h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

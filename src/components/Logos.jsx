@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 const logos = [
-  { src: `${import.meta.env.BASE_URL}sliderlogo1.png`, alt: 'Logo 1', scale: 1.2, gap: '5rem' },
-  { src: `${import.meta.env.BASE_URL}sliderlogo2.png`, alt: 'Logo 2', scale: 1.9, gap: '6rem' },
-  { src: `${import.meta.env.BASE_URL}sliderlogo3.png`, alt: 'Logo 3', scale: 1.8, gap: '3rem' },
+  { src: `${import.meta.env.BASE_URL}sliderlogo1.png`, alt: 'Logo 1', scale: 1.2, gap: '8rem' },
+  { src: `${import.meta.env.BASE_URL}sliderlogo2.png`, alt: 'Logo 2', scale: 1.9, gap: '9rem' },
+  { src: `${import.meta.env.BASE_URL}sliderlogo3.png`, alt: 'Logo 3', scale: 1.8, gap: '6rem' },
   { src: `${import.meta.env.BASE_URL}sliderlogo4.png`, alt: 'Logo 4', scale: 1.0, gap: '3rem' },
   { src: `${import.meta.env.BASE_URL}sliderlogo5.png`, alt: 'Logo 5', scale: 1.4, gap: '2.5rem' },
   { src: `${import.meta.env.BASE_URL}sliderlogo6.png`, alt: 'Logo 6', scale: 1.8, gap: '2rem' },
@@ -59,7 +59,7 @@ const Logos = () => {
           <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
 
           {/* Marquee Container with pause on hover */}
-          <div className="animate-marquee flex items-center hover:[animation-play-state:paused] cursor-pointer">
+          <div className="animate-marquee min-w-max flex items-center hover:[animation-play-state:paused] cursor-pointer">
             <LogoGroup />
             <LogoGroup />
             <LogoGroup />

@@ -157,7 +157,7 @@ const BackingCards = () => {
         {backers.map((backer, i) => (
           <div 
             key={i} 
-            className={`relative flex flex-col rounded-[28px] p-10 overflow-hidden border border-white/[0.05] bg-white/[0.01] backdrop-blur-md ${backer.borderHover} transition-all duration-500 group`}
+            className={`relative h-full flex flex-col rounded-[28px] p-10 overflow-hidden border border-white/[0.05] bg-white/[0.01] backdrop-blur-md ${backer.borderHover} transition-all duration-500 group`}
           >
             <div
               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
@@ -166,13 +166,13 @@ const BackingCards = () => {
             <div className="relative z-10 h-24 flex items-center justify-center mb-10 transition-transform duration-700 group-hover:scale-110">
               {backer.logo}
             </div>
-            <div className="relative z-10 flex flex-col items-center text-center">
+            <div className="relative z-10 flex flex-col items-center text-center flex-1">
               <span className="text-tagline-02 text-purple-400 uppercase mb-3">{backer.tagline}</span>
-              <h3 className="text-tier-2">{backer.name}</h3>
-              <p className="text-tier-3 mb-8">{backer.description}</p>
+              <h3 className="text-[1.05rem] lg:text-[1.15rem] xl:text-[1.35rem] font-semibold text-white tracking-tight mb-4 whitespace-nowrap w-full">{backer.name}</h3>
+              <p className="text-[0.95rem] text-[#A0A0A0] leading-[1.7] mb-8 w-full max-w-[300px] mx-auto">{backer.description}</p>
               <button
                 onClick={() => openModal(backer)}
-                className="text-btn-secondary inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/10 bg-white/5 text-white hover:bg-white hover:text-black transition-all duration-300 group/btn"
+                className="text-btn-secondary mt-auto inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/10 bg-white/5 text-white hover:bg-white hover:text-black transition-all duration-300 group/btn"
               >
                 <span>Read more</span>
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />

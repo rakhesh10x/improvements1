@@ -66,12 +66,12 @@ const FeatureLinks = ({ mode = 'all' }) => {
   return (
     <section className="relative z-20 w-full max-w-[1360px] mx-auto px-6 py-8 lg:py-12">
         {mode === 'home' && (
-          <div className="mb-10 text-center">
+          <div className="mb-10 text-left">
             <h2 className="text-tier-1">Research & Blog</h2>
           </div>
         )}
         {mode === 'ai' && (
-          <div className="mb-10 text-center">
+          <div className="mb-10 text-left">
             <h2 className="text-tier-1">Explore our Tech</h2>
           </div>
         )}
@@ -156,16 +156,15 @@ const FeatureLinks = ({ mode = 'all' }) => {
                     (originalIndex === 3) ? 'md:order-2 items-start text-left p-8 md:p-12' : (originalIndex === 1) ? 'md:order-2 items-start text-left md:pl-12 lg:pl-16' : 'md:order-1 items-start text-left md:pr-12 lg:pr-16'
                   }`}>
                     {originalIndex === 3 ? (
-                      <div className="flex flex-col items-start w-full max-w-sm ml-0">
+                      <div className="flex flex-col items-start w-full ml-0">
                         <span className="text-tagline-02 text-purple-400 uppercase mb-1 opacity-60">
                           {card.category}
                         </span>
-                        <h2 className="text-tier-2">
-                          <span className="whitespace-nowrap">Inside 10X Technologies &</span> <br />
-                          <span className="text-white">LUCA</span>
+                        <h2 className="text-tier-2 mb-4">
+                          <span className="text-white">Inside 10X Technologies & LUCA</span>
                         </h2>
-                        <p className="text-tier-3 max-w-[340px] mb-8">
-                          Read our latest announcements, SOTA - Research updates, product breakthroughs, behind the scenes stories and get to know about our journey in Redefining Technology!
+                        <p className="text-[0.95rem] text-[#A0A0A0] leading-[1.7] w-full mb-8">
+                          Read our latest announcements, SOTA - Research updates, product breakthroughs, behind the scenes stories and get to know about our journey in Redefining Technology! Discover how we are pushing the boundaries of edge AI and building efficient, multilingual systems from the ground up. Join us as we explore the future of intelligent hardware and scalable on-device communication.
                         </p>
 
                         <Link
@@ -184,7 +183,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
                         <h2 className="text-tier-2">
                           {card.title}
                         </h2>
-                        <p className="text-tier-3 max-w-lg mb-6">
+                        <p className="text-[0.95rem] text-[#A0A0A0] leading-[1.7] max-w-lg mb-6">
                           {card.description}
                         </p>
 
