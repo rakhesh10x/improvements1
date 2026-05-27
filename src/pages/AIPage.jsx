@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import ContactModal from '../components/ContactModal';
 import { Sparkles, Layers, Settings2, ArrowUpRight, MessageCircle, Zap, Target, Shield } from 'lucide-react';
 import WorkflowShowcase from '../components/WorkflowShowcase';
+import TechnicalFiller from '../components/TechnicalFiller';
 
 const AIPage = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -147,9 +148,9 @@ const AIPage = () => {
             <div className="w-full max-w-[1360px] mx-auto flex flex-col">
 
               {/* TOP CENTER HEADING */}
-              <div className="w-full max-w-4xl mx-auto text-center mb-10 md:mb-14">
-                <h2 className="text-white text-2xl md:text-[2rem] font-semibold tracking-tight leading-[1.25]">
-                  You do not need frontier AI for every workflow.
+              <div className="w-full max-w-[1360px] mx-auto text-center mb-10 md:mb-14">
+                <h2 className="text-tier-1">
+                  You do not need frontier AI for every workflow.<br />
                   You should not depend on APIs for internal questions.
                 </h2>
               </div>
@@ -219,7 +220,10 @@ const AIPage = () => {
           </section>
 
           {/* Interactive Workflow Showcase */}
+          <TechnicalFiller />
           <WorkflowShowcase />
+
+          <TechnicalFiller />
 
           {/* Section 3: Old AI Hero (Features/Card) */}
           <section className="relative px-6 py-16 max-w-[1360px] mx-auto overflow-visible z-10 flex items-center w-full">

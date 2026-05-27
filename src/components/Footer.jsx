@@ -62,7 +62,7 @@ const Footer = ({ openContactModal, minimal = false }) => {
       {!minimal && (
         <>
           <div className="mb-4">
-            <h3 className="text-tier-1">Community & support</h3>
+            <h3 className="text-tier-1">Community & Support</h3>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -112,7 +112,7 @@ const Footer = ({ openContactModal, minimal = false }) => {
           {/* Premium Newsletter / Waitlist Section */}
           <div className="relative w-full rounded-3xl p-[1px] overflow-hidden mb-8 group">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 via-blue-500/30 to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <div className="relative bg-[#050508]/90 backdrop-blur-xl rounded-[23px] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 h-full border border-white/5 shadow-[inset_0_0_30px_rgba(0,0,0,0.5)]">
+            <div className="relative bg-[#050508]/90 backdrop-blur-xl rounded-[23px] py-6 px-8 md:py-8 md:px-10 flex flex-col md:flex-row items-center justify-between gap-8 h-full border border-white/5 shadow-[inset_0_0_30px_rgba(0,0,0,0.5)]">
                <div className="flex-1">
                  <div className="flex items-center gap-2 mb-3">
                    <Sparkles className="w-5 h-5 text-purple-400 animate-pulse" />
