@@ -10,7 +10,7 @@ const PageGateways = () => {
   const handleMouseEnter = (idx) => {
     setHoveredCard(idx);
     const v = videoRefs.current[idx];
-    if (v) {
+    if (v && idx !== 0) {
       v.currentTime = 0;
       v.playbackRate = 5;
       v.play().catch(err => console.log("Video play interrupted", err));
@@ -24,7 +24,7 @@ const PageGateways = () => {
   const handleMouseLeave = (idx) => {
     setHoveredCard(null);
     const v = videoRefs.current[idx];
-    if (v) {
+    if (v && idx !== 0) {
       v.pause();
       v.currentTime = 0;
     }
@@ -106,22 +106,16 @@ const PageGateways = () => {
                     {/* Internal Premium Glow */}
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(81,45,139,0.15)_0%,transparent_70%)] opacity-80 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
 
-                    {/* Image with Fade and Glow Sync */}
-                    <img 
-                      src={gateway.image} 
-                      alt={gateway.title}
-                      className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-90 group-hover:scale-[1.02] z-10 ${hoveredCard === i ? 'opacity-0' : 'group-hover:opacity-100'}`}
-                    />
-
                     {/* Hardware Video (New Video) */}
                     <video
                       ref={el => videoRefs.current[i] = el}
                       src={`${import.meta.env.BASE_URL}new video in ai container.mp4`}
+                      poster={gateway.image}
+                      autoPlay
+                      loop
                       muted
                       playsInline
-                      preload="auto"
-                      onEnded={handleVideoEnded}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-0 z-10 ${hoveredCard === i ? 'opacity-100' : 'opacity-0'}`}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.02] z-10"
                     />
 
                     {/* Gloss reflection */}
