@@ -18,19 +18,19 @@ const tabs = [
       'Premium industrial design'
     ],
     visual: (
-      <div className="relative w-full h-full min-h-[400px] flex items-center justify-center rounded-2xl overflow-hidden bg-black border border-white/5 shadow-[inset_0_0_80px_rgba(81,45,168,0.2)]">
+      <div className="relative w-full flex items-center justify-center rounded-2xl overflow-hidden bg-black border border-white/5 shadow-[inset_0_0_80px_rgba(81,45,168,0.2)]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-600/30 blur-[100px] rounded-full" />
         <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-blue-600/20 blur-[80px] rounded-full" />
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="relative z-10 w-full h-full flex items-center justify-center"
+          className="relative z-10 w-full flex items-center justify-center"
         >
           <img 
             src="/hardware productpage.png" 
             alt="Hardware Showcase" 
-            className="w-full h-full object-cover drop-shadow-2xl"
+            className="w-full h-auto object-contain block drop-shadow-2xl"
           />
         </motion.div>
       </div>
@@ -49,19 +49,19 @@ const tabs = [
       'Cross-device ecosystem'
     ],
     visual: (
-      <div className="relative w-full h-full min-h-[400px] flex items-center justify-center rounded-2xl overflow-hidden bg-black border border-white/5 shadow-[inset_0_0_80px_rgba(59,130,246,0.15)]">
+      <div className="relative w-full flex items-center justify-center rounded-2xl overflow-hidden bg-black border border-white/5 shadow-[inset_0_0_80px_rgba(59,130,246,0.15)]">
         <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-blue-600/20 blur-[120px] rounded-full" />
         <div className="absolute bottom-1/3 right-1/4 w-56 h-56 bg-indigo-600/20 blur-[100px] rounded-full" />
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="relative z-10 w-full h-full flex items-center justify-center"
+          className="relative z-10 w-full flex items-center justify-center"
         >
           <img 
             src="/os product page.png" 
             alt="OS Showcase" 
-            className="w-full h-full object-cover drop-shadow-2xl"
+            className="w-full h-auto object-contain block drop-shadow-2xl"
           />
         </motion.div>
       </div>
@@ -80,19 +80,19 @@ const tabs = [
       'Emotion-aware interaction'
     ],
     visual: (
-      <div className="relative w-full h-full min-h-[400px] flex items-center justify-center rounded-2xl overflow-hidden bg-black border border-white/5 shadow-[inset_0_0_100px_rgba(217,70,239,0.15)]">
+      <div className="relative w-full flex items-center justify-center rounded-2xl overflow-hidden bg-black border border-white/5 shadow-[inset_0_0_100px_rgba(217,70,239,0.15)]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(217,70,239,0.15)_0%,transparent_70%)]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-fuchsia-600/30 blur-[100px] rounded-full" />
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="relative z-10 w-full h-full flex items-center justify-center"
+          className="relative z-10 w-full flex items-center justify-center"
         >
           <img 
             src="/ai product page.png" 
             alt="AI Showcase" 
-            className="w-full h-full object-cover drop-shadow-[0_0_40px_rgba(217,70,239,0.2)]"
+            className="w-full h-auto object-contain block drop-shadow-[0_0_40px_rgba(217,70,239,0.2)]"
           />
         </motion.div>
       </div>
@@ -271,7 +271,7 @@ const ProductTabs = () => {
               </div>
 
               {/* Visual */}
-              <div className="order-1 lg:order-2 w-full h-full">
+              <div className="order-1 lg:order-2 w-full flex items-center justify-center">
                 {activeTab.visual}
               </div>
             </motion.div>
