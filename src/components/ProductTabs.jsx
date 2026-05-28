@@ -25,12 +25,12 @@ const tabs = [
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="relative z-10 w-full h-full p-4 sm:p-8 flex items-center justify-center"
+          className="relative z-10 w-full h-full flex items-center justify-center"
         >
           <img 
             src="/hardware productpage.png" 
             alt="Hardware Showcase" 
-            className="w-full h-full object-contain max-h-[400px] drop-shadow-2xl"
+            className="w-full h-full object-cover drop-shadow-2xl"
           />
         </motion.div>
       </div>
@@ -56,12 +56,12 @@ const tabs = [
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="relative z-10 w-full h-full p-4 sm:p-8 flex items-center justify-center"
+          className="relative z-10 w-full h-full flex items-center justify-center"
         >
           <img 
             src="/os product page.png" 
             alt="OS Showcase" 
-            className="w-full h-full object-contain max-h-[400px] drop-shadow-2xl"
+            className="w-full h-full object-cover drop-shadow-2xl"
           />
         </motion.div>
       </div>
@@ -84,27 +84,16 @@ const tabs = [
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(217,70,239,0.15)_0%,transparent_70%)]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-fuchsia-600/30 blur-[100px] rounded-full" />
         <motion.div
-          animate={{ scale: [1, 1.05, 1], rotate: [0, 5, -5, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-          className="relative z-10"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="relative z-10 w-full h-full flex items-center justify-center"
         >
-          <div className="relative w-40 h-40 border border-fuchsia-500/30 rounded-full flex items-center justify-center bg-black/50 backdrop-blur-md">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-              className="absolute inset-[-1px] rounded-full border border-transparent border-t-fuchsia-400/50 border-r-fuchsia-400/50"
-            />
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-fuchsia-600/40 to-purple-600/40 blur-md absolute" />
-            <Brain className="w-12 h-12 text-fuchsia-300 relative z-10" />
-            <motion.div
-              animate={{ rotate: -360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-              className="absolute w-full h-full"
-            >
-              <div className="absolute -top-2 left-1/2 w-4 h-4 bg-fuchsia-400 rounded-full shadow-[0_0_15px_rgba(232,121,249,0.8)]" />
-              <div className="absolute bottom-4 right-2 w-3 h-3 bg-purple-400 rounded-full shadow-[0_0_10px_rgba(192,132,252,0.8)]" />
-            </motion.div>
-          </div>
+          <img 
+            src="/LUCA AI image.png" 
+            alt="AI Showcase" 
+            className="w-full h-full object-cover drop-shadow-[0_0_40px_rgba(217,70,239,0.3)]"
+          />
         </motion.div>
       </div>
     )
