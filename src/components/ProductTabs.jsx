@@ -22,20 +22,16 @@ const tabs = [
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-600/30 blur-[100px] rounded-full" />
         <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-blue-600/20 blur-[80px] rounded-full" />
         <motion.div
-          initial={{ rotate: -5, scale: 0.95 }}
-          animate={{ rotate: 0, scale: 1 }}
-          transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
-          className="relative z-10 w-64 h-64 border border-white/10 rounded-[2rem] bg-gradient-to-br from-white/5 to-transparent backdrop-blur-xl flex flex-col items-center justify-center p-6 shadow-2xl"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="relative z-10 w-full h-full p-4 sm:p-8 flex items-center justify-center"
         >
-          <div className="w-24 h-24 rounded-full border border-purple-500/30 flex items-center justify-center bg-black mb-4 relative">
-            <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-xl animate-pulse" />
-            <AudioWaveform className="w-10 h-10 text-purple-400 relative z-10" />
-          </div>
-          <div className="w-full flex justify-between px-4 mt-6">
-            <div className="w-12 h-2 rounded-full bg-white/10" />
-            <div className="w-12 h-2 rounded-full bg-purple-500/40" />
-            <div className="w-12 h-2 rounded-full bg-white/10" />
-          </div>
+          <img 
+            src="/hardware productpage.png" 
+            alt="Hardware Showcase" 
+            className="w-full h-full object-contain max-h-[400px] drop-shadow-2xl"
+          />
         </motion.div>
       </div>
     )
@@ -56,33 +52,18 @@ const tabs = [
       <div className="relative w-full h-full min-h-[400px] flex items-center justify-center rounded-2xl overflow-hidden bg-black border border-white/5 shadow-[inset_0_0_80px_rgba(59,130,246,0.15)]">
         <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-blue-600/20 blur-[120px] rounded-full" />
         <div className="absolute bottom-1/3 right-1/4 w-56 h-56 bg-indigo-600/20 blur-[100px] rounded-full" />
-        <div className="relative z-10 w-72 h-48 border border-white/10 rounded-xl bg-[#0a0a0f] overflow-hidden flex flex-col">
-          <div className="h-8 border-b border-white/10 flex items-center px-4 gap-2 bg-white/5">
-            <div className="w-2 h-2 rounded-full bg-red-500/50" />
-            <div className="w-2 h-2 rounded-full bg-yellow-500/50" />
-            <div className="w-2 h-2 rounded-full bg-green-500/50" />
-          </div>
-          <div className="flex-1 p-4 flex flex-col gap-3 relative">
-            <motion.div
-              initial={{ width: '0%' }}
-              animate={{ width: '100%' }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-              className="absolute top-0 left-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent"
-            />
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center"><Layers className="w-4 h-4 text-blue-400" /></div>
-              <div className="h-2 bg-white/10 rounded-full w-24" />
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-indigo-500/20 flex items-center justify-center"><Globe className="w-4 h-4 text-indigo-400" /></div>
-              <div className="h-2 bg-white/10 rounded-full w-32" />
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center"><Shield className="w-4 h-4 text-purple-400" /></div>
-              <div className="h-2 bg-white/10 rounded-full w-20" />
-            </div>
-          </div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="relative z-10 w-full h-full p-4 sm:p-8 flex items-center justify-center"
+        >
+          <img 
+            src="/os product page.png" 
+            alt="OS Showcase" 
+            className="w-full h-full object-contain max-h-[400px] drop-shadow-2xl"
+          />
+        </motion.div>
       </div>
     )
   },
