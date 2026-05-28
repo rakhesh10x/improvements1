@@ -4,7 +4,7 @@ import Logo10X from './Logo10X';
 const Hero = () => {
   const navigate = useNavigate();
   return (
-    <section className="relative px-6 pt-40 pb-12 max-w-[1360px] mx-auto overflow-visible z-10 min-h-[70svh] flex items-center">
+    <section className="relative px-6 pt-40 pb-12 max-w-[1220px] mx-auto overflow-visible z-10 min-h-[70svh] flex items-center">
       
       {/* Background is purely black */}
 

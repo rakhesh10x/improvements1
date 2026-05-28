@@ -64,19 +64,19 @@ const FeatureLinks = ({ mode = 'all' }) => {
   };
 
   return (
-    <section className="relative z-20 w-full max-w-[1360px] mx-auto px-6 py-8 lg:py-12">
+    <section className="relative z-20 w-full max-w-[1220px] mx-auto px-6 py-8 lg:py-12">
         {mode === 'home' && (
-          <div className="mb-10 text-left">
+          <div className="mb-6 text-left">
             <h2 className="text-tier-1">Research & Blog</h2>
           </div>
         )}
         {mode === 'ai' && (
-          <div className="mb-10 text-left">
+          <div className="mb-6 text-left">
             <h2 className="text-tier-1">Explore our Tech</h2>
           </div>
         )}
         
-        <div className="flex flex-col gap-12 lg:gap-16">
+        <div className="flex flex-col gap-10 lg:gap-16">
           {cards.map((card, i) => {
             // Calculate the original index to preserve alternating logic and card 4's unique style
             const originalIndex = allCards.findIndex(c => c.title === card.title);
@@ -99,7 +99,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
                   </>
                 )}
 
-                <div className={`grid grid-cols-1 md:grid-cols-2 ${originalIndex === 3 ? 'gap-0 items-stretch' : 'gap-16 lg:gap-24 items-center'} relative z-10`}>
+                <div className={`grid grid-cols-1 md:grid-cols-2 ${originalIndex === 3 ? 'gap-0 items-stretch' : 'gap-10 lg:gap-24 items-center'} relative z-10`}>
                   {/* Image Section */}
                   <div className={`relative ${originalIndex === 3 ? 'w-full h-full min-h-[250px] md:min-h-0 flex items-center justify-center' : 'aspect-[16/10] rounded-[24px] overflow-hidden group w-full bg-[#08080f] border border-white/[0.05] hover:border-transparent shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)] transition-all duration-500'} ${
                     (originalIndex === 3) ? 'md:order-1' : (originalIndex === 1) ? 'md:order-1 md:mr-auto' : 'md:order-2 md:ml-auto'
@@ -153,7 +153,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
 
                   {/* Text Content Section */}
                   <div className={`flex flex-col h-full justify-center ${
-                    (originalIndex === 3) ? 'md:order-2 items-start text-left p-8 md:p-12' : (originalIndex === 1) ? 'md:order-2 items-start text-left md:pl-12 lg:pl-16' : 'md:order-1 items-start text-left md:pr-12 lg:pr-16'
+                    (originalIndex === 3) ? 'md:order-2 items-start text-left p-6 md:p-12' : (originalIndex === 1) ? 'md:order-2 items-start text-left md:pl-12 lg:pl-16' : 'md:order-1 items-start text-left md:pr-12 lg:pr-16'
                   }`}>
                     {originalIndex === 3 ? (
                       <div className="flex flex-col items-start w-full ml-0">
@@ -163,7 +163,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
                         <h2 className="text-tier-2 mb-4">
                           <span className="text-white">Inside 10X Technologies & LUCA</span>
                         </h2>
-                        <p className="text-[0.95rem] text-[#A0A0A0] leading-[1.7] w-full mb-8">
+                        <p className="text-[0.95rem] text-[#A0A0A0] leading-[1.7] w-full mb-6">
                           Read our latest announcements, SOTA - Research updates, product breakthroughs, behind the scenes stories and get to know about our journey in Redefining Technology! Discover how we are pushing the boundaries of edge AI and building efficient, multilingual systems from the ground up. Join us as we explore the future of intelligent hardware and scalable on-device communication.
                         </p>
 

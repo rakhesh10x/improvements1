@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const SolutionSection = () => {
   return (
-    <section className="py-24 bg-white text-black overflow-hidden">
+    <section className="py-10 bg-white text-black overflow-hidden">
       <div className="container mx-auto px-6 flex flex-col items-center">
         <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center tracking-tight">
           WHAT WE ARE DOING?

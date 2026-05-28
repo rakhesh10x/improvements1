@@ -14,14 +14,14 @@ const specs = [
 
 const TheFirstForm = () => {
   return (
-    <section className="py-24 bg-black border-t border-white/5">
+    <section className="py-10 bg-black border-t border-white/5">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center tracking-tight">THE FIRST FORM</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-[1260px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[1260px] mx-auto">
           {/* Spec List */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold mb-8 text-purple-400">Technical Specifications</h3>
+            <h3 className="text-2xl font-bold mb-6 text-purple-400">Technical Specifications</h3>
             {specs.map((spec, i) => (
               <motion.div
                 key={i}
@@ -38,9 +38,9 @@ const TheFirstForm = () => {
           </div>
 
           {/* Hardware Philosophy */}
-          <div className="bg-[#0A0A0A] p-10 rounded-3xl border border-white/5 flex flex-col justify-center">
+          <div className="bg-[#0A0A0A] p-6 rounded-3xl border border-white/5 flex flex-col justify-center">
             <h3 className="text-2xl font-bold mb-6">Hardware & Software Philosophy</h3>
-            <p className="text-gray-400 leading-relaxed mb-8">
+            <p className="text-gray-400 leading-relaxed mb-6">
               Based on <span className="text-white font-bold">LibreMobileOS</span> and <span className="text-white font-bold">Android</span>, LUCA ensures an open but private ecosystem. We believe that hardware should empower the user, not control them.
             </p>
             <div className="flex gap-4">

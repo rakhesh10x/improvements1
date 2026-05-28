@@ -4,27 +4,29 @@ import { ArrowRight } from 'lucide-react';
 import ShineBorder from './ShineBorder';
 
 const PageGateways = () => {
-  const [showVideo, setShowVideo] = useState(false);
-  const videoRef = useRef(null);
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const videoRefs = useRef([null, null]);
 
-  const handleMouseEnter = () => {
-    setShowVideo(true);
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0;
-      videoRef.current.playbackRate = 5;
-      videoRef.current.play().catch(err => console.log("Video play interrupted", err));
+  const handleMouseEnter = (idx) => {
+    setHoveredCard(idx);
+    const v = videoRefs.current[idx];
+    if (v) {
+      v.currentTime = 0;
+      v.playbackRate = 5;
+      v.play().catch(err => console.log("Video play interrupted", err));
     }
   };
 
   const handleVideoEnded = () => {
-    setShowVideo(false);
+    setHoveredCard(null);
   };
 
-  const handleMouseLeave = () => {
-    setShowVideo(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
+  const handleMouseLeave = (idx) => {
+    setHoveredCard(null);
+    const v = videoRefs.current[idx];
+    if (v) {
+      v.pause();
+      v.currentTime = 0;
     }
   };
 
@@ -48,17 +50,17 @@ const PageGateways = () => {
   ];
 
   return (
-    <section className="relative z-20 w-full max-w-[1360px] mx-auto px-6 py-8 lg:py-12">
-      <div className="mb-10 text-left">
+    <section className="relative z-20 w-full max-w-[1220px] mx-auto px-6 py-8 lg:py-12">
+      <div className="mb-6 text-left">
         <h2 className="text-tier-1">Hardware & Intelligence</h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {gateways.map((gateway, i) => (
           <div 
             key={i} 
             className="group relative h-full"
-            onMouseEnter={i === 1 ? handleMouseEnter : undefined}
-            onMouseLeave={i === 1 ? handleMouseLeave : undefined}
+            onMouseEnter={() => handleMouseEnter(i)}
+            onMouseLeave={() => handleMouseLeave(i)}
           >
             <div className="relative h-full bg-white/[0.01] backdrop-blur-md border border-white/[0.05] group-hover:border-transparent rounded-[32px] overflow-hidden flex flex-col transition-colors duration-500">
               <ShineBorder 
@@ -80,17 +82,17 @@ const PageGateways = () => {
                     <img 
                       src={gateway.image} 
                       alt={gateway.title}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-0 ${showVideo ? 'opacity-0' : 'opacity-100'}`}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-0 ${hoveredCard === i ? 'opacity-0' : 'opacity-100'}`}
                     />
                     
                     <video
-                      ref={videoRef}
-                      src={`${import.meta.env.BASE_URL}new video in ai container.mp4`}
+                      ref={el => videoRefs.current[i] = el}
+                      src={`${import.meta.env.BASE_URL}LUCA blink logo WhiteBG.mp4`}
                       muted
                       playsInline
                       preload="auto"
                       onEnded={handleVideoEnded}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-0 ${showVideo ? 'opacity-100' : 'opacity-0'}`}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-0 ${hoveredCard === i ? 'opacity-100' : 'opacity-0'}`}
                     />
                   </div>
                 ) : (
@@ -108,7 +110,18 @@ const PageGateways = () => {
                     <img 
                       src={gateway.image} 
                       alt={gateway.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] z-10"
+                      className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-90 group-hover:scale-[1.02] z-10 ${hoveredCard === i ? 'opacity-0' : 'group-hover:opacity-100'}`}
+                    />
+
+                    {/* Hardware Video (New Video) */}
+                    <video
+                      ref={el => videoRefs.current[i] = el}
+                      src={`${import.meta.env.BASE_URL}new video in ai container.mp4`}
+                      muted
+                      playsInline
+                      preload="auto"
+                      onEnded={handleVideoEnded}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-0 z-10 ${hoveredCard === i ? 'opacity-100' : 'opacity-0'}`}
                     />
 
                     {/* Gloss reflection */}
@@ -127,12 +140,12 @@ const PageGateways = () => {
               </div>
 
               {/* Content */}
-              <div className="p-8 flex flex-col items-start flex-grow">
+              <div className="p-6 flex flex-col items-start flex-grow">
                 {gateway.tagline && (
                   <span className="text-tagline-02 text-purple-400 uppercase mb-3">{gateway.tagline}</span>
                 )}
                 <h3 className="text-tier-2">{gateway.title}</h3>
-                <p className="text-tier-3 max-w-sm mb-8">
+                <p className="text-tier-3 max-w-sm mb-6">
                   {gateway.description}
                 </p>
                 

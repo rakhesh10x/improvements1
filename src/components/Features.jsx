@@ -27,7 +27,7 @@ const features = [
 export default function Features() {
   return (
     <section className="py-28 relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
         
         <div className="mb-16 text-center">
           <motion.h2 
@@ -49,9 +49,9 @@ export default function Features() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.03, y: -5 }}
-              className="bg-[#111111] border border-gray-800 rounded-2xl p-8 flex flex-col h-full hover:border-accent/40 hover:shadow-[0_10px_30px_rgba(81,45,168,0.15)] transition-all duration-300 group"
+              className="bg-[#111111] border border-gray-800 rounded-2xl p-6 flex flex-col h-full hover:border-accent/40 hover:shadow-[0_10px_30px_rgba(81,45,168,0.15)] transition-all duration-300 group"
             >
-              <div className="w-16 h-16 bg-black/50 border border-gray-800 rounded-xl flex items-center justify-center mb-8 group-hover:bg-accent/10 group-hover:border-accent/30 transition-colors">
+              <div className="w-16 h-16 bg-black/50 border border-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent/10 group-hover:border-accent/30 transition-colors">
                 {feature.icon}
               </div>
               <h4 className="text-xl font-bold text-text-primary mb-4">

@@ -311,12 +311,12 @@ const ProductAnnouncement = () => {
       className="relative pt-24 pb-12 bg-black z-10 border-t border-white/5 px-4 md:px-6 overflow-visible"
     >
 
-      <div className="max-w-[1320px] mx-auto w-full relative z-10 flex flex-col items-center">
+      <div className="max-w-[1180px] mx-auto w-full relative z-10 flex flex-col items-center">
 
         {/* Centered Spaced Header (Slides upward and fades softly during expansion) */}
         <motion.div 
           style={{ y: headerY, opacity: headerOpacity }}
-          className="text-center mb-8 select-none pointer-events-none"
+          className="text-center mb-6 select-none pointer-events-none"
         >
           <h2 className="text-2xl md:text-3xl font-extrabold tracking-widest text-center text-white mb-2.5 uppercase bg-clip-text text-transparent bg-gradient-to-b from-white via-zinc-200 to-zinc-400 drop-shadow-[0_0_20px_rgba(255,255,255,0.08)] font-sans">
             WATCH OUR ANNOUNCEMENT

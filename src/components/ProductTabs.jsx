@@ -82,7 +82,7 @@ const tabs = [
     visual: (
       <div className="relative w-full h-full min-h-[400px] flex items-center justify-center rounded-2xl overflow-hidden bg-black border border-white/5 shadow-[inset_0_0_100px_rgba(217,70,239,0.15)]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(217,70,239,0.15)_0%,transparent_70%)]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-fuchsia-600/30 blur-[100px] rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-fuchsia-600/30 blur-[100px] rounded-full" />
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -90,9 +90,9 @@ const tabs = [
           className="relative z-10 w-full h-full flex items-center justify-center"
         >
           <img 
-            src="/LUCA AI image.png" 
+            src="/ai product page.png" 
             alt="AI Showcase" 
-            className="w-full h-full object-cover drop-shadow-[0_0_40px_rgba(217,70,239,0.3)]"
+            className="w-full h-full object-cover drop-shadow-[0_0_40px_rgba(217,70,239,0.2)]"
           />
         </motion.div>
       </div>
@@ -165,10 +165,10 @@ const ProductTabs = () => {
 
   return (
     <section className="py-4 lg:py-6 bg-black relative z-10 overflow-hidden">
-      <div className="max-w-[1360px] mx-auto px-6">
+      <div className="max-w-[1220px] mx-auto px-6">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-6">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -189,7 +189,7 @@ const ProductTabs = () => {
         </div>
 
         {/* Full-width tab bar */}
-        <div className="w-full mb-10">
+        <div className="w-full mb-6">
           <div className="flex items-stretch gap-2 w-full">
             {/* Tabs — progress lines live INSIDE so overflow:hidden clips at corners */}
             <div className="flex flex-1 border border-white/[0.07] rounded-full overflow-hidden relative">
@@ -244,7 +244,7 @@ const ProductTabs = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.45, ease: [0.23, 1, 0.32, 1] }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
             >
               {/* Text */}
               <div className="flex flex-col gap-6 order-2 lg:order-1">

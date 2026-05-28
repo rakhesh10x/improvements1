@@ -21,12 +21,12 @@ export const blogPosts = [
     content: (
       <>
         <h2 className="text-3xl font-bold text-white mb-6 tracking-tight mt-12 first:mt-0">Cloud Infrastructure</h2>
-        <p className="mb-8">
+        <p className="mb-6">
           Leveraging AWS global cloud infrastructure for high-performance model training and secure, scalable deployment. Our infrastructure provides the backbone for secure data pipelines, model versioning, and the mission-critical APIs that developers rely on to access advanced AI models at scale.
         </p>
 
         <h2 className="text-3xl font-bold text-white mb-6 tracking-tight mt-12">AI Deployment Scalability</h2>
-        <p className="mb-8">
+        <p className="mb-6">
           With scalable inference endpoints via Amazon SageMaker, we ensure that our foundation models remain accessible worldwide with consistently low latency and high availability, even during unprecedented traffic spikes.
         </p>
 
@@ -35,14 +35,14 @@ export const blogPosts = [
           Our distributed model training on AWS EC2 P-series instances allows us to accelerate research and development significantly, pushing the boundaries of what's possible with our custom-built models.
         </p>
         
-        <div className="my-14 p-8 rounded-[24px] bg-[#512da8]/10 border border-[#512da8]/30 shadow-[0_0_30px_rgba(81,45,168,0.1)]">
+        <div className="my-14 p-6 rounded-[24px] bg-[#512da8]/10 border border-[#512da8]/30 shadow-[0_0_30px_rgba(81,45,168,0.1)]">
           <p className="text-xl md:text-2xl font-medium text-white italic leading-relaxed m-0 text-center">
             "The future of AI deployment relies on robust, scalable, and highly available cloud infrastructure."
           </p>
         </div>
 
         <h2 className="text-3xl font-bold text-white mb-6 tracking-tight mt-12">Infrastructure Reliability</h2>
-        <p className="mb-8">
+        <p className="mb-6">
           Secure data storage and versioning with S3 and DynamoDB ensures that our infrastructure remains highly reliable under immense workloads, establishing trust with enterprise partners globally.
         </p>
       </>
@@ -61,12 +61,12 @@ export const blogPosts = [
     content: (
       <>
         <h2 className="text-3xl font-bold text-white mb-6 tracking-tight mt-12 first:mt-0">Innovation Ecosystem</h2>
-        <p className="mb-8">
+        <p className="mb-6">
           Supported and backed by the Ministry of Electronics and Information Technology through the MeitY Startup Hub. This robust ecosystem fosters deep-tech innovation and accelerates indigenous AI development across India.
         </p>
 
         <h2 className="text-3xl font-bold text-white mb-6 tracking-tight mt-12">Startup Support</h2>
-        <p className="mb-8">
+        <p className="mb-6">
           Being selected under the MeitY GENESIS EiR-2 cohort provides us with crucial grant funding for AI hardware R&D, accelerating our mission to build language models strictly tailored for linguistic diversity and localized nuances.
         </p>
 
@@ -75,14 +75,14 @@ export const blogPosts = [
           Our collaboration with MeitY offers unparalleled access to government pilot programs and testbeds, allowing us to rapidly deploy and iterate our models in real-world administrative and public-sector scenarios.
         </p>
         
-        <div className="my-14 p-8 rounded-[24px] bg-[#512da8]/10 border border-[#512da8]/30 shadow-[0_0_30px_rgba(81,45,168,0.1)]">
+        <div className="my-14 p-6 rounded-[24px] bg-[#512da8]/10 border border-[#512da8]/30 shadow-[0_0_30px_rgba(81,45,168,0.1)]">
           <p className="text-xl md:text-2xl font-medium text-white italic leading-relaxed m-0 text-center">
             "Empowering national AI development requires strong public-private partnerships to scale impactful technologies."
           </p>
         </div>
 
         <h2 className="text-3xl font-bold text-white mb-6 tracking-tight mt-12">National AI Development</h2>
-        <p className="mb-8">
+        <p className="mb-6">
           Recognized as a deep-tech startup of national interest, we are heavily committed to shaping the future of AI in India by building secure, sovereign, and indigenous compute infrastructure.
         </p>
       </>
@@ -94,19 +94,19 @@ export const blogPosts = [
     image: '/nvidia.png',
     imageBg: 'bg-white',
     imageFit: 'object-contain',
-    imagePadding: 'p-8',
+    imagePadding: 'p-6',
     date: 'Sep 6, 2025',
     authorName: 'Lucas Morgan',
     authorAvatar: 'https://i.pravatar.cc/150?u=3',
     content: (
       <>
         <h2 className="text-3xl font-bold text-white mb-6 tracking-tight mt-12 first:mt-0">AI Acceleration</h2>
-        <p className="mb-8">
+        <p className="mb-6">
           Collaborating through the NVIDIA Inception Program dramatically accelerates our AI compute capabilities. We leverage cutting-edge GPU infrastructure to train robust foundation models efficiently and at massive scale.
         </p>
 
         <h2 className="text-3xl font-bold text-white mb-6 tracking-tight mt-12">GPU Optimization</h2>
-        <p className="mb-8">
+        <p className="mb-6">
           With access to NVIDIA DGX Cloud compute, we can optimize our large language models at the hardware level, ensuring maximum operational efficiency, minimal latency, and optimal resource utilization across distributed nodes.
         </p>
 
@@ -115,14 +115,14 @@ export const blogPosts = [
           Hardware-level optimization for Telugu LLM inference allows us to deliver unprecedented, industry-leading performance both on-device and within large-scale, high-concurrency cloud environments.
         </p>
         
-        <div className="my-14 p-8 rounded-[24px] bg-[#512da8]/10 border border-[#512da8]/30 shadow-[0_0_30px_rgba(81,45,168,0.1)]">
+        <div className="my-14 p-6 rounded-[24px] bg-[#512da8]/10 border border-[#512da8]/30 shadow-[0_0_30px_rgba(81,45,168,0.1)]">
           <p className="text-xl md:text-2xl font-medium text-white italic leading-relaxed m-0 text-center">
             "Hardware and software codesign is the absolute key to unlocking the true potential of advanced AI compute infrastructure."
           </p>
         </div>
 
         <h2 className="text-3xl font-bold text-white mb-6 tracking-tight mt-12">Model Performance & Compute Infrastructure</h2>
-        <p className="mb-8">
+        <p className="mb-6">
           Continuous technical mentorship from NVIDIA AI engineers and priority access to state-of-the-art GPU architectures significantly enhance our overall model performance, paving the way for the next generation of AI.
         </p>
       </>
@@ -168,18 +168,18 @@ const BlogPage = () => {
         <CenterExpandingGrid />
       </div>
 
-      <div className="relative z-10 flex flex-col min-h-screen">
+      <div className="relative z-10 flex flex-col min-h-[90svh]">
         <Navbar openContactModal={() => setIsContactModalOpen(true)} />
         
         {/* Main Content */}
-        <main className="flex-grow pt-32 pb-24">
+        <main className="flex-grow pt-28 pb-20">
           
           {/* Blog Hero Section */}
-          <section className="relative w-full mx-auto px-6 pt-32 pb-24 min-h-[75svh] flex flex-col justify-center items-center overflow-hidden border-b border-white/5">
+          <section className="relative w-full mx-auto px-6 pt-28 pb-20 min-h-[75svh] flex flex-col justify-center items-center overflow-hidden border-b border-white/5">
             {/* Background moved to fullscreen layer above */}
             
             <div className="relative z-10 flex flex-col items-center max-w-[1200px] mx-auto w-full">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-[#0a0a0f] mb-8 shadow-[0_0_15px_rgba(81,45,168,0.15)]">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-[#0a0a0f] mb-6 shadow-[0_0_15px_rgba(81,45,168,0.15)]">
                 <div className="w-2 h-2 rounded-full bg-[#512da8] animate-pulse"></div>
                 <span className="text-[#ccc] text-sm font-medium">Recent blog updates</span>
               </div>
@@ -195,7 +195,7 @@ const BlogPage = () => {
           </section>
 
           {/* Blog Grid Section */}
-          <section className="relative z-20 w-full max-w-[1280px] mx-auto px-6 pb-0">
+          <section className="relative z-20 w-full max-w-[1150px] mx-auto px-6 pb-0">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
               {blogPosts.map((post) => (
                 <Link 
@@ -237,8 +237,8 @@ const BlogPage = () => {
           <TechnicalFiller />
 
           {/* Research Updates Section */}
-          <section className="relative z-20 w-full max-w-[1280px] mx-auto px-6 pb-0 pt-0">
-            <h2 className="text-white text-3xl md:text-5xl font-bold tracking-tight mb-12">
+          <section className="relative z-20 w-full max-w-[1150px] mx-auto px-6 pb-0 pt-0">
+            <h2 className="text-white text-3xl md:text-5xl font-bold tracking-tight mb-10">
               Research Updates
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">

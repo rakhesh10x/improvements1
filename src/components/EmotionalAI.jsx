@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 const EmotionalAI = () => {
   return (
-    <section className="py-24 relative bg-black overflow-hidden">
-      <div className="max-w-[1360px] mx-auto px-6">
+    <section className="py-10 relative bg-black overflow-hidden">
+      <div className="max-w-[1220px] mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center gap-20">
           <div className="w-full md:w-1/2">
             <motion.div
@@ -19,7 +19,7 @@ const EmotionalAI = () => {
                   A companion.
                 </span>
               </h2>
-              <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+              <p className="text-gray-400 text-lg mb-6 leading-relaxed">
                 LUCA doesn't just listen; it understands. By analyzing tone, mood, and context, LUCA interacts with you on an emotional level, making technology feel truly human.
               </p>
               
@@ -53,7 +53,7 @@ const EmotionalAI = () => {
               <div className="absolute inset-0 bg-purple-500/20 blur-[80px] rounded-full animate-pulse"></div>
               <div className="relative z-10 w-64 h-64 md:w-80 md:h-80 bg-[#0A0A0A] border border-white/10 rounded-full flex items-center justify-center overflow-hidden shadow-2xl">
                 {/* The Mascot Eyes Animation */}
-                <div className="flex gap-12">
+                <div className="flex gap-10">
                   <motion.div 
                     animate={{ 
                       scaleY: [1, 1.2, 1, 0.1, 1],

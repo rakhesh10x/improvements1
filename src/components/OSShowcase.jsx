@@ -31,8 +31,8 @@ const features = [
 
 const OSShowcase = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-[#050505]">
-      <div className="max-w-[1360px] mx-auto px-6 relative z-10">
+    <section className="py-10 relative overflow-hidden bg-[#050505]">
+      <div className="max-w-[1220px] mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">LUCA-OS V-1.0</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">

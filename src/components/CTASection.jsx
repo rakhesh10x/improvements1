@@ -22,7 +22,7 @@ export default function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-xl md:text-2xl text-text-secondary mb-12 max-w-2xl mx-auto font-medium"
+          className="text-xl md:text-2xl text-text-secondary mb-10 max-w-2xl mx-auto font-medium"
         >
           Join our waitlist today and be among the first to explore the integrated power of LUCA AI and LIBRE OS.
         </motion.p>

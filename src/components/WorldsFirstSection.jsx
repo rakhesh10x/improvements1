@@ -28,11 +28,11 @@ const WorldsFirstSection = () => {
   return (
     <section className="py-4 lg:py-6 bg-black text-white">
       <div className="container mx-auto px-6">
-        <h2 className="text-tier-1 mb-10">World's 1st</h2>
+        <h2 className="text-tier-1 mb-6">World's 1st</h2>
 
         {/* 3-column grid: card | image | card / card | image | card */}
         <div
-          className="grid gap-8"
+          className="grid gap-6"
           style={{
             gridTemplateColumns: '1fr auto 1fr',
             gridTemplateRows: 'auto auto',
@@ -50,7 +50,7 @@ const WorldsFirstSection = () => {
             transition={{ delay: 0.0 }}
             viewport={{ once: true }}
             style={{ gridArea: 'tl' }}
-            className="bg-[#0A0A0A] border border-white/5 p-10 rounded-3xl flex items-start gap-8 group hover:border-purple-500/30 transition-all"
+            className="bg-[#0A0A0A] border border-white/5 p-6 rounded-3xl flex items-start gap-6 group hover:border-purple-500/30 transition-all"
           >
             <div className="w-16 h-16 shrink-0">
               <img src={`${import.meta.env.BASE_URL}${features[0].icon.slice(1)}`} alt={features[0].title} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
@@ -96,7 +96,7 @@ const WorldsFirstSection = () => {
             transition={{ delay: 0.1 }}
             viewport={{ once: true }}
             style={{ gridArea: 'tr' }}
-            className="bg-[#0A0A0A] border border-white/5 p-10 rounded-3xl flex items-start gap-8 group hover:border-purple-500/30 transition-all"
+            className="bg-[#0A0A0A] border border-white/5 p-6 rounded-3xl flex items-start gap-6 group hover:border-purple-500/30 transition-all"
           >
             <div className="w-16 h-16 shrink-0">
               <img src={`${import.meta.env.BASE_URL}${features[1].icon.slice(1)}`} alt={features[1].title} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
@@ -114,7 +114,7 @@ const WorldsFirstSection = () => {
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
             style={{ gridArea: 'bl' }}
-            className="bg-[#0A0A0A] border border-white/5 p-10 rounded-3xl flex items-start gap-8 group hover:border-purple-500/30 transition-all"
+            className="bg-[#0A0A0A] border border-white/5 p-6 rounded-3xl flex items-start gap-6 group hover:border-purple-500/30 transition-all"
           >
             <div className="w-16 h-16 shrink-0">
               <img src={`${import.meta.env.BASE_URL}${features[2].icon.slice(1)}`} alt={features[2].title} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
@@ -132,7 +132,7 @@ const WorldsFirstSection = () => {
             transition={{ delay: 0.3 }}
             viewport={{ once: true }}
             style={{ gridArea: 'br' }}
-            className="bg-[#0A0A0A] border border-white/5 p-10 rounded-3xl flex items-start gap-8 group hover:border-purple-500/30 transition-all"
+            className="bg-[#0A0A0A] border border-white/5 p-6 rounded-3xl flex items-start gap-6 group hover:border-purple-500/30 transition-all"
           >
             <div className="w-16 h-16 shrink-0">
               <img src={`${import.meta.env.BASE_URL}${features[3].icon.slice(1)}`} alt={features[3].title} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />

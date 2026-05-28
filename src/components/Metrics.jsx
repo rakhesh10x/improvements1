@@ -9,7 +9,7 @@ const Metrics = () => {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="py-16 px-6 max-w-4xl mx-auto flex justify-center gap-20 text-center"
+      className="py-10 px-6 max-w-4xl mx-auto flex justify-center gap-20 text-center"
     >
       {[
         { Icon: Star, title: "LUCA", subtitle: "Emotionally Aware AI" },

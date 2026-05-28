@@ -23,9 +23,9 @@ const SmartSpeakerHero = () => {
   }, []);
 
   return (
-    <section className="relative pt-28 pb-6 overflow-hidden min-h-[90svh] flex items-center">
-      <div className="max-w-[1360px] mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-12 gap-8 md:gap-12 items-center">
+    <section className="relative pt-24 pb-6 overflow-hidden min-h-[90svh] flex items-center">
+      <div className="max-w-[1220px] mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-12 gap-6 md:gap-12 items-center">
           {/* Left Side: Matter (Text) - Spanning 6 columns */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -33,7 +33,7 @@ const SmartSpeakerHero = () => {
             transition={{ duration: 0.8 }}
             className="col-span-12 md:col-span-6 flex flex-col items-start"
           >
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div className="flex flex-wrap gap-3 mb-6">
               <span className="inline-block px-4 py-1.5 text-[10px] font-bold tracking-[0.3em] text-purple-400 uppercase bg-purple-500/10 border border-purple-500/20 rounded-full">
                 LUCA HARDWARE
               </span>

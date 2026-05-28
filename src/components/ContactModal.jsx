@@ -56,7 +56,7 @@ const ContactModal = ({ isOpen, onClose }) => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: "spring", duration: 0.5 }}
-          className="relative w-full max-w-md bg-[#0A0A0E] border border-white/10 rounded-3xl shadow-2xl overflow-hidden glass-card p-8"
+          className="relative w-full max-w-md bg-[#0A0A0E] border border-white/10 rounded-3xl shadow-2xl overflow-hidden glass-card p-6"
         >
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-blue-500"></div>
           
@@ -68,7 +68,7 @@ const ContactModal = ({ isOpen, onClose }) => {
           </button>
 
           <h2 className="text-heading-05 text-white mb-2">Contact Support</h2>
-          <p className="text-body-03 text-[#A0A0A0] mb-8">We'd love to hear from you. Send us a message.</p>
+          <p className="text-body-03 text-[#A0A0A0] mb-6">We'd love to hear from you. Send us a message.</p>
 
           {isSuccess ? (
             <motion.div 

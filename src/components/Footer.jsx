@@ -58,14 +58,14 @@ const Footer = ({ openContactModal, minimal = false }) => {
   };
 
   return (
-    <footer className={`px-6 max-w-[1360px] mx-auto w-full ${minimal ? 'pt-8 pb-4 lg:pb-6' : 'py-4 lg:py-6'}`}>
+    <footer className={`px-6 max-w-[1220px] mx-auto w-full ${minimal ? 'pt-8 pb-4 lg:pb-6' : 'py-4 lg:py-6'}`}>
       {!minimal && (
         <>
           <div className="mb-4">
             <h3 className="text-tier-1">Community & Support</h3>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
             {/* Community Card (LinkedIn) */}
             <a 
               href="https://www.linkedin.com/company/10xglobaltechnologies/" 
@@ -110,9 +110,9 @@ const Footer = ({ openContactModal, minimal = false }) => {
           </div>
 
           {/* Premium Newsletter / Waitlist Section */}
-          <div className="relative w-full rounded-3xl p-[1px] overflow-hidden mb-8 group">
+          <div className="relative w-full rounded-3xl p-[1px] overflow-hidden mb-6 group">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 via-blue-500/30 to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <div className="relative bg-[#050508]/90 backdrop-blur-xl rounded-[23px] py-6 px-8 md:py-8 md:px-10 flex flex-col md:flex-row items-center justify-between gap-8 h-full border border-white/5 shadow-[inset_0_0_30px_rgba(0,0,0,0.5)]">
+            <div className="relative bg-[#050508]/90 backdrop-blur-xl rounded-[23px] py-6 px-8 md:py-8 md:px-10 flex flex-col md:flex-row items-center justify-between gap-6 h-full border border-white/5 shadow-[inset_0_0_30px_rgba(0,0,0,0.5)]">
                <div className="flex-1">
                  <div className="flex items-center gap-2 mb-3">
                    <Sparkles className="w-5 h-5 text-purple-400 animate-pulse" />
@@ -156,7 +156,7 @@ const Footer = ({ openContactModal, minimal = false }) => {
           </div>
 
           {/* Mid Section: AI / Search / Status */}
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-6 mb-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6 mb-6">
             <div className="hidden lg:block w-full lg:w-auto"></div>
 
             <div className="flex flex-col lg:flex-row items-center gap-6 w-full lg:w-auto">

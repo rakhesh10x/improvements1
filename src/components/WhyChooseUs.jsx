@@ -27,7 +27,7 @@ const reasons = [
 export default function WhyChooseUs() {
   return (
     <section className="py-28 relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
         
         <div className="text-center mb-20">
           <motion.h2 
@@ -49,7 +49,7 @@ export default function WhyChooseUs() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {reasons.map((reason, index) => (
             <motion.div
               key={index}
@@ -58,7 +58,7 @@ export default function WhyChooseUs() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.02, y: -4 }}
-              className="bg-[#111111] border border-gray-800 rounded-2xl p-10 flex flex-col sm:flex-row gap-8 items-start hover:border-accent/40 hover:shadow-[0_10px_30px_rgba(81,45,168,0.15)] transition-all duration-300 group"
+              className="bg-[#111111] border border-gray-800 rounded-2xl p-6 flex flex-col sm:flex-row gap-6 items-start hover:border-accent/40 hover:shadow-[0_10px_30px_rgba(81,45,168,0.15)] transition-all duration-300 group"
             >
               <div className="shrink-0 w-16 h-16 bg-black/50 border border-gray-800 rounded-xl flex items-center justify-center group-hover:bg-accent/10 group-hover:border-accent/30 transition-colors">
                 {reason.icon}

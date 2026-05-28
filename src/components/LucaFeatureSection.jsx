@@ -104,7 +104,7 @@ const LucaFeatureSection = ({ openContactModal }) => {
           style={{ background: 'radial-gradient(circle,rgba(120,80,255,1)0%,transparent 70%)' }} />
       </div>
 
-      <div className="relative z-10 max-w-[1560px] mx-auto px-6 md:px-12 lg:px-[72px] py-4 lg:py-6 flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-[72px] py-4 lg:py-6 flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
 
         {/* ── LEFT ── */}
         <motion.div

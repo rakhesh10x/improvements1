@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ImageGallery = () => {
   return (
-    <section className="py-24 bg-black">
+    <section className="py-10 bg-black">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Large Main Image */}
@@ -12,7 +12,7 @@ const ImageGallery = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="md:col-span-2 relative aspect-[16/9] bg-white rounded-3xl overflow-hidden flex items-center justify-center p-8"
+            className="md:col-span-2 relative aspect-[16/9] bg-white rounded-3xl overflow-hidden flex items-center justify-center p-6"
           >
             <img 
               src={`${import.meta.env.BASE_URL}hero-device.png`} 

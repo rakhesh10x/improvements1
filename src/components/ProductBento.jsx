@@ -52,7 +52,7 @@ const ProductBento = () => {
         <div className="absolute bottom-[10%] right-[8%] w-0.5 h-0.5 bg-white rounded-full opacity-25" />
       </div>
 
-      <div className="max-w-[1560px] mx-auto relative z-10 w-full">
+      <div className="max-w-[1400px] mx-auto relative z-10 w-full">
 
         {/* Heading */}
         <div className="text-center mb-6 select-none">

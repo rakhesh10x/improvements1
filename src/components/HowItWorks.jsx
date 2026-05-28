@@ -10,7 +10,7 @@ export default function HowItWorks() {
 
   return (
     <section className="py-28 relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
         
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
@@ -31,7 +31,7 @@ export default function HowItWorks() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
                 whileHover={{ scale: 1.05 }}
-                className="flex flex-col items-center flex-1 md:w-56 bg-[#111111] border border-gray-800 p-10 rounded-2xl relative z-10 hover:border-accent/40 hover:shadow-[0_10px_30px_rgba(81,45,168,0.15)] transition-all duration-300 group"
+                className="flex flex-col items-center flex-1 md:w-56 bg-[#111111] border border-gray-800 p-6 rounded-2xl relative z-10 hover:border-accent/40 hover:shadow-[0_10px_30px_rgba(81,45,168,0.15)] transition-all duration-300 group"
               >
                 <div className="mb-6 bg-black/50 border border-gray-800 p-5 rounded-full group-hover:bg-accent/10 transition-colors">
                   {step.icon}

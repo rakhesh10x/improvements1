@@ -25,14 +25,14 @@ const NoiseOverlay = () => (
 
 const BentoGrid = () => {
   return (
-    <section id="os" className="py-12 max-w-[1260px] mx-auto px-6 text-center">
+    <section id="os" className="py-10 max-w-[1260px] mx-auto px-6 text-center">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
         <h2 className="text-2xl font-medium mb-1 text-white tracking-tight">Real Hardware.</h2>
-        <h2 className="text-2xl font-medium text-[#A0A0A0] mb-12 tracking-tight">Real Emotion. Real AI.</h2>
+        <h2 className="text-2xl font-medium text-[#A0A0A0] mb-10 tracking-tight">Real Emotion. Real AI.</h2>
       </motion.div>
       
       <motion.div 

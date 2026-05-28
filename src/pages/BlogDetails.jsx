@@ -35,15 +35,15 @@ const BlogDetails = () => {
         <Starfield />
       </div>
 
-      <div className="relative z-10 flex flex-col min-h-screen">
+      <div className="relative z-10 flex flex-col min-h-[90svh]">
         <Navbar openContactModal={() => setIsContactModalOpen(true)} />
         
         {/* Main Content */}
-        <main className="flex-grow pt-32 pb-24">
+        <main className="flex-grow pt-28 pb-20">
 
           {/* Article Header (Title & Meta) */}
-          <section className="relative w-full max-w-[900px] mx-auto px-6 mb-12 text-center">
-            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-[1.15] mb-8 mx-auto">
+          <section className="relative w-full max-w-[900px] mx-auto px-6 mb-10 text-center">
+            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-[1.15] mb-6 mx-auto">
               {post.title}
             </h1>
             
@@ -79,12 +79,12 @@ const BlogDetails = () => {
               ) : (
                 <>
                   <h2 className="text-3xl font-bold text-white mb-6 tracking-tight mt-12 first:mt-0">Introduction</h2>
-                  <p className="mb-8">
+                  <p className="mb-6">
                     Creating a truly data-driven culture isn't just about having data—it's about building the right processes, systems, and habits that make data central to decision-making, empowering teams, improving collaboration, driving innovation, and ensuring organizations stay agile, competitive, and future-ready in a rapidly evolving business landscape.
                   </p>
 
                   <h2 className="text-3xl font-bold text-white mb-6 tracking-tight mt-12">Secure Leadership Buy-In</h2>
-                  <p className="mb-8">
+                  <p className="mb-6">
                     Leadership must champion data as the foundation for decisions, setting a clear example, inspiring accountability, encouraging adoption across teams, and ensuring that data-driven practices become ingrained in the organizational culture.
                   </p>
 
@@ -93,19 +93,19 @@ const BlogDetails = () => {
                     Set clear expectations that strategies, campaigns, and operations are backed by data, ensuring measurable goals, accountability, transparency, and alignment with organizational objectives for consistent growth, innovation, and informed decision-making across all departments.
                   </p>
                   
-                  <ul className="list-disc pl-6 mb-8 space-y-3">
+                  <ul className="list-disc pl-6 mb-6 space-y-3">
                     <li>Standardize how data is collected, stored, and maintained.</li>
                     <li>Establish protocols for data governance, accuracy, and consistency.</li>
                   </ul>
                   
-                  <div className="my-14 p-8 rounded-[24px] bg-[#512da8]/10 border border-[#512da8]/30 shadow-[0_0_30px_rgba(81,45,168,0.1)]">
+                  <div className="my-14 p-6 rounded-[24px] bg-[#512da8]/10 border border-[#512da8]/30 shadow-[0_0_30px_rgba(81,45,168,0.1)]">
                     <p className="text-xl md:text-2xl font-medium text-white italic leading-relaxed m-0 text-center">
                       "The future belongs to models with architectures crafted, optimized, and deployed for focused, low-latency tasks."
                     </p>
                   </div>
 
                   <h2 className="text-3xl font-bold text-white mb-6 tracking-tight mt-12">Empower Your Team</h2>
-                  <p className="mb-8">
+                  <p className="mb-6">
                     Equip employees with the tools, training, and resources they need to confidently use data in their daily roles, fostering a sense of ownership, improving efficiency, and encouraging a proactive mindset when approaching complex challenges.
                   </p>
                 </>
@@ -114,8 +114,8 @@ const BlogDetails = () => {
           </section>
 
           {/* Explore More Blogs Section */}
-          <section className="relative w-full max-w-[1280px] mx-auto px-6 mt-24 pt-16 border-t border-white/5">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+          <section className="relative w-full max-w-[1150px] mx-auto px-6 mt-24 pt-16 border-t border-white/5">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
               <div>
                 <h2 className="text-white text-3xl md:text-5xl font-bold tracking-tight mb-4">Explore more blogs</h2>
                 <p className="text-[#888] text-lg max-w-xl">
@@ -130,7 +130,7 @@ const BlogDetails = () => {
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {otherPosts.slice(0, 3).map((relatedPost) => (
                 <Link 
                   to={`/blog/${relatedPost.id}`}
