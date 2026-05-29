@@ -187,19 +187,15 @@ const ProductBento = () => {
             whileHover={{ borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'left2' }}
-            className="bento-card-height h-[225px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            className="bento-card-height h-[225px] rounded-[28px] border border-white/[0.05] bg-transparent group cursor-default transition-all overflow-hidden relative"
           >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center,rgba(120,80,255,0.05)0%,transparent 70%)' }} />
-            <div className="relative z-10 flex justify-between items-start">
-              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">AMBIENT</span>
-              <Eye className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-            </div>
-            <div className="relative z-10">
-              <h3 className="text-white text-lg font-bold tracking-tight mb-3">Ambient Intel</h3>
-              <p className="text-[#888] text-xs leading-relaxed font-light">
-                Fades quietly into the background, responding only when contextually triggered by presence models.
-              </p>
-            </div>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
+            <img
+              src="/resolution%20changed%20ambient%20img.png"
+              alt="Ambient"
+              className="absolute inset-0 w-full h-full pointer-events-none select-none z-0 object-cover"
+              draggable={false}
+            />
           </motion.div>
 
           {/* ── bottom ── */}
