@@ -120,10 +120,10 @@ const AIPage = () => {
               </div>
 
               {/* Right Column: Duplicated AI Active visual */}
-              <div className="flex justify-center lg:justify-end order-2">
+              <div className="flex justify-center lg:justify-end order-2 w-full">
                 <div
-                  className="relative w-[300px] md:w-[340px] rounded-[45px] bg-[#04040c] overflow-hidden flex flex-col"
-                  style={{ aspectRatio: '4/5', boxShadow: '0 0 60px rgba(236,72,153,0.08), 0 0 120px rgba(139,92,246,0.06)' }}
+                  className="relative w-full max-w-[480px] lg:max-w-[600px] rounded-[32px] md:rounded-[40px] bg-[#04040c] overflow-hidden flex flex-col"
+                  style={{ aspectRatio: '16/9', boxShadow: '0 0 60px rgba(236,72,153,0.08), 0 0 120px rgba(139,92,246,0.06)' }}
                 >
                   {/* Subtle grid */}
                   <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none"></div>
