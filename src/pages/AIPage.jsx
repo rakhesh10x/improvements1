@@ -75,7 +75,7 @@ const AIPage = () => {
           {/* Section 1: Hero */}
           <section className="relative w-full min-h-[70svh] flex flex-col z-10 border-b border-white/5">
             {/* Main content — vertically centered, left-aligned */}
-            <div className="flex-1 flex flex-col justify-center max-w-[1220px] mx-auto w-full px-6 pt-40 pb-12">
+            <div className="flex-1 flex flex-col justify-center max-w-[1360px] mx-auto w-full px-6 pt-40 pb-12">
               <div className="max-w-3xl flex flex-col gap-6">
 
                 {/* Label */}
@@ -145,10 +145,10 @@ const AIPage = () => {
 
           {/* Section 2: LFM Core Use Case */}
           <section className="relative w-full z-10 py-10 md:py-16 px-6 flex flex-col items-center min-h-[70svh] justify-center">
-            <div className="w-full max-w-[1220px] mx-auto flex flex-col">
+            <div className="w-full max-w-[1360px] mx-auto flex flex-col">
 
               {/* TOP CENTER HEADING */}
-              <div className="w-full max-w-[1220px] mx-auto text-center mb-6 md:mb-14">
+              <div className="w-full max-w-[1360px] mx-auto text-center mb-6 md:mb-14">
                 <h2 className="text-tier-1">
                   You do not need frontier AI for every workflow.<br />
                   You should not depend on APIs for internal questions.
@@ -226,7 +226,7 @@ const AIPage = () => {
           <TechnicalFiller />
 
           {/* Section 3: Old AI Hero (Features/Card) */}
-          <section className="relative px-6 py-10 max-w-[1220px] mx-auto overflow-visible z-10 flex items-center w-full">
+          <section className="relative px-6 py-10 max-w-[1360px] mx-auto overflow-visible z-10 flex items-center w-full">
             <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-16 items-center">
 
               {/* Left */}
@@ -338,7 +338,7 @@ const AIPage = () => {
 
           {/* Capabilities Section */}
           <section className="relative z-10 px-6 pb-12">
-            <div className="w-full max-w-[1220px] mx-auto rounded-2xl bg-[#0d0d18] border border-white/[0.07] p-6 md:p-8">
+            <div className="w-full max-w-[1360px] mx-auto rounded-2xl bg-[#0d0d18] border border-white/[0.07] p-6 md:p-8">
               <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] lg:grid-cols-[240px_1fr] gap-6 items-start">
 
                 {/* Left label */}

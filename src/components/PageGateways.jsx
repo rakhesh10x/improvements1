@@ -50,7 +50,7 @@ const PageGateways = () => {
   ];
 
   return (
-    <section className="relative z-20 w-full max-w-[1220px] mx-auto px-6 py-8 lg:py-12">
+    <section className="relative z-20 w-full max-w-[1360px] mx-auto px-6 py-8 lg:py-12">
       <div className="mb-6 text-left">
         <h2 className="text-tier-1">Hardware & Intelligence</h2>
       </div>
@@ -70,7 +70,7 @@ const PageGateways = () => {
                 className="opacity-[0.12] group-hover:opacity-[0.85] transition-opacity duration-500 z-30"
               />
               {/* Image/Video Container */}
-              <div className="relative aspect-[16/9] md:aspect-[2/1] lg:aspect-[2.35/1] overflow-hidden bg-[#04040c] flex items-center justify-center">
+              <div className="relative aspect-[16/9] md:aspect-[1.8/1] lg:aspect-[2/1] overflow-hidden bg-[#04040c] flex items-center justify-center">
                 {i === 1 ? (
                   <div 
                     className="relative w-full h-full overflow-hidden bg-[#04040c]"

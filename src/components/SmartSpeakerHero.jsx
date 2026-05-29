@@ -24,7 +24,7 @@ const SmartSpeakerHero = () => {
 
   return (
     <section className="relative pt-24 pb-6 overflow-hidden min-h-[90svh] flex items-center">
-      <div className="max-w-[1220px] mx-auto px-6 relative z-10">
+      <div className="max-w-[1360px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-12 gap-6 md:gap-12 items-center">
           {/* Left Side: Matter (Text) - Spanning 6 columns */}
           <motion.div

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play, Pause, Volume2, VolumeX, Maximize } from 'lucide-react';
 import vid from '../assets/vid.mp4';
@@ -125,12 +126,12 @@ const LucaFeatureSection = ({ openContactModal }) => {
             An ambient intelligence platform built for Indian homes and dialects — powered by on-device AI with no lag and no compromise on privacy.
           </p>
           <div className="mt-2">
-            <button onClick={openContactModal}
+            <Link to="/ai"
               className="group inline-flex items-center gap-3 px-7 py-3 rounded-full border border-purple-500/40 bg-transparent text-white text-[11px] uppercase tracking-[0.22em] font-bold transition-all duration-300 hover:border-purple-400/70 hover:shadow-[0_0_35px_rgba(147,90,255,0.3)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
             >
               Know More
               <ArrowRight className="w-3.5 h-3.5 text-purple-400 transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
+            </Link>
           </div>
         </motion.div>
 

@@ -114,7 +114,7 @@ const BlogDetails = () => {
           </section>
 
           {/* Explore More Blogs Section */}
-          <section className="relative w-full max-w-[1150px] mx-auto px-6 mt-24 pt-16 border-t border-white/5">
+          <section className="relative w-full max-w-[1360px] mx-auto px-6 mt-24 pt-16 border-t border-white/5">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
               <div>
                 <h2 className="text-white text-3xl md:text-5xl font-bold tracking-tight mb-4">Explore more blogs</h2>

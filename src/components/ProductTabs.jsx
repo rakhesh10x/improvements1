@@ -165,7 +165,7 @@ const ProductTabs = () => {
 
   return (
     <section className="py-4 lg:py-6 bg-black relative z-10 overflow-hidden">
-      <div className="max-w-[1220px] mx-auto px-6">
+      <div className="max-w-[1360px] mx-auto px-6">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-6">

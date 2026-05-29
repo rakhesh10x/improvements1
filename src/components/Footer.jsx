@@ -58,7 +58,7 @@ const Footer = ({ openContactModal, minimal = false }) => {
   };
 
   return (
-    <footer className={`px-6 max-w-[1220px] mx-auto w-full ${minimal ? 'pt-8 pb-4 lg:pb-6' : 'py-4 lg:py-6'}`}>
+    <footer className={`px-6 max-w-[1360px] mx-auto w-full ${minimal ? 'pt-8 pb-4 lg:pb-6' : 'py-4 lg:py-6'}`}>
       {!minimal && (
         <>
           <div className="mb-4">

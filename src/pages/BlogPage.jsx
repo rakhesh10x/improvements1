@@ -13,7 +13,7 @@ export const blogPosts = [
     title: 'AWS',
     image: 'https://i.ibb.co/7xm7tHpW/10-X-AWS-Announcement.png',
     imageBg: 'bg-[#050505]',
-    imageFit: 'object-contain',
+    imageFit: 'object-cover',
     imagePadding: 'p-0',
     date: 'Sep 6, 2025',
     authorName: 'John Smith',
@@ -178,7 +178,7 @@ const BlogPage = () => {
           <section className="relative w-full mx-auto px-6 pt-28 pb-20 min-h-[75svh] flex flex-col justify-center items-center overflow-hidden border-b border-white/5">
             {/* Background moved to fullscreen layer above */}
             
-            <div className="relative z-10 flex flex-col items-center max-w-[1200px] mx-auto w-full">
+            <div className="relative z-10 flex flex-col items-center max-w-[1360px] mx-auto w-full">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-[#0a0a0f] mb-6 shadow-[0_0_15px_rgba(81,45,168,0.15)]">
                 <div className="w-2 h-2 rounded-full bg-[#512da8] animate-pulse"></div>
                 <span className="text-[#ccc] text-sm font-medium">Recent blog updates</span>
@@ -195,7 +195,7 @@ const BlogPage = () => {
           </section>
 
           {/* Blog Grid Section */}
-          <section className="relative z-20 w-full max-w-[1150px] mx-auto px-6 pb-0">
+          <section className="relative z-20 w-full max-w-[1360px] mx-auto px-6 pb-0">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
               {blogPosts.map((post) => (
                 <Link 
@@ -237,7 +237,7 @@ const BlogPage = () => {
           <TechnicalFiller />
 
           {/* Research Updates Section */}
-          <section className="relative z-20 w-full max-w-[1150px] mx-auto px-6 pb-0 pt-0">
+          <section className="relative z-20 w-full max-w-[1360px] mx-auto px-6 pb-0 pt-0">
             <h2 className="text-white text-3xl md:text-5xl font-bold tracking-tight mb-10">
               Research Updates
             </h2>

@@ -37,7 +37,7 @@ const Home = () => {
         <Hero />
         <Logos />
 
-        <div className="relative z-20 w-full max-w-[1220px] mx-auto px-6 pt-4 pb-2 text-left mt-4">
+        <div className="relative z-20 w-full max-w-[1360px] mx-auto px-6 pt-4 pb-2 text-left mt-4">
           <h2 className="text-tier-1">Announcements</h2>
         </div>
 

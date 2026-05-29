@@ -25,7 +25,7 @@ const WorkflowShowcase = () => {
 
   return (
     <section className="relative w-full py-10 lg:py-20 bg-[#050505] flex flex-col items-center border-t border-white/[0.05]">
-      <div className="w-full max-w-[1220px] mx-auto px-6 mb-16 lg:mb-24 flex flex-col items-center text-center">
+      <div className="w-full max-w-[1360px] mx-auto px-6 mb-16 lg:mb-24 flex flex-col items-center text-center">
         {/* Main Title */}
         <h2 className="text-tier-1 mb-6">
           Purpose beats scale.
@@ -37,7 +37,7 @@ const WorkflowShowcase = () => {
         </p>
       </div>
 
-      <div className="w-full max-w-[1220px] mx-auto px-6">
+      <div className="w-full max-w-[1360px] mx-auto px-6">
         {/* Architectural Grid Container */}
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-0 border border-white/[0.08] rounded-[36px] overflow-hidden bg-[#050505]">
           

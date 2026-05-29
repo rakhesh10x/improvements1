@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 const FeatureCards = () => {
   return (
-    <section className="py-10 px-6 max-w-[1220px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+    <section className="py-10 px-6 max-w-[1360px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
       {/* LUCA AI Card */}
       <div className="group relative bg-[#0a0a0a] border border-white/5 rounded-3xl p-6 overflow-hidden flex flex-col justify-between min-h-[400px] hover:border-white/10 transition-colors cursor-pointer">
         <div className="absolute inset-0 bg-gradient-to-br from-[rgba(30,80,255,0.05)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>

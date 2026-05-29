@@ -64,7 +64,7 @@ const FeatureLinks = ({ mode = 'all' }) => {
   };
 
   return (
-    <section className="relative z-20 w-full max-w-[1220px] mx-auto px-6 py-8 lg:py-12">
+    <section className="relative z-20 w-full max-w-[1360px] mx-auto px-6 py-8 lg:py-12">
         {mode === 'home' && (
           <div className="mb-6 text-left">
             <h2 className="text-tier-1">Research & Blog</h2>

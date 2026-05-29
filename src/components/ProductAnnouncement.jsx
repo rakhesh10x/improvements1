@@ -311,7 +311,7 @@ const ProductAnnouncement = () => {
       className="relative pt-24 pb-12 bg-black z-10 border-t border-white/5 px-4 md:px-6 overflow-visible"
     >
 
-      <div className="max-w-[1180px] mx-auto w-full relative z-10 flex flex-col items-center">
+      <div className="max-w-[1360px] mx-auto w-full relative z-10 flex flex-col items-center">
 
         {/* Centered Spaced Header (Slides upward and fades softly during expansion) */}
         <motion.div 

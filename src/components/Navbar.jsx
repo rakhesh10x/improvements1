@@ -85,7 +85,7 @@ const Navbar = ({ openContactModal }) => {
         <nav className={`w-full flex items-center justify-between pointer-events-auto transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] border rounded-full ${
           isScrolled 
             ? 'max-w-[920px] px-8 py-2 bg-[#04040c]/25 backdrop-blur-[14px] border-white/[0.07] shadow-[0_16px_36px_rgba(0,0,0,0.4),0_0_24px_rgba(124,58,237,0.015)]' 
-            : 'max-w-[1220px] px-12 py-3 bg-white/[0.01] backdrop-blur-[4px] border-white/[0.02] shadow-none'
+            : 'max-w-[1360px] px-12 py-3 bg-white/[0.01] backdrop-blur-[4px] border-white/[0.02] shadow-none'
         }`}>
           <div className="flex items-center gap-6">
             <Link to="/" className="flex items-center cursor-pointer group">
