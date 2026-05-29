@@ -259,11 +259,9 @@ const AIPage = () => {
                     />
 
                     <div className="relative z-10 flex flex-col">
-                      <div className="inline-flex items-center gap-2 bg-[#512da8]/20 border border-[#512da8]/30 rounded-full px-3 py-1 w-fit mb-6">
-                        <span className="text-[#a78bfa] text-[9px] sm:text-[10px] uppercase tracking-[0.15em] font-bold">LFM Core</span>
-                      </div>
+                      <span className="text-tagline-02 text-purple-400 uppercase mb-3 block">LFM Core</span>
 
-                      <h3 className="text-[1.15rem] lg:text-[1.35rem] xl:text-[1.55rem] font-semibold text-white tracking-tight mb-4 leading-snug">
+                      <h3 className="text-[1.05rem] lg:text-[1.15rem] xl:text-[1.35rem] font-semibold text-white tracking-tight mb-4">
                         Most enterprise tasks are not open-ended reasoning problems.
                       </h3>
 
@@ -271,7 +269,7 @@ const AIPage = () => {
                         They are retrieval problems, lookup problems, translation problems, summarization problems, and structured response problems.
                       </p>
 
-                      <p className="text-[0.95rem] text-white leading-[1.7] font-semibold tracking-wide">
+                      <p className="text-[0.95rem] text-[#A0A0A0] leading-[1.7]">
                         LFM is built for that class of workload.
                       </p>
                     </div>

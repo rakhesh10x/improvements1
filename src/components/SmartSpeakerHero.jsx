@@ -77,8 +77,7 @@ const SmartSpeakerHero = () => {
         </div>
       </div>
       
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-white/5 to-transparent"></div>
+      {/* Background Decorative Elements removed as per request */}
     </section>
   );
 };
