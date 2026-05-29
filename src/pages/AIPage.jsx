@@ -15,7 +15,7 @@ const AIPage = () => {
 
   const handleEyeBlink = () => {
     setIsBlinking(true);
-    setTimeout(() => setIsBlinking(false), 150);
+    setTimeout(() => setIsBlinking(false), 200);
   };
 
   useEffect(() => {
@@ -382,12 +382,22 @@ const AIPage = () => {
                   {/* Eyes */}
                   <div className="relative z-10 flex-1 flex items-center justify-center gap-10">
                     <div 
-                      className="w-[74px] h-[74px] rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)] transition-transform duration-100 ease-out"
-                      style={{ transform: isBlinking ? `${eyeTransform} scaleY(0.06)` : eyeTransform }}
+                      className="w-[74px] bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)]"
+                      style={{ 
+                        transform: eyeTransform,
+                        height: isBlinking ? '12px' : '74px',
+                        borderRadius: isBlinking ? '6px' : '37px',
+                        transition: 'height 0.15s ease-in-out, border-radius 0.15s ease-in-out, transform 0.1s ease-out'
+                      }}
                     ></div>
                     <div 
-                      className="w-[74px] h-[74px] rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)] transition-transform duration-100 ease-out"
-                      style={{ transform: isBlinking ? `${eyeTransform} scaleY(0.06)` : eyeTransform }}
+                      className="w-[74px] bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)]"
+                      style={{ 
+                        transform: eyeTransform,
+                        height: isBlinking ? '12px' : '74px',
+                        borderRadius: isBlinking ? '6px' : '37px',
+                        transition: 'height 0.15s ease-in-out, border-radius 0.15s ease-in-out, transform 0.1s ease-out'
+                      }}
                     ></div>
                   </div>
 

@@ -189,7 +189,7 @@ const ProductBento = () => {
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
             <img
-              src="/resolution%20changed%20ambient%20img.png"
+              src="/reslution%20changed%20ambient1%20img.png"
               alt="Ambient"
               className="absolute inset-0 w-full h-full pointer-events-none select-none z-0 object-cover"
               draggable={false}
@@ -201,12 +201,15 @@ const ProductBento = () => {
             whileHover={{ borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'bottom' }}
-            className="bento-card-height h-[68px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md px-5 flex flex-row items-center justify-between group cursor-default transition-all overflow-hidden relative"
+            className="bento-card-height h-[68px] rounded-[28px] border border-white/[0.05] bg-transparent group cursor-default transition-all overflow-hidden relative"
           >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center,rgba(120,80,255,0.05)0%,transparent 70%)' }} />
-            <span className="relative z-10 text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">ECOSYSTEM SYNC</span>
-            <h3 className="relative z-10 text-white text-sm font-bold tracking-tight">Indian AI Ecosystem</h3>
-            <Globe className="relative z-10 w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
+            <img
+              src="/resolutin%20changed%20Ecosystem%20Sync%20img.png"
+              alt="Ecosystem Sync"
+              className="absolute inset-0 w-full h-full pointer-events-none select-none z-0 object-cover"
+              draggable={false}
+            />
           </motion.div>
 
         </div>
