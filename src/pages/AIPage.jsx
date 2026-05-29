@@ -75,34 +75,44 @@ const AIPage = () => {
           {/* Section 1: Hero */}
           <section className="relative w-full min-h-[70svh] flex flex-col z-10 border-b border-white/5">
             {/* Main content — vertically centered, responsive grid */}
-            <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-stretch max-w-[1360px] mx-auto w-full px-6 pt-24 lg:pt-28 pb-12">
+            <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-6 items-stretch max-w-[1360px] mx-auto w-full px-6 pt-24 pb-6">
               
               {/* Left Column: Text Content */}
-              <div className="max-w-2xl flex flex-col gap-6 order-1">
+              <div className="max-w-2xl flex flex-col gap-4 order-1">
 
                 {/* Label */}
-                <div className="inline-flex items-center gap-2 bg-[#512da8]/10 border border-[#512da8]/30 rounded-full px-4 py-1.5 w-fit">
+                <div className="inline-flex items-center gap-2 bg-[#512da8]/10 border border-[#512da8]/30 rounded-full px-4 py-1 w-fit">
                   <Sparkles className="w-3 h-3 text-[#a78bfa]" />
                   <span className="text-[#a78bfa] text-[10px] uppercase tracking-[0.35em] font-bold">INTRODUCING</span>
                 </div>
 
                 {/* Heading */}
                 <div>
-                  <h1 className="text-tier-1">
-                    L.F.M
+                  <h1 className="text-tier-1" style={{ fontSize: 'clamp(3.5rem, 7vw, 5.5rem)' }}>
+                    L . F . M
                   </h1>
-                  <p className="text-tier-2 mt-4">
+                  <p className="text-tier-2 mt-2">
                     Conversational AI for internal knowledge.
                   </p>
                 </div>
 
                 {/* Description */}
-                <p className="text-tier-3 max-w-xl">
-                  A compact, Indic-first language layer that turns intranet data, documents, and databases into natural conversation — fully offline, license-based, and deployment-ready.
-                </p>
+                <div className="flex flex-col gap-3 text-tier-3 max-w-xl">
+                  <p>
+                    A compact, Indic-first language layer that turns intranet data, documents, and databases into natural conversation — fully offline, license-based, and deployment-ready.
+                  </p>
+                  <p>
+                    Engineered exclusively for rigid enterprise architecture, the Language Fluency Model bypasses the latency, cost, and critical security vulnerabilities of cloud-based APIs. It securely ingests your proprietary knowledge bases and operational manuals to deliver immediate, perfectly localized answers directly within your secure perimeter.
+                  </p>
+                  <ul className="flex flex-col gap-1.5 pl-4 border-l-2 border-[#512da8]/40 py-1 mt-0">
+                    <li><strong className="text-white font-semibold tracking-wide">Zero Data Leakage:</strong> Your data never leaves your local servers or VPN.</li>
+                    <li><strong className="text-white font-semibold tracking-wide">Instant Reasoning:</strong> Hardware-optimized for zero network round-trips.</li>
+                    <li><strong className="text-white font-semibold tracking-wide">Indic Mastery:</strong> Native linguistic comprehension across regional dialects.</li>
+                  </ul>
+                </div>
 
                 {/* Buttons */}
-                <div className="flex items-center gap-4 flex-wrap">
+                <div className="flex items-center gap-4 flex-wrap mt-1">
                   <button
                     onClick={() => setIsContactModalOpen(true)}
                     className="px-7 py-3 rounded-full bg-white text-black text-sm font-bold tracking-wide hover:bg-zinc-200 transition-all duration-300"
@@ -205,7 +215,7 @@ const AIPage = () => {
 
               {/* TOP CENTER HEADING */}
               <div className="w-full max-w-[1360px] mx-auto text-center mb-6 md:mb-14">
-                <h2 className="text-tier-1">
+                <h2 className="text-tier-1 text-white/70 drop-shadow-md">
                   You do not need frontier AI for every workflow.<br />
                   You should not depend on APIs for internal questions.
                 </h2>

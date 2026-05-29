@@ -37,12 +37,17 @@ const Navbar = ({ openContactModal }) => {
           isBentoExpanded ? '-translate-y-[200%] opacity-0' : 'translate-y-0'
         }`}
       >
-        <nav className={`w-full max-w-[1360px] px-12 py-3 flex items-center justify-between pointer-events-auto transition-colors duration-500 border rounded-full backdrop-blur-md ${
-          isScrolled 
-            ? 'bg-[#04040c]/40 border-white/[0.08] shadow-[0_16px_36px_rgba(0,0,0,0.4)]' 
-            : 'bg-white/[0.02] border-white/[0.02] shadow-none'
-        }`}>
-          <div className="flex items-center gap-6">
+        <nav className="relative w-full max-w-[1360px] px-12 py-3 flex items-center justify-between pointer-events-auto rounded-full">
+          
+          {/* Dynamic Unified Background (Fixes WebGL Canvas crossfade bug) */}
+          <div className={`absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none border rounded-full ${
+            isScrolled 
+              ? 'bg-[#04040c]/25 backdrop-blur-[14px] border-white/[0.07] shadow-[0_16px_36px_rgba(0,0,0,0.4),0_0_24px_rgba(124,58,237,0.015)]'
+              : 'bg-white/[0.01] backdrop-blur-[4px] border-white/[0.02] shadow-none'
+          }`}></div>
+
+          {/* Nav Content */}
+          <div className="relative z-10 flex items-center gap-6">
             <Link to="/" className="flex items-center cursor-pointer group">
               <img 
                 src="https://i.ibb.co/Y781ky06/Screenshot-2026-05-26-000916-removebg-preview.png"
@@ -57,7 +62,7 @@ const Navbar = ({ openContactModal }) => {
             </div>
           </div>
           
-          <div className="hidden md:block">
+          <div className="relative z-10 hidden md:block">
             <button 
               onClick={openContactModal}
               className="text-btn-secondary bg-gradient-to-r from-[#512da8] to-[#4c1d95] border border-purple-500/30 text-white px-6 py-2.5 rounded-full shadow-[0_4px_20px_rgba(81,45,168,0.3),inset_0_1px_0_rgba(255,255,255,0.15)] hover:shadow-[0_4px_30px_rgba(124,58,237,0.5),inset_0_1px_0_rgba(255,255,255,0.25)] hover:border-purple-400/40 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer"
@@ -66,7 +71,7 @@ const Navbar = ({ openContactModal }) => {
             </button>
           </div>
  
-          <button className="md:hidden text-[#A0A0A0] hover:text-white transition-colors">
+          <button className="relative z-10 md:hidden text-[#A0A0A0] hover:text-white transition-colors">
             <Menu className="w-5 h-5" />
           </button>
         </nav>
