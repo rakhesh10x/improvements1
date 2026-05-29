@@ -73,18 +73,18 @@ const ProductBento = () => {
           {/* ── ROW 1: 4 top cards ── */}
           <div style={{ gridArea: 'top-row' }} className="bento-top-row-grid w-full">
             {[
-              { label: 'SPATIAL AUDIO', title: 'Room Resonance',  desc: 'Concentric acoustic arrays for immersive room-scale projection.',   Icon: Volume2, image: '/resolutin%20changed%20spatial%20audio%20img2.png' },
+              { label: 'SPATIAL AUDIO', title: 'Room Resonance',  desc: 'Concentric acoustic arrays for immersive room-scale projection.',   Icon: Volume2, image: '/resolution%20changed%20spatial%20audio3%20img.png' },
               { label: 'EDGE AI',       title: 'Local Inference', desc: 'On-device neural network execution with zero latency.',              Icon: Cpu, image: '/resolution%20changed%20edge%20ai1.png' },
               { label: 'LUCA OS',       title: 'Real-Time Core',  desc: 'Low-level OS scheduled dynamically for sub-millisecond threads.',   Icon: Layers, image: '/resolution%20changed%20luca%20os%20img.jpeg' },
               { label: 'VOICE NATIVE',  title: 'Instant Voice',   desc: 'Continuous hardware speech-to-speech loop running locally.',        Icon: Radio, image: '/resolution%20changed%20voicenative%20img.png' },
             ].map(({ label, title, desc, Icon, image }) => (
               <motion.div
                 key={label}
-                whileHover={image ? {} : { borderColor: 'rgba(120,80,255,0.3)' }}
+                whileHover={{ borderColor: 'rgba(120,80,255,0.3)' }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
-                className={`bento-card-height h-[165px] rounded-[28px] group cursor-default transition-all overflow-hidden relative ${
+                className={`bento-card-height h-[165px] rounded-[28px] group cursor-default transition-all overflow-hidden relative border border-white/[0.05] ${
                   !image 
-                    ? 'border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between' 
+                    ? 'bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between' 
                     : 'bg-transparent'
                 }`}
               >
@@ -92,8 +92,7 @@ const ProductBento = () => {
                   <img 
                     src={image} 
                     alt={label} 
-                    className="absolute inset-0 w-full h-full pointer-events-none select-none z-0" 
-                    style={{ objectFit: 'fill' }}
+                    className="absolute inset-0 w-full h-full pointer-events-none select-none z-0 object-cover" 
                   />
                 ) : (
                   <>
@@ -167,16 +166,16 @@ const ProductBento = () => {
 
             {/* ── right2 ── */}
             <motion.div
-              whileHover={{}}
+              whileHover={{ borderColor: 'rgba(120,80,255,0.3)' }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="flex-1 rounded-[28px] bg-transparent group cursor-default transition-all overflow-hidden relative"
+              className="flex-1 rounded-[28px] bg-transparent border border-white/[0.05] group cursor-default transition-all overflow-hidden relative"
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
               <img
-                src="/resolutin%20changed%20privacy%20img2.png"
+                src="/privacy%20img1.jpeg"
                 alt="Privacy"
-                className="absolute inset-0 w-full h-full pointer-events-none select-none"
-                style={{ objectFit: 'fill', transform: 'scale(1.05)' }}
+                className="absolute inset-0 w-full h-full pointer-events-none select-none object-cover"
+                style={{ transform: 'scale(1.05)' }}
                 draggable={false}
               />
             </motion.div>
