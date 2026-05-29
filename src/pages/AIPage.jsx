@@ -10,10 +10,27 @@ import TechnicalFiller from '../components/TechnicalFiller';
 
 const AIPage = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isBlinking, setIsBlinking] = useState(false);
+
+  const handleEyeBlink = () => {
+    setIsBlinking(true);
+    setTimeout(() => setIsBlinking(false), 150);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const handleMouseMove = (e) => {
+      const x = (e.clientX / window.innerWidth) * 2 - 1;
+      const y = (e.clientY / window.innerHeight) * 2 - 1;
+      setMousePos({ x, y });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
+
+  const eyeTransform = `translate(${mousePos.x * 12}px, ${mousePos.y * 12}px)`;
 
   const features = [
     {
@@ -36,12 +53,6 @@ const AIPage = () => {
   return (
     <div className="min-h-[100svh] bg-black text-white selection:bg-purple-500/30 font-sans relative w-full flex flex-col">
       <style>{`
-        @keyframes eyeBlink {
-          0%, 88%, 100% { transform: scaleY(1); }
-          93% { transform: scaleY(0.06); }
-        }
-        .eye { animation: eyeBlink 5s ease-in-out infinite; transform-origin: center; }
-        .eye-right { animation-delay: 0.08s; }
 
         @keyframes scanMove {
           0%   { top: 14%; }
@@ -127,8 +138,9 @@ const AIPage = () => {
               {/* Right Column: Duplicated AI Active visual */}
               <div className="flex justify-center lg:justify-end order-2 w-full h-full">
                 <div
-                  className="relative w-full h-full rounded-[24px] bg-[#04040c] overflow-hidden flex flex-col"
+                  className="relative w-full h-full rounded-[24px] bg-[#04040c] overflow-hidden flex flex-col cursor-pointer"
                   style={{ boxShadow: '0 0 60px rgba(81,45,168,0.15), 0 0 120px rgba(81,45,168,0.1)' }}
+                  onMouseDown={handleEyeBlink}
                 >
                   {/* Subtle grid */}
                   <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none"></div>
@@ -160,8 +172,14 @@ const AIPage = () => {
 
                   {/* Eyes */}
                   <div className="relative z-10 flex-1 flex items-center justify-center gap-10">
-                    <div className="eye w-[74px] h-[74px] rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)]"></div>
-                    <div className="eye eye-right w-[74px] h-[74px] rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)]"></div>
+                    <div 
+                      className="w-[74px] h-[74px] rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)] transition-transform duration-100 ease-out"
+                      style={{ transform: isBlinking ? `${eyeTransform} scaleY(0.06)` : eyeTransform }}
+                    ></div>
+                    <div 
+                      className="w-[74px] h-[74px] rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)] transition-transform duration-100 ease-out"
+                      style={{ transform: isBlinking ? `${eyeTransform} scaleY(0.06)` : eyeTransform }}
+                    ></div>
                   </div>
 
                   {/* Bottom text */}
@@ -325,8 +343,9 @@ const AIPage = () => {
               {/* Center Card */}
               <div className="flex justify-center">
                 <div
-                  className="relative w-[300px] md:w-[340px] rounded-[45px] bg-[#04040c] overflow-hidden flex flex-col"
+                  className="relative w-[300px] md:w-[340px] rounded-[45px] bg-[#04040c] overflow-hidden flex flex-col cursor-pointer"
                   style={{ aspectRatio: '4/5', boxShadow: '0 0 60px rgba(236,72,153,0.08), 0 0 120px rgba(139,92,246,0.06)' }}
+                  onMouseDown={handleEyeBlink}
                 >
                   {/* Subtle grid */}
                   <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none"></div>
@@ -362,8 +381,14 @@ const AIPage = () => {
 
                   {/* Eyes */}
                   <div className="relative z-10 flex-1 flex items-center justify-center gap-10">
-                    <div className="eye w-[74px] h-[74px] rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)]"></div>
-                    <div className="eye eye-right w-[74px] h-[74px] rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)]"></div>
+                    <div 
+                      className="w-[74px] h-[74px] rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)] transition-transform duration-100 ease-out"
+                      style={{ transform: isBlinking ? `${eyeTransform} scaleY(0.06)` : eyeTransform }}
+                    ></div>
+                    <div 
+                      className="w-[74px] h-[74px] rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.1)] transition-transform duration-100 ease-out"
+                      style={{ transform: isBlinking ? `${eyeTransform} scaleY(0.06)` : eyeTransform }}
+                    ></div>
                   </div>
 
                   {/* Bottom text */}
