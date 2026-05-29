@@ -80,12 +80,21 @@ const ProductBento = () => {
             ].map(({ label, title, desc, Icon, image }) => (
               <motion.div
                 key={label}
-                whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
+                whileHover={image ? { y: -4 } : { y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
-                className={`bento-card-height h-[165px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md group cursor-default transition-all overflow-hidden relative ${!image ? 'p-5 flex flex-col justify-between' : ''}`}
+                className={`bento-card-height h-[165px] rounded-[28px] group cursor-default transition-all overflow-hidden relative ${
+                  !image 
+                    ? 'border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between' 
+                    : 'bg-transparent'
+                }`}
               >
                 {image ? (
-                  <img src={image} alt={label} className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-0" />
+                  <img 
+                    src={image} 
+                    alt={label} 
+                    className="absolute inset-0 w-full h-full pointer-events-none select-none z-0" 
+                    style={{ objectFit: 'fill' }}
+                  />
                 ) : (
                   <>
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" style={{ background: 'radial-gradient(circle at center,rgba(120,80,255,0.05)0%,transparent 70%)' }} />
