@@ -73,9 +73,9 @@ const AIPage = () => {
 
         <main className="flex-grow">
           {/* Section 1: Hero */}
-          <section className="relative w-full min-h-[65svh] flex flex-col z-10 border-b border-white/5">
+          <section className="relative w-full min-h-[83svh] flex flex-col z-10 border-b border-white/5">
             {/* Main content — vertically centered, responsive grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-6 items-stretch max-w-[1360px] mx-auto w-full px-6 pt-32 pb-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-6 items-stretch max-w-[1360px] mx-auto w-full px-6 pt-44 pb-20">
               
               {/* Left Column: Text Content */}
               <div className="max-w-2xl flex flex-col gap-4 order-1">
@@ -103,10 +103,7 @@ const AIPage = () => {
                   <p className="leading-relaxed text-[15px]">
                     Engineered exclusively for rigid enterprise architecture, the Language Fluency Model bypasses the latency, cost, and critical security vulnerabilities of cloud-based APIs. It securely ingests your proprietary knowledge bases and operational manuals to deliver immediate, perfectly localized answers directly within your secure perimeter.
                   </p>
-                  <ul className="flex flex-col gap-4 pl-5 border-l-2 border-[#512da8]/40 py-2 mt-2">
-                    <li className="leading-relaxed"><strong className="text-white font-semibold tracking-wide">Zero Data Leakage:</strong> Your data never leaves your local servers or VPN.</li>
-                    <li className="leading-relaxed"><strong className="text-white font-semibold tracking-wide">Instant Reasoning:</strong> Hardware-optimized for zero network round-trips.</li>
-                  </ul>
+
                 </div>
 
                 {/* Buttons */}
