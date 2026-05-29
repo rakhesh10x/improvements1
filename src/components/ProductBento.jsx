@@ -74,7 +74,7 @@ const ProductBento = () => {
           <div style={{ gridArea: 'top-row' }} className="bento-top-row-grid w-full">
             {[
               { label: 'SPATIAL AUDIO', title: 'Room Resonance',  desc: 'Concentric acoustic arrays for immersive room-scale projection.',   Icon: Volume2, image: '/resolutin%20changed%20spatial%20audio%20img2.png' },
-              { label: 'EDGE AI',       title: 'Local Inference', desc: 'On-device neural network execution with zero latency.',              Icon: Cpu, image: '/resolution%20changed%20edge%20ai.png' },
+              { label: 'EDGE AI',       title: 'Local Inference', desc: 'On-device neural network execution with zero latency.',              Icon: Cpu, image: '/resolution%20changed%20edge%20ai1.png' },
               { label: 'LUCA OS',       title: 'Real-Time Core',  desc: 'Low-level OS scheduled dynamically for sub-millisecond threads.',   Icon: Layers, image: '/resolution%20changed%20luca%20os%20img.jpeg' },
               { label: 'VOICE NATIVE',  title: 'Instant Voice',   desc: 'Continuous hardware speech-to-speech loop running locally.',        Icon: Radio, image: '/resolution%20changed%20voicenative%20img.png' },
             ].map(({ label, title, desc, Icon, image }) => (
@@ -176,7 +176,7 @@ const ProductBento = () => {
                 src="/resolutin%20changed%20privacy%20img2.png"
                 alt="Privacy"
                 className="absolute inset-0 w-full h-full pointer-events-none select-none"
-                style={{ objectFit: 'fill' }}
+                style={{ objectFit: 'fill', transform: 'scale(1.05)' }}
                 draggable={false}
               />
             </motion.div>
