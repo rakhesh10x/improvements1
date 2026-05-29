@@ -74,7 +74,7 @@ const ProductBento = () => {
           <div style={{ gridArea: 'top-row' }} className="bento-top-row-grid w-full">
             {[
               { label: 'SPATIAL AUDIO', title: 'Room Resonance',  desc: 'Concentric acoustic arrays for immersive room-scale projection.',   Icon: Volume2, image: '/resolution%20changed%20spatial%20audio3%20img.png' },
-              { label: 'EDGE AI',       title: 'Local Inference', desc: 'On-device neural network execution with zero latency.',              Icon: Cpu, image: '/resolution%20changed%20edge%20ai1.png' },
+              { label: 'EDGE AI',       title: 'Local Inference', desc: 'On-device neural network execution with zero latency.',              Icon: Cpu, image: '/resolution%20changed%20edge%20ai%204.png' },
               { label: 'LUCA OS',       title: 'Real-Time Core',  desc: 'Low-level OS scheduled dynamically for sub-millisecond threads.',   Icon: Layers, image: '/resolution%20changed%20luca%20os%20img.jpeg' },
               { label: 'VOICE NATIVE',  title: 'Instant Voice',   desc: 'Continuous hardware speech-to-speech loop running locally.',        Icon: Radio, image: '/resolution%20changed%20voicenative%20img.png' },
             ].map(({ label, title, desc, Icon, image }) => (
@@ -172,7 +172,7 @@ const ProductBento = () => {
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
               <img
-                src="/privacy%20img1.jpeg"
+                src="/resolution%20changed%20privacy%20new%20img.png"
                 alt="Privacy"
                 className="absolute inset-0 w-full h-full pointer-events-none select-none object-cover"
                 style={{ transform: 'scale(1.05)' }}
