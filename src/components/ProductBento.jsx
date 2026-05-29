@@ -76,11 +76,11 @@ const ProductBento = () => {
               { label: 'SPATIAL AUDIO', title: 'Room Resonance',  desc: 'Concentric acoustic arrays for immersive room-scale projection.',   Icon: Volume2, image: '/resolution%20changed%20spatialaudio.png' },
               { label: 'EDGE AI',       title: 'Local Inference', desc: 'On-device neural network execution with zero latency.',              Icon: Cpu, image: '/resolution%20changed%20edge%20ai.png' },
               { label: 'LUCA OS',       title: 'Real-Time Core',  desc: 'Low-level OS scheduled dynamically for sub-millisecond threads.',   Icon: Layers  },
-              { label: 'VOICE NATIVE',  title: 'Instant Voice',   desc: 'Continuous hardware speech-to-speech loop running locally.',        Icon: Radio   },
+              { label: 'VOICE NATIVE',  title: 'Instant Voice',   desc: 'Continuous hardware speech-to-speech loop running locally.',        Icon: Radio, image: '/resolution%20changed%20voicenative%20img.png' },
             ].map(({ label, title, desc, Icon, image }) => (
               <motion.div
                 key={label}
-                whileHover={image ? { y: -4 } : { y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
+                whileHover={image ? {} : { borderColor: 'rgba(120,80,255,0.3)' }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
                 className={`bento-card-height h-[165px] rounded-[28px] group cursor-default transition-all overflow-hidden relative ${
                   !image 
@@ -114,7 +114,7 @@ const ProductBento = () => {
 
           {/* ── left1 ── */}
           <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
+            whileHover={{ borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'left1' }}
             className="bento-card-height h-[215px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
@@ -132,7 +132,7 @@ const ProductBento = () => {
 
           {/* ── HERO card: center image ── */}
           <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.2)' }}
+            whileHover={{ borderColor: 'rgba(120,80,255,0.2)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'hero' }}
             className="bento-hero-height rounded-[28px] border border-white/[0.05] bg-white/[0.01] relative overflow-hidden group"
@@ -150,7 +150,7 @@ const ProductBento = () => {
           <div style={{ gridArea: 'right-col' }} className="flex flex-col gap-[14px]">
             {/* ── right1 ── */}
             <motion.div
-              whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
+              whileHover={{ borderColor: 'rgba(120,80,255,0.3)' }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
               className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
             >
@@ -167,7 +167,7 @@ const ProductBento = () => {
 
             {/* ── right2 ── */}
             <motion.div
-              whileHover={{ y: -4 }}
+              whileHover={{}}
               transition={{ duration: 0.5, ease: 'easeOut' }}
               className="flex-1 rounded-[28px] bg-transparent group cursor-default transition-all overflow-hidden relative"
             >
@@ -184,7 +184,7 @@ const ProductBento = () => {
 
           {/* ── left2 ── */}
           <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
+            whileHover={{ borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'left2' }}
             className="bento-card-height h-[225px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
@@ -204,7 +204,7 @@ const ProductBento = () => {
 
           {/* ── bottom ── */}
           <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
+            whileHover={{ borderColor: 'rgba(120,80,255,0.3)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ gridArea: 'bottom' }}
             className="bento-card-height h-[68px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md px-5 flex flex-row items-center justify-between group cursor-default transition-all overflow-hidden relative"
