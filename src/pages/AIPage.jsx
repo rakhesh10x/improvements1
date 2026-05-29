@@ -73,17 +73,19 @@ const AIPage = () => {
 
         <main className="flex-grow">
           {/* Section 1: Hero */}
-          <section className="relative w-full min-h-[70svh] flex flex-col z-10 border-b border-white/5">
+          <section className="relative w-full min-h-[65svh] flex flex-col z-10 border-b border-white/5">
             {/* Main content — vertically centered, responsive grid */}
-            <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-6 items-stretch max-w-[1360px] mx-auto w-full px-6 pt-24 pb-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-6 items-stretch max-w-[1360px] mx-auto w-full px-6 pt-32 pb-6">
               
               {/* Left Column: Text Content */}
               <div className="max-w-2xl flex flex-col gap-4 order-1">
-
-                {/* Label */}
-                <div className="inline-flex items-center gap-2 bg-[#512da8]/10 border border-[#512da8]/30 rounded-full px-4 py-1 w-fit">
-                  <Sparkles className="w-3 h-3 text-[#a78bfa]" />
-                  <span className="text-[#a78bfa] text-[10px] uppercase tracking-[0.35em] font-bold">INTRODUCING</span>
+                
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 bg-[#512da8]/20 border border-[#512da8]/30 rounded-full px-3 py-1.5 w-fit">
+                  <svg className="w-3.5 h-3.5 text-[#a78bfa]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                  </svg>
+                  <span className="text-[#a78bfa] text-xs font-bold uppercase tracking-widest">Introducing</span>
                 </div>
 
                 {/* Heading */}
@@ -91,23 +93,19 @@ const AIPage = () => {
                   <h1 className="text-tier-1" style={{ fontSize: 'clamp(3.5rem, 7vw, 5.5rem)' }}>
                     L . F . M
                   </h1>
-                  <p className="text-tier-2 mt-2">
+                  <p className="text-tier-2 mt-4 text-lg">
                     Conversational AI for internal knowledge.
                   </p>
                 </div>
 
                 {/* Description */}
-                <div className="flex flex-col gap-3 text-tier-3 max-w-xl">
-                  <p>
-                    A compact, Indic-first language layer that turns intranet data, documents, and databases into natural conversation — fully offline, license-based, and deployment-ready.
-                  </p>
-                  <p>
+                <div className="flex flex-col gap-6 text-tier-3 max-w-xl mb-4">
+                  <p className="leading-relaxed text-[15px]">
                     Engineered exclusively for rigid enterprise architecture, the Language Fluency Model bypasses the latency, cost, and critical security vulnerabilities of cloud-based APIs. It securely ingests your proprietary knowledge bases and operational manuals to deliver immediate, perfectly localized answers directly within your secure perimeter.
                   </p>
-                  <ul className="flex flex-col gap-1.5 pl-4 border-l-2 border-[#512da8]/40 py-1 mt-0">
-                    <li><strong className="text-white font-semibold tracking-wide">Zero Data Leakage:</strong> Your data never leaves your local servers or VPN.</li>
-                    <li><strong className="text-white font-semibold tracking-wide">Instant Reasoning:</strong> Hardware-optimized for zero network round-trips.</li>
-                    <li><strong className="text-white font-semibold tracking-wide">Indic Mastery:</strong> Native linguistic comprehension across regional dialects.</li>
+                  <ul className="flex flex-col gap-4 pl-5 border-l-2 border-[#512da8]/40 py-2 mt-2">
+                    <li className="leading-relaxed"><strong className="text-white font-semibold tracking-wide">Zero Data Leakage:</strong> Your data never leaves your local servers or VPN.</li>
+                    <li className="leading-relaxed"><strong className="text-white font-semibold tracking-wide">Instant Reasoning:</strong> Hardware-optimized for zero network round-trips.</li>
                   </ul>
                 </div>
 
@@ -132,7 +130,7 @@ const AIPage = () => {
               {/* Right Column: Duplicated AI Active visual */}
               <div className="flex justify-center lg:justify-end order-2 w-full h-full">
                 <div
-                  className="relative w-full h-full min-h-[320px] rounded-[24px] bg-[#04040c] overflow-hidden flex flex-col"
+                  className="relative w-full h-full rounded-[24px] bg-[#04040c] overflow-hidden flex flex-col"
                   style={{ boxShadow: '0 0 60px rgba(81,45,168,0.15), 0 0 120px rgba(81,45,168,0.1)' }}
                 >
                   {/* Subtle grid */}
@@ -185,7 +183,7 @@ const AIPage = () => {
             </div>
 
             {/* Marquee ticker at the bottom */}
-            <div className="border-t border-white/[0.06] py-4 overflow-hidden">
+            <div className="mt-auto w-full border-t border-white/[0.06] pt-4 pb-1 overflow-hidden">
               <style>{`
                 @keyframes marquee-left {
                   0%   { transform: translateX(0); }

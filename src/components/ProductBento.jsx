@@ -13,10 +13,10 @@ const ProductBento = () => {
           grid-template-rows: auto 215px 61px 68px 68px;
           grid-template-areas:
             "top-row top-row top-row top-row"
-            "left1   hero    hero    right1"
-            "left2   hero    hero    right2"
-            "left2   hero    hero    right2"
-            "left2   bottom  bottom  right2";
+            "left1   hero    hero    right-col"
+            "left2   hero    hero    right-col"
+            "left2   hero    hero    right-col"
+            "left2   bottom  bottom  right-col";
         }
         .bento-top-row-grid {
           display: grid;
@@ -29,7 +29,7 @@ const ProductBento = () => {
             grid-template-rows: auto;
             grid-template-areas:
               "hero hero" "top-row top-row"
-              "left1 right1" "left2 right2" "bottom bottom";
+              "left1 right-col" "left2 right-col" "bottom bottom";
           }
           .bento-top-row-grid { grid-template-columns: repeat(2, 1fr); }
           .bento-card-height  { height: auto !important; min-height: 160px; }
@@ -131,43 +131,44 @@ const ProductBento = () => {
             />
           </motion.div>
 
-          {/* ── right1 ── */}
-          <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            style={{ gridArea: 'right1' }}
-            className="bento-card-height h-[215px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
-          >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center,rgba(120,80,255,0.05)0%,transparent 70%)' }} />
-            <div className="relative z-10 flex justify-between items-start">
-              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">REAL-TIME AI</span>
-              <Zap className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-            </div>
-            <div className="relative z-10">
-              <h3 className="text-white text-sm font-bold tracking-tight mb-1">Predictive Loops</h3>
-              <p className="text-[#888] text-[10px] leading-relaxed">Predictive action execution responding instantly to environmental triggers.</p>
-            </div>
-          </motion.div>
+          {/* ── right-col wrapper ── */}
+          <div style={{ gridArea: 'right-col' }} className="flex flex-col gap-[14px]">
+            {/* ── right1 ── */}
+            <motion.div
+              whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            >
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center,rgba(120,80,255,0.05)0%,transparent 70%)' }} />
+              <div className="relative z-10 flex justify-between items-start">
+                <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">REAL-TIME AI</span>
+                <Zap className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
+              </div>
+              <div className="relative z-10">
+                <h3 className="text-white text-sm font-bold tracking-tight mb-1">Predictive Loops</h3>
+                <p className="text-[#888] text-[10px] leading-relaxed hidden lg:block">Predictive action execution responding instantly to environmental triggers.</p>
+              </div>
+            </motion.div>
 
-          {/* ── right2 ── */}
-          <motion.div
-            whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            style={{ gridArea: 'right2' }}
-            className="bento-card-height h-[225px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
-          >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center,rgba(120,80,255,0.05)0%,transparent 70%)' }} />
-            <div className="relative z-10 flex justify-between items-start">
-              <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">PRIVACY</span>
-              <Lock className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-            </div>
-            <div className="relative z-10">
-              <h3 className="text-white text-lg font-bold tracking-tight mb-3">Privacy First</h3>
-              <p className="text-[#888] text-xs leading-relaxed font-light">
-                Encrypted sandboxed loops to safeguard your local voice patterns and telemetry logs with absolute hardware-level protection.
-              </p>
-            </div>
-          </motion.div>
+            {/* ── right2 ── */}
+            <motion.div
+              whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              className="flex-1 rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-6 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+            >
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center,rgba(120,80,255,0.05)0%,transparent 70%)' }} />
+              <div className="relative z-10 flex justify-between items-start">
+                <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">PRIVACY</span>
+                <Lock className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
+              </div>
+              <div className="relative z-10">
+                <h3 className="text-white text-lg font-bold tracking-tight mb-3">Privacy First</h3>
+                <p className="text-[#888] text-xs leading-relaxed font-light">
+                  Encrypted sandboxed loops to safeguard your local voice patterns and telemetry logs with absolute hardware-level protection.
+                </p>
+              </div>
+            </motion.div>
+          </div>
 
           {/* ── left2 ── */}
           <motion.div
