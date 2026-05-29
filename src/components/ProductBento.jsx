@@ -147,10 +147,13 @@ const ProductBento = () => {
           {/* ── right-col wrapper ── */}
           <div style={{ gridArea: 'right-col' }} className="flex flex-col gap-[14px]">
             {/* ── right1 ── */}
-            <motion.div
+            <motion.a
+              href="https://libremobileos.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ borderColor: 'rgba(120,80,255,0.3)' }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-transparent group cursor-default transition-all overflow-hidden relative"
+              className="bento-card-height h-[135px] rounded-[28px] border border-white/[0.05] bg-transparent group cursor-pointer transition-all overflow-hidden relative block"
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
               <img
@@ -159,7 +162,7 @@ const ProductBento = () => {
                 className="absolute inset-0 w-full h-full pointer-events-none select-none z-0 object-cover"
                 draggable={false}
               />
-            </motion.div>
+            </motion.a>
 
             {/* ── right2 ── */}
             <motion.div
