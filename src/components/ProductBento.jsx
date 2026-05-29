@@ -156,7 +156,7 @@ const ProductBento = () => {
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
               <img
-                src="/resolution%20changed%20libre%20os%20img.png"
+                src="/resolution%20changed%20libre%20os1%20img.png"
                 alt="REAL-TIME AI"
                 className="absolute inset-0 w-full h-full pointer-events-none select-none z-0 object-cover"
                 draggable={false}

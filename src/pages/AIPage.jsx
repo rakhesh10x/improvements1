@@ -251,22 +251,27 @@ const AIPage = () => {
                 <div className="flex flex-col gap-4 lg:gap-5 w-full h-full">
                   
                   {/* CARD 1: Large Main Card */}
-                  <div className="relative flex flex-col justify-center p-6 lg:p-10 rounded-[24px] border border-white/5 bg-[#0a0a0f]/90 backdrop-blur-xl flex-grow overflow-hidden group hover:border-white/10 transition-colors duration-500">
+                  <div className="relative flex flex-col justify-center p-6 lg:p-10 rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md flex-grow overflow-hidden group hover:border-purple-500/30 transition-all duration-500">
                     
-                    <div className="relative z-10">
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                      style={{ background: 'radial-gradient(circle at center, rgba(124,58,237,0.05) 0%, transparent 70%)' }}
+                    />
+
+                    <div className="relative z-10 flex flex-col">
                       <div className="inline-flex items-center gap-2 bg-[#512da8]/20 border border-[#512da8]/30 rounded-full px-3 py-1 w-fit mb-6">
                         <span className="text-[#a78bfa] text-[9px] sm:text-[10px] uppercase tracking-[0.15em] font-bold">LFM Core</span>
                       </div>
 
-                      <h3 className="text-white text-xl lg:text-2xl font-semibold leading-snug mb-4 tracking-tight">
+                      <h3 className="text-[1.15rem] lg:text-[1.35rem] xl:text-[1.55rem] font-semibold text-white tracking-tight mb-4 leading-snug">
                         Most enterprise tasks are not open-ended reasoning problems.
                       </h3>
 
-                      <p className="text-[#888] text-sm lg:text-base leading-relaxed mb-6 font-light">
+                      <p className="text-[0.95rem] text-[#A0A0A0] leading-[1.7] mb-6">
                         They are retrieval problems, lookup problems, translation problems, summarization problems, and structured response problems.
                       </p>
 
-                      <p className="text-[#e2e8f0] text-sm lg:text-base font-medium tracking-wide">
+                      <p className="text-[0.95rem] text-white leading-[1.7] font-semibold tracking-wide">
                         LFM is built for that class of workload.
                       </p>
                     </div>
@@ -276,19 +281,31 @@ const AIPage = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
                     
                     {/* Card 2 */}
-                    <div className="relative flex flex-col p-6 lg:p-8 rounded-[24px] border border-white/5 bg-[#0a0a0f]/90 backdrop-blur-xl hover:bg-[#0f0f14]/90 hover:border-white/10 transition-colors duration-500 group">
-                      <h4 className="text-white text-lg lg:text-xl font-semibold mb-3 tracking-tight">Private<br />by design</h4>
-                      <p className="text-[#777] text-xs lg:text-sm leading-relaxed font-light mt-auto pt-2">
-                        Run language workflows without exposing internal company knowledge to external AI APIs.
-                      </p>
+                    <div className="relative flex flex-col p-6 lg:p-8 rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md hover:border-purple-500/30 transition-all duration-500 group overflow-hidden">
+                      <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                        style={{ background: 'radial-gradient(circle at center, rgba(124,58,237,0.05) 0%, transparent 70%)' }}
+                      />
+                      <div className="relative z-10 flex flex-col h-full">
+                        <h4 className="text-[1.05rem] lg:text-[1.15rem] xl:text-[1.35rem] font-semibold text-white tracking-tight mb-3">Private<br />by design</h4>
+                        <p className="text-[0.95rem] text-[#A0A0A0] leading-[1.7] mt-auto pt-2">
+                          Run language workflows without exposing internal company knowledge to external AI APIs.
+                        </p>
+                      </div>
                     </div>
 
                     {/* Card 3 */}
-                    <div className="relative flex flex-col p-6 lg:p-8 rounded-[24px] border border-white/5 bg-[#0a0a0f]/90 backdrop-blur-xl hover:bg-[#0f0f14]/90 hover:border-white/10 transition-colors duration-500 group">
-                      <h4 className="text-white text-lg lg:text-xl font-semibold mb-3 tracking-tight">Fast local<br />inference</h4>
-                      <p className="text-[#777] text-xs lg:text-sm leading-relaxed font-light mt-auto pt-2">
-                        Optimized for structured enterprise intelligence tasks with lower latency and predictable outputs.
-                      </p>
+                    <div className="relative flex flex-col p-6 lg:p-8 rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md hover:border-purple-500/30 transition-all duration-500 group overflow-hidden">
+                      <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                        style={{ background: 'radial-gradient(circle at center, rgba(124,58,237,0.05) 0%, transparent 70%)' }}
+                      />
+                      <div className="relative z-10 flex flex-col h-full">
+                        <h4 className="text-[1.05rem] lg:text-[1.15rem] xl:text-[1.35rem] font-semibold text-white tracking-tight mb-3">Fast local<br />inference</h4>
+                        <p className="text-[0.95rem] text-[#A0A0A0] leading-[1.7] mt-auto pt-2">
+                          Optimized for structured enterprise intelligence tasks with lower latency and predictable outputs.
+                        </p>
+                      </div>
                     </div>
 
                   </div>
