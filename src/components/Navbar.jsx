@@ -37,10 +37,10 @@ const Navbar = ({ openContactModal }) => {
           isBentoExpanded ? '-translate-y-[200%] opacity-0' : 'translate-y-0'
         }`}
       >
-        <nav className={`w-full max-w-[1360px] px-12 py-3 flex items-center justify-between pointer-events-auto transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] border rounded-full ${
+        <nav className={`w-full max-w-[1360px] px-12 py-3 flex items-center justify-between pointer-events-auto transition-colors duration-500 border rounded-full backdrop-blur-md ${
           isScrolled 
-            ? 'bg-[#04040c]/25 backdrop-blur-[14px] border-white/[0.07] shadow-[0_16px_36px_rgba(0,0,0,0.4),0_0_24px_rgba(124,58,237,0.015)]' 
-            : 'bg-white/[0.01] backdrop-blur-[4px] border-white/[0.02] shadow-none'
+            ? 'bg-[#04040c]/40 border-white/[0.08] shadow-[0_16px_36px_rgba(0,0,0,0.4)]' 
+            : 'bg-white/[0.02] border-white/[0.02] shadow-none'
         }`}>
           <div className="flex items-center gap-6">
             <Link to="/" className="flex items-center cursor-pointer group">

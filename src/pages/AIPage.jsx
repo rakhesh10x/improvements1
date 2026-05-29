@@ -75,7 +75,7 @@ const AIPage = () => {
           {/* Section 1: Hero */}
           <section className="relative w-full min-h-[70svh] flex flex-col z-10 border-b border-white/5">
             {/* Main content — vertically centered, responsive grid */}
-            <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center max-w-[1360px] mx-auto w-full px-6 pt-32 lg:pt-40 pb-12">
+            <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-stretch max-w-[1360px] mx-auto w-full px-6 pt-24 lg:pt-28 pb-12">
               
               {/* Left Column: Text Content */}
               <div className="max-w-2xl flex flex-col gap-6 order-1">
@@ -83,13 +83,13 @@ const AIPage = () => {
                 {/* Label */}
                 <div className="inline-flex items-center gap-2 bg-[#512da8]/10 border border-[#512da8]/30 rounded-full px-4 py-1.5 w-fit">
                   <Sparkles className="w-3 h-3 text-[#a78bfa]" />
-                  <span className="text-[#a78bfa] text-[10px] uppercase tracking-[0.35em] font-bold">10X AI</span>
+                  <span className="text-[#a78bfa] text-[10px] uppercase tracking-[0.35em] font-bold">INTRODUCING</span>
                 </div>
 
                 {/* Heading */}
                 <div>
-                  <h1 className="text-white font-extrabold tracking-tight leading-[1.0] text-[clamp(2.6rem,6.5vw,5.5rem)]">
-                    Language Fluency<br />Model
+                  <h1 className="text-tier-1">
+                    L.F.M
                   </h1>
                   <p className="text-tier-2 mt-4">
                     Conversational AI for internal knowledge.
@@ -120,29 +120,29 @@ const AIPage = () => {
               </div>
 
               {/* Right Column: Duplicated AI Active visual */}
-              <div className="flex justify-center lg:justify-end order-2 w-full">
+              <div className="flex justify-center lg:justify-end order-2 w-full h-full">
                 <div
-                  className="relative w-full max-w-[480px] lg:max-w-[600px] rounded-[32px] md:rounded-[40px] bg-[#04040c] overflow-hidden flex flex-col"
-                  style={{ aspectRatio: '16/9', boxShadow: '0 0 60px rgba(236,72,153,0.08), 0 0 120px rgba(139,92,246,0.06)' }}
+                  className="relative w-full h-full min-h-[320px] rounded-[24px] bg-[#04040c] overflow-hidden flex flex-col"
+                  style={{ boxShadow: '0 0 60px rgba(81,45,168,0.15), 0 0 120px rgba(81,45,168,0.1)' }}
                 >
                   {/* Subtle grid */}
                   <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none"></div>
 
                   {/* ── Corner brackets ── */}
-                  <div className="corner-bracket absolute top-3 left-3 w-5 h-5 border-t-[2px] border-l-[2px] border-pink-400/80 rounded-tl-sm pointer-events-none z-30"></div>
-                  <div className="corner-bracket absolute top-3 right-3 w-5 h-5 border-t-[2px] border-r-[2px] border-pink-400/80 rounded-tr-sm pointer-events-none z-30"></div>
-                  <div className="corner-bracket absolute bottom-3 left-3 w-5 h-5 border-b-[2px] border-l-[2px] border-pink-400/80 rounded-bl-sm pointer-events-none z-30"></div>
-                  <div className="corner-bracket absolute bottom-3 right-3 w-5 h-5 border-b-[2px] border-r-[2px] border-pink-400/80 rounded-br-sm pointer-events-none z-30"></div>
+                  <div className="corner-bracket absolute top-4 left-4 w-6 h-6 border-t-[2px] border-l-[2px] border-[#512DA8] rounded-tl-[8px] pointer-events-none z-30"></div>
+                  <div className="corner-bracket absolute top-4 right-4 w-6 h-6 border-t-[2px] border-r-[2px] border-[#512DA8] rounded-tr-[8px] pointer-events-none z-30"></div>
+                  <div className="corner-bracket absolute bottom-4 left-4 w-6 h-6 border-b-[2px] border-l-[2px] border-[#512DA8] rounded-bl-[8px] pointer-events-none z-30"></div>
+                  <div className="corner-bracket absolute bottom-4 right-4 w-6 h-6 border-b-[2px] border-r-[2px] border-[#512DA8] rounded-br-[8px] pointer-events-none z-30"></div>
 
                   {/* ── Scan line ── */}
                   <div
                     className="scan-line absolute left-0 right-0 h-[1.5px] z-20 pointer-events-none"
-                    style={{ background: 'linear-gradient(to right, transparent 0%, rgba(236,72,153,0.9) 25%, rgba(167,139,250,1) 50%, rgba(236,72,153,0.9) 75%, transparent 100%)' }}
+                    style={{ background: 'linear-gradient(to right, transparent 0%, rgba(81,45,168,0.9) 25%, rgba(167,139,250,1) 50%, rgba(81,45,168,0.9) 75%, transparent 100%)' }}
                   ></div>
                   {/* Scan glow beneath line */}
                   <div
                     className="scan-glow absolute left-0 right-0 h-10 z-20 pointer-events-none -mt-5"
-                    style={{ background: 'linear-gradient(to bottom, transparent, rgba(236,72,153,0.06), transparent)' }}
+                    style={{ background: 'linear-gradient(to bottom, transparent, rgba(81,45,168,0.15), transparent)' }}
                   ></div>
 
                   {/* Status badge */}
@@ -166,8 +166,8 @@ const AIPage = () => {
                   </div>
 
                   {/* Inset shadow */}
-                  <div className="absolute inset-0 pointer-events-none rounded-xl"
-                    style={{ boxShadow: 'inset 0 0 60px rgba(0,0,0,0.7)', borderRadius: '45px' }}
+                  <div className="absolute inset-0 pointer-events-none rounded-[24px]"
+                    style={{ boxShadow: 'inset 0 0 60px rgba(0,0,0,0.7)' }}
                   ></div>
                 </div>
               </div>
