@@ -73,26 +73,32 @@ const ProductBento = () => {
           {/* ── ROW 1: 4 top cards ── */}
           <div style={{ gridArea: 'top-row' }} className="bento-top-row-grid w-full">
             {[
-              { label: 'SPATIAL AUDIO', title: 'Room Resonance',  desc: 'Concentric acoustic arrays for immersive room-scale projection.',   Icon: Volume2 },
-              { label: 'EDGE AI',       title: 'Local Inference', desc: 'On-device neural network execution with zero latency.',              Icon: Cpu     },
+              { label: 'SPATIAL AUDIO', title: 'Room Resonance',  desc: 'Concentric acoustic arrays for immersive room-scale projection.',   Icon: Volume2, image: '/resolution%20changed%20spatialaudio.png' },
+              { label: 'EDGE AI',       title: 'Local Inference', desc: 'On-device neural network execution with zero latency.',              Icon: Cpu, image: '/resolution%20changed%20edge%20ai.png' },
               { label: 'LUCA OS',       title: 'Real-Time Core',  desc: 'Low-level OS scheduled dynamically for sub-millisecond threads.',   Icon: Layers  },
               { label: 'VOICE NATIVE',  title: 'Instant Voice',   desc: 'Continuous hardware speech-to-speech loop running locally.',        Icon: Radio   },
-            ].map(({ label, title, desc, Icon }) => (
+            ].map(({ label, title, desc, Icon, image }) => (
               <motion.div
                 key={label}
                 whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
-                className="bento-card-height h-[165px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-5 flex flex-col justify-between group cursor-default transition-all overflow-hidden relative"
+                className={`bento-card-height h-[165px] rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md group cursor-default transition-all overflow-hidden relative ${!image ? 'p-5 flex flex-col justify-between' : ''}`}
               >
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center,rgba(120,80,255,0.05)0%,transparent 70%)' }} />
-                <div className="relative z-10 flex justify-between items-start">
-                  <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">{label}</span>
-                  <Icon className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
-                </div>
-                <div className="relative z-10">
-                  <h3 className="text-white text-sm font-bold tracking-tight mb-1">{title}</h3>
-                  <p className="text-[#888] text-[10px] leading-relaxed">{desc}</p>
-                </div>
+                {image ? (
+                  <img src={image} alt={label} className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-0" />
+                ) : (
+                  <>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" style={{ background: 'radial-gradient(circle at center,rgba(120,80,255,0.05)0%,transparent 70%)' }} />
+                    <div className="relative z-20 flex justify-between items-start">
+                      <span className="text-purple-400 text-[10px] uppercase tracking-[0.2em] font-bold">{label}</span>
+                      <Icon className="w-4 h-4 text-zinc-500 group-hover:text-purple-400/80 transition-colors duration-300" />
+                    </div>
+                    <div className="relative z-20">
+                      <h3 className="text-white text-sm font-bold tracking-tight mb-1">{title}</h3>
+                      <p className="text-[#888] text-[10px] leading-relaxed">{desc}</p>
+                    </div>
+                  </>
+                )}
               </motion.div>
             ))}
           </div>
@@ -152,13 +158,13 @@ const ProductBento = () => {
 
             {/* ── right2 ── */}
             <motion.div
-              whileHover={{ y: -4, borderColor: 'rgba(120,80,255,0.3)' }}
+              whileHover={{ y: -4 }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="flex-1 rounded-[28px] border border-white/[0.05] bg-white/[0.01] backdrop-blur-md group cursor-default transition-all overflow-hidden relative"
+              className="flex-1 rounded-[28px] bg-transparent group cursor-default transition-all overflow-hidden relative"
             >
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" style={{ background: 'radial-gradient(circle at center,rgba(120,80,255,0.05)0%,transparent 70%)' }} />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
               <img
-                src="/privacy%20img1.jpeg"
+                src="/resolutin%20changed%20privacy%20img1.png"
                 alt="Privacy"
                 className="absolute inset-0 w-full h-full pointer-events-none select-none"
                 style={{ objectFit: 'fill' }}
