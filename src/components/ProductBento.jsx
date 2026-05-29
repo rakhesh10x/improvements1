@@ -172,7 +172,7 @@ const ProductBento = () => {
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
               <img
-                src="/resolution%20changed%20privacy%20new%20img.png"
+                src="/resolution%20changed%20privacy%20new1%20img.png"
                 alt="Privacy"
                 className="absolute inset-0 w-full h-full pointer-events-none select-none object-cover"
                 style={{ transform: 'scale(1.05)' }}
