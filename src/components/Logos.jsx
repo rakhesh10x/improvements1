@@ -18,7 +18,7 @@ const LogoGroup = () => (
     {logos.map((logo, i) => (
       <div 
         key={i} 
-        className="flex items-center justify-center h-[50px] sm:h-[60px] md:h-[75px]"
+        className="flex items-center justify-center h-[40px] sm:h-[48px] md:h-[60px]"
         style={{ marginRight: logo.gap || '4rem' }}
       >
         <img
@@ -48,18 +48,21 @@ const Logos = () => {
 
   return (
     <section className="relative z-20 mt-8 md:mt-12 lg:mt-16 w-full overflow-hidden flex flex-col items-center">
-      <p className="text-tagline-02 text-[#A0A0A0] uppercase mb-4 text-center tracking-widest font-medium">
+      <p className="text-tagline-02 text-[#A0A0A0] uppercase mb-6 text-center tracking-widest font-medium">
         COLLABORATED & BACKED BY
       </p>
 
-      <div className="w-full border-y border-white/[0.08] pt-6 pb-1 bg-[#030303]/40 backdrop-blur-sm">
+      <div className="w-full border-y border-white/[0.08] pt-3 pb-2 bg-[#030303]/40 backdrop-blur-sm">
         <div className="relative w-full max-w-[1920px] mx-auto flex items-center">
           {/* Edge Gradients for smooth fade out */}
           <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
           <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
 
           {/* Marquee Container with pause on hover */}
-          <div className="animate-marquee min-w-max flex items-center hover:[animation-play-state:paused] cursor-pointer">
+          <div 
+            className="animate-marquee min-w-max flex items-center hover:[animation-play-state:paused] cursor-pointer"
+            style={{ animationDuration: '48s' }}
+          >
             <LogoGroup />
             <LogoGroup />
             <LogoGroup />

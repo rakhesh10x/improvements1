@@ -79,14 +79,14 @@ const AIPage = () => {
         <Starfield />
       </div>
 
-      <div className="relative z-10 flex flex-col min-h-[90svh]">
+      <div className="relative z-10 flex flex-col w-full">
         <Navbar openContactModal={() => setIsContactModalOpen(true)} />
 
-        <main className="flex-grow">
+        <main className="flex-grow flex flex-col w-full">
           {/* Section 1: Hero */}
-          <section className="relative w-full min-h-[83svh] flex flex-col z-10 border-b border-white/5">
+          <section className="relative w-full min-h-[100svh] flex flex-col z-10 border-b border-white/5">
             {/* Main content — vertically centered, responsive grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-6 items-stretch max-w-[1360px] mx-auto w-full px-6 pt-44 pb-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-6 items-stretch max-w-[1360px] mx-auto w-full px-6 pt-36 md:pt-44 pb-12 lg:pb-16 my-auto">
               
               {/* Left Column: Text Content */}
               <div className="max-w-2xl flex flex-col gap-4 order-1">
