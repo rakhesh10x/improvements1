@@ -62,7 +62,10 @@ const Navbar = ({ openContactModal }) => {
             </div>
           </div>
           
-          <div className="relative z-10 hidden md:block">
+          <div className="relative z-10 hidden md:flex items-center gap-4">
+            <button className="px-7 py-3 rounded-full border border-white/[0.15] text-white text-sm font-bold tracking-wide hover:border-white/40 transition-all duration-300">
+              BLOG
+            </button>
             <button 
               onClick={openContactModal}
               className="text-btn-secondary bg-gradient-to-r from-[#512da8] to-[#4c1d95] border border-purple-500/30 text-white px-6 py-2.5 rounded-full shadow-[0_4px_20px_rgba(81,45,168,0.3),inset_0_1px_0_rgba(255,255,255,0.15)] hover:shadow-[0_4px_30px_rgba(124,58,237,0.5),inset_0_1px_0_rgba(255,255,255,0.25)] hover:border-purple-400/40 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer"

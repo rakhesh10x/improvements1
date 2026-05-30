@@ -198,7 +198,7 @@ const AIPage = () => {
             </div>
 
             {/* Marquee ticker at the bottom */}
-            <div className="mt-auto w-full border-t border-white/[0.06] pt-4 pb-1 overflow-hidden">
+            <div className="mt-auto mb-4 w-full border-t border-white/[0.06] pt-4 pb-1 overflow-hidden">
               <style>{`
                 @keyframes marquee-left {
                   0%   { transform: translateX(0); }
